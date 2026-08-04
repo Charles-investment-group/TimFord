@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js (use project's Node)
         uses: actions/setup-node@v4
         with:
-          node-version: '18.x'
+          node-version: '20.19.x'
           cache: npm
 
       - name: CI environment info (debug)
