@@ -1,4 +1,4 @@
-# Deploy to GitHub Pages — fixed: use setup-node + npm (no pnpm), add debug info
+# Deploy to GitHub Pages — updated for Svelte project at repo root (no cig/)
 on:
   push:
     branches:
@@ -27,30 +27,66 @@ jobs:
           echo "== Workspace listing =="
           pwd
           ls -la
-          echo "== cig directory listing =="
-          ls -la cig || true
           echo "== Lockfile checks =="
-          if [ -f cig/pnpm-lock.yaml ]; then echo "pnpm lock exists"; else echo "no pnpm lock"; fi
-          if [ -f cig/package-lock.json ]; then echo "npm lock exists"; else echo "no npm lock"; fi
+          if [ -f package-lock.json ]; then echo "npm lock exists"; else echo "no npm lock"; fi
+          if [ -f pnpm-lock.yaml ]; then echo "pnpm lock exists"; else echo "no pnpm lock"; fi
 
       - name: Install dependencies
-        working-directory: cig
         run: |
-          # Use npm (project has cig/package-lock.json). Prefer CI mode for reproducible installs.
+          echo "Installing dependencies at repository root"
           npm ci --prefer-offline --no-audit
 
       - name: Build
-        working-directory: cig
         env:
           BASE_PATH: '/${{ github.event.repository.name }}'
           PUBLIC_SUPABASE_URL: ${{ secrets.PUBLIC_SUPABASE_URL }}
           PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.PUBLIC_SUPABASE_PUBLISHABLE_KEY }}
-        run: npm run build
+        run: |
+          echo "Running build at repository root"
+          npm run build
+
+      - name: Prepare artifact for upload
+        run: |
+          # Create a consistent site/ folder so upload step has a single known source
+          rm -rf site
+          mkdir -p site
+          echo "Looking for common build output directories"
+          candidates=("build" "dist" "public" "public/build" "build/client" "out" "static")
+          found=false
+          for c in "${candidates[@]}"; do
+            if [ -d "$c" ]; then
+              # Prefer directories that look like static sites (contain index.html)
+              if [ -f "$c/index.html" ] || [ -f "$c/index.htm" ] || ls "$c" | grep -q -E 'index\.html|index\.htm' 2>/dev/null; then
+                echo "Using $c as artifact source"
+                cp -a "$c" site
+                found=true
+                break
+              fi
+            fi
+          done
+          # Fallback: copy first existing candidate if none contain index.html
+          if [ "$found" = false ]; then
+            for c in "${candidates[@]}"; do
+              if [ -d "$c" ]; then
+                echo "No index.html detected; falling back to $c"
+                cp -a "$c" site
+                found=true
+                break
+              fi
+            done
+          fi
+          if [ "$found" = false ]; then
+            echo "No build output found in common locations (build, dist, public, out, static). Listing workspace:"
+            ls -la
+            exit 1
+          fi
+          echo "site/ contents:"
+          ls -la site || true
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'cig/dist/'
+          path: 'site/'
 
   deploy:
     needs: build_site
