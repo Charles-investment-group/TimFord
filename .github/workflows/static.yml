@@ -25,6 +25,7 @@ jobs:
           node -v
           npm -v || true
           pnpm -v || true
+          yarn -v || true
           echo "== Workspace listing =="
           pwd
           ls -la
@@ -36,6 +37,8 @@ jobs:
       - name: Install dependencies (detect package manager)
         run: |
           echo "Installing dependencies at repository root"
+          set -euo pipefail
+          # Prefer pnpm if pnpm-lock.yaml present
           if [ -f pnpm-lock.yaml ]; then
             echo "Using pnpm (pnpm-lock.yaml present)"
             corepack enable
@@ -46,7 +49,9 @@ jobs:
             npm ci --prefer-offline --no-audit
           elif [ -f yarn.lock ]; then
             echo "Using yarn (yarn.lock present)"
-            npm ci --prefer-offline --no-audit
+            corepack enable
+            corepack prepare yarn@stable --activate
+            yarn install --frozen-lockfile
           else
             echo "No lockfile found — defaulting to npm ci"
             npm ci --prefer-offline --no-audit || npm install
@@ -58,6 +63,7 @@ jobs:
           node -v
           npm -v || true
           pnpm -v || true
+          yarn -v || true
           echo
           echo "=== Show vite config (if present) ==="
           if [ -f vite.config.js ]; then
@@ -79,10 +85,32 @@ jobs:
           PUBLIC_SUPABASE_URL: ${{ secrets.PUBLIC_SUPABASE_URL }}
           PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.PUBLIC_SUPABASE_PUBLISHABLE_KEY }}
         run: |
+          # Fail fast and print commands
+          set -euxo pipefail
+
           echo "Running build at repository root"
+          node -v
+          echo "Detected package manager lockfiles:"
+          [ -f pnpm-lock.yaml ] && echo "pnpm-lock.yaml"
+          [ -f yarn.lock ] && echo "yarn.lock"
+          [ -f package-lock.json ] && echo "package-lock.json"
+
+          echo "package.json scripts:"
+          node -e "try{console.log(JSON.stringify(require('./package.json').scripts || {}, null, 2))}catch(e){console.error('Cannot read package.json', e)}"
+
+          # Ensure corepack available for pnpm/yarn
           if [ -f pnpm-lock.yaml ]; then
+            corepack enable || true
+            corepack prepare pnpm@latest --activate || true
+            echo "Running pnpm run build"
             pnpm run build
+          elif [ -f yarn.lock ]; then
+            corepack enable || true
+            corepack prepare yarn@stable --activate || true
+            echo "Running yarn build"
+            yarn build
           else
+            echo "Running npm run build"
             npm run build
           fi
 
@@ -92,7 +120,7 @@ jobs:
           rm -rf site
           mkdir -p site
           echo "Looking for common build output directories"
-          candidates=("build" "dist" "public" "public/build" "build/client" "out" "static")
+          candidates=("build" "dist" "public" "public/build" "build/client" "out" "static" ".svelte-kit/output/client")
           found=false
           for c in "${candidates[@]}"; do
             if [ -d "$c" ]; then
