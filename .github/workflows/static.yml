@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js (use project's Node)
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 18
           cache: npm
 
       - name: CI environment info (debug)
@@ -24,17 +24,54 @@ jobs:
           echo "== Environment =="
           node -v
           npm -v || true
+          pnpm -v || true
           echo "== Workspace listing =="
           pwd
           ls -la
           echo "== Lockfile checks =="
           if [ -f package-lock.json ]; then echo "npm lock exists"; else echo "no npm lock"; fi
           if [ -f pnpm-lock.yaml ]; then echo "pnpm lock exists"; else echo "no pnpm lock"; fi
+          if [ -f yarn.lock ]; then echo "yarn lock exists"; else echo "no yarn lock"; fi
 
-      - name: Install dependencies
+      - name: Install dependencies (detect package manager)
         run: |
           echo "Installing dependencies at repository root"
-          npm ci --prefer-offline --no-audit
+          if [ -f pnpm-lock.yaml ]; then
+            echo "Using pnpm (pnpm-lock.yaml present)"
+            corepack enable
+            corepack prepare pnpm@latest --activate
+            pnpm install --frozen-lockfile
+          elif [ -f package-lock.json ]; then
+            echo "Using npm (package-lock.json present)"
+            npm ci --prefer-offline --no-audit
+          elif [ -f yarn.lock ]; then
+            echo "Using yarn (yarn.lock present)"
+            npm ci --prefer-offline --no-audit
+          else
+            echo "No lockfile found — defaulting to npm ci"
+            npm ci --prefer-offline --no-audit || npm install
+          fi
+
+      - name: Show Vite / config diagnostics
+        run: |
+          echo "=== Node & package manager versions ==="
+          node -v
+          npm -v || true
+          pnpm -v || true
+          echo
+          echo "=== Show vite config (if present) ==="
+          if [ -f vite.config.js ]; then
+            echo "vite.config.js:"
+            sed -n '1,200p' vite.config.js || true
+          elif [ -f vite.config.ts ]; then
+            echo "vite.config.ts:"
+            sed -n '1,200p' vite.config.ts || true
+          else
+            echo "No vite.config.* in repo root"
+          fi
+          echo
+          echo "=== Listing repo root ==="
+          ls -la
 
       - name: Build
         env:
@@ -43,7 +80,11 @@ jobs:
           PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.PUBLIC_SUPABASE_PUBLISHABLE_KEY }}
         run: |
           echo "Running build at repository root"
-          npm run build
+          if [ -f pnpm-lock.yaml ]; then
+            pnpm run build
+          else
+            npm run build
+          fi
 
       - name: Prepare artifact for upload
         run: |
