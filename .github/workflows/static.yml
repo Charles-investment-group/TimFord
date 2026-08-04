@@ -1,8 +1,10 @@
-name: Deploy to GitHub Pages
-
+# Deploy to GitHub Pages — fixed: use setup-node + npm (no pnpm), add debug info
 on:
   push:
-    branches: 'main'
+    branches:
+      - main
+
+name: Deploy to GitHub Pages
 
 jobs:
   build_site:
@@ -11,29 +13,33 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 8
-
-      - name: Install Node.js
+      - name: Setup Node.js (use project's Node)
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
 
-      # Optional debug step to confirm file layout
-      - name: Dump workspace (debug)
+      - name: CI environment info (debug)
         run: |
+          echo "== Environment =="
+          node -v
+          npm -v || true
+          echo "== Workspace listing =="
           pwd
           ls -la
-          find . -maxdepth 4 -name package.json || true
+          echo "== cig directory listing =="
+          ls -la cig || true
+          echo "== Lockfile checks =="
+          if [ -f cig/pnpm-lock.yaml ]; then echo "pnpm lock exists"; else echo "no pnpm lock"; fi
+          if [ -f cig/package-lock.json ]; then echo "npm lock exists"; else echo "no npm lock"; fi
 
       - name: Install dependencies
         working-directory: cig
-        run: npm ci
+        run: |
+          # Use npm (project has cig/package-lock.json). Prefer CI mode for reproducible installs.
+          npm ci --prefer-offline --no-audit
 
-      - name: build
+      - name: Build
         working-directory: cig
         env:
           BASE_PATH: '/${{ github.event.repository.name }}'
@@ -44,8 +50,6 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          # adjust to the actual output folder your build creates:
-          # use 'cig/dist/' if vite default, or 'cig/build/' if your adapter outputs 'build/'
           path: 'cig/dist/'
 
   deploy:
