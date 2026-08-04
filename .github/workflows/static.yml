@@ -107,7 +107,7 @@ jobs:
 
           echo "package.json scripts:"
           # ESM-safe package.json read (works whether Node is running in ESM or CJS mode)
-          node -e "(async()=>{ try{ const fs = await import('fs'); const pkg = JSON.parse(fs.readFileSync(new URL('./package.json', import.meta.url), 'utf8')); console.log(JSON.stringify(pkg.scripts||{}, null, 2)); }catch(e){ console.error('Cannot read package.json', e); process.exit(1);} })()"
+          node -e "(async()=>{ try{ const fs = await import('fs'); const pkg = JSON.parse(fs.readFileSync(new URL('./package.json', import.meta.url), 'utf8')); console.log(JSON.stringify(pkg.scripts, null, 2)); }catch(e){ console.error('package.json read failed:', e); } })()"
 
           # Ensure corepack available for pnpm/yarn
           if [ -f pnpm-lock.yaml ]; then
