@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js (use project's Node)
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: '18.x'
           cache: npm
 
       - name: CI environment info (debug)
@@ -33,6 +33,16 @@ jobs:
           if [ -f package-lock.json ]; then echo "npm lock exists"; else echo "no npm lock"; fi
           if [ -f pnpm-lock.yaml ]; then echo "pnpm lock exists"; else echo "no pnpm lock"; fi
           if [ -f yarn.lock ]; then echo "yarn lock exists"; else echo "no yarn lock"; fi
+
+          echo "== package.json validation =="
+          if [ -f package.json ]; then
+            echo "package.json (first 200 lines):"
+            sed -n '1,200p' package.json || true
+            # Use an ESM-safe parser to validate package.json (works whether Node runs in ESM or CJS)
+            node -e "(async()=>{ try{ const fs = await import('fs'); JSON.parse(fs.readFileSync(new URL('./package.json', import.meta.url), 'utf8')); console.log('package.json parsed OK'); }catch(e){ console.error('package.json parse failed:', e); } })()"
+          else
+            echo "package.json not found"
+          fi
 
       - name: Install dependencies (detect package manager)
         run: |
@@ -96,7 +106,8 @@ jobs:
           [ -f package-lock.json ] && echo "package-lock.json"
 
           echo "package.json scripts:"
-          node -e "try{console.log(JSON.stringify(require('./package.json').scripts || {}, null, 2))}catch(e){console.error('Cannot read package.json', e)}"
+          # ESM-safe package.json read (works whether Node is running in ESM or CJS mode)
+          node -e "(async()=>{ try{ const fs = await import('fs'); const pkg = JSON.parse(fs.readFileSync(new URL('./package.json', import.meta.url), 'utf8')); console.log(JSON.stringify(pkg.scripts||{}, null, 2)); }catch(e){ console.error('Cannot read package.json', e); process.exit(1);} })()"
 
           # Ensure corepack available for pnpm/yarn
           if [ -f pnpm-lock.yaml ]; then
