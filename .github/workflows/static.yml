@@ -11,7 +11,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # If you're using pnpm, add this step then change the commands and cache key below to use `pnpm`
       - name: Install pnpm
         uses: pnpm/action-setup@v3
         with:
@@ -23,22 +22,31 @@ jobs:
           node-version: 22
           cache: npm
 
+      # Optional debug step to confirm file layout
+      - name: Dump workspace (debug)
+        run: |
+          pwd
+          ls -la
+          find . -maxdepth 4 -name package.json || true
+
       - name: Install dependencies
-        run: npm i
+        working-directory: cig
+        run: npm ci
 
       - name: build
+        working-directory: cig
         env:
           BASE_PATH: '/${{ github.event.repository.name }}'
           PUBLIC_SUPABASE_URL: ${{ secrets.PUBLIC_SUPABASE_URL }}
           PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.PUBLIC_SUPABASE_PUBLISHABLE_KEY }}
-        run: |
-          npm run build
+        run: npm run build
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          # this should match the `pages` option in your adapter-static options
-          path: 'build/'
+          # adjust to the actual output folder your build creates:
+          # use 'cig/dist/' if vite default, or 'cig/build/' if your adapter outputs 'build/'
+          path: 'cig/dist/'
 
   deploy:
     needs: build_site
