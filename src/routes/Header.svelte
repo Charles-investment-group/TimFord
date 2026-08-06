@@ -1,19 +1,36 @@
 <script>
 
+
 </script>
 
-<header>
 
+<header>
+<div class="main_content">
 <div class="logo_container">
 <div class="menu_container">
-<button class="menu_button"><svg width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<button class="menu_button"><svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
  <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
  </svg>
  </button>
 </div>
 
-<img src="" alt=""/>
+<div class="logo">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2rem" height="2rem" viewBox="0 0 512 512">
+  <defs>
+    <clipPath id="canvas-clip">
+      <rect width="512" height="512" rx="112" ry="112"/>
+    </clipPath>
+  </defs>
+  <rect width="512" height="512" rx="112" ry="112" fill="#F74562"  clip-path="url(#canvas-clip)"/>
+  <g clip-path="url(#canvas-clip)">
+    <g transform="rotate(0, 256, 256)">
+      
+      <g transform="translate(103 103) scale(12.791666666666666 12.791666666666666) translate(0 0)"><path fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 10H6a4 4 0 0 1-4-4a1 1 0 0 1 1-1h4m0 0a1 1 0 0 1 1-1h13a1 1 0 0 1 1 1a7 7 0 0 1-7 7H8a1 1 0 0 1-1-1zm2 7v5m6-5v5M5 20a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1"/></g>
+    </g>
+  </g>
+</svg>
 <span class="logo_name">Tim Ford</span>
+</div>
 </div>
 
 <div class="header_links_container">
@@ -30,49 +47,159 @@
  </svg>
  <span class="">Admin Portal</span>
 </a>
-<a href="#" class="login_button">Login</a>
+<a href="#" class="login_link">Login</a>
+<button class="login_button">Login</button>
 <a href="#" class="create_profile_button">Create Profile</a>
+</div>
+</div>
+<div class="open_menu_containers">
+<div class="open_menu">
+<a href="#">Templates</a>
+<a href="#">CAD Studio</a>
+<a href="#">Media Studio</a>
+<a href="#">Pricing</a>
+<a href="#">Hosting</a>
+<a href="#">Login</a>
+<a href="#">Create Profile</a>
+<a href="#">Admin Portal</a>
+
+</div>
+<div class="open_login">
+<a href="#">Login</a>
+<a href="#">Create Profile</a>
+<a href="#">Admin Portal</a>
+</div>
 </div>
 </header>
 
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+font-size: 1.1rem;
+font-family: Inter;
+font-weight: 300;
+transition: all 0.3s ease;
+color: #111111;
+}
+
+*:hover {
+font-weight: 400;
+color: #000000;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+header, .main_content, .open_menu_containers {
+align-self: stretch;
+}
+
+
 
 header {
+display: flex;
+flex-direction: column;
+flex-wrap: nowrap;
+align-items: flex-start;
+justify-content: flex-start;
+padding: 20px;
+background-color: lightgrey;
+margin: 0px;
+}
+
+.main_content {
 display: flex;
 flex-wrap: nowrap;
 align-items: center;
 justify-content: space-between;
-padding: 5px 20px;
+padding: 0px;
 background-color: white;
 margin: 0px;
+gap: 20px;
+}
+
+.main_content > * {
+    min-width: 0;
+}
+
+.open_menu_containers {
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+justify-content: space-between;
+}
+
+.open_menu {
+display: flex;
+flex-direction: column;
+flex-wrap: nowrap;
+align-items: flex-start;
+justify-content: flex-start;
+padding: 20px;
+background-color: red;
+margin: 0px;
+gap: 7px;
+}
+
+.open_login {
+display: flex;
+flex-direction: column;
+flex-wrap: nowrap;
+align-items: flex-start;
+justify-content: flex-start;
+padding: 30px;
+background-color: yellow;
+margin: 0px;
+gap: 7px;
+}
+
+.login_button {
+display: none;
 }
 
 .menu_container {
 display: flex;
 align-items: center;
 justify-content: center;
-background-color: white;
-margin-right: 20px;
+background-color: transparent;
+margin-right: 0px;
 }
 
 .menu_button {
 display: flex;
 align-items: center;
 justify-content: center;
+display: none;
+border: none;
+background: none;
+cursor: pointer;
 }
 
 .logo_container {
 display: flex;
 flex-wrap: nowrap;
-align-items: center;
+align-items: flex-start;
 justify-content: flex-start;
-flex: 0.25;
+gap: 0px;
+background-color: transparent;
+}
+
+.logo {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+background-color: orange;
 }
 
 .logo_name, a {
 white-space: nowrap;
-color: #000000;
 text-decoration: none;
 }
 
@@ -81,19 +208,59 @@ display: flex;
 flex-wrap: nowrap;
 align-items: center;
 justify-content: center;
-flex: 0.5;
-background-color: white;
+background-color: coral;
 gap: 20px;
-margin: 0px 20px;
 }
 
 .login_container {
 display: flex;
 flex-wrap: nowrap;
 align-items: center;
-justify-content: center;
+justify-content: flex-end;
 gap: 20px;
-flex: 0.25;
 }
+
+@media (max-width: 1050px) {
+.admin_login_button, .create_profile_button, .login_link {
+display: none;
+}
+
+.login_button {
+display: flex;
+}
+
+}
+
+@media (max-width: 800px) {
+.header_links_container {
+display: none;
+}
+
+.menu_container, .menu_button {
+display: flex;
+}
+
+.logo, .login_container  {
+display: none;
+}
+
+
+} 
+
+@media (max-width: 600px) {
+.login_container {
+display: none;
+}
+}
+
+@media (max-width: 405px) {
+* {
+font-size: 1.2rem;
+}
+svg {
+scale: 1.1;
+}
+}
+
 
 </style>
