@@ -54,7 +54,7 @@
 	<div class="section-inner">
 		<div class="intro">
 			<p class="eyebrow">
-				<Icon name="triangle" size="18" />
+						{@render Icon({ name: 'triangle', size: '18' })}
 				<span>Proprietary Technology</span>
 			</p>
 			<h1 id="forge-heading">Introducing <span>ForgeEngine</span></h1>
@@ -73,7 +73,7 @@
 		<div class="feature-grid">
 			{#each features as feature, index}
 				<article class:featured={index === 0}>
-					<Icon name={feature.icon} size="34" />
+					{@render Icon({ name: feature.icon, size: '34' })}
 					<h2>{feature.title}</h2>
 					<p>{feature.text}</p>
 				</article>
