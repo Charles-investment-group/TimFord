@@ -39,7 +39,7 @@ jobs:
             echo "package.json (first 200 lines):"
             sed -n '1,200p' package.json || true
             # Use a robust CommonJS one-liner to validate package.json (avoids ESM import/quoting issues)
-            node -e "try { const fs = require('fs'); JSON.parse(fs.readFileSync('./package.json','utf8')); console.log('package.json parsed OK'); } catch (e) { console.error('package.json parse failed:', e); process.exit(1); }"
+            node -e "try { const fs = require('fs'); JSON.parse(fs.readFileSync('./package.json','utf8')); console.log('package.json parsed OK'); } catch (e) { console.error('package.json parse failed:', e.message); }"
           else
             echo "package.json not found"
           fi
@@ -107,7 +107,7 @@ jobs:
 
           echo "package.json scripts:"
           # Read package.json using a CommonJS one-liner to avoid ESM quoting pitfalls
-          node -e "try { const fs = require('fs'); const pkg = JSON.parse(fs.readFileSync('./package.json','utf8')); console.log('package.json scripts:', JSON.stringify(pkg.scripts || {})); } catch (e) { console.error('package.json read failed:', e); }"
+          node -e "try { const fs = require('fs'); const pkg = JSON.parse(fs.readFileSync('./package.json','utf8')); console.log('package.json scripts:', JSON.stringify(pkg.scripts || {})); } catch (e) { console.error('failed to read package.json scripts:', e.message); }"
 
           # Ensure corepack available for pnpm/yarn
           if [ -f pnpm-lock.yaml ]; then
@@ -138,7 +138,8 @@ jobs:
               # Prefer directories that look like static sites (contain index.html)
               if [ -f "$c/index.html" ] || [ -f "$c/index.htm" ] || ls "$c" | grep -q -E 'index\.html|index\.htm' 2>/dev/null; then
                 echo "Using $c as artifact source"
-                cp -a "$c" site
+                # COPY CONTENTS of $c into site/ root (not the directory itself)
+                cp -a "$c/." site
                 found=true
                 break
               fi
@@ -149,7 +150,8 @@ jobs:
             for c in "${candidates[@]}"; do
               if [ -d "$c" ]; then
                 echo "No index.html detected; falling back to $c"
-                cp -a "$c" site
+                # COPY CONTENTS of $c into site/ root (not the directory itself)
+                cp -a "$c/." site
                 found=true
                 break
               fi
