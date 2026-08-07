@@ -3,12 +3,14 @@
 
 </script>
 
-
-<main class="main_container container">
+<main>
+<div class="main_container container">
 <div id="stars"></div>
   <div id="stars2"></div>
   <div id="stars3"></div>
   <div></div>
+</div>
+<div class="overlay"></div>
 </main>
 
 <style>
@@ -19,11 +21,23 @@ height: 100vh;
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
+position: absolute;
 }
- 
+
+.overlay {
+width: 100%;
+height: 100vh;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background: linear-gradient(rgba(0,0,0,0) 50%, #020919 100%);
+position: relative;
+}
+
+
 .container {
   width: 100%;
-  background: radial-gradient(circle at 50vw 111vh,yellow 10%, orange 22%,red 40%, #000000 60%);
+  background: radial-gradient(circle at 50vw 110vh,yellow 10%, orange 22%,red 40%, #000000 40%,#0B223E );
   overflow: hidden;
 }
 
