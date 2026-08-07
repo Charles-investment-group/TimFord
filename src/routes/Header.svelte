@@ -79,8 +79,8 @@
 font-size: 1.1rem;
 font-family: Inter;
 font-weight: 300;
-transition: all 0.3s ease;
-color: #111111;
+transition: all 0.5s ease;
+color: #000000;
 }
 
 *:hover {
@@ -104,10 +104,13 @@ flex-direction: column;
 flex-wrap: nowrap;
 align-items: flex-start;
 justify-content: flex-start;
-padding: 20px;
-background-color: lightgrey;
+padding: 0px;
+background-color: transparent;
 margin: 0px;
 gap: 10px;
+z-index: 10000000;
+position: fixed;
+width: 100%;
 }
 
 .main_content {
@@ -117,8 +120,20 @@ align-items: center;
 justify-content: space-between;
 padding: 0px;
 background-color: transparent;
-margin: 0px;
+padding: 5px 20px;
 gap: 20px;
+}
+
+.main_content:hover {
+background-color: rgba(255,255,255,1);
+}
+
+.main_content * {
+color: white;
+}
+
+.main_content:hover * {
+color: black;
 }
 
 .main_content > * {
@@ -130,6 +145,7 @@ display: flex;
 flex-direction: row;
 align-items: flex-start;
 justify-content: space-between;
+padding: 5px 20px;
 }
 
 .open_menu {
@@ -139,10 +155,11 @@ flex-wrap: nowrap;
 align-items: flex-start;
 justify-content: flex-start;
 padding: 30px;
-background-color: rgba(255,255,255,0.6);
-border: 1px solid rgba(255,255,255,0.8);
+background-color: rgba(255,255,255,0.8);
+border: 1px solid rgba(255,255,255,1);
 border-radius: 20px;
-box-shadow: -1px 1px 5px rgba(0,0,0,0.1);
+backdrop-filter: blur(5px);
+box-shadow: -1px 1px 5px rgba(0,0,0,0.2);
 margin: 0px;
 gap: 10px;
 width: 180px;
@@ -157,11 +174,12 @@ justify-content: flex-start;
 padding: 30px;
 background-color: yellow;
 margin: 0px;
-gap: 7px;
-background-color: rgba(255,255,255,0.6);
-border: 1px solid rgba(255,255,255,0.8);
+gap: 10px;
+background-color: rgba(255,255,255,0.8);
+border: 1px solid rgba(255,255,255,1);
 border-radius: 20px;
-box-shadow: -1px 1px 5px rgba(0,0,0,0.1);
+backdrop-filter: blur(5px);
+box-shadow: -1px 1px 5px rgba(0,0,0,0.2);
 margin: 0px;
 gap: 7px;
 width: 180px;
@@ -205,7 +223,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 gap: 10px;
-background-color: orange;
+background-color: transparent;
 }
 
 .logo_name, a {
@@ -254,6 +272,10 @@ display: flex;
 display: none;
 }
 
+.main_content:hover {
+background-color: rgba(0,0,0,1);
+}
+
 
 } 
 
@@ -261,6 +283,10 @@ display: none;
 .login_container {
 display: none;
 }
+.main_content:hover {
+background-color: rgba(0,0,0,1);
+}
+
 }
 
 @media (max-width: 405px) {
@@ -270,6 +296,10 @@ font-size: 1.2rem;
 svg {
 scale: 1.1;
 }
+.main_content:hover {
+background-color: rgba(0,0,0,1);
+}
+
 }
 
 
