@@ -3,7 +3,6 @@
 
 </script>
 
-
 <header>
 <div class="main_content">
 <div class="logo_container">
@@ -40,6 +39,7 @@
 <a href="#">Pricing</a>
 <a href="#">Hosting</a>
 </div>
+
 <div class="login_container">
 <a href="#" class="admin_login_button">
 <svg width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -72,7 +72,6 @@
 </div>
 </header>
 
-
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
@@ -95,12 +94,9 @@ color: #000000;
     box-sizing: border-box;
 }
 
-
 header, .main_content, .open_menu_containers {
 align-self: stretch;
 }
-
-
 
 header {
 display: flex;
@@ -111,6 +107,7 @@ justify-content: flex-start;
 padding: 20px;
 background-color: lightgrey;
 margin: 0px;
+gap: 10px;
 }
 
 .main_content {
@@ -119,7 +116,7 @@ flex-wrap: nowrap;
 align-items: center;
 justify-content: space-between;
 padding: 0px;
-background-color: white;
+background-color: transparent;
 margin: 0px;
 gap: 20px;
 }
@@ -141,10 +138,14 @@ flex-direction: column;
 flex-wrap: nowrap;
 align-items: flex-start;
 justify-content: flex-start;
-padding: 20px;
-background-color: red;
+padding: 30px;
+background-color: rgba(255,255,255,0.6);
+border: 1px solid rgba(255,255,255,0.8);
+border-radius: 20px;
+box-shadow: -1px 1px 5px rgba(0,0,0,0.1);
 margin: 0px;
-gap: 7px;
+gap: 10px;
+width: 180px;
 }
 
 .open_login {
@@ -157,6 +158,13 @@ padding: 30px;
 background-color: yellow;
 margin: 0px;
 gap: 7px;
+background-color: rgba(255,255,255,0.6);
+border: 1px solid rgba(255,255,255,0.8);
+border-radius: 20px;
+box-shadow: -1px 1px 5px rgba(0,0,0,0.1);
+margin: 0px;
+gap: 7px;
+width: 180px;
 }
 
 .login_button {
@@ -176,8 +184,10 @@ display: flex;
 align-items: center;
 justify-content: center;
 display: none;
-border: none;
-background: none;
+border: 1px solid rgba(255,255,255,0.6);
+border-radius: 100px;
+padding: 5px;
+background: rgba(255,255,255,0.7);
 cursor: pointer;
 }
 
