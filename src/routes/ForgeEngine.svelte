@@ -54,10 +54,10 @@
 	<div class="section-inner">
 		<div class="intro">
 			<p class="eyebrow">
-						{@render Icon({ name: 'triangle', size: '18' })}
+				{@render Icon({ name: 'triangle', size: '18' })}
 				<span>Proprietary Technology</span>
 			</p>
-			<h1 id="forge-heading">Introducing <span>ForgeEngine</span></h1>
+			<h2 id="forge-heading" class="forge-title">Introducing <span>ForgeEngine</span></h2>
 			<p class="summary">
 				ForgeAI's proprietary game engine is built from the ground up to deliver premium games,
 				apps, and interactive experiences without third-party engines or licensing fees.
@@ -165,16 +165,10 @@
 {/snippet}
 
 <style>
-	:global(body) {
-		margin: 0;
-		font-family:
-			Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-		background: #f6f8fb;
-		color: #0d1728;
-	}
-
 	.forge-section {
 		position: relative;
+		isolation: isolate;
+		width: 100%;
 		overflow: hidden;
 		background:
 			linear-gradient(rgba(74, 144, 255, 0.055) 1px, transparent 1px),
@@ -183,7 +177,14 @@
 			linear-gradient(180deg, #020818 0%, #071121 56%, #0b1424 100%);
 		background-size: 96px 96px, 96px 96px, auto, auto;
 		color: white;
+		font-family:
+			Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 		padding: 112px 24px 120px;
+	}
+
+	.forge-section,
+	.forge-section * {
+		box-sizing: border-box;
 	}
 
 	.section-inner {
@@ -209,20 +210,19 @@
 		letter-spacing: 0.14em;
 	}
 
-	h1,
-	h2,
-	p {
+	.forge-section h2,
+	.forge-section p {
 		margin-top: 0;
 	}
 
-	h1 {
+	.forge-title {
 		margin-bottom: 22px;
 		font-size: clamp(2.6rem, 7vw, 5.9rem);
 		line-height: 0.98;
 		font-weight: 900;
 	}
 
-	h1 span {
+	.forge-title span {
 		color: #45b8ff;
 	}
 
