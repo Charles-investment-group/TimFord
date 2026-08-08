@@ -129,8 +129,8 @@
 	.section3 {
 		color: #f8fafc;
 		font-family: 'Inter', 'Segoe UI', sans-serif;
-		/* trimmed top pad — ForgeEngine supplies the rest of the gap above */
-		padding: clamp(1.75rem, 3.5vw, 2.5rem) clamp(1rem, 4vw, 1.5rem) clamp(3rem, 7vw, 5.5rem);
+		/* trimmed on both edges — neighbouring sections supply the rest of the gap */
+		padding: clamp(1.75rem, 3.5vw, 2.5rem) clamp(1rem, 4vw, 1.5rem) clamp(1.75rem, 3.5vw, 2.5rem);
 	}
 
 	.section3 *,
