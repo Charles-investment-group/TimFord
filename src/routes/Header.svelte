@@ -9,13 +9,26 @@ function loginToggle() {
 loginOpen = !loginOpen;
 }
 
+let scrolled = $state(false);
+
+$effect(() => {
+const handleScroll = () => {
+scrolled = window.scrollY > 0;
+};
+
+window.addEventListener('scroll', handleScroll);
+return () => {
+window.removeEventListener('scroll', handleScroll);
+};
+
+});
 
 </script>
 
 <header>
-<div class="main_content">
+<div class="main_content" class:scrolled>
 <div class="logo_container">
-<div class="menu_container">
+<div class="menu_container" >
 <button type="button" class="menu_button" onclick={menuToggle}><svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
  <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
  </svg>
@@ -107,13 +120,9 @@ font-size: 1.1rem;
 font-family: Inter;
 font-weight: 300;
 transition: all 0.5s ease;
-color: #000000;
+color: #ffffff;
 }
 
-*:hover {
-font-weight: 400;
-color: #000000;
-}
 
 *,
 *::before,
@@ -147,16 +156,21 @@ flex-wrap: nowrap;
 align-items: center;
 justify-content: space-between;
 padding: 0px;
-background-color: rgba(10,22,40,0);
+background-color: rgba(0,0,0,1);
 backdrop-filter: blur(0px);
-padding: 20px;
+border-bottom: 1px solid transparent;
+padding: 10px 20px;
 margin-bottom: 0px;
 gap: 20px;
+box-shadow: 0px 20px 50px rgba(0,0,0,0.5);
 }
 
-.main_content:hover {
-background-color: rgba(255,255,255,0);
+.main_content.scrolled {
+background: linear-gradient(#0A1628);
+border-bottom: 1px solid #0C1F3A;
+backdrop-filter: blur(20px);
 }
+
 
 .main_content * {
 color: white;
@@ -181,12 +195,12 @@ flex-wrap: nowrap;
 align-items: flex-start;
 justify-content: flex-start;
 padding: 30px;
-background-color: rgba(255,255,255,0.8);
-border: 1px solid rgba(255,255,255,1);
+background-color: rgba(17, 39, 69, 0.5);
+border: 1px solid #2A5386;
 border-radius: 20px;
 backdrop-filter: blur(5px);
-box-shadow: -1px 1px 5px rgba(0,0,0,0.2);
-margin: 0px;
+box-shadow: -1px 1px 10px rgba(0,0,0,0.4);
+margin-top: 20px;
 gap: 10px;
 width: 180px;
 }
@@ -239,12 +253,12 @@ display: flex;
 align-items: center;
 justify-content: center;
 display: none;
-border: 1px solid rgba(255,255,255,0.3);
+border: 1px solid rgba(255,255,255,0);
 border-radius: 100px;
 padding: 5px;
-background: rgba(255,255,255,0.2);
+background: rgba(255,255,255,0);
 cursor: pointer;
-backdrop-filter: blur(10px);
+backdrop-filter: blur(0px);
 }
 
 .logo_container {
@@ -337,9 +351,6 @@ width: 100vw;
 }
 
 
-.main_content:hover {
-background-color: rgba(0,0,0,0);
-}
 
 .open_login,
 .open_login.open {
@@ -371,9 +382,6 @@ font-size: 1.2rem;
 }
 svg {
 scale: 1.1;
-}
-.main_content:hover {
-background-color: rgba(0,0,0,0);
 }
 
 .open_login,
