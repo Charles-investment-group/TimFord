@@ -1,4 +1,13 @@
 <script>
+let menuOpen = $state(false);
+function menuToggle() {
+menuOpen = !menuOpen;
+}
+
+let loginOpen = $state(false);
+function loginToggle() {
+loginOpen = !loginOpen;
+}
 
 
 </script>
@@ -7,7 +16,7 @@
 <div class="main_content">
 <div class="logo_container">
 <div class="menu_container">
-<button class="menu_button"><svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<button type="button" class="menu_button" onclick={menuToggle}><svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
  <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
  </svg>
  </button>
@@ -33,11 +42,29 @@
 </div>
 
 <div class="header_links_container">
-<a href="#">Templates</a>
-<a href="#">CAD Studio</a>
-<a href="#">Media Studio</a>
-<a href="#">Pricing</a>
-<a href="#">Hosting</a>
+<a class="header_link" href="#">Templates</a>
+<a class="header_link" href="#">CAD Studio</a>
+<a class="header_link" href="#">Media Studio</a>
+<a class="header_link" href="#">Pricing</a>
+<a class="header_link" href="#">Hosting</a>
+<div class="logo_middle">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2rem" height="2rem" viewBox="0 0 512 512">
+  <defs>
+    <clipPath id="canvas-clip">
+      <rect width="512" height="512" rx="112" ry="112"/>
+    </clipPath>
+  </defs>
+  <rect width="512" height="512" rx="112" ry="112" fill="#F74562"  clip-path="url(#canvas-clip)"/>
+  <g clip-path="url(#canvas-clip)">
+    <g transform="rotate(0, 256, 256)">
+      
+      <g transform="translate(103 103) scale(12.791666666666666 12.791666666666666) translate(0 0)"><path fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 10H6a4 4 0 0 1-4-4a1 1 0 0 1 1-1h4m0 0a1 1 0 0 1 1-1h13a1 1 0 0 1 1 1a7 7 0 0 1-7 7H8a1 1 0 0 1-1-1zm2 7v5m6-5v5M5 20a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1"/></g>
+    </g>
+  </g>
+</svg>
+<span class="logo_name">Tim Ford</span>
+</div>
+
 </div>
 
 <div class="login_container">
@@ -48,12 +75,12 @@
  <span class="">Admin Portal</span>
 </a>
 <a href="#" class="login_link">Login</a>
-<button class="login_button">Login</button>
+<button type="button" onclick={loginToggle} class="login_button">Login</button>
 <a href="#" class="create_profile_button">Create Profile</a>
 </div>
 </div>
 <div class="open_menu_containers">
-<div class="open_menu">
+<div style:display={menuOpen ? 'flex' : 'none'} class="open_menu" >
 <a href="#">Templates</a>
 <a href="#">CAD Studio</a>
 <a href="#">Media Studio</a>
@@ -64,7 +91,7 @@
 <a href="#">Admin Portal</a>
 
 </div>
-<div class="open_login">
+<div class:open={loginOpen} class="open_login">
 <a href="#">Login</a>
 <a href="#">Create Profile</a>
 <a href="#">Admin Portal</a>
@@ -94,6 +121,7 @@ color: #000000;
     box-sizing: border-box;
 }
 
+
 header, .main_content, .open_menu_containers {
 align-self: stretch;
 }
@@ -119,22 +147,19 @@ flex-wrap: nowrap;
 align-items: center;
 justify-content: space-between;
 padding: 0px;
-background-color: transparent;
-padding: 5px 20px;
-margin-bottom: 10px;
+background-color: rgba(10,22,40,0);
+backdrop-filter: blur(0px);
+padding: 20px;
+margin-bottom: 0px;
 gap: 20px;
 }
 
 .main_content:hover {
-background-color: rgba(255,255,255,1);
+background-color: rgba(255,255,255,0);
 }
 
 .main_content * {
 color: white;
-}
-
-.main_content:hover *:not(.menu_button) {
-color: black;
 }
 
 .main_content > * {
@@ -150,7 +175,7 @@ padding: 0px 20px;
 }
 
 .open_menu {
-display: flex;
+display: none;
 flex-direction: column;
 flex-wrap: nowrap;
 align-items: flex-start;
@@ -166,8 +191,12 @@ gap: 10px;
 width: 180px;
 }
 
-.open_login {
+.open_menu.open {
 display: flex;
+}
+
+.open_login {
+display: none;
 flex-direction: column;
 flex-wrap: nowrap;
 align-items: flex-start;
@@ -184,7 +213,14 @@ box-shadow: -1px 1px 5px rgba(0,0,0,0.2);
 margin: 0px;
 gap: 7px;
 width: 180px;
+position: absolute;
+right: 20px;
 }
+
+.open_login.open {
+display: flex;
+}
+
 
 .login_button {
 display: none;
@@ -203,11 +239,12 @@ display: flex;
 align-items: center;
 justify-content: center;
 display: none;
-border: 1px solid rgba(255,255,255,0.6);
+border: 1px solid rgba(255,255,255,0.3);
 border-radius: 100px;
 padding: 5px;
-background: rgba(255,255,255,0.7);
+background: rgba(255,255,255,0.2);
 cursor: pointer;
+backdrop-filter: blur(10px);
 }
 
 .logo_container {
@@ -219,13 +256,22 @@ gap: 0px;
 background-color: transparent;
 }
 
-.logo {
+.logo, .logo_middle {
 display: flex;
 align-items: center;
 justify-content: center;
 gap: 10px;
 background-color: transparent;
 }
+
+.logo_middle {
+display: none;
+align-items: center;
+justify-content: center;
+gap: 10px;
+background-color: transparent;
+}
+
 
 .logo_name, a {
 white-space: nowrap;
@@ -237,7 +283,7 @@ display: flex;
 flex-wrap: nowrap;
 align-items: center;
 justify-content: center;
-background-color: coral;
+background-color: transparent;
 gap: 20px;
 }
 
@@ -256,12 +302,17 @@ display: none;
 
 .login_button {
 display: flex;
+border: 1px solid rgba(255,255,255,0.6);
+border-radius: 100px;
+padding: 5px 20px;
+background: rgba(255,255,255,0.7);
+cursor: pointer;
 }
 
 }
 
 @media (max-width: 800px) {
-.header_links_container {
+.header_link {
 display: none;
 }
 
@@ -273,8 +324,26 @@ display: flex;
 display: none;
 }
 
+.logo_middle {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+background-color: rgba(255,255,255,0.0);
+border: 1px solid rgba(255,255,255,0);
+padding: 1px 40px 1px 0px;
+border-radius: 100px;
+width: 100vw;
+}
+
+
 .main_content:hover {
 background-color: rgba(0,0,0,0);
+}
+
+.open_login,
+.open_login.open {
+display: none;
 }
 
 
@@ -288,6 +357,12 @@ display: none;
 background-color: rgba(0,0,0,0);
 }
 
+.open_login,
+.open_login.open {
+display: none;
+}
+
+
 }
 
 @media (max-width: 405px) {
@@ -299,6 +374,11 @@ scale: 1.1;
 }
 .main_content:hover {
 background-color: rgba(0,0,0,0);
+}
+
+.open_login,
+.open_login.open {
+display: none;
 }
 
 }
