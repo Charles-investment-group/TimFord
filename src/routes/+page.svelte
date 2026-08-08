@@ -3,6 +3,7 @@
 	import Hero from './Hero.svelte';
 	import ForgeEngine from './ForgeEngine.svelte';
 	import Section3 from '$lib/Section3.svelte';
+	import RenderingEngine from '$lib/RenderingEngine.svelte';
 	import CadStudio from '$lib/CadStudio.svelte';
 </script>
 
@@ -11,5 +12,6 @@
 	<Hero />
 	<ForgeEngine />
 	<Section3 />
+	<RenderingEngine />
 	<CadStudio />
 </main>
