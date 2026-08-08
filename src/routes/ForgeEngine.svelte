@@ -1,130 +1,89 @@
 <script>
 	const highlights = [
-		'4K/8K Cinematic + PBR',
-		'500+ Animation Clips',
-		'500+ Free Assets',
-		'Moon server integration coming soon'
+		{ icon: 'film', label: '4K/8K Cinematic + PBR' },
+		{ icon: 'clapperboard', label: '500+ Animation Clips' },
+		{ icon: 'box', label: '500+ Free Assets' },
+		{ icon: 'sparkles', label: 'Moon server integration coming soon' }
 	];
 
 	const features = [
 		{
 			icon: 'triangle',
 			title: 'Real-Time 3D Renderer',
-			text: 'PBR lighting, ray-traced shadows, dynamic global illumination, and smooth frame rates on modern hardware.'
+			text: 'PBR lighting, ray-traced shadows, dynamic global illumination, and 60+ FPS on modern hardware. Near-AAA visual quality out of the box.'
 		},
 		{
-			icon: 'chip',
+			icon: 'cpu',
 			title: 'ForgeScript Engine',
-			text: 'A proprietary scripting language with the power of C# and the simplicity of Python for fast game logic.'
+			text: 'Our proprietary scripting language — the power of C# with the simplicity of Python. Write game logic in minutes, not days.'
 		},
 		{
-			icon: 'bolt',
+			icon: 'zap',
 			title: 'Physics & Simulation',
-			text: 'Rigid body, soft body, fluid simulation, and collision systems for vehicles, characters, and environments.'
+			text: 'Full rigid body, soft body, fluid, and cloth simulation with collision detection. Vehicles, characters, ragdolls — all supported natively.'
 		},
 		{
 			icon: 'wifi',
 			title: 'Built-In Multiplayer',
-			text: 'Peer-to-peer and dedicated server networking with state sync, lag compensation, and player lobbies.'
+			text: 'Peer-to-peer and dedicated server networking baked in. Up to 1,000 concurrent players on Titan tier. State sync, lag compensation, lobbies.'
 		},
 		{
-			icon: 'cube',
+			icon: 'box',
 			title: 'Asset Pipeline',
-			text: 'Import 3D models, textures, audio, animations, and video while ForgeEngine optimizes for each platform.'
+			text: 'Import 3D models, textures, audio, animations, and video. ForgeEngine auto-optimizes every asset for performance across all platforms.'
 		},
 		{
-			icon: 'phone',
+			icon: 'smartphone',
 			title: 'Multi-Platform Export',
-			text: 'Build once, then export to web, Windows, macOS, Linux, iOS, Android, Google Play, and the App Store.'
+			text: 'Build once, export to Web, Windows, macOS, Linux, iOS, and Android. Google Play and App Store ready from day one.'
 		},
 		{
 			icon: 'film',
 			title: '4K/8K Cinematic Rendering',
-			text: 'HDRP lighting, ray-traced reflections, volumetric fog, and high-resolution PBR textures in real time.'
+			text: 'HDRP lighting, ray-traced reflections, volumetric fog, and 4K/8K PBR textures deliver near-AAA cinematic visuals in real time.'
 		},
 		{
-			icon: 'clapper',
+			icon: 'clapperboard',
 			title: 'Animation Studio',
-			text: 'Mocap-blended rigs, blend trees, root motion, facial blends, and a 500+ clip animation library.'
+			text: 'Mocap-standard rigs, blend trees, root motion, facial blendshapes, and a 500+ animation clip library. Bring any character to life.'
 		}
 	];
 </script>
 
-<section class="forge-section" aria-labelledby="forge-heading">
+<section class="forge-section page-backdrop" aria-labelledby="forge-heading">
 	<div class="section-inner">
 		<div class="intro">
 			<p class="eyebrow">
-				{@render Icon({ name: 'triangle', size: '18' })}
+				{@render Icon({ name: 'triangle', size: '14' })}
 				<span>Proprietary Technology</span>
 			</p>
+
 			<h2 id="forge-heading" class="forge-title">Introducing <span>ForgeEngine</span></h2>
+
 			<p class="summary">
-				ForgeAI's proprietary game engine is built from the ground up to deliver premium games,
-				apps, and interactive experiences without third-party engines or licensing fees.
+				ForgeAI's proprietary game engine — built from the ground up to deliver near-AAA quality
+				games, apps, and interactive experiences. No third-party engines. No licensing fees.
 				Fully integrated with <strong>Chloe</strong> and all <strong>83 AIs</strong>.
 			</p>
-			<div class="highlight-row" aria-label="ForgeEngine highlights">
+
+			<ul class="highlight-row" aria-label="ForgeEngine highlights">
 				{#each highlights as item}
-					<span>{item}</span>
+					<li>
+						{@render Icon({ name: item.icon, size: '13' })}
+						<span>{item.label}</span>
+					</li>
 				{/each}
-			</div>
+			</ul>
 		</div>
 
 		<div class="feature-grid">
-			{#each features as feature, index}
-				<article class:featured={index === 0}>
-					{@render Icon({ name: feature.icon, size: '34' })}
-					<h2>{feature.title}</h2>
+			{#each features as feature}
+				<article>
+					{@render Icon({ name: feature.icon, size: '22' })}
+					<h3>{feature.title}</h3>
 					<p>{feature.text}</p>
 				</article>
 			{/each}
-		</div>
-
-		<div class="dimension-block">
-			<h2>1D / 2D / 3D Rendering Engine</h2>
-			<p>
-				Every build renders in the dimension it needs: audio and data streams, flat 2D canvas
-				scenes, or real-time 3D WebGL. <strong>Chloe automatically detects the right dimension</strong>
-				from what you describe.
-			</p>
-
-			<div class="dimension-grid">
-				<article class="visual-card">
-					<div class="visual-heading">
-						<span class="pill cyan">1D</span>
-						<p>Audio / Text / Data streams</p>
-					</div>
-					<div class="bars" aria-hidden="true">
-						{#each Array(34) as _, index}
-							<span style={`--height: ${26 + Math.round(Math.abs(Math.sin(index * 0.47)) * 70)}%`}></span>
-						{/each}
-					</div>
-				</article>
-
-				<article class="visual-card">
-					<div class="visual-heading">
-						<span class="pill violet">2D</span>
-						<p>Canvas / Sprites / Flat scenes</p>
-					</div>
-					<div class="node-preview" aria-hidden="true">
-						<span></span>
-						<span></span>
-						<span></span>
-						<span></span>
-						<span></span>
-					</div>
-				</article>
-
-				<article class="visual-card">
-					<div class="visual-heading">
-						<span class="pill amber">3D</span>
-						<p>WebGL / Three.js / Real-time 3D</p>
-					</div>
-					<div class="terrain" aria-hidden="true">
-						<div></div>
-					</div>
-				</article>
-			</div>
 		</div>
 	</div>
 </section>
@@ -136,90 +95,104 @@
 		height={size}
 		viewBox="0 0 24 24"
 		fill="none"
+		stroke="currentColor"
+		stroke-width="2"
+		stroke-linecap="round"
+		stroke-linejoin="round"
 		xmlns="http://www.w3.org/2000/svg"
 		aria-hidden="true"
 	>
 		{#if name === 'triangle'}
-			<path d="M12 4.5L21 20H3L12 4.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
-		{:else if name === 'chip'}
-			<path d="M8 8H16V16H8V8Z" stroke="currentColor" stroke-width="2" />
-			<path d="M4 9H7M4 15H7M17 9H20M17 15H20M9 4V7M15 4V7M9 17V20M15 17V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-		{:else if name === 'bolt'}
-			<path d="M13 2L4 14H11L10 22L20 9H13L13 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+			<path d="M13.73 4a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3z" />
+		{:else if name === 'cpu'}
+			<path d="M12 20v2M12 2v2M17 20v2M17 2v2M2 12h2M2 17h2M2 7h2M20 12h2M20 17h2M20 7h2M7 20v2M7 2v2" />
+			<rect x="4" y="4" width="16" height="16" rx="2" />
+			<rect x="8" y="8" width="8" height="8" rx="1" />
+		{:else if name === 'zap'}
+			<path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
 		{:else if name === 'wifi'}
-			<path d="M5 10C9.5 6.5 14.5 6.5 19 10M8 14C10.4 12.2 13.6 12.2 16 14M11.5 18H12.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-		{:else if name === 'cube'}
-			<path d="M12 3L20 7.5V16.5L12 21L4 16.5V7.5L12 3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
-			<path d="M4.5 8L12 12.5L19.5 8M12 12.5V20.5" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
-		{:else if name === 'phone'}
-			<path d="M8 3H16C17.1 3 18 3.9 18 5V19C18 20.1 17.1 21 16 21H8C6.9 21 6 20.1 6 19V5C6 3.9 6.9 3 8 3Z" stroke="currentColor" stroke-width="2" />
-			<path d="M11.5 17.5H12.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+			<path d="M12 20h.01" />
+			<path d="M2 8.82a15 15 0 0 1 20 0" />
+			<path d="M5 12.859a10 10 0 0 1 14 0" />
+			<path d="M8.5 16.429a5 5 0 0 1 7 0" />
+		{:else if name === 'box'}
+			<path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
+			<path d="m3.3 7 8.7 5 8.7-5" />
+			<path d="M12 22V12" />
+		{:else if name === 'smartphone'}
+			<rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+			<path d="M12 18h.01" />
 		{:else if name === 'film'}
-			<path d="M5 4H19V20H5V4Z" stroke="currentColor" stroke-width="2" />
-			<path d="M9 4V20M15 4V20M5 9H19M5 15H19" stroke="currentColor" stroke-width="2" />
+			<rect width="18" height="18" x="3" y="3" rx="2" />
+			<path d="M7 3v18M3 7.5h4M3 12h18M3 16.5h4M17 3v18M17 7.5h4M17 16.5h4" />
+		{:else if name === 'sparkles'}
+			<path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" />
+			<path d="M20 3v4M22 5h-4M4 17v2M5 18H3" />
 		{:else}
-			<path d="M5 7H19V19H5V7Z" stroke="currentColor" stroke-width="2" />
-			<path d="M8 7L7 4H11L12 7M15 7L14 4H18L19 7" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+			<!-- clapperboard -->
+			<path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z" />
+			<path d="m6.2 5.3 3.1 3.9M12.4 3.4l3.1 4" />
+			<path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />
 		{/if}
 	</svg>
 {/snippet}
 
 <style>
+	/* base/grid/glow come from .page-backdrop in src/app.css */
 	.forge-section {
-		position: relative;
-		isolation: isolate;
 		width: 100%;
-		overflow: hidden;
-		background:
-			linear-gradient(rgba(74, 144, 255, 0.055) 1px, transparent 1px),
-			linear-gradient(90deg, rgba(74, 144, 255, 0.055) 1px, transparent 1px),
-			radial-gradient(circle at 48% 24%, rgba(54, 162, 255, 0.18), transparent 32%),
-			linear-gradient(180deg, #020818 0%, #071121 56%, #0b1424 100%);
-		background-size: 96px 96px, 96px 96px, auto, auto;
-		color: white;
+		color: #ffffff;
 		font-family:
-			Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-		padding: 112px 24px 120px;
+			Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+		/* trimmed bottom pad — Section3 supplies the rest of the gap below */
+		padding: clamp(3rem, 7vw, 5.5rem) clamp(1rem, 4vw, 1.5rem) clamp(1.75rem, 3.5vw, 2.5rem);
 	}
 
 	.forge-section,
-	.forge-section * {
+	.forge-section *,
+	.forge-section *::before,
+	.forge-section *::after {
 		box-sizing: border-box;
 	}
 
 	.section-inner {
-		width: min(1180px, 100%);
+		width: min(1040px, 100%);
 		margin: 0 auto;
 	}
 
+	.forge-section h2,
+	.forge-section h3,
+	.forge-section p {
+		margin-top: 0;
+	}
+
+	/* ---------- intro ---------- */
+
 	.intro {
 		text-align: center;
-		max-width: 930px;
-		margin: 0 auto 58px;
+		max-width: 660px;
+		margin: 0 auto clamp(1.75rem, 4vw, 2.5rem);
 	}
 
 	.eyebrow {
 		display: inline-flex;
 		align-items: center;
-		gap: 10px;
-		margin: 0 0 22px;
-		color: #5aa7ff;
-		font-size: 0.82rem;
-		font-weight: 800;
+		gap: 0.5rem;
+		margin: 0 0 0.85rem;
+		color: #ffffff;
+		font-size: clamp(0.62rem, 1.4vw, 0.7rem);
+		font-weight: 700;
 		text-transform: uppercase;
-		letter-spacing: 0.14em;
-	}
-
-	.forge-section h2,
-	.forge-section p {
-		margin-top: 0;
+		letter-spacing: 0.28em;
 	}
 
 	.forge-title {
-		margin-bottom: 22px;
-		font-size: clamp(2.6rem, 7vw, 5.9rem);
-		line-height: 0.98;
+		margin-bottom: 1.1rem;
+		font-size: clamp(1.8rem, 5.2vw, 3rem);
+		line-height: 1.1;
+		letter-spacing: -0.03em;
 		font-weight: 900;
+		text-wrap: balance;
 	}
 
 	.forge-title span {
@@ -227,287 +200,113 @@
 	}
 
 	.summary {
-		max-width: 820px;
+		max-width: 40rem;
 		margin: 0 auto;
-		color: #e5edf9;
-		font-size: clamp(1rem, 2.4vw, 1.35rem);
-		line-height: 1.72;
+		color: #ffffff;
+		font-size: clamp(0.8rem, 1.7vw, 0.9rem);
+		line-height: 1.7;
 	}
 
 	.summary strong {
 		color: #58aaff;
+		font-weight: 600;
 	}
 
 	.highlight-row {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		gap: 14px;
-		margin-top: 34px;
+		gap: 0.5rem;
+		margin: 1.4rem 0 0;
+		padding: 0;
+		list-style: none;
 	}
 
-	.highlight-row span {
+	.highlight-row li {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
 		border: 1px solid rgba(90, 167, 255, 0.35);
 		border-radius: 999px;
 		background: rgba(39, 93, 165, 0.24);
-		padding: 12px 20px;
-		color: #f5f9ff;
-		font-size: 0.96rem;
-		font-weight: 800;
-		white-space: nowrap;
+		padding: 0.4rem 0.75rem;
+		color: #ffffff;
+		font-size: clamp(0.6rem, 1.4vw, 0.68rem);
+		font-weight: 600;
 	}
+
+	.highlight-row .icon {
+		color: #58aaff;
+	}
+
+	/* ---------- feature grid ---------- */
 
 	.feature-grid {
 		display: grid;
 		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 18px;
-	}
-
-	article {
-		border: 1px solid rgba(93, 159, 237, 0.28);
-		border-radius: 8px;
-		background: rgba(30, 43, 63, 0.92);
+		gap: 0.75rem;
 	}
 
 	.feature-grid article {
-		min-height: 210px;
-		padding: 32px;
-		color: #f7fbff;
+		min-width: 0;
+		border: 1px solid rgba(93, 159, 237, 0.28);
+		border-radius: 0.6rem;
+		background: rgba(17, 32, 64, 0.9);
+		padding: 1.1rem 1.15rem 1.25rem;
+		color: #ffffff;
+		transition:
+			border-color 0.2s ease,
+			background 0.2s ease,
+			box-shadow 0.2s ease;
 	}
 
-	.feature-grid article.featured {
+	.feature-grid article:hover,
+	.feature-grid article:focus-within {
 		border-color: #5aa7ff;
-		box-shadow: inset 0 0 0 1px #5aa7ff, 0 16px 60px rgba(20, 108, 255, 0.18);
+		background: rgba(30, 111, 217, 0.16);
+		box-shadow: 0 16px 60px -30px rgba(20, 108, 255, 0.9);
 	}
 
 	.icon {
-		color: #58aaff;
 		flex: 0 0 auto;
 	}
 
-	.feature-grid h2 {
-		margin: 24px 0 12px;
-		font-size: 1.25rem;
-		line-height: 1.2;
+	.feature-grid .icon {
+		color: #58aaff;
+	}
+
+	.feature-grid h3 {
+		margin: 0.75rem 0 0.4rem;
+		font-size: clamp(0.8rem, 1.7vw, 0.9rem);
+		font-weight: 700;
+		line-height: 1.25;
 	}
 
 	.feature-grid p {
 		margin-bottom: 0;
-		color: #e5edf9;
-		font-size: 1rem;
-		line-height: 1.58;
+		color: #ffffff;
+		font-size: clamp(0.63rem, 1.4vw, 0.7rem);
+		line-height: 1.55;
 	}
 
-	.dimension-block {
-		margin-top: 88px;
-		text-align: center;
-	}
+	/* ---------- responsive ---------- */
 
-	.dimension-block > h2 {
-		margin-bottom: 16px;
-		font-size: clamp(1.8rem, 4vw, 2.55rem);
-		line-height: 1.16;
-	}
-
-	.dimension-block > p {
-		max-width: 800px;
-		margin: 0 auto 38px;
-		color: #dce8f8;
-		font-size: clamp(1rem, 2vw, 1.2rem);
-		line-height: 1.65;
-	}
-
-	.dimension-block strong {
-		color: #58aaff;
-	}
-
-	.dimension-grid {
-		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 18px;
-	}
-
-	.visual-card {
-		min-height: 310px;
-		padding: 24px;
-		text-align: left;
-		background: rgba(3, 9, 24, 0.82);
-	}
-
-	.visual-heading {
-		display: flex;
-		align-items: center;
-		gap: 12px;
-		margin-bottom: 26px;
-	}
-
-	.visual-heading p {
-		margin-bottom: 0;
-		color: #b9c9df;
-		font-weight: 700;
-	}
-
-	.pill {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		min-width: 44px;
-		height: 30px;
-		border-radius: 999px;
-		color: white;
-		font-weight: 900;
-	}
-
-	.cyan {
-		background: #19c6e7;
-	}
-
-	.violet {
-		background: #9b5cf6;
-	}
-
-	.amber {
-		background: #f59d0b;
-	}
-
-	.bars {
-		display: flex;
-		align-items: end;
-		gap: 6px;
-		height: 205px;
-	}
-
-	.bars span {
-		width: 100%;
-		height: var(--height);
-		border-radius: 6px 6px 0 0;
-		background: linear-gradient(180deg, #8df4ff, #16bddc);
-		box-shadow: 0 0 16px rgba(32, 212, 242, 0.45);
-	}
-
-	.node-preview {
-		position: relative;
-		width: min(230px, 78%);
-		aspect-ratio: 1;
-		margin: 18px auto 0;
-		border: 4px solid #a35cf7;
-		transform: rotate(-13deg);
-	}
-
-	.node-preview span {
-		position: absolute;
-		width: 30px;
-		height: 30px;
-		border-radius: 999px;
-		background: linear-gradient(135deg, #8b5cf6, #f052d6);
-		box-shadow: 0 0 20px rgba(209, 93, 255, 0.45);
-	}
-
-	.node-preview span:nth-child(1) {
-		top: -16px;
-		left: 20%;
-	}
-
-	.node-preview span:nth-child(2) {
-		top: -16px;
-		right: -10px;
-	}
-
-	.node-preview span:nth-child(3) {
-		right: -16px;
-		bottom: 22%;
-	}
-
-	.node-preview span:nth-child(4) {
-		bottom: -16px;
-		left: 40%;
-	}
-
-	.node-preview span:nth-child(5) {
-		left: -16px;
-		bottom: 22%;
-	}
-
-	.terrain {
-		position: relative;
-		height: 215px;
-		overflow: hidden;
-		border-radius: 6px;
-		background:
-			linear-gradient(transparent 88%, rgba(86, 149, 230, 0.35) 89%),
-			linear-gradient(90deg, transparent 88%, rgba(86, 149, 230, 0.3) 89%);
-		background-size: 34px 34px;
-		perspective: 700px;
-	}
-
-	.terrain::before {
-		content: "";
-		position: absolute;
-		inset: auto -20px 10px;
-		height: 105px;
-		background:
-			linear-gradient(rgba(86, 149, 230, 0.35) 1px, transparent 1px),
-			linear-gradient(90deg, rgba(86, 149, 230, 0.28) 1px, transparent 1px);
-		background-size: 32px 22px;
-		transform: rotateX(62deg);
-		transform-origin: bottom;
-	}
-
-	.terrain div {
-		position: absolute;
-		right: 17%;
-		bottom: 32px;
-		width: 130px;
-		aspect-ratio: 1.28;
-		border-radius: 58% 42% 44% 56%;
-		background:
-			linear-gradient(135deg, rgba(255, 255, 255, 0.14), transparent 38%),
-			linear-gradient(45deg, #b06c12, #e7a21f);
-		box-shadow: 0 24px 52px rgba(0, 0, 0, 0.45);
-	}
-
-	@media (max-width: 920px) {
-		.forge-section {
-			padding: 84px 18px 88px;
+	/* tablet — 2 columns */
+	@media (max-width: 980px) {
+		.feature-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
 		}
+	}
 
-		.feature-grid,
-		.dimension-grid {
+	/* phone — single column */
+	@media (max-width: 620px) {
+		.feature-grid {
 			grid-template-columns: 1fr;
 		}
 
-		.feature-grid article,
-		.visual-card {
-			min-height: auto;
-		}
-
-		.highlight-row {
-			align-items: stretch;
-			flex-direction: column;
-		}
-
-		.highlight-row span {
-			white-space: normal;
-		}
-	}
-
-	@media (max-width: 560px) {
-		.forge-section {
-			padding: 66px 14px 72px;
-		}
-
-		.feature-grid article,
-		.visual-card {
-			padding: 22px;
-		}
-
-		.eyebrow {
-			font-size: 0.72rem;
-		}
-
-		.bars {
-			gap: 3px;
-			height: 150px;
+		.highlight-row li {
+			width: 100%;
+			justify-content: center;
 		}
 	}
 </style>

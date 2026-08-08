@@ -1,0 +1,54 @@
+/* ---------------------------------------------------------------
+   Shared page backdrop.
+   Single source of truth for the site background so every section
+   sits on the same base, grid and glow.
+   --------------------------------------------------------------- */
+
+:root {
+	--bg-base: #0a1628;
+	--bg-raised: #112040;
+	--brand: #1e6fd9;
+	--brand-light: #4a9fff;
+	--grid-line: #1e6fd9;
+	--grid-size: 50px;
+	--grid-opacity: 0.1;
+}
+
+html,
+body {
+	background: var(--bg-base);
+}
+
+/* Apply to any full-width section to give it the shared backdrop. */
+.page-backdrop {
+	position: relative;
+	isolation: isolate;
+	overflow: hidden;
+	background: var(--bg-base);
+}
+
+/* blue grid */
+.page-backdrop::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	z-index: -2;
+	pointer-events: none;
+	opacity: var(--grid-opacity);
+	background-image:
+		linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
+		linear-gradient(0deg, var(--grid-line) 1px, transparent 1px);
+	background-size: var(--grid-size) var(--grid-size);
+}
+
+/* soft glows bleeding in from the left and right edges */
+.page-backdrop::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	pointer-events: none;
+	background:
+		radial-gradient(24rem 24rem at 0% 25%, rgba(30, 111, 217, 0.18), transparent 70%),
+		radial-gradient(24rem 24rem at 100% 75%, rgba(74, 159, 255, 0.1), transparent 70%);
+}

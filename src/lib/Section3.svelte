@@ -1,12 +1,13 @@
 <script>
+	// each category is staffed by 10 AIs and covers 5-10 languages / frameworks
 	const categories = [
-		{ title: 'Web & Frontend', subtitle: 'HTML, CSS/JS/TS, React, Svelte, TypeScript', badge: '10 AIs', variant: 'blue' },
+		{ title: 'Web & Frontend', subtitle: 'HTML, CSS, JavaScript, TypeScript, React, Vue, Svelte, Next.js', badge: '10 AIs', variant: 'blue' },
 		{ title: 'Backend & General', subtitle: 'Python, Java, Go, Rust, Ruby, PHP, Scala, Elixir', badge: '10 AIs', variant: 'green' },
-		{ title: 'Systems & Low-Level', subtitle: 'C, C++, C#, Assembly, WebAssembly', badge: '10 AIs', variant: 'amber' },
-		{ title: 'Mobile', subtitle: 'Swift/iOS, Kotlin/Android, Flutter, React Native', badge: '10 AIs', variant: 'pink' },
-		{ title: 'Enterprise & Legacy', subtitle: 'Java Enterprise, .NET/ASP.NET, COBOL, Fortran', badge: '10 AIs', variant: 'yellow' },
-		{ title: 'Data, AI & Blockchain', subtitle: 'R, MATLAB, Solidity, SQL/NoSQL', badge: '10 AIs', variant: 'cyan' },
-		{ title: 'Scripting & Proprietary', subtitle: 'AutoHotkey, Bash/Shell, Perl', badge: '10 AIs', variant: 'fuchsia' }
+		{ title: 'Systems & Low-Level', subtitle: 'C, C++, C#, Objective-C, Zig, Assembly, WebAssembly', badge: '10 AIs', variant: 'amber' },
+		{ title: 'Mobile', subtitle: 'Swift, SwiftUI, Kotlin, Java/Android, Dart, Flutter, React Native', badge: '10 AIs', variant: 'pink' },
+		{ title: 'Enterprise & Legacy', subtitle: 'Java EE, .NET, ASP.NET, Visual Basic, ABAP, COBOL, Fortran', badge: '10 AIs', variant: 'yellow' },
+		{ title: 'Data, AI & Blockchain', subtitle: 'Python, R, MATLAB, Julia, SQL, NoSQL, Solidity, Vyper', badge: '10 AIs', variant: 'cyan' },
+		{ title: 'Scripting & Proprietary', subtitle: 'Bash/Shell, PowerShell, Perl, Lua, AutoHotkey, VBScript', badge: '10 AIs', variant: 'fuchsia' }
 	];
 
 	const stats = [
@@ -16,13 +17,7 @@
 	];
 </script>
 
-<section class="section3">
-	<div class="bg-grid" aria-hidden="true"></div>
-	<div class="bg-orbs" aria-hidden="true">
-		<span class="orb orb-a"></span>
-		<span class="orb orb-b"></span>
-	</div>
-
+<section class="section3 page-backdrop">
 	<div class="container">
 		<div class="hero-copy">
 			<p class="eyebrow">The Chloe Engine</p>
@@ -130,60 +125,18 @@
 </section>
 
 <style>
+	/* base/grid/glow come from .page-backdrop in src/app.css */
 	.section3 {
-		position: relative;
-		overflow: hidden;
-		background: #0a1628;
 		color: #f8fafc;
 		font-family: 'Inter', 'Segoe UI', sans-serif;
-		padding: clamp(3rem, 7vw, 5.5rem) clamp(1rem, 4vw, 1.5rem);
+		/* trimmed top pad — ForgeEngine supplies the rest of the gap above */
+		padding: clamp(1.75rem, 3.5vw, 2.5rem) clamp(1rem, 4vw, 1.5rem) clamp(3rem, 7vw, 5.5rem);
 	}
 
 	.section3 *,
 	.section3 *::before,
 	.section3 *::after {
 		box-sizing: border-box;
-	}
-
-	/* blue 50px grid, same recipe as the reference site */
-	.bg-grid {
-		position: absolute;
-		inset: 0;
-		opacity: 0.1;
-		pointer-events: none;
-		background-image:
-			linear-gradient(90deg, #1e6fd9 1px, transparent 1px),
-			linear-gradient(0deg, #1e6fd9 1px, transparent 1px);
-		background-size: 50px 50px;
-	}
-
-	/* soft blurred orbs bleeding in from the edges */
-	.bg-orbs {
-		position: absolute;
-		inset: 0;
-		pointer-events: none;
-	}
-
-	.orb {
-		position: absolute;
-		width: 24rem;
-		height: 24rem;
-		border-radius: 50%;
-		filter: blur(64px);
-	}
-
-	.orb-a {
-		top: 25%;
-		left: -16rem;
-		background: #1e6fd9;
-		opacity: 0.1;
-	}
-
-	.orb-b {
-		bottom: 25%;
-		right: -16rem;
-		background: #4a9fff;
-		opacity: 0.05;
 	}
 
 	.container {
@@ -206,7 +159,7 @@
 		letter-spacing: 0.28em;
 		font-size: clamp(0.62rem, 1.4vw, 0.7rem);
 		font-weight: 700;
-		color: #7dd3fc;
+		color: #ffffff;
 		margin: 0 0 0.85rem;
 	}
 
@@ -225,7 +178,7 @@
 		font-size: clamp(0.8rem, 1.7vw, 0.9rem);
 		line-height: 1.7;
 		max-width: 40rem;
-		color: #cbd5e1;
+		color: #ffffff;
 	}
 
 	.hero-highlight {
@@ -316,11 +269,7 @@
 		margin: 0;
 		font-size: 0.68rem;
 		line-height: 1.4;
-		color: rgba(255, 255, 255, 0.75);
-	}
-
-	.secondary-card .flow-subtitle {
-		color: #94a3b8;
+		color: #ffffff;
 	}
 
 	/* horizontal rule spanning the card width, git-branch icon centred in the break */
@@ -358,7 +307,7 @@
 	.flow-note {
 		margin: 1.25rem 0 0;
 		font-size: clamp(0.66rem, 1.5vw, 0.72rem);
-		color: #64748b;
+		color: #ffffff;
 		text-align: center;
 	}
 
@@ -415,7 +364,7 @@
 		margin: 0;
 		font-size: 0.62rem;
 		line-height: 1.4;
-		color: #7c8aa1;
+		color: #ffffff;
 		overflow-wrap: anywhere;
 	}
 
@@ -491,7 +440,7 @@
 		margin: 0;
 		font-size: clamp(0.62rem, 1.4vw, 0.65rem);
 		line-height: 1.4;
-		color: #7c8aa1;
+		color: #ffffff;
 	}
 
 	/* ---------- responsive ---------- */
