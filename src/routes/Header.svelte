@@ -92,8 +92,9 @@ window.removeEventListener('scroll', handleScroll);
 <a href="#" class="create_profile_button">Create Profile</a>
 </div>
 </div>
-<div class="open_menu_containers">
-<div style:display={menuOpen ? 'flex' : 'none'} class="open_menu" >
+
+</header>
+<div class:open={menuOpen} class="open_menu" >
 <a href="#">Templates</a>
 <a href="#">CAD Studio</a>
 <a href="#">Media Studio</a>
@@ -109,13 +110,13 @@ window.removeEventListener('scroll', handleScroll);
 <a href="#">Create Profile</a>
 <a href="#">Admin Portal</a>
 </div>
-</div>
-</header>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 * {
+
+
 font-size: 1.1rem;
 font-family: Inter;
 font-weight: 300;
@@ -156,19 +157,22 @@ flex-wrap: nowrap;
 align-items: center;
 justify-content: space-between;
 padding: 0px;
-background-color: rgba(0,0,0,1);
-backdrop-filter: blur(0px);
-border-bottom: 1px solid transparent;
+background-color: black;
+border-bottom: 1px solid black;
+box-shadow: 0px 40px 60px black;
+
 padding: 10px 20px;
 margin-bottom: 0px;
 gap: 20px;
-box-shadow: 0px 20px 50px rgba(0,0,0,0.5);
+z-index: 10000000000000;
 }
 
 .main_content.scrolled {
 background: linear-gradient(#0A1628);
 border-bottom: 1px solid #0C1F3A;
 backdrop-filter: blur(20px);
+box-shadow: 0px 20px 50px rgba(0,0,0,0.5);
+
 }
 
 
@@ -178,14 +182,6 @@ color: white;
 
 .main_content > * {
     min-width: 0;
-}
-
-.open_menu_containers {
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-justify-content: space-between;
-padding: 0px 20px;
 }
 
 .open_menu {
@@ -203,10 +199,14 @@ box-shadow: -1px 1px 10px rgba(0,0,0,0.4);
 margin-top: 20px;
 gap: 10px;
 width: 180px;
+z-index: 10000000000000000;
+position: fixed;
+top: 60px;
+left: 20px;
 }
 
 .open_menu.open {
-display: flex;
+display: none;
 }
 
 .open_login {
@@ -216,23 +216,29 @@ flex-wrap: nowrap;
 align-items: flex-start;
 justify-content: flex-start;
 padding: 30px;
-background-color: yellow;
-margin: 0px;
-gap: 10px;
-background-color: rgba(255,255,255,0.8);
-border: 1px solid rgba(255,255,255,1);
+background-color: rgba(17, 39, 69, 0.5);
+border: 1px solid #2A5386;
 border-radius: 20px;
 backdrop-filter: blur(5px);
-box-shadow: -1px 1px 5px rgba(0,0,0,0.2);
-margin: 0px;
-gap: 7px;
+box-shadow: -1px 1px 10px rgba(0,0,0,0.4);
+margin-top: 20px;
+gap: 10px;
 width: 180px;
-position: absolute;
+z-index: 10000000000000000;
+position: fixed;
+top: 60px;
 right: 20px;
+
 }
 
 .open_login.open {
 display: flex;
+}
+
+
+.open_login,
+.open_login.open {
+display: none;
 }
 
 
@@ -316,12 +322,25 @@ display: none;
 
 .login_button {
 display: flex;
-border: 1px solid rgba(255,255,255,0.6);
 border-radius: 100px;
 padding: 5px 20px;
-background: rgba(255,255,255,0.7);
 cursor: pointer;
+background-color: rgba(17, 39, 69, 0.5);
+border: 1px solid #2A5386;
+border-radius: 20px;
+backdrop-filter: blur(5px);
+box-shadow: -1px 1px 10px rgba(0,0,0,0.4);
+
 }
+
+.open_login.open {
+display: flex;
+}
+
+.open_menu, .open_menu.open {
+display: none;
+}
+
 
 }
 
@@ -351,10 +370,13 @@ width: 100vw;
 }
 
 
-
 .open_login,
 .open_login.open {
 display: none;
+}
+
+.open_menu.open {
+display: flex;
 }
 
 
@@ -364,13 +386,14 @@ display: none;
 .login_container {
 display: none;
 }
-.main_content:hover {
-background-color: rgba(0,0,0,0);
-}
 
 .open_login,
 .open_login.open {
 display: none;
+}
+
+.open_menu.open {
+display: flex;
 }
 
 
@@ -388,6 +411,11 @@ scale: 1.1;
 .open_login.open {
 display: none;
 }
+
+.open_menu.open {
+display: flex;
+}
+
 
 }
 
