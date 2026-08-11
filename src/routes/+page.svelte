@@ -5,6 +5,7 @@
 	import Section3 from '$lib/Section3.svelte';
 	import RenderingEngine from '$lib/RenderingEngine.svelte';
 	import CadStudio from '$lib/CadStudio.svelte';
+	import Pricing from './Pricing.svelte';
 </script>
 
 <main>
@@ -14,4 +15,5 @@
 	<Section3 />
 	<RenderingEngine />
 	<CadStudio />
+	<Pricing />
 </main>
