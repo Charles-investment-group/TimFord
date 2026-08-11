@@ -1,0 +1,820 @@
+<script>
+	let selectedBilling = $state('monthly');
+
+	const billingOptions = [
+		{ value: 'one-time', label: 'One-Time', detail: '1 month' },
+		{ value: 'monthly', label: 'Monthly', detail: 'Recurring' },
+		{ value: 'annual', label: 'Annual', detail: 'Save 20%' }
+	];
+
+	const billingMessages = {
+		'one-time':
+			'One-time payments give you a full month of credits with no recurring charges. Slightly higher than monthly recurring pricing.',
+		monthly:
+			'Monthly recurring keeps pricing lower upfront and renews automatically each billing cycle.',
+		annual:
+			'Annual billing charges once per year and saves 20% versus monthly pricing while keeping the same plan benefits.'
+	};
+
+	function getPriceValue(value) {
+		return Number(value.replace(/[^0-9.]/g, ''));
+	}
+
+	const plans = [
+		{
+			name: 'Apprentice',
+			tagline: 'Free Forever',
+			monthlyPrice: '$0',
+			oneTimePrice: '$0',
+			annualPrice: '$0',
+			description: 'Try AetherForge for free. Build your first project and explore what AI can create.',
+			chipRows: [
+				[{ label: 'Chloe' }, { label: '5 AIs' }],
+				[{ label: 'Free social media ad & commercial creation', accent: true }],
+				[{ label: '100 AI credits' }, { label: '25 integration' }]
+			],
+			features: [
+				'Chloe + 5 AIs',
+				'Gemini Flash AI model',
+				'ForgeEngine Basic web export',
+				'Free templates only',
+				'1 published project',
+				'AetherForge subdomain',
+				'Integrations hub, 25 credits/mo',
+				'Standard analytics',
+				'Community support'
+			],
+			cta: 'Start Free'
+		},
+		{
+			name: 'Starter',
+			tagline: 'Most Affordable',
+			monthlyPrice: '$15',
+			oneTimePrice: '$19',
+			annualPrice: '$144',
+			description: 'More credits, better AI models, and light support from our team. Great for side projects.',
+			chipRows: [
+				[{ label: 'Chloe' }, { label: 'up to 83 AIs' }],
+				[{ label: 'Chloe & her team manage your ads', accent: true }, { label: 'From $15/mo', accent: true }],
+				[{ label: '300 AI credits' }, { label: '50 integration' }]
+			],
+			features: [
+				'Chloe + up to 83 AIs work on your website, app, game & enterprise software (2-3 of which are QA)',
+				'Gemini Flash, Claude Haiku AI',
+				'ForgeEngine Lite (2D & basic 3D)',
+				'More templates unlocked',
+				'3 published projects',
+				'Custom subdomain',
+				'Stripe payment integration',
+				'Integrations hub - 50 credits/mo',
+				'Advanced analytics',
+				'Chloe and her team craft your social media ads & commercials; they manage posting & distribution',
+				'Priority email support'
+			],
+			cta: 'Go Starter'
+		},
+		{
+			name: 'Builder',
+			tagline: 'Best for Creators',
+			monthlyPrice: '$25',
+			oneTimePrice: '$31',
+			annualPrice: '$240',
+			description: 'Built for serious creators. Pro engines, custom domain, team access, and multiple AI choices.',
+			chipRows: [
+				[{ label: 'Chloe' }, { label: 'up to 83 AIs' }],
+				[{ label: 'Chloe & her team manage your ads', accent: true }, { label: 'From $15/mo', accent: true }],
+				[{ label: '800 AI credits' }, { label: '150 integration' }, { label: '3 seats' }]
+			],
+			features: [
+				'Chloe + up to 83 AIs work on your website, app, game & enterprise software (2-3 of which are QA)',
+				'Gemini Pro, Claude Sonnet, GPT-4o',
+				'ForgeEngine Pro (full 3D, physics, 5 platforms)',
+				'All free templates',
+				'10 published projects',
+				'1 custom domain included',
+				'Up to 3 team members (share plan credits)',
+				'Stripe + PayPal integration',
+				'Integrations hub - 150 credits/mo',
+				'Chloe and her team craft your social media ads & commercials; they manage posting & distribution',
+				'Advanced analytics',
+				'Professional email setup',
+				'Google Play / App Store deploy',
+				'Priority support'
+			],
+			highlighted: true,
+			badge: 'Most Popular',
+			badgeTone: 'blue',
+			cta: 'Start Building'
+		},
+		{
+			name: 'Architect',
+			tagline: 'Pro Power',
+			monthlyPrice: '$39',
+			oneTimePrice: '$49',
+			annualPrice: '$374',
+			description: 'Full power for agencies and freelancers. Multiple AI models, advanced engines, and client tools.',
+			chipRows: [
+				[{ label: 'Chloe' }, { label: 'up to 83 AIs (Full Swarm)' }],
+				[{ label: 'Chloe & her team manage your ads', accent: true }, { label: 'From $15/mo', accent: true }],
+				[{ label: '3,000 AI credits' }, { label: '400 integration' }, { label: '8 seats' }]
+			],
+			features: [
+				'Chloe + up to 83 AIs (Full Swarm) work on your website, app, game & enterprise software (2-3 of which are QA)',
+				'Gemini Ultra, Claude, GPT-4o + config',
+				'ForgeEngine Advanced (ray tracing, multiplayer)',
+				'All templates (free + premium)',
+				'25 published projects',
+				'3 custom domains',
+				'Up to 8 team members (share plan credits)',
+				'Full payment suite',
+				'Integrations hub - 400 credits/mo',
+				'Advanced analytics',
+				'Chloe and her team craft your social media ads & commercials; they manage posting & distribution',
+				'Client project management',
+				'White-label option',
+				'Custom AI model configuration',
+				'Direct App Store publishing',
+				'Dedicated support agent'
+			],
+			badge: 'Pro',
+			cta: 'Go Architect'
+		},
+		{
+			name: 'Studio',
+			tagline: 'Team Power',
+			monthlyPrice: '$79',
+			oneTimePrice: '$99',
+			annualPrice: '$758',
+			description: 'For studios, agencies, and dev teams. Collaborate with up to 20 members and use multiple AIs at once.',
+			chipRows: [
+				[{ label: 'Chloe' }, { label: 'up to 83 AIs (Full Swarm)' }],
+				[{ label: 'Chloe & her team manage your ads', accent: true }, { label: 'From $15/mo', accent: true }],
+				[{ label: '7,000 AI credits' }, { label: '1000 integration' }, { label: '20 seats' }]
+			],
+			features: [
+				'Chloe + up to 83 AIs (Full Swarm) work on your website, app, game & enterprise software (2-3 of which are QA)',
+				'All AI models + multi-agent routing',
+				'Build a custom AI from scratch',
+				'ForgeEngine Studio (high-fidelity 3D)',
+				'All templates (free + premium)',
+				'Unlimited projects',
+				'10 custom domains',
+				'Up to 20 team members (share plan credits)',
+				'Team roles & permissions',
+				'Complete payment infrastructure',
+				'Integrations hub - 1,000 credits/mo',
+				'Advanced analytics',
+				'Chloe and her team craft your social media ads & commercials; they manage posting & distribution',
+				'White-label & reseller tools',
+				'High-fidelity 3D graphics',
+				'Professional email suites',
+				'Cloud-based dedicated server (website/app)',
+				'Dedicated game server hosting',
+				'Enterprise CDN hosting',
+				'Dedicated account manager'
+			],
+			badge: 'Team',
+			cta: 'Build with Studio'
+		},
+		{
+			name: 'Forge',
+			tagline: 'Scale Power',
+			monthlyPrice: '$109',
+			oneTimePrice: '$136',
+			annualPrice: '$1046',
+			description: 'For growing teams that need more firepower. 12,000 credits, 30 seats, and dedicated infrastructure - without the Titan price tag.',
+			chipRows: [
+				[{ label: 'Chloe' }, { label: 'up to 83 AIs (Full Swarm)' }],
+				[{ label: 'Chloe & her team manage your ads', accent: true }, { label: 'From $15/mo', accent: true }],
+				[{ label: '12,000 AI credits' }, { label: '2000 integration' }, { label: '30 seats' }]
+			],
+			features: [
+				'Chloe + up to 83 AIs (Full Swarm) work on your website, app, game & enterprise software (2-3 of which are QA)',
+				'Every AI model available',
+				'Build & fine-tune your own AI model',
+				'ForgeEngine Ultimate (near-AAA)',
+				'All templates (free + premium)',
+				'Unlimited projects',
+				'15 custom domains',
+				'Up to 30 team members (share plan credits)',
+				'Advanced team roles & permissions',
+				'White-label platform option',
+				'Chloe and her team craft your social media ads & commercials; they manage posting & distribution',
+				'Integrations hub - 2,000 credits/mo',
+				'Advanced analytics',
+				'AAA-grade game graphics',
+				'Dedicated game server (up to 500 concurrent players)',
+				'Dedicated web/app server (cloud)',
+				'Full payment + monetization suite',
+				'Professional email suites',
+				'Global edge CDN',
+				'Priority 24/7 support'
+			],
+			badge: 'Scale',
+			cta: 'Go Forge'
+		},
+		{
+			name: 'Titan',
+			tagline: 'Apex Tier',
+			monthlyPrice: '$149',
+			oneTimePrice: '$186',
+			annualPrice: '$1430',
+			description: 'The apex tier. ForgeEngine Ultimate, 20,000 credits, up to 50 team seats, and the most powerful AI stack available.',
+			chipRows: [
+				[{ label: 'Chloe' }, { label: 'up to 83 AIs (Full Swarm)' }],
+				[{ label: 'Chloe & her team manage your ads', accent: true }, { label: 'From $15/mo', accent: true }],
+				[{ label: '20,000 AI credits' }, { label: '3500 integration' }, { label: '50 seats' }]
+			],
+			features: [
+				'Chloe + up to 83 AIs (Full Swarm) work on your website, app, game & enterprise software (2-3 of which are QA)',
+				'Every AI model available',
+				'Build & fine-tune your own AI model',
+				'ForgeEngine Ultimate (near-AAA)',
+				'All templates + exclusive Titan-only',
+				'Unlimited projects',
+				'Up to 20 custom domains',
+				'Up to 50 team members (share plan credits)',
+				'Advanced team roles & permissions',
+				'White-label platform option',
+				'Chloe and her team craft your social media ads & commercials; they manage posting & distribution',
+				'Integrations hub - 3,500 credits/mo',
+				'Advanced analytics',
+				'AAA-grade game graphics',
+				'Dedicated game server (up to 1,000 concurrent players)',
+				'Dedicated web/app server (cloud or bare-metal)',
+				'Full payment + monetization suite',
+				'Professional email suites',
+				'Global edge CDN',
+				'24/7 dedicated support engineer',
+				'Domain marketplace access'
+			],
+			badge: 'Ultimate',
+			tone: 'dark',
+			cta: 'Go Titan'
+		},
+		{
+			name: 'Colossus',
+			tagline: 'God Tier',
+			monthlyPrice: '$249',
+			oneTimePrice: '$311',
+			annualPrice: '$2390',
+			description: 'The ultimate power tier. 40,000 credits, 100 team seats, bare-metal infrastructure, and unlimited everything. For those who need absolute maximum.',
+			chipRows: [
+				[{ label: 'Chloe' }, { label: 'up to 83 AIs (Full Swarm + Priority GPU)' }],
+				[{ label: 'Chloe & her team manage your ads', accent: true }, { label: 'From $15/mo', accent: true }],
+				[{ label: '40,000 AI credits' }, { label: '6000 integration' }, { label: '100 seats' }]
+			],
+			features: [
+				'Chloe + up to 83 AIs (Full Swarm) work on your website, app, game & enterprise software (2-3 of which are QA)',
+				'Every AI model + priority GPU inference',
+				'Build & fine-tune unlimited custom AI models',
+				'ForgeEngine Ultimate+ (AAA-grade)',
+				'All templates + exclusive Colossus-only',
+				'Unlimited projects',
+				'Unlimited custom domains',
+				'Up to 100 team members (share plan credits)',
+				'Advanced team roles & permissions',
+				'Full white-label + reseller platform',
+				'Integrations hub - 6,000 credits/mo',
+				'Advanced analytics',
+				'Chloe and her team craft your social media ads & commercials; they manage posting & distribution',
+				'AAA-grade game graphics + ray tracing',
+				'Dedicated game server (up to 5,000 concurrent players)',
+				'Bare-metal dedicated server (cloud or on-prem)',
+				'Full payment + monetization suite',
+				'Professional email suites',
+				'Global edge CDN + dedicated bandwidth',
+				'24/7 dedicated support team',
+				'Domain marketplace access',
+				'Early access to new AI models & features'
+			],
+			badge: 'God Tier',
+			tone: 'dark',
+			cta: 'Go Colossus'
+		}
+	];
+
+	const displayPlans = $derived(
+		plans.map((plan) => {
+			const annualSavings = getPriceValue(plan.monthlyPrice) * 12 - getPriceValue(plan.annualPrice);
+
+			return {
+				...plan,
+				price:
+					selectedBilling === 'one-time'
+						? plan.oneTimePrice
+						: selectedBilling === 'annual'
+							? plan.annualPrice
+							: plan.monthlyPrice,
+				priceSuffix:
+					selectedBilling === 'monthly' && plan.monthlyPrice !== '$0'
+						? '/mo'
+						: selectedBilling === 'annual' && plan.annualPrice !== '$0'
+							? '/year'
+							: '',
+				billingNote:
+					selectedBilling === 'one-time' && plan.oneTimePrice !== '$0'
+						? 'One-time payment • 1 month of credits'
+						: selectedBilling === 'annual' && plan.annualPrice !== '$0'
+							? `Billed once • saves $${annualSavings}/yr vs monthly`
+							: ''
+			};
+		})
+	);
+
+	function setBilling(value) {
+		selectedBilling = value;
+	}
+</script>
+
+<section class="pricing-section" aria-labelledby="pricing-heading">
+	<div class="container">
+		<div class="intro">
+			<p class="eyebrow">Plans &amp; Pricing</p>
+			<h2 id="pricing-heading">Choose Your Power Level</h2>
+			<p class="lede">
+				Start free and scale into teams, premium engines, and dedicated infrastructure. The
+				mockup reads as a dense pricing matrix, so this version keeps the compact card rhythm,
+				strong plan hierarchy, and the premium emphasis on the higher tiers.
+			</p>
+			<p class="lede secondary">
+				Monthly is highlighted by default, with annual positioned as the savings option and
+				one-time framed as a short-term pass.
+			</p>
+
+			<div class="billing-toggle" role="tablist" aria-label="Billing period">
+				{#each billingOptions as option}
+					<button
+						type="button"
+						onclick={() => setBilling(option.value)}
+						class:active={selectedBilling === option.value}
+						role="tab"
+						aria-selected={selectedBilling === option.value}
+					>
+						<span>{option.label}</span>
+						<small>{option.detail}</small>
+					</button>
+				{/each}
+			</div>
+
+			<p class="billing-message">{billingMessages[selectedBilling]}</p>
+		</div>
+
+		<div class="plan-grid">
+			{#each displayPlans as plan}
+				<article class:dark={plan.tone === 'dark'} class:highlighted={plan.highlighted} class="plan-card">
+					{#if plan.badge}
+						<span class:badge-blue={plan.badgeTone === 'blue'} class="plan-badge">{plan.badge}</span>
+					{/if}
+
+					<div class="plan-header">
+						<h3>{plan.name}</h3>
+						<p class="tagline">{plan.tagline}</p>
+						<div class="price-row">
+							<span class="price">{plan.price}</span>
+							{#if plan.priceSuffix}
+								<span class="price-suffix">{plan.priceSuffix}</span>
+							{/if}
+						</div>
+						{#if plan.billingNote}
+							<p class="billing-note-row">{plan.billingNote}</p>
+						{/if}
+						<p class="description">{plan.description}</p>
+					</div>
+
+					<div class="chip-stack" aria-label={`${plan.name} quick highlights`}>
+						{#each plan.chipRows as row}
+							<div class:single-chip={row.length === 1} class="chip-row">
+								{#each row as chip}
+									<span class:accent={chip.accent} class="chip">{chip.label}</span>
+								{/each}
+							</div>
+						{/each}
+					</div>
+
+					<ul class="feature-list">
+						{#each plan.features as feature}
+							<li>{feature}</li>
+						{/each}
+					</ul>
+
+					<button type="button" class="plan-cta">{plan.cta}</button>
+				</article>
+			{/each}
+		</div>
+	</div>
+</section>
+
+<style>
+	.pricing-section {
+		width: 100%;
+		padding: clamp(4rem, 8vw, 6rem) clamp(1rem, 4vw, 1.5rem) clamp(4.5rem, 8vw, 6.5rem);
+		background:
+			radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.08), transparent 30%),
+			linear-gradient(180deg, #ffffff 0%, #f4f7fc 100%);
+		color: #0f172a;
+		font-family:
+			Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	}
+
+	.pricing-section,
+	.pricing-section *,
+	.pricing-section *::before,
+	.pricing-section *::after {
+		box-sizing: border-box;
+	}
+
+	.container {
+		width: min(1040px, 100%);
+		margin: 0 auto;
+	}
+
+	.intro {
+		max-width: 760px;
+		margin: 0 auto clamp(1.8rem, 3vw, 2.35rem);
+		text-align: center;
+	}
+
+	.eyebrow {
+		margin: 0 0 0.9rem;
+		font-size: 0.78rem;
+		font-weight: 800;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+		color: #2563eb;
+	}
+
+	h2 {
+		margin: 0;
+		font-size: clamp(2rem, 5vw, 3.2rem);
+		line-height: 1.08;
+		letter-spacing: -0.04em;
+		font-weight: 900;
+	}
+
+	.lede {
+		margin: 1.15rem auto 0;
+		max-width: 46rem;
+		font-size: clamp(0.92rem, 1.4vw, 1rem);
+		line-height: 1.65;
+		color: #334155;
+	}
+
+	.lede.secondary {
+		margin-top: 0.35rem;
+	}
+
+	.billing-message {
+		margin: 0.7rem auto 0;
+		max-width: 46rem;
+		font-size: 0.86rem;
+		line-height: 1.5;
+		color: #64748b;
+	}
+
+	.billing-toggle {
+		display: inline-grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 0.35rem;
+		margin-top: 1.35rem;
+		padding: 0.35rem;
+		border: 1px solid #94a3b8;
+		border-radius: 1rem;
+		background: #ffffff;
+		box-shadow: 0 12px 35px -24px rgba(15, 23, 42, 0.35);
+	}
+
+	.billing-toggle button {
+		appearance: none;
+		border: 0;
+		border-radius: 0.75rem;
+		padding: 0.7rem 1rem;
+		background: transparent;
+		color: #0f172a;
+		font: inherit;
+		cursor: pointer;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.1rem;
+	}
+
+	.billing-toggle button span {
+		font-size: 0.95rem;
+		font-weight: 700;
+	}
+
+	.billing-toggle button small {
+		font-size: 0.72rem;
+		font-weight: 500;
+		color: #64748b;
+	}
+
+	.billing-toggle button.active {
+		background: #2563eb;
+		color: #ffffff;
+		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+	}
+
+	.billing-toggle button.active small {
+		color: rgba(255, 255, 255, 0.85);
+	}
+
+	.plan-grid {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		grid-auto-rows: 1fr;
+		gap: 0.9rem;
+		align-items: stretch;
+	}
+
+	.plan-card {
+		position: relative;
+		min-width: 0;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		padding: 1rem 0.9rem 0.8rem;
+		border: 2px solid #0f172a;
+		border-radius: 1rem;
+		background: #ffffff;
+		box-shadow: 0 18px 48px -34px rgba(15, 23, 42, 0.14);
+	}
+
+	.plan-card.highlighted {
+		border-color: #3b82f6;
+		box-shadow: 0 24px 60px -36px rgba(37, 99, 235, 0.34);
+		background: linear-gradient(180deg, #edf5ff, #ffffff 16rem);
+	}
+
+	.plan-card.dark {
+		border-color: #2563eb;
+		background: linear-gradient(180deg, #111b31 0%, #111a2d 100%);
+		color: #f8fafc;
+	}
+
+	.plan-badge {
+		position: absolute;
+		top: -0.68rem;
+		left: 50%;
+		transform: translateX(-50%);
+		padding: 0.18rem 0.68rem;
+		border-radius: 999px;
+		background: #22324a;
+		color: #ffffff;
+		font-size: 0.68rem;
+		font-weight: 800;
+		letter-spacing: 0.01em;
+		white-space: nowrap;
+	}
+
+	.plan-badge.badge-blue {
+		background: #3b82f6;
+	}
+
+	.plan-header h3 {
+		margin: 0;
+		font-size: 1.85rem;
+		line-height: 1.1;
+		font-weight: 900;
+	}
+
+	.plan-card.dark .plan-header h3 {
+		color: #ffffff;
+	}
+
+	.tagline {
+		margin: 0.2rem 0 0;
+		font-size: 0.76rem;
+		font-weight: 600;
+		color: #475569;
+	}
+
+	.plan-card.dark .tagline {
+		color: rgba(226, 232, 240, 0.8);
+	}
+
+	.price-row {
+		display: flex;
+		align-items: baseline;
+		gap: 0.2rem;
+		margin-top: 0.65rem;
+	}
+
+	.price {
+		font-size: 3.2rem;
+		line-height: 0.95;
+		font-weight: 900;
+		letter-spacing: -0.05em;
+	}
+
+	.plan-card.dark .price {
+		color: #ffffff;
+	}
+
+	.price-suffix {
+		font-size: 1.08rem;
+		font-weight: 700;
+		color: #334155;
+	}
+
+	.plan-card.dark .price-suffix {
+		color: rgba(226, 232, 240, 0.9);
+	}
+
+	.billing-note-row {
+		margin: 0.45rem 0 0;
+		font-size: 0.8rem;
+		font-weight: 700;
+		line-height: 1.4;
+		color: #0f172a;
+	}
+
+	.plan-card.dark .billing-note-row {
+		color: rgba(248, 250, 252, 0.96);
+	}
+
+	.description {
+		margin: 0.75rem 0 0;
+		font-size: 0.86rem;
+		line-height: 1.55;
+		color: #334155;
+	}
+
+	.plan-card.dark .description {
+		color: rgba(226, 232, 240, 0.86);
+	}
+
+	.chip-stack {
+		display: grid;
+		gap: 0.45rem;
+		margin: 0.95rem 0 1rem;
+	}
+
+	.chip-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.35rem;
+	}
+
+	.chip-row.single-chip .chip {
+		width: 100%;
+	}
+
+	.chip {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 1.9rem;
+		padding: 0.3rem 0.58rem;
+		border: 1px solid #bfd5ff;
+		border-radius: 0.65rem;
+		background: #ebf3ff;
+		color: #0f172a;
+		font-size: 0.68rem;
+		font-weight: 700;
+		line-height: 1.25;
+		text-align: center;
+	}
+
+	.chip.accent {
+		color: #2563eb;
+	}
+
+	.plan-card.dark .chip {
+		border-color: rgba(96, 165, 250, 0.2);
+		background: rgba(255, 255, 255, 0.06);
+		color: #e2e8f0;
+	}
+
+	.plan-card.dark .chip.accent {
+		color: #58c0ff;
+	}
+
+	.feature-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: grid;
+		gap: 0.45rem;
+		flex: 1;
+	}
+
+	.feature-list li {
+		position: relative;
+		padding-left: 0.95rem;
+		font-size: 0.83rem;
+		line-height: 1.45;
+		color: #0f172a;
+	}
+
+	.plan-card.dark .feature-list li {
+		color: rgba(241, 245, 249, 0.92);
+	}
+
+	.feature-list li::before {
+		content: '✓';
+		position: absolute;
+		left: 0;
+		top: 0;
+		color: #2563eb;
+		font-weight: 800;
+	}
+
+	.plan-card.dark .feature-list li::before {
+		color: #38bdf8;
+	}
+
+	.plan-cta {
+		margin-top: 1.15rem;
+		width: 100%;
+		min-height: 2.35rem;
+		border: 1px solid #dbe4f0;
+		border-radius: 0.6rem;
+		background: #ffffff;
+		color: #0f172a;
+		font: inherit;
+		font-size: 0.88rem;
+		font-weight: 700;
+		cursor: pointer;
+		transform: translateY(0);
+		transition:
+			transform 0.2s ease,
+			background 0.2s ease,
+			border-color 0.2s ease,
+			box-shadow 0.2s ease,
+			color 0.2s ease;
+	}
+
+	.plan-card.highlighted .plan-cta {
+		border-color: #3565d8;
+		background: linear-gradient(180deg, #3a67df, #2959d5);
+		color: #ffffff;
+	}
+
+	.plan-card.dark .plan-cta {
+		border-color: rgba(56, 189, 248, 0.55);
+		background: linear-gradient(180deg, #41b7ea, #33a9de);
+		color: #082032;
+	}
+
+	.plan-cta:hover,
+	.plan-cta:focus-visible {
+		transform: translateY(-2px);
+		border-color: #bfd1ea;
+		box-shadow: 0 14px 30px -20px rgba(15, 23, 42, 0.34);
+	}
+
+	.plan-card.highlighted .plan-cta:hover,
+	.plan-card.highlighted .plan-cta:focus-visible {
+		background: linear-gradient(180deg, #4873e6, #315dd6);
+		border-color: #3f6ce0;
+		box-shadow: 0 16px 34px -18px rgba(37, 99, 235, 0.52);
+	}
+
+	.plan-card.dark .plan-cta:hover,
+	.plan-card.dark .plan-cta:focus-visible {
+		background: linear-gradient(180deg, #55c6f1, #3bb4e3);
+		border-color: rgba(103, 212, 255, 0.82);
+		box-shadow: 0 16px 34px -18px rgba(56, 189, 248, 0.46);
+	}
+
+	@media (max-width: 1120px) {
+		.plan-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	@media (max-width: 720px) {
+		.pricing-section {
+			padding-top: 3.5rem;
+			padding-bottom: 4rem;
+		}
+
+		.billing-toggle {
+			width: 100%;
+		}
+
+		.plan-grid {
+			grid-template-columns: minmax(0, 1fr);
+		}
+
+		.plan-card {
+			padding-top: 1.2rem;
+		}
+	}
+
+	@media (max-width: 520px) {
+		.billing-toggle button {
+			padding-inline: 0.55rem;
+		}
+
+		.billing-toggle button span {
+			font-size: 0.86rem;
+		}
+
+		.price {
+			font-size: 2.65rem;
+		}
+	}
+</style>
