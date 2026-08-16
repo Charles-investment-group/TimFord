@@ -1,7 +1,9 @@
 <script>
-
+ let { data, form } = $props();
 
 </script>
+
+
 
 <main>
 <div class="main_container container">
@@ -9,24 +11,41 @@
   <div id="stars2"></div>
   <div id="stars3"></div>
   <div></div>
+  <form method="POST" class="form_container">
+  <label for="aiprompt">Type your prompt:</label>
+  <input type="text" id="aiprompt" name="aiprompt" required />
+  <button type="submit">Submit</button>
+  </form>
+
+{#if form?.aiResponse}
+  <div class="response">
+    <h3>AI Response:</h3>
+    <p>{form.aiResponse}</p>
+  </div>
+{/if}
+
 </div>
 <div class="overlay"></div>
+
+
 </main>
 
 <style>
 
 .main_container {
 width: 100%;
-height: 100vh;
+height: 200vh;
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
 position: absolute;
+padding-top: 50px;
 }
 
 .overlay {
 width: 100%;
-height: 100vh;
+height: 100%;
+min-height: 100vh;
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
@@ -34,6 +53,18 @@ background: linear-gradient(rgba(0,0,0,0) 50%, #020919 100%);
 position: relative;
 }
 
+.form_container, .response, .svelte-1h9oe6u, form {
+background-color: transparent;
+color: white;
+}
+
+form {
+padding: 100px 10vw 20px 10vw;
+}
+
+.response {
+padding: 10px 10vw;
+}
 
 .container {
   width: 100%;
