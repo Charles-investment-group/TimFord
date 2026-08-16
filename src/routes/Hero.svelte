@@ -7,11 +7,17 @@
 
 <main>
 <div class="main_container container">
-<div id="stars"></div>
-  <div id="stars2"></div>
-  <div id="stars3"></div>
-  <div></div>
-  <form method="POST" class="form_container">
+ <!--<div id="stars"></div>-->
+ <!--<div id="stars2"></div>-->
+ <!--<div id="stars3"></div>-->
+   <div></div>
+
+
+
+
+</div>
+<div class="overlay">
+   <form method="POST" class="form_container">
   <label for="aiprompt">Type your prompt:</label>
   <input type="text" id="aiprompt" name="aiprompt" required />
   <button type="submit">Submit</button>
@@ -25,7 +31,6 @@
 {/if}
 
 </div>
-<div class="overlay"></div>
 
 
 </main>
