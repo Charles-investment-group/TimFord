@@ -6,15 +6,17 @@
     import RenderingEngine from '$lib/RenderingEngine.svelte';
     import CadStudio from '$lib/CadStudio.svelte';
     import Pricing from './Pricing.svelte';
-
+    import AI from './AI.svelte'; 
     let { data, form } = $props();
+
 </script>
 
 
 <main>
     <Header />
-    <Hero {data} {form} />
+    <Hero  />
     <ForgeEngine />
+    <AI {data} {form}/>
     <Section3 />
     <RenderingEngine />
     <CadStudio />
