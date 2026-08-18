@@ -6,46 +6,52 @@
 		'Moon server integration coming soon'
 	];
 
-	const features = [
+	// Stat cards replacing the old feature boilerplate (Ranger's call).
+	//
+	// The 98% SEO figure came from Ranger and is the company's own customer claim.
+	// The remaining five are product facts already published elsewhere on this site,
+	// so they stay consistent with the rest of the page:
+	//   83 agents + 41+ languages .... Section3.svelte stat row
+	//   no licensing fees ............ ForgeEngine summary copy
+	//   1,000 concurrent players ..... Pricing.svelte, Titan tier
+	//   500+ free assets ............. ForgeEngine highlight row
+	// If any of those change, update them here too.
+	const stats = [
 		{
-			icon: 'triangle',
-			title: 'Real-Time 3D Renderer',
-			text: 'PBR lighting, ray-traced shadows, dynamic global illumination, and smooth frame rates on modern hardware.'
+			icon: 'bolt',
+			value: '98%',
+			title: 'See SEO gains by week two',
+			text: 'of customers see a 5% increase in SEO by the second week of working with Charles Investment Group.'
 		},
 		{
 			icon: 'chip',
-			title: 'ForgeScript Engine',
-			text: 'A proprietary scripting language with the power of C# and the simplicity of Python for fast game logic.'
-		},
-		{
-			icon: 'bolt',
-			title: 'Physics & Simulation',
-			text: 'Rigid body, soft body, fluid simulation, and collision systems for vehicles, characters, and environments.'
-		},
-		{
-			icon: 'wifi',
-			title: 'Built-In Multiplayer',
-			text: 'Peer-to-peer and dedicated server networking with state sync, lag compensation, and player lobbies.'
+			value: '83',
+			title: 'AI agents on every build',
+			text: 'Chloe leads 2 QA orchestrators and 80 specialists on your project — no prompt engineering required.'
 		},
 		{
 			icon: 'cube',
-			title: 'Asset Pipeline',
-			text: 'Import 3D models, textures, audio, animations, and video while ForgeEngine optimizes for each platform.'
+			value: '41+',
+			title: 'Languages and frameworks',
+			text: 'React and Swift through to COBOL and Solidity. Your stack is already covered before you ask.'
 		},
 		{
-			icon: 'phone',
-			title: 'Multi-Platform Export',
-			text: 'Build once, then export to web, Windows, macOS, Linux, iOS, Android, Google Play, and the App Store.'
+			icon: 'triangle',
+			value: '$0',
+			title: 'In engine licensing fees',
+			text: 'ForgeEngine is built in-house, so you never owe a third-party engine royalty on anything you ship.'
+		},
+		{
+			icon: 'wifi',
+			value: '1,000',
+			title: 'Concurrent players per server',
+			text: 'Dedicated multiplayer hosting on Titan, with the full AAA pipeline and 4K/8K rendering included.'
 		},
 		{
 			icon: 'film',
-			title: '4K/8K Cinematic Rendering',
-			text: 'HDRP lighting, ray-traced reflections, volumetric fog, and high-resolution PBR textures in real time.'
-		},
-		{
-			icon: 'clapper',
-			title: 'Animation Studio',
-			text: 'Mocap-blended rigs, blend trees, root motion, facial blends, and a 500+ clip animation library.'
+			value: '500+',
+			title: 'Free assets, included',
+			text: 'Models, textures and audio ready to drop in, alongside a 500+ clip mocap animation library.'
 		}
 	];
 </script>
@@ -71,62 +77,17 @@
 		</div>
 
 		<div class="feature-grid">
-			{#each features as feature, index}
-				<article class:featured={index === 0} style={`--delay: ${index * 70}ms`}>
-					{@render Icon({ name: feature.icon, size: '34' })}
-					<h2>{feature.title}</h2>
-					<p>{feature.text}</p>
+			{#each stats as stat, index}
+				<article
+					class:featured={index === 0}
+					style={`--delay: ${index * 70}ms`}
+				>
+					{@render Icon({ name: stat.icon, size: '34' })}
+					<p class="stat-value">{stat.value}</p>
+					<h2>{stat.title}</h2>
+					<p>{stat.text}</p>
 				</article>
 			{/each}
-		</div>
-
-		<div class="dimension-block">
-			<h2>1D / 2D / 3D Rendering Engine</h2>
-			<p>
-				Every build renders in the dimension it needs: audio and data streams, flat 2D canvas
-				scenes, or real-time 3D WebGL. <strong>Chloe automatically detects the right dimension</strong>
-				from what you describe.
-			</p>
-
-			<div class="dimension-grid">
-				<article class="visual-card">
-					<div class="visual-heading">
-						<span class="pill cyan">1D</span>
-						<p>Audio / Text / Data streams</p>
-					</div>
-					<div class="bars" aria-hidden="true">
-						{#each Array(34) as _, index}
-							<span
-								style={`--height: ${26 + Math.round(Math.abs(Math.sin(index * 0.47)) * 70)}%; --delay: ${index * 38}ms`}
-							></span>
-						{/each}
-					</div>
-				</article>
-
-				<article class="visual-card">
-					<div class="visual-heading">
-						<span class="pill violet">2D</span>
-						<p>Canvas / Sprites / Flat scenes</p>
-					</div>
-					<div class="node-preview" aria-hidden="true">
-						<span></span>
-						<span></span>
-						<span></span>
-						<span></span>
-						<span></span>
-					</div>
-				</article>
-
-				<article class="visual-card">
-					<div class="visual-heading">
-						<span class="pill amber">3D</span>
-						<p>WebGL / Three.js / Real-time 3D</p>
-					</div>
-					<div class="terrain" aria-hidden="true">
-						<div></div>
-					</div>
-				</article>
-			</div>
 		</div>
 	</div>
 </section>
@@ -420,180 +381,17 @@
 		line-height: 1.58;
 	}
 
-	.dimension-block {
-		margin-top: 88px;
-		text-align: center;
-		animation: revealUp 760ms ease 180ms both;
-	}
-
-	.dimension-block > h2 {
-		margin-bottom: 16px;
-		font-size: clamp(1.8rem, 4vw, 2.55rem);
-		line-height: 1.16;
-	}
-
-	.dimension-block > p {
-		max-width: 800px;
-		margin: 0 auto 38px;
-		color: #dce8f8;
-		font-size: clamp(1rem, 2vw, 1.2rem);
-		line-height: 1.65;
-	}
-
-	.dimension-block strong {
-		color: #58aaff;
-	}
-
-	.dimension-grid {
-		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 18px;
-	}
-
-	.visual-card {
-		min-height: 310px;
-		padding: 24px;
-		text-align: left;
-		background: rgba(3, 9, 24, 0.82);
-	}
-
-	.visual-heading {
-		display: flex;
-		align-items: center;
-		gap: 12px;
-		margin-bottom: 26px;
-	}
-
-	.visual-heading p {
-		margin-bottom: 0;
-		color: #b9c9df;
-		font-weight: 700;
-	}
-
-	.pill {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		min-width: 44px;
-		height: 30px;
-		border-radius: 999px;
-		color: white;
+	.stat-value {
+		margin: 22px 0 8px;
+		color: #8df4ff;
+		font-size: 2.7rem;
+		line-height: 1;
+		letter-spacing: -0.03em;
 		font-weight: 900;
 	}
 
-	.cyan {
-		background: #19c6e7;
-	}
-
-	.violet {
-		background: #9b5cf6;
-	}
-
-	.amber {
-		background: #f59d0b;
-	}
-
-	.bars {
-		display: flex;
-		align-items: end;
-		gap: 6px;
-		height: 205px;
-	}
-
-	.bars span {
-		width: 100%;
-		height: var(--height);
-		border-radius: 6px 6px 0 0;
-		background: linear-gradient(180deg, #8df4ff, #16bddc);
-		box-shadow: 0 0 16px rgba(32, 212, 242, 0.45);
-		transform-origin: bottom;
-		animation: barBreathe 2.4s ease-in-out infinite;
-		animation-delay: var(--delay);
-	}
-
-	.node-preview {
-		position: relative;
-		width: min(230px, 78%);
-		aspect-ratio: 1;
-		margin: 18px auto 0;
-		border: 4px solid #a35cf7;
-		transform: rotate(-13deg);
-		animation: nodeDrift 7s ease-in-out infinite;
-	}
-
-	.node-preview span {
-		position: absolute;
-		width: 30px;
-		height: 30px;
-		border-radius: 999px;
-		background: linear-gradient(135deg, #8b5cf6, #f052d6);
-		box-shadow: 0 0 20px rgba(209, 93, 255, 0.45);
-		animation: nodeGlow 2.8s ease-in-out infinite;
-	}
-
-	.node-preview span:nth-child(1) {
-		top: -16px;
-		left: 20%;
-	}
-
-	.node-preview span:nth-child(2) {
-		top: -16px;
-		right: -10px;
-	}
-
-	.node-preview span:nth-child(3) {
-		right: -16px;
-		bottom: 22%;
-	}
-
-	.node-preview span:nth-child(4) {
-		bottom: -16px;
-		left: 40%;
-	}
-
-	.node-preview span:nth-child(5) {
-		left: -16px;
-		bottom: 22%;
-	}
-
-	.terrain {
-		position: relative;
-		height: 215px;
-		overflow: hidden;
-		border-radius: 6px;
-		background:
-			linear-gradient(transparent 88%, rgba(86, 149, 230, 0.35) 89%),
-			linear-gradient(90deg, transparent 88%, rgba(86, 149, 230, 0.3) 89%);
-		background-size: 34px 34px;
-		perspective: 700px;
-		animation: gridDrift 5.6s linear infinite;
-	}
-
-	.terrain::before {
-		content: "";
-		position: absolute;
-		inset: auto -20px 10px;
-		height: 105px;
-		background:
-			linear-gradient(rgba(86, 149, 230, 0.35) 1px, transparent 1px),
-			linear-gradient(90deg, rgba(86, 149, 230, 0.28) 1px, transparent 1px);
-		background-size: 32px 22px;
-		transform: rotateX(62deg);
-		transform-origin: bottom;
-	}
-
-	.terrain div {
-		position: absolute;
-		right: 17%;
-		bottom: 32px;
-		width: 130px;
-		aspect-ratio: 1.28;
-		border-radius: 58% 42% 44% 56%;
-		background:
-			linear-gradient(135deg, rgba(255, 255, 255, 0.14), transparent 38%),
-			linear-gradient(45deg, #b06c12, #e7a21f);
-		box-shadow: 0 24px 52px rgba(0, 0, 0, 0.45);
-		animation: terrainFloat 4.8s ease-in-out infinite;
+	.feature-grid article h2 {
+		margin: 0 0 10px;
 	}
 
 	@property --border-angle {
@@ -638,68 +436,21 @@
 		}
 	}
 
-	@keyframes barBreathe {
-		0%,
-		100% {
-			transform: scaleY(0.82);
-			opacity: 0.78;
-		}
-		50% {
-			transform: scaleY(1);
-			opacity: 1;
-		}
-	}
 
-	@keyframes nodeDrift {
-		0%,
-		100% {
-			transform: rotate(-13deg) translate3d(0, 0, 0);
-		}
-		50% {
-			transform: rotate(-9deg) translate3d(6px, -4px, 0);
-		}
-	}
 
-	@keyframes nodeGlow {
-		0%,
-		100% {
-			box-shadow: 0 0 16px rgba(209, 93, 255, 0.38);
-		}
-		50% {
-			box-shadow: 0 0 28px rgba(141, 244, 255, 0.5);
-		}
-	}
 
-	@keyframes gridDrift {
-		to {
-			background-position:
-				34px 34px,
-				34px 34px;
-		}
-	}
 
-	@keyframes terrainFloat {
-		0%,
-		100% {
-			transform: translateY(0) rotate(0deg);
-		}
-		50% {
-			transform: translateY(-8px) rotate(-2deg);
-		}
-	}
 
 	@media (max-width: 920px) {
 		.forge-section {
 			padding: 84px 18px 88px;
 		}
 
-		.feature-grid,
-		.dimension-grid {
+		.feature-grid {
 			grid-template-columns: 1fr;
 		}
 
-		.feature-grid article,
-		.visual-card {
+		.feature-grid article {
 			min-height: auto;
 		}
 
@@ -718,18 +469,12 @@
 			padding: 66px 14px 72px;
 		}
 
-		.feature-grid article,
-		.visual-card {
+		.feature-grid article {
 			padding: 22px;
 		}
 
 		.eyebrow {
 			font-size: 0.72rem;
-		}
-
-		.bars {
-			gap: 3px;
-			height: 150px;
 		}
 	}
 
@@ -739,13 +484,7 @@
 		.forge-section::after,
 		.intro,
 		.eyebrow,
-		.feature-grid article,
-		.dimension-block,
-		.bars span,
-		.node-preview,
-		.node-preview span,
-		.terrain,
-		.terrain div {
+		.feature-grid article {
 			animation: none;
 			transition: none;
 		}
