@@ -186,7 +186,7 @@ only ever give just the list. never any other form of data. a list only no matte
   }
 </script>
 
-<main>
+<main class="page-backdrop">
   <div class="overlay"> 
     <div class="button-group">
       {#each aiOptions as ai, index}
@@ -228,7 +228,6 @@ only ever give just the list. never any other form of data. a list only no matte
  flex-direction: column;
  align-items: center;
  justify-content: center;
- background-color: white;
 }
 
   .response, form {
@@ -277,8 +276,7 @@ only ever give just the list. never any other form of data. a list only no matte
 
 
   .form_container, .response {
-    background-color: white;
-    color: black;
+    color: white;
   }
 
   form {
@@ -294,8 +292,8 @@ only ever give just the list. never any other form of data. a list only no matte
   }
 
   .aibox {
-    background-color: white;
-    color: black;
+    background-color: rgba(0,0,0,0);
+    color: white;
     padding: 10px;
     display: flex;
     justify-content: center;

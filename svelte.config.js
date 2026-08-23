@@ -5,7 +5,6 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 const config = {
 	preprocess: vitePreprocess(),
 	compilerOptions: {
-		// Preserved your runes mode setting from your previous config
 		runes: ({ filename }) =>
 			filename.split(/[/\\]/).includes('node_modules') ? undefined : true
 	},
@@ -18,11 +17,9 @@ const config = {
 			strict: true
 		}),
 		paths: {
-			// This sets your path prefix for GitHub Pages
-			base: process.argv.includes('dev') ? '' : '/TimFord'
+			base: '/TimFord'  // Keep this constant; don't check dev mode
 		}
 	}
 };
 
 export default config;
-
