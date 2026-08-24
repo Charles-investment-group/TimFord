@@ -16,8 +16,8 @@
 <main>
     <Header />
     <Hero  />
+     <AI {data} {form}/>
     <ForgeEngine />
-    <AI {data} {form}/>
     <Section3 />
     <RenderingEngine />
     <CadStudio />

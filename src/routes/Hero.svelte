@@ -1,16 +1,42 @@
 <script>
  
 </script>
-<main>
+<main class="hero-shell">
   <div class="main_container container">
     <div id="stars"></div>
      <div id="stars2"></div>
       <div id="stars3"></div>
         </div>
 <div class="overlay"></div>
+<section class="hero-content" aria-labelledby="hero-forge-heading">
+  <p class="hero-eyebrow">Proprietary Technology</p>
+  <h1 id="hero-forge-heading">Introducing <span>ForgeEngine</span></h1>
+  <p class="hero-summary">
+    ForgeAI's proprietary game engine is built from the ground up to deliver premium games,
+    apps, and interactive experiences without third-party engines or licensing fees.
+    Fully integrated with <strong>Chloe</strong> and all <strong>83 AIs</strong>.
+  </p>
+
+  <div class="about-me" aria-labelledby="about-me-heading">
+    <p class="about-kicker">About Me</p>
+    <h2 id="about-me-heading">Building faster paths from idea to launch.</h2>
+    <p>
+      This platform brings AI strategy, web development, CAD tools, media workflows, and
+      ForgeEngine together so creators and businesses can move from concept to polished
+      digital products with one connected system.
+    </p>
+  </div>
+</section>
 </main>
 
 <style>
+
+.hero-shell {
+position: relative;
+min-height: 100vh;
+overflow: hidden;
+isolation: isolate;
+}
 
 .main_container {
 width: 100%;
@@ -31,6 +57,99 @@ background-position: center;
 background-repeat: no-repeat;
 background: linear-gradient(rgba(0,0,0,0) 50%, #020919 100%);
 position: relative;
+}
+
+.hero-content {
+position: absolute;
+z-index: 2;
+inset: 0;
+display: flex;
+flex-direction: column;
+justify-content: center;
+width: min(1120px, calc(100% - 40px));
+margin: 0 auto;
+padding: 118px 0 72px;
+color: #fff;
+font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+pointer-events: none;
+}
+
+.hero-eyebrow {
+width: fit-content;
+margin: 0 0 18px;
+border: 1px solid rgba(90, 167, 255, 0.42);
+border-radius: 999px;
+background: rgba(12, 32, 62, 0.54);
+box-shadow: 0 0 28px rgba(68, 158, 255, 0.16);
+padding: 10px 16px;
+color: #8df4ff;
+font-size: 0.78rem;
+font-weight: 800;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+animation: introFadeUp 720ms ease-out both;
+}
+
+.hero-content h1 {
+max-width: 880px;
+margin: 0;
+font-size: clamp(3rem, 8vw, 7rem);
+line-height: 0.92;
+font-weight: 900;
+letter-spacing: 0;
+text-wrap: balance;
+animation: introFadeUp 900ms ease-out 90ms both;
+}
+
+.hero-content h1 span {
+color: #45b8ff;
+text-shadow: 0 0 34px rgba(69, 184, 255, 0.34);
+}
+
+.hero-summary {
+max-width: 760px;
+margin: 24px 0 0;
+color: #e5edf9;
+font-size: clamp(1rem, 2vw, 1.25rem);
+line-height: 1.7;
+animation: introFadeUp 900ms ease-out 180ms both;
+}
+
+.hero-summary strong {
+color: #8df4ff;
+}
+
+.about-me {
+width: min(620px, 100%);
+margin-top: 34px;
+border-left: 3px solid #45b8ff;
+background: linear-gradient(90deg, rgba(7, 17, 33, 0.76), rgba(7, 17, 33, 0.22));
+box-shadow: 0 24px 70px rgba(0, 0, 0, 0.26);
+padding: 22px 26px;
+animation: introFadeUp 900ms ease-out 270ms both;
+}
+
+.about-kicker {
+margin: 0 0 8px;
+color: #8df4ff;
+font-size: 0.76rem;
+font-weight: 900;
+letter-spacing: 0.16em;
+text-transform: uppercase;
+}
+
+.about-me h2 {
+margin: 0 0 10px;
+color: #fff;
+font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+line-height: 1.18;
+}
+
+.about-me p:last-child {
+margin: 0;
+color: #dce8f8;
+font-size: 1rem;
+line-height: 1.62;
 }
 
 .container {
@@ -2090,29 +2209,6 @@ position: relative;
     287px 1272px #fff;
 }
 
-#title {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  color: #fff;
-  text-align: center;
-  font-family: "lato", sans-serif;
-  font-weight: 300;
-  font-size: 50px;
-  letter-spacing: 10px;
-  margin-top: -60px;
-  padding-left: 10px;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: introFadeUp 1.2s ease-out forwards;
-}
-#title span {
-  background: -webkit-linear-gradient(white, #38495a);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 @keyframes animStar {
   from {
     transform: translateY(0px);
@@ -2130,6 +2226,46 @@ position: relative;
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-content {
+    width: min(100% - 28px, 1120px);
+    padding: 104px 0 42px;
+    justify-content: flex-end;
+  }
+
+  .hero-summary {
+    margin-top: 18px;
+  }
+
+  .about-me {
+    margin-top: 24px;
+    padding: 18px 20px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-content h1 {
+    font-size: clamp(2.45rem, 15vw, 4rem);
+  }
+
+  .hero-eyebrow {
+    font-size: 0.68rem;
+    white-space: normal;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-eyebrow,
+  .hero-content h1,
+  .hero-summary,
+  .about-me,
+  #stars,
+  #stars2,
+  #stars3 {
+    animation: none;
   }
 }
 
