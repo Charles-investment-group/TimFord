@@ -1,189 +1,27 @@
-# Deploy to GitHub Pages — updated for Svelte project at repo root (no cig/)
+name: Run Node.js on GitHub Server
+
+# Triggers whenever you push changes to the main branch or click the manual button
 on:
   push:
-    branches:
-      - main
-
-name: Deploy to GitHub Pages
+    branches: [ "main" ]
+  workflow_dispatch: 
 
 jobs:
-  build_site:
+  run-node-app:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Copy code to the cloud server
         uses: actions/checkout@v4
 
-      - name: Setup Node.js (use project's Node)
+      - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20.19.x'
-          cache: npm
+          node-version: '20' # Uses the stable Node 20 LTS environment
+          cache: 'npm'       # Speeds up future runs by caching npm packages
 
-      - name: CI environment info (debug)
-        run: |
-          echo "== Environment =="
-          node -v
-          npm -v || true
-          pnpm -v || true
-          yarn -v || true
-          echo "== Workspace listing =="
-          pwd
-          ls -la
-          echo "== Lockfile checks =="
-          if [ -f package-lock.json ]; then echo "npm lock exists"; else echo "no npm lock"; fi
-          if [ -f pnpm-lock.yaml ]; then echo "pnpm lock exists"; else echo "no pnpm lock"; fi
-          if [ -f yarn.lock ]; then echo "yarn lock exists"; else echo "no yarn lock"; fi
+      - name: Install node_modules dependencies
+        run: npm ci          # A clean, faster version of 'npm install' for servers
 
-          echo "== package.json validation =="
-          if [ -f package.json ]; then
-            echo "package.json (first 200 lines):"
-            sed -n '1,200p' package.json || true
-            # Use a robust CommonJS one-liner to validate package.json (avoids ESM import/quoting issues)
-            node -e "try { const fs = require('fs'); JSON.parse(fs.readFileSync('./package.json','utf8')); console.log('package.json parsed OK'); } catch (e) { console.error('package.json parse failed:', e.message); }"
-          else
-            echo "package.json not found"
-          fi
-
-      - name: Install dependencies (detect package manager)
-        run: |
-          echo "Installing dependencies at repository root"
-          set -euo pipefail
-          # Prefer pnpm if pnpm-lock.yaml present
-          if [ -f pnpm-lock.yaml ]; then
-            echo "Using pnpm (pnpm-lock.yaml present)"
-            corepack enable
-            corepack prepare pnpm@latest --activate
-            pnpm install --frozen-lockfile
-          elif [ -f package-lock.json ]; then
-            echo "Using npm (package-lock.json present)"
-            npm ci --prefer-offline --no-audit
-          elif [ -f yarn.lock ]; then
-            echo "Using yarn (yarn.lock present)"
-            corepack enable
-            corepack prepare yarn@stable --activate
-            yarn install --frozen-lockfile
-          else
-            echo "No lockfile found — defaulting to npm ci"
-            npm ci --prefer-offline --no-audit || npm install
-          fi
-
-      - name: Show Vite / config diagnostics
-        run: |
-          echo "=== Node & package manager versions ==="
-          node -v
-          npm -v || true
-          pnpm -v || true
-          yarn -v || true
-          echo
-          echo "=== Show vite config (if present) ==="
-          if [ -f vite.config.js ]; then
-            echo "vite.config.js:"
-            sed -n '1,200p' vite.config.js || true
-          elif [ -f vite.config.ts ]; then
-            echo "vite.config.ts:"
-            sed -n '1,200p' vite.config.ts || true
-          else
-            echo "No vite.config.* in repo root"
-          fi
-          echo
-          echo "=== Listing repo root ==="
-          ls -la
-
-      - name: Build
-        env:
-          BASE_PATH: '/${{ github.event.repository.name }}'
-          PUBLIC_SUPABASE_URL: ${{ secrets.PUBLIC_SUPABASE_URL }}
-          PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.PUBLIC_SUPABASE_PUBLISHABLE_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: |
-          # Fail fast and print commands
-          set -euxo pipefail
-
-          echo "Running build at repository root"
-          node -v
-          echo "Detected package manager lockfiles:"
-          [ -f pnpm-lock.yaml ] && echo "pnpm-lock.yaml"
-          [ -f yarn.lock ] && echo "yarn.lock"
-          [ -f package-lock.json ] && echo "package-lock.json"
-
-          echo "package.json scripts:"
-          # Read package.json using a CommonJS one-liner to avoid ESM quoting pitfalls
-          node -e "try { const fs = require('fs'); const pkg = JSON.parse(fs.readFileSync('./package.json','utf8')); console.log('package.json scripts:', JSON.stringify(pkg.scripts || {})); } catch (e) { console.error('failed to read package.json scripts:', e.message); }"
-
-          # Ensure corepack available for pnpm/yarn
-          if [ -f pnpm-lock.yaml ]; then
-            corepack enable || true
-            corepack prepare pnpm@latest --activate || true
-            echo "Running pnpm run build"
-            pnpm run build
-          elif [ -f yarn.lock ]; then
-            corepack enable || true
-            corepack prepare yarn@stable --activate || true
-            echo "Running yarn build"
-            yarn build
-          else
-            echo "Running npm run build"
-            npm run build
-          fi
-
-      - name: Prepare artifact for upload
-        run: |
-          # Create a consistent site/ folder so upload step has a single known source
-          rm -rf site
-          mkdir -p site
-          echo "Looking for common build output directories"
-          candidates=("build" "dist" "public" "public/build" "build/client" "out" "static" ".svelte-kit/output/client")
-          found=false
-          for c in "${candidates[@]}"; do
-            if [ -d "$c" ]; then
-              # Prefer directories that look like static sites (contain index.html)
-              if [ -f "$c/index.html" ] || [ -f "$c/index.htm" ] || ls "$c" | grep -q -E 'index\.html|index\.htm' 2>/dev/null; then
-                echo "Using $c as artifact source"
-                # COPY CONTENTS of $c into site/ root (not the directory itself)
-                cp -a "$c/." site
-                found=true
-                break
-              fi
-            fi
-          done
-          # Fallback: copy first existing candidate if none contain index.html
-          if [ "$found" = false ]; then
-            for c in "${candidates[@]}"; do
-              if [ -d "$c" ]; then
-                echo "No index.html detected; falling back to $c"
-                # COPY CONTENTS of $c into site/ root (not the directory itself)
-                cp -a "$c/." site
-                found=true
-                break
-              fi
-            done
-          fi
-          if [ "$found" = false ]; then
-            echo "No build output found in common locations (build, dist, public, out, static). Listing workspace:"
-            ls -la
-            exit 1
-          fi
-          echo "site/ contents:"
-          ls -la site || true
-
-      - name: Upload Artifacts
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: 'site/'
-
-  deploy:
-    needs: build_site
-    runs-on: ubuntu-latest
-
-    permissions:
-      pages: write
-      id-token: write
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Execute Node code
+        run: npm start       # Runs the start script defined in your package.json
