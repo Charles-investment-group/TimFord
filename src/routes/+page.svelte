@@ -7,6 +7,7 @@
     import CadStudio from '$lib/CadStudio.svelte';
     import Pricing from './Pricing.svelte';
     import AI from './AI.svelte'; 
+	import Footer from './Footer.svelte'
     let { data, form } = $props();
 
 </script>
@@ -22,3 +23,7 @@
     <CadStudio />
     <Pricing />
 </main>
+
+<footer>
+	<Footer />
+</footer>
