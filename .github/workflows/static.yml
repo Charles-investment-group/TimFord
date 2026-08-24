@@ -20,8 +20,21 @@ jobs:
           node-version: '20' # Uses the stable Node 20 LTS environment
           cache: 'npm'       # Speeds up future runs by caching npm packages
 
+      # Fix: Added --ignore-scripts to prevent SvelteKit from firing before it is ready
       - name: Install node_modules dependencies
-        run: npm ci          # A clean, faster version of 'npm install' for servers
+        run: npm ci --ignore-scripts         # A clean, faster version of 'npm install' for servers
 
       - name: Execute Node code
         run: npm start       # Runs the start script defined in your package.json
+        
+    # Manually run the sync and build after dependencies are installed safely
+      - name: Sync and Build SvelteKit Project
+        run: |
+          npx svelte-kit sync
+          npm run build --if-present
+
+      - name: Execute Node code
+        run: npm start
+
+
+        
