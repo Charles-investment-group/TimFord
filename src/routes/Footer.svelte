@@ -2,6 +2,7 @@
 
 </script>
 <footer>
+<div class='footer_columns'>
 <div class='footer-logo'>
 <div class='header_logo'>
 
@@ -58,16 +59,24 @@
 <a class="footer_link" href="#">Affiliates</a>
     
 </div>
+</div>
+<div class='copyright'>
+ <p> Bullt with AI, powered by ambition</p>
+ <p>&copy; 2026 AetherForge. All rights reserved. </p>
 
-
+</div>
 
 </footer>
 <style>
 footer
 {
-    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 247, 247);
+}
+.footer_columns
+{
+     display: flex;
     gap: 30px;
-    background-color: rgb(204, 204, 204);
 }
 .header_logo
 {
@@ -98,6 +107,12 @@ footer
     
     font-family: Inter;
     font-size: 15px;
+    
+}
+.copyright
+{
+    display:flex;
+    justify-content: space-between;
     
 }
 </style>
