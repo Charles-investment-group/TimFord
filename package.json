@@ -1,9 +1,10 @@
 {
 	"name": "timford",
 	"private": true,
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
+		"start":"node index.js"
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
@@ -17,7 +18,11 @@
 		"svelte": "^5.56.1",
 		"vite": "^8.0.16"
 	},
-	"dependencies": {
+	"dependencies": 
+	{"express":"^4.19.2"}
+}
+
+	{
 		"@google/genai": "^2.17.1"
 	},
 	"allowScripts": {
