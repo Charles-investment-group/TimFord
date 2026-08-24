@@ -31,7 +31,7 @@ jobs:
       - name: Sync and Build SvelteKit Project
         run: |
           npx svelte-kit sync
-          npm run build --if-present
+          npx vite build
 
       - name: Execute Node code
         timeout-minutes: 1 # Automatically shuts down after 1 minute of running successfully
