@@ -22,7 +22,7 @@ jobs:
 
       # Fix: Added --ignore-scripts to prevent SvelteKit from firing before it is ready
       - name: Install node_modules dependencies
-        run: npm ci --ignore-scripts         # A clean, faster version of 'npm install' for servers
+        run: npm install --ignore-scripts         # A clean, faster version of 'npm install' for servers
 
       - name: Execute Node code
         run: npm start       # Runs the start script defined in your package.json
