@@ -21,9 +21,6 @@
   "dependencies": {
     "express": "^4.19.2",
     "@google/genai": "^2.17.1"
-  },
-  "allowScripts": {
-    "@google/genai@2.17.1": true,
-    "protobufjs@7.6.5": true
   }
 }
+ 
