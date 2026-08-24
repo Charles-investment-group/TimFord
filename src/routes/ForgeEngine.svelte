@@ -56,24 +56,12 @@
 	];
 </script>
 
-<section class="forge-section" aria-labelledby="forge-heading">
+<section class="forge-section" aria-label="ForgeEngine platform highlights">
 	<div class="section-inner">
-		<div class="intro">
-			<p class="eyebrow">
-				{@render Icon({ name: 'triangle', size: '18' })}
-				<span>Proprietary Technology</span>
-			</p>
-			<h2 id="forge-heading" class="forge-title">Introducing <span>ForgeEngine</span></h2>
-			<p class="summary">
-				ForgeAI's proprietary game engine is built from the ground up to deliver premium games,
-				apps, and interactive experiences without third-party engines or licensing fees.
-				Fully integrated with <strong>Chloe</strong> and all <strong>83 AIs</strong>.
-			</p>
-			<div class="highlight-row" aria-label="ForgeEngine highlights">
-				{#each highlights as item}
-					<span>{item}</span>
-				{/each}
-			</div>
+		<div class="highlight-row" aria-label="ForgeEngine highlights">
+			{#each highlights as item}
+				<span>{item}</span>
+			{/each}
 		</div>
 
 		<div class="feature-grid">
@@ -220,52 +208,9 @@
 		margin: 0 auto;
 	}
 
-	.intro {
-		text-align: center;
-		max-width: 930px;
-		margin: 0 auto 58px;
-		animation: revealUp 760ms ease both;
-	}
-
-	.eyebrow {
-		display: inline-flex;
-		align-items: center;
-		gap: 10px;
-		margin: 0 0 22px;
-		color: #5aa7ff;
-		font-size: 0.82rem;
-		font-weight: 800;
-		text-transform: uppercase;
-		letter-spacing: 0.14em;
-		animation: softPulse 2.8s ease-in-out infinite;
-	}
-
 	.forge-section h2,
 	.forge-section p {
 		margin-top: 0;
-	}
-
-	.forge-title {
-		margin-bottom: 22px;
-		font-size: clamp(2.6rem, 7vw, 5.9rem);
-		line-height: 0.98;
-		font-weight: 900;
-	}
-
-	.forge-title span {
-		color: #45b8ff;
-	}
-
-	.summary {
-		max-width: 820px;
-		margin: 0 auto;
-		color: #e5edf9;
-		font-size: clamp(1rem, 2.4vw, 1.35rem);
-		line-height: 1.72;
-	}
-
-	.summary strong {
-		color: #58aaff;
 	}
 
 	.highlight-row {
@@ -273,7 +218,7 @@
 		flex-wrap: wrap;
 		justify-content: center;
 		gap: 14px;
-		margin-top: 34px;
+		margin: 0 0 44px;
 	}
 
 	.highlight-row span {
@@ -426,21 +371,6 @@
 		}
 	}
 
-	@keyframes softPulse {
-		0%,
-		100% {
-			text-shadow: 0 0 0 rgba(90, 167, 255, 0);
-		}
-		50% {
-			text-shadow: 0 0 22px rgba(90, 167, 255, 0.42);
-		}
-	}
-
-
-
-
-
-
 	@media (max-width: 920px) {
 		.forge-section {
 			padding: 84px 18px 88px;
@@ -473,17 +403,12 @@
 			padding: 22px;
 		}
 
-		.eyebrow {
-			font-size: 0.72rem;
-		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {
 		.forge-section,
 		.forge-section::before,
 		.forge-section::after,
-		.intro,
-		.eyebrow,
 		.feature-grid article {
 			animation: none;
 			transition: none;
