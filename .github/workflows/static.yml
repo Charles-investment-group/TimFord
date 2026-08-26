@@ -1,5 +1,5 @@
 # Deploy to GitHub Pages — updated for Svelte project at repo root (no cig/)
-server:
+server: on:
   push:
     branches:
       - main
