@@ -1,5 +1,5 @@
-# Deploy to GitHub Pages — updated for Svelte project at repo root (no cig/
- on:
+# Deploy to GitHub Pages — updated for Svelte project at repo root
+on:
   push:
     branches:
       - main
@@ -46,7 +46,7 @@ jobs:
             echo "package.json (first 200 lines):"
             sed -n '1,200p' package.json || true
             # Use a robust CommonJS one-liner to validate package.json (avoids ESM import/quoting issues)
-            node -e "try { const fs = require('fs'); JSON.parse(fs.readFileSync('./package.json','utf8')); console.log('package.json parsed OK'); } catch (e) { console.error('package.json parse failed:', e.message); }"
+            node -e "try { const fs = require('fs'); JSON.parse(fs.readFileSync('./package.json','utf8')); console.log('package.json parsed OK'); } catch (e) { console.error('package.json parse failed:', e.message); process.exit(1); }" || true
           else
             echo "package.json not found"
           fi
@@ -115,7 +115,7 @@ jobs:
 
           echo "package.json scripts:"
           # Read package.json using a CommonJS one-liner to avoid ESM quoting pitfalls
-          node -e "try { const fs = require('fs'); const pkg = JSON.parse(fs.readFileSync('./package.json','utf8')); console.log('package.json scripts:', JSON.stringify(pkg.scripts || {})); } catch (e) { console.error('failed to read package.json scripts:', e.message); }"
+          node -e "try { const fs = require('fs'); const pkg = JSON.parse(fs.readFileSync('./package.json','utf8')); console.log('package.json scripts:', JSON.stringify(pkg.scripts || {})); } catch (e) { console.error('Failed to read scripts:', e.message); }" || true
 
           # Ensure corepack available for pnpm/yarn
           if [ -f pnpm-lock.yaml ]; then
