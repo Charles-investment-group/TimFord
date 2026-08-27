@@ -1,4 +1,4 @@
-# Deploy to GitHub Pages — updated for Svelte project at repo root
+# Deploy to GitHub Pages — updated for Svelte project at repo root (no cig/)
 on:
   push:
     branches:
@@ -6,16 +6,9 @@ on:
 
 name: Deploy to GitHub Pages
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
-
 jobs:
   build_site:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-   
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -46,7 +39,7 @@ jobs:
             echo "package.json (first 200 lines):"
             sed -n '1,200p' package.json || true
             # Use a robust CommonJS one-liner to validate package.json (avoids ESM import/quoting issues)
-            node -e "try { const fs = require('fs'); JSON.parse(fs.readFileSync('./package.json','utf8')); console.log('package.json parsed OK'); } catch (e) { console.error('package.json parse failed:', e.message); process.exit(1); }" || true
+            node -e "try { const fs = require('fs'); JSON.parse(fs.readFileSync('./package.json','utf8')); console.log('package.json parsed OK'); } catch (e) { console.error('package.json parse failed:', e.message); }"
           else
             echo "package.json not found"
           fi
@@ -101,7 +94,6 @@ jobs:
           BASE_PATH: '/${{ github.event.repository.name }}'
           PUBLIC_SUPABASE_URL: ${{ secrets.PUBLIC_SUPABASE_URL }}
           PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.PUBLIC_SUPABASE_PUBLISHABLE_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           # Fail fast and print commands
           set -euxo pipefail
@@ -115,7 +107,7 @@ jobs:
 
           echo "package.json scripts:"
           # Read package.json using a CommonJS one-liner to avoid ESM quoting pitfalls
-          node -e "try { const fs = require('fs'); const pkg = JSON.parse(fs.readFileSync('./package.json','utf8')); console.log('package.json scripts:', JSON.stringify(pkg.scripts || {})); } catch (e) { console.error('Failed to read scripts:', e.message); }" || true
+          node -e "try { const fs = require('fs'); const pkg = JSON.parse(fs.readFileSync('./package.json','utf8')); console.log('package.json scripts:', JSON.stringify(pkg.scripts || {})); } catch (e) { console.error('failed to read package.json scripts:', e.message); }"
 
           # Ensure corepack available for pnpm/yarn
           if [ -f pnpm-lock.yaml ]; then
