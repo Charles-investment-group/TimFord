@@ -1,9 +1,106 @@
 <script>
+	import Scene3D from '$lib/Scene3D.svelte';
+
+	const features = [
+		{
+			icon: 'box',
+			title: 'Primitives & Presets',
+			text: 'Drop in boxes, cylinders, spheres — or whole houses, buildings, trees, cars & bike frames.'
+		},
+		{
+			icon: 'layers',
+			title: 'Plan / Front / Side Views',
+			text: 'Classic blueprint views plus a full 3D orbit viewport — model like traditional CAD programs.'
+		},
+		{
+			icon: 'pencil',
+			title: 'Transform & Edit',
+			text: 'Move, rotate, scale, recolor any object. Save, load, and export your scene as JSON.'
+		}
+	];
+
 </script>
 
 <section class="cad-section page-backdrop" aria-labelledby="cad-heading">
-	<div class="container"></div>
+	<div class="container">
+		<div class="intro">
+			<p class="eyebrow">
+				{@render Icon({ name: 'box', size: '13' })}
+				<span>Forge CAD Studio</span>
+			</p>
+
+			<h2 id="cad-heading">3D CAD Program &amp; Rendering System</h2>
+
+			<p class="lede">
+				Our <strong>3D CAD program and rendering system</strong> is built right into the
+				<strong>Forge AI engine</strong> — model and render objects, buildings, vehicles, and parts
+				for any website, app, or game, then drop them straight into your build.
+			</p>
+		</div>
+
+		<div class="layout">
+			<div class="viewport">
+				<div class="viewport-bar">
+					<span class="badge">3D</span>
+					<span class="viewport-meta">WebGL · Three.js · Real-time 3D</span>
+				</div>
+
+				<Scene3D />
+			</div>
+
+			<div class="panel">
+				<ul class="feature-list">
+					{#each features as feature}
+						<li>
+							<span class="feature-icon">{@render Icon({ name: feature.icon, size: '16' })}</span>
+							<div class="feature-copy">
+								<h3>{feature.title}</h3>
+								<p>{feature.text}</p>
+							</div>
+						</li>
+					{/each}
+				</ul>
+
+				<!-- swap to <a href="/cad-studio"> once the route exists -->
+				<button class="cta" type="button">
+					<span>Launch CAD Studio</span>
+					{@render Icon({ name: 'arrow', size: '15' })}
+				</button>
+			</div>
+		</div>
+	</div>
 </section>
+
+{#snippet Icon({ name, size = '24' })}
+	<svg
+		width={size}
+		height={size}
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		stroke-width="2"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		xmlns="http://www.w3.org/2000/svg"
+		aria-hidden="true"
+	>
+		{#if name === 'box'}
+			<path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
+			<path d="m3.3 7 8.7 5 8.7-5" />
+			<path d="M12 22V12" />
+		{:else if name === 'layers'}
+			<path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z" />
+			<path d="m6.08 10.37-3.48 1.6a1 1 0 0 0 0 1.81l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9a1 1 0 0 0 0-1.83l-3.5-1.59" />
+			<path d="m6.08 15.37-3.48 1.6a1 1 0 0 0 0 1.81l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9a1 1 0 0 0 0-1.83l-3.5-1.59" />
+		{:else if name === 'pencil'}
+			<path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" />
+			<path d="m15 5 4 4" />
+		{:else}
+			<path d="M5 12h14" />
+			<path d="m12 5 7 7-7 7" />
+		{/if}
+	</svg>
+{/snippet}
 
 <style>
 	/* base/grid/glow come from .page-backdrop in src/app.css */

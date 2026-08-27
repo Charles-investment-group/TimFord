@@ -89,6 +89,55 @@
 				</article>
 			{/each}
 		</div>
+
+		<div class="dimension-block">
+			<h2>1D / 2D / 3D Rendering Engine</h2>
+			<p>
+				Every build renders in the dimension it needs: audio and data streams, flat 2D canvas
+				scenes, or real-time 3D WebGL. <strong>Chloe automatically detects the right dimension</strong>
+				from what you describe.
+			</p>
+
+			<div class="dimension-grid">
+				<article class="visual-card">
+					<div class="visual-heading">
+						<span class="pill cyan">1D</span>
+						<p>Audio / Text / Data streams</p>
+					</div>
+					<div class="bars" aria-hidden="true">
+						{#each Array(34) as _, index}
+							<span
+								style={`--height: ${26 + Math.round(Math.abs(Math.sin(index * 0.47)) * 70)}%; --delay: ${index * 38}ms`}
+							></span>
+						{/each}
+					</div>
+				</article>
+
+				<article class="visual-card">
+					<div class="visual-heading">
+						<span class="pill violet">2D</span>
+						<p>Canvas / Sprites / Flat scenes</p>
+					</div>
+					<div class="node-preview" aria-hidden="true">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</article>
+
+				<article class="visual-card">
+					<div class="visual-heading">
+						<span class="pill amber">3D</span>
+						<p>WebGL / Three.js / Real-time 3D</p>
+					</div>
+					<div class="terrain" aria-hidden="true">
+						<div></div>
+					</div>
+				</article>
+			</div>
+		</div>
 	</div>
 </section>
 
@@ -634,11 +683,13 @@
 			padding: 84px 18px 88px;
 		}
 
-		.feature-grid {
+		.feature-grid,
+		.dimension-grid {
 			grid-template-columns: 1fr;
 		}
 
-		.feature-grid article {
+		.feature-grid article,
+		.visual-card {
 			min-height: auto;
 		}
 
@@ -657,7 +708,8 @@
 			padding: 66px 14px 72px;
 		}
 
-		.feature-grid article {
+		.feature-grid article,
+		.visual-card {
 			padding: 22px;
 		}
 
