@@ -1,15 +1,6 @@
 <script>
 	let selectedBilling = $state('monthly');
 
-	// Long plans run to 22 features, which made the section enormous. Collapse to a
-	// preview and let the reader open the ones they care about.
-	const VISIBLE_FEATURES = 6;
-	let expandedPlans = $state({});
-
-	function toggleFeatures(name) {
-		expandedPlans[name] = !expandedPlans[name];
-	}
-
 	const billingOptions = [
 		{ value: 'one-time', label: 'One-Time', detail: '1 month' },
 		{ value: 'monthly', label: 'Monthly', detail: 'Recurring' },
@@ -312,8 +303,13 @@
 			<p class="eyebrow">Plans &amp; Pricing</p>
 			<h2 id="pricing-heading">Choose Your Power Level</h2>
 			<p class="lede">
-				Start free and scale into teams, premium engines, and dedicated infrastructure. Pay once
-				for a month of credits, go monthly recurring, or save 20% with annual billing.
+				Start free and scale into teams, premium engines, and dedicated infrastructure. The
+				mockup reads as a dense pricing matrix, so this version keeps the compact card rhythm,
+				strong plan hierarchy, and the premium emphasis on the higher tiers.
+			</p>
+			<p class="lede secondary">
+				Monthly is highlighted by default, with annual positioned as the savings option and
+				one-time framed as a short-term pass.
 			</p>
 
 			<div class="billing-toggle" role="tablist" aria-label="Billing period">
@@ -366,29 +362,11 @@
 						{/each}
 					</div>
 
-					<div class="plan-body">
-						<ul class="feature-list">
-							{#each expandedPlans[plan.name] ? plan.features : plan.features.slice(0, VISIBLE_FEATURES) as feature}
-								<li>{feature}</li>
-							{/each}
-						</ul>
-
-						{#if plan.features.length > VISIBLE_FEATURES}
-							<button
-								type="button"
-								class="feature-toggle"
-								onclick={() => toggleFeatures(plan.name)}
-								aria-expanded={Boolean(expandedPlans[plan.name])}
-							>
-								<span>
-									{expandedPlans[plan.name]
-										? 'Show less'
-										: `+${plan.features.length - VISIBLE_FEATURES} more features`}
-								</span>
-								<span class="chevron" class:open={expandedPlans[plan.name]} aria-hidden="true">▾</span>
-							</button>
-						{/if}
-					</div>
+					<ul class="feature-list">
+						{#each plan.features as feature}
+							<li>{feature}</li>
+						{/each}
+					</ul>
 
 					<button type="button" class="plan-cta">{plan.cta}</button>
 				</article>
@@ -400,7 +378,7 @@
 <style>
 	.pricing-section {
 		width: 100%;
-		padding: clamp(2.5rem, 5vw, 3.5rem) clamp(1rem, 4vw, 1.5rem) clamp(3rem, 5vw, 4rem);
+		padding: clamp(4rem, 8vw, 6rem) clamp(1rem, 4vw, 1.5rem) clamp(4.5rem, 8vw, 6.5rem);
 		background:
 			radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.08), transparent 30%),
 			linear-gradient(180deg, #ffffff 0%, #f4f7fc 100%);
@@ -423,13 +401,13 @@
 
 	.intro {
 		max-width: 760px;
-		margin: 0 auto clamp(1.25rem, 2.2vw, 1.6rem);
+		margin: 0 auto clamp(1.8rem, 3vw, 2.35rem);
 		text-align: center;
 	}
 
 	.eyebrow {
-		margin: 0 0 0.6rem;
-		font-size: 0.74rem;
+		margin: 0 0 0.9rem;
+		font-size: 0.78rem;
 		font-weight: 800;
 		letter-spacing: 0.16em;
 		text-transform: uppercase;
@@ -438,24 +416,28 @@
 
 	h2 {
 		margin: 0;
-		font-size: clamp(1.6rem, 4vw, 2.4rem);
+		font-size: clamp(2rem, 5vw, 3.2rem);
 		line-height: 1.08;
 		letter-spacing: -0.04em;
 		font-weight: 900;
 	}
 
 	.lede {
-		margin: 0.75rem auto 0;
+		margin: 1.15rem auto 0;
 		max-width: 46rem;
-		font-size: clamp(0.85rem, 1.3vw, 0.92rem);
-		line-height: 1.55;
+		font-size: clamp(0.92rem, 1.4vw, 1rem);
+		line-height: 1.65;
 		color: #334155;
 	}
 
+	.lede.secondary {
+		margin-top: 0.35rem;
+	}
+
 	.billing-message {
-		margin: 0.5rem auto 0;
+		margin: 0.7rem auto 0;
 		max-width: 46rem;
-		font-size: 0.8rem;
+		font-size: 0.86rem;
 		line-height: 1.5;
 		color: #64748b;
 	}
@@ -463,9 +445,9 @@
 	.billing-toggle {
 		display: inline-grid;
 		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 0.3rem;
-		margin-top: 1rem;
-		padding: 0.28rem;
+		gap: 0.35rem;
+		margin-top: 1.35rem;
+		padding: 0.35rem;
 		border: 1px solid #94a3b8;
 		border-radius: 1rem;
 		background: #ffffff;
@@ -476,7 +458,7 @@
 		appearance: none;
 		border: 0;
 		border-radius: 0.75rem;
-		padding: 0.5rem 0.9rem;
+		padding: 0.7rem 1rem;
 		background: transparent;
 		color: #0f172a;
 		font: inherit;
@@ -511,8 +493,8 @@
 	.plan-grid {
 		display: grid;
 		grid-template-columns: repeat(4, minmax(0, 1fr));
-		/* no grid-auto-rows: cards match within a row, rows size to their own content */
-		gap: 0.75rem;
+		grid-auto-rows: 1fr;
+		gap: 0.9rem;
 		align-items: stretch;
 	}
 
@@ -522,7 +504,7 @@
 		height: 100%;
 		display: flex;
 		flex-direction: column;
-		padding: 0.85rem 0.8rem 0.75rem;
+		padding: 1rem 0.9rem 0.8rem;
 		border: 2px solid #0f172a;
 		border-radius: 1rem;
 		background: #ffffff;
@@ -562,7 +544,7 @@
 
 	.plan-header h3 {
 		margin: 0;
-		font-size: 1.35rem;
+		font-size: 1.85rem;
 		line-height: 1.1;
 		font-weight: 900;
 	}
@@ -572,8 +554,8 @@
 	}
 
 	.tagline {
-		margin: 0.15rem 0 0;
-		font-size: 0.72rem;
+		margin: 0.2rem 0 0;
+		font-size: 0.76rem;
 		font-weight: 600;
 		color: #475569;
 	}
@@ -586,11 +568,11 @@
 		display: flex;
 		align-items: baseline;
 		gap: 0.2rem;
-		margin-top: 0.4rem;
+		margin-top: 0.65rem;
 	}
 
 	.price {
-		font-size: 2.4rem;
+		font-size: 3.2rem;
 		line-height: 0.95;
 		font-weight: 900;
 		letter-spacing: -0.05em;
@@ -601,7 +583,7 @@
 	}
 
 	.price-suffix {
-		font-size: 0.92rem;
+		font-size: 1.08rem;
 		font-weight: 700;
 		color: #334155;
 	}
@@ -611,10 +593,10 @@
 	}
 
 	.billing-note-row {
-		margin: 0.3rem 0 0;
-		font-size: 0.74rem;
+		margin: 0.45rem 0 0;
+		font-size: 0.8rem;
 		font-weight: 700;
-		line-height: 1.35;
+		line-height: 1.4;
 		color: #0f172a;
 	}
 
@@ -623,9 +605,9 @@
 	}
 
 	.description {
-		margin: 0.5rem 0 0;
-		font-size: 0.78rem;
-		line-height: 1.45;
+		margin: 0.75rem 0 0;
+		font-size: 0.86rem;
+		line-height: 1.55;
 		color: #334155;
 	}
 
@@ -635,14 +617,14 @@
 
 	.chip-stack {
 		display: grid;
-		gap: 0.3rem;
-		margin: 0.65rem 0 0.7rem;
+		gap: 0.45rem;
+		margin: 0.95rem 0 1rem;
 	}
 
 	.chip-row {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.28rem;
+		gap: 0.35rem;
 	}
 
 	.chip-row.single-chip .chip {
@@ -653,15 +635,15 @@
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		min-height: 1.55rem;
-		padding: 0.22rem 0.5rem;
+		min-height: 1.9rem;
+		padding: 0.3rem 0.58rem;
 		border: 1px solid #bfd5ff;
 		border-radius: 0.65rem;
 		background: #ebf3ff;
 		color: #0f172a;
-		font-size: 0.64rem;
+		font-size: 0.68rem;
 		font-weight: 700;
-		line-height: 1.2;
+		line-height: 1.25;
 		text-align: center;
 	}
 
@@ -684,56 +666,15 @@
 		margin: 0;
 		padding: 0;
 		display: grid;
-		gap: 0.28rem;
-	}
-
-	/* holds list + toggle so the CTA still pins to the bottom of the card */
-	.plan-body {
-		display: flex;
+		gap: 0.45rem;
 		flex: 1;
-		flex-direction: column;
-	}
-
-	.feature-toggle {
-		display: inline-flex;
-		align-items: center;
-		align-self: flex-start;
-		gap: 0.25rem;
-		margin-top: 0.5rem;
-		padding: 0;
-		border: 0;
-		background: none;
-		color: #2563eb;
-		font: inherit;
-		font-size: 0.72rem;
-		font-weight: 700;
-		cursor: pointer;
-	}
-
-	.feature-toggle:hover span:first-child,
-	.feature-toggle:focus-visible span:first-child {
-		text-decoration: underline;
-	}
-
-	.plan-card.dark .feature-toggle {
-		color: #58c0ff;
-	}
-
-	.chevron {
-		font-size: 0.8rem;
-		line-height: 1;
-		transition: transform 0.2s ease;
-	}
-
-	.chevron.open {
-		transform: rotate(180deg);
 	}
 
 	.feature-list li {
 		position: relative;
-		padding-left: 0.85rem;
-		font-size: 0.76rem;
-		line-height: 1.35;
+		padding-left: 0.95rem;
+		font-size: 0.83rem;
+		line-height: 1.45;
 		color: #0f172a;
 	}
 
@@ -755,15 +696,15 @@
 	}
 
 	.plan-cta {
-		margin-top: 0.8rem;
+		margin-top: 1.15rem;
 		width: 100%;
-		min-height: 2.05rem;
+		min-height: 2.35rem;
 		border: 1px solid #dbe4f0;
 		border-radius: 0.6rem;
 		background: #ffffff;
 		color: #0f172a;
 		font: inherit;
-		font-size: 0.8rem;
+		font-size: 0.88rem;
 		font-weight: 700;
 		cursor: pointer;
 		transform: translateY(0);
@@ -816,8 +757,8 @@
 
 	@media (max-width: 720px) {
 		.pricing-section {
-			padding-top: 2.25rem;
-			padding-bottom: 2.75rem;
+			padding-top: 3.5rem;
+			padding-bottom: 4rem;
 		}
 
 		.billing-toggle {
@@ -829,7 +770,7 @@
 		}
 
 		.plan-card {
-			padding-top: 1.05rem;
+			padding-top: 1.2rem;
 		}
 	}
 
@@ -843,7 +784,7 @@
 		}
 
 		.price {
-			font-size: 2.1rem;
+			font-size: 2.65rem;
 		}
 	}
 </style>
