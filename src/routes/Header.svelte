@@ -87,7 +87,7 @@ window.removeEventListener('scroll', handleScroll);
  </svg>
  <span class="">Admin Portal</span>
 </a>
-<a href="#" class="login_link">Login</a>
+<a href="./login/" class="login_link">Login</a>
 <button type="button" onclick={loginToggle} class="login_button">Login</button>
 <a href="#" class="create_profile_button">Create Profile</a>
 </div>
