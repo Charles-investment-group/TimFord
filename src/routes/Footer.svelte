@@ -5,23 +5,14 @@
 <div class='footer_columns'>
 <div class='footer-logo'>
 <div class='header_logo'>
+<div class='logo-color'>
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <path d="M13 2L4.09344 12.6879C3.74463 13.1064 3.57023 13.3157 3.56756 13.4925C3.56524 13.6461 3.63372 13.7923 3.75324 13.8889C3.89073 14 4.16316 14 4.70802 14H12L11 22L19.9065 11.3121C20.2553 10.8936 20.4297 10.6843 20.4324 10.5075C20.4347 10.3539 20.3663 10.2077 20.2467 10.1111C20.1092 10 19.8368 10 19.292 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+ </svg>
+</div>
 
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2rem" height="2rem" viewBox="0 0 512 512">
-  <defs>
-    <clipPath id="canvas-clip">
-      <rect width="512" height="512" rx="112" ry="112"/>
-    </clipPath>
-  </defs>
-  <rect width="512" height="512" rx="112" ry="112" fill="#F74562"  clip-path="url(#canvas-clip)"/>
-  <g clip-path="url(#canvas-clip)">
-    <g transform="rotate(0, 256, 256)">
-      
-      <g transform="translate(103 103) scale(12.791666666666666 12.791666666666666) translate(0 0)"><path fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 10H6a4 4 0 0 1-4-4a1 1 0 0 1 1-1h4m0 0a1 1 0 0 1 1-1h13a1 1 0 0 1 1 1a7 7 0 0 1-7 7H8a1 1 0 0 1-1-1zm2 7v5m6-5v5M5 20a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1"/></g>
-    </g>
-  </g>
-</svg>
 <h3 class='logo_name'>
-    Tim Forge
+    Aether<span class='highlight'>Forge</span>
 </h3>
 </div>
 <p class='summary'>
@@ -32,37 +23,49 @@
 <h3 class='column_header'>
    Platform
 </h3>
-<a class="footer_link" href="#">Templates</a>
-<a class="footer_link" href="#">Pricing</a>
-<a class="footer_link" href="#">Ai prompting</a>
-<a class="footer_link" href="#">Deploy</a>
+<ul>
+<li><a class="footer_link" href="#">Templates</a></li>
+<li><a class="footer_link" href="#">Pricing</a></li>
+<li><a class="footer_link" href="#">AI Prompting</a></li>
+<li><a class="footer_link" href="#">Deploy</a></li>
+</ul>
+
 </div>
-<div class='footer_links'>
+<nav class='footer_links'>
 <h3 class='column_header'>
  Resources
 </h3>
-<a class="footer_link" href="#">Documentation</a>
-<a class="footer_link" href="#">Tutorials</a>
-<a class="footer_link" href="#">Community</a>
-<a class="footer_link" href="#">Blog</a>
-<a class="footer_link" href="#">Changelog</a>
-<a class="footer_link" href="#">Support tickets</a>
-</div>
+<ul>
+
+<li><a class="footer_link" href="#">Documentation</a></li>
+<li><a class="footer_link" href="#">Tutorials</a></li>
+<li><a class="footer_link" href="#">Community</a></li>
+<li><a class="footer_link" href="#">Blog</a></li>
+<li><a class="footer_link" href="#">Changelog</a></li>
+<li><a class="footer_link" href="#">Support tickets</a></li>
+
+</ul>
+</nav>
+
+
 <div class='footer_links'>
 <h3 class='column_header'>
  Company
 </h3>
-<a class="footer_link" href="#">About</a>
-<a class="footer_link" href="#">Contact information</a>
-<a class="footer_link" href="#">Policy</a>
-<a class="footer_link" href="#">Social media</a>
-<a class="footer_link" href="#">Affiliates</a>
-    
+<ul>
+<li><a class="footer_link" href="#">About</a></li>
+<li><a class="footer_link" href="#">Contact information</a></li>
+<li><a class="footer_link" href="#">Policy</a></li>
+<li><a class="footer_link" href="#">Social media</a></li>
+<li><a class="footer_link" href="#">Affiliates</a></li>
+</ul>
+
 </div>
 </div>
 <div class='copyright'>
- <p> Bullt with AI, powered by ambition</p>
- <p>&copy; 2026 AetherForge. All rights reserved. </p>
+<p>&copy; 2026 AetherForge. All rights reserved. </p>
+ <p> Built with AI, powered by ambition.</p>
+ 
 
 </div>
 
@@ -70,49 +73,88 @@
 <style>
 footer
 {
-    justify-content: space-between;
-    background-color: rgb(255, 247, 247);
+   
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+}
+h3
+{
+    font-weight: bold;
 }
 .footer_columns
 {
-     display: flex;
+    display: flex;
     gap: 30px;
+    max-width: 920px;
+    margin: 0 auto;
+
 }
 .header_logo
 {
     display: flex;
     flex-shrink: 0;
     align-items: center; 
-    flex: 2;
+    gap: 10px;
+    
 
+
+}
+.logo-color
+{
+    background-color: rgb(36, 99, 235);
+    border-radius: 9px;
+    padding: 8px;
+    vertical-align: middle;
+    color: white;
 }
 .footer_links
 {
     display: flex;
     flex-direction: column;
     flex: 1;
+    
+    
+}
+.footer-logo
+{
+    flex: 2;
 }
 .footer_link
 {
 
     font-size: 15px;
     font-family: Inter;
-    padding: 3px;
-    text-align: center;
-    
-
+    text-decoration: none;
+    color: grey; 
 }
 .summary
 {
     
     font-family: Inter;
-    font-size: 15px;
+    font-size: 13.5px;
+    
     
 }
+
 .copyright
 {
+    border-top: 1px solid black;
     display:flex;
     justify-content: space-between;
-    
+    max-width: 920px;
+    margin: 10px auto;
+}
+.highlight
+{
+    color: rgb(36, 99, 235)
+}
+ul
+{
+list-style-type: none;
+padding: 1px;
+}
+li
+{
+    padding: 6px;
 }
 </style>
