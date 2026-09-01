@@ -1,0 +1,131 @@
+/* ---------------------------------------------------------------------------
+   Admin Portal styles — migrated from the original Base44 admin app.
+
+   Imported ONLY by src/routes/admin/+layout.svelte, so none of this reaches
+   the landing page. Two deliberate differences from the Base44 original:
+
+     1. Theme tokens are scoped to `.admin-root` instead of `:root`. In Base44
+        the admin app owned the whole document; here it is one route inside an
+        existing site, so the tokens must not escape.
+     2. Tailwind's preflight is off (see tailwind.config.js). The scoped reset
+        below restores just the parts the portal's markup relies on.
+
+   Source of the token values: TimFord-Mats/src/index.css
+   --------------------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.admin-root {
+	--font-inter: 'Inter', sans-serif;
+	--font-mono: 'JetBrains Mono', monospace;
+
+	--background: 210 40% 98%;
+	--foreground: 222 47% 11%;
+	--card: 0 0% 100%;
+	--card-foreground: 222 47% 11%;
+	--popover: 0 0% 100%;
+	--popover-foreground: 222 47% 11%;
+	--primary: 221 83% 53%;
+	--primary-foreground: 0 0% 100%;
+	--secondary: 210 40% 96%;
+	--secondary-foreground: 222 47% 11%;
+	--muted: 210 40% 96%;
+	--muted-foreground: 215 16% 47%;
+	--accent: 199 89% 60%;
+	--accent-foreground: 222 47% 11%;
+	--destructive: 0 84% 60%;
+	--destructive-foreground: 0 0% 98%;
+	--border: 214 32% 91%;
+	--input: 214 32% 91%;
+	--ring: 221 83% 53%;
+	--radius: 0.625rem;
+
+	font-family: var(--font-inter);
+	background-color: hsl(var(--background));
+	color: hsl(var(--foreground));
+}
+
+/* Replaces Tailwind preflight, scoped to the portal only. Mirrors the parts of
+   the reset the migrated markup depends on. */
+.admin-root *,
+.admin-root *::before,
+.admin-root *::after {
+	box-sizing: border-box;
+	border: 0 solid hsl(var(--border));
+}
+
+.admin-root h1,
+.admin-root h2,
+.admin-root h3,
+.admin-root p {
+	margin: 0;
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+.admin-root button {
+	font-family: inherit;
+	font-size: 100%;
+	line-height: inherit;
+	color: inherit;
+	margin: 0;
+	padding: 0;
+	background-color: transparent;
+	background-image: none;
+	cursor: pointer;
+}
+
+.admin-root input,
+.admin-root textarea,
+.admin-root select {
+	font-family: inherit;
+	font-size: 100%;
+	line-height: inherit;
+	color: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+.admin-root a {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+.admin-root svg {
+	display: block;
+	vertical-align: middle;
+}
+
+.admin-root ::placeholder {
+	color: hsl(var(--muted-foreground));
+	opacity: 1;
+}
+
+/* Admin Portal: blue content box on white page — verbatim from Base44's
+   src/index.css. The token overrides are what make the shadcn-derived controls
+   render dark inside the blue box. */
+.admin-blue-box {
+	background-color: #0b1c4a;
+	color: #fff;
+	--background: 224 74% 17%;
+	--foreground: 210 40% 98%;
+	--card: 223 63% 22%;
+	--card-foreground: 210 40% 98%;
+	--popover: 224 60% 15%;
+	--popover-foreground: 210 40% 98%;
+	--muted-foreground: 215 25% 72%;
+	--border: 220 54% 36%;
+	--input: 223 63% 22%;
+}
+
+.font-inter {
+	font-family: var(--font-inter);
+}
+
+.font-mono {
+	font-family: var(--font-mono);
+}
