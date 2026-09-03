@@ -50,24 +50,24 @@
 }
 
 /* Replaces Tailwind preflight, scoped to the portal only. Mirrors the parts of
-   the reset the migrated markup depends on. */
-.admin-root *,
-.admin-root *::before,
-.admin-root *::after {
+   the reset the migrated markup depends on.
+
+   Every selector is wrapped in :where() so the whole reset has ZERO specificity,
+   exactly like real preflight's bare-element selectors: any utility class
+   (0-1-0) must beat it. Without this, `.admin-root button { padding: 0 }`
+   (0-1-1) silently overrides `px-4 py-3` etc. on every element it names. */
+:where(.admin-root *, .admin-root *::before, .admin-root *::after) {
 	box-sizing: border-box;
 	border: 0 solid hsl(var(--border));
 }
 
-.admin-root h1,
-.admin-root h2,
-.admin-root h3,
-.admin-root p {
+:where(.admin-root h1, .admin-root h2, .admin-root h3, .admin-root p) {
 	margin: 0;
 	font-size: inherit;
 	font-weight: inherit;
 }
 
-.admin-root button {
+:where(.admin-root button) {
 	font-family: inherit;
 	font-size: 100%;
 	line-height: inherit;
@@ -79,9 +79,7 @@
 	cursor: pointer;
 }
 
-.admin-root input,
-.admin-root textarea,
-.admin-root select {
+:where(.admin-root input, .admin-root textarea, .admin-root select) {
 	font-family: inherit;
 	font-size: 100%;
 	line-height: inherit;
@@ -90,17 +88,17 @@
 	padding: 0;
 }
 
-.admin-root a {
+:where(.admin-root a) {
 	color: inherit;
 	text-decoration: inherit;
 }
 
-.admin-root svg {
+:where(.admin-root svg) {
 	display: block;
 	vertical-align: middle;
 }
 
-.admin-root ::placeholder {
+:where(.admin-root) ::placeholder {
 	color: hsl(var(--muted-foreground));
 	opacity: 1;
 }
