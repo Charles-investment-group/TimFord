@@ -19,8 +19,8 @@
 	 *   - The ticket / alert / user lists and their detail dialogs are driven
 	 *     entirely by those same entities, so they are represented by
 	 *     BackendRequired rather than reproduced against no data.
-	 *   - The Owner tab's Gemini-key card, ChloeUpscaleCard and StripeSettingsTab
-	 *     are localStorage-backed and portable, but belong to a later batch.
+	 *   - StripeSettingsTab is migrated without the original's secret-key field;
+	 *     see that component for why.
 	 *
 	 * NOT MIGRATED ON PURPOSE
 	 *   - OWNER_REAL_EMAIL / OWNER_ALIAS. In the original these swap the owner's
@@ -57,10 +57,14 @@
 	import Lock from 'lucide-svelte/icons/lock';
 
 	import BackendRequired from '$lib/admin/BackendRequired.svelte';
-	import PendingMigration from '$lib/admin/PendingMigration.svelte';
 	import PagesTab from '$lib/admin/tabs/PagesTab.svelte';
+	import TemplateControlsTab from '$lib/admin/tabs/TemplateControlsTab.svelte';
+	import CadStudioTab from '$lib/admin/tabs/CadStudioTab.svelte';
+	import StripeSettingsTab from '$lib/admin/tabs/StripeSettingsTab.svelte';
 	import AdminCloneCard from '$lib/admin/cards/AdminCloneCard.svelte';
 	import OwnerSuperAdminCard from '$lib/admin/cards/OwnerSuperAdminCard.svelte';
+	import ChloeUpscaleCard from '$lib/admin/cards/ChloeUpscaleCard.svelte';
+	import GeminiKeyCard from '$lib/admin/cards/GeminiKeyCard.svelte';
 
 	// ALL_TABS — ids, labels, icons and order verbatim from the original.
 	const ALL_TABS = [
@@ -278,15 +282,9 @@
 			{:else if activeTab === 'assets'}
 				<BackendRequired title="ForgeEngine Assets" entities={['GameAsset']} />
 			{:else if activeTab === 'templates'}
-				<PendingMigration
-					title="Template Controls"
-					detail="The original stores these toggles in localStorage, so this section can be migrated in full. Scheduled for the next batch."
-				/>
+				<TemplateControlsTab />
 			{:else if activeTab === 'cad'}
-				<PendingMigration
-					title="CAD Studio"
-					detail="The original stores its settings in localStorage, so this section can be migrated in full. Scheduled for the next batch."
-				/>
+				<CadStudioTab />
 			{:else if activeTab === 'messaging'}
 				<BackendRequired
 					title="Messaging & Notifications"
@@ -317,19 +315,10 @@
 				/>
 			{:else if activeTab === 'owner'}
 				<div class="space-y-6">
-					<PendingMigration
-						title="Chloe's Gemini API Key"
-						detail="The original keeps a user-supplied key in this browser's localStorage and calls Google directly. Portable, and scheduled for the next batch."
-					/>
-					<PendingMigration
-						title="Chloe Upscale"
-						detail="localStorage-backed in the original. Scheduled for the next batch."
-					/>
+					<GeminiKeyCard />
+					<ChloeUpscaleCard />
 					<AdminCloneCard />
-					<PendingMigration
-						title="Payment Processing"
-						detail="The Stripe panel is migrated without its secret-key field, which the original stored in browser localStorage. Publishable key, webhook and price IDs are scheduled for the next batch; the secret key stays disabled until a secure backend exists."
-					/>
+					<StripeSettingsTab />
 					<OwnerSuperAdminCard />
 				</div>
 			{/if}
