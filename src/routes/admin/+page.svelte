@@ -57,6 +57,18 @@
 	import Lock from 'lucide-svelte/icons/lock';
 
 	import BackendRequired from '$lib/admin/BackendRequired.svelte';
+	import AdminDashboardTab from '$lib/admin/tabs/AdminDashboardTab.svelte';
+	import SupportTicketsTab from '$lib/admin/tabs/SupportTicketsTab.svelte';
+	import SafetyAlertsTab from '$lib/admin/tabs/SafetyAlertsTab.svelte';
+	import UsersTab from '$lib/admin/tabs/UsersTab.svelte';
+	import AdminsTab from '$lib/admin/tabs/AdminsTab.svelte';
+	import ForgeEngineTab from '$lib/admin/tabs/ForgeEngineTab.svelte';
+	import MessagingTab from '$lib/admin/tabs/MessagingTab.svelte';
+	import ForgeMarketingAgencyTab from '$lib/admin/tabs/ForgeMarketingAgencyTab.svelte';
+	import AdminMediaPlacementsTab from '$lib/admin/tabs/AdminMediaPlacementsTab.svelte';
+	import UserCreditsTab from '$lib/admin/tabs/UserCreditsTab.svelte';
+	import RecurringPaymentsTab from '$lib/admin/tabs/RecurringPaymentsTab.svelte';
+	import FinanceTab from '$lib/admin/tabs/FinanceTab.svelte';
 	import PagesTab from '$lib/admin/tabs/PagesTab.svelte';
 	import TemplateControlsTab from '$lib/admin/tabs/TemplateControlsTab.svelte';
 	import CadStudioTab from '$lib/admin/tabs/CadStudioTab.svelte';
@@ -131,28 +143,27 @@
 			ForgeAI <span class="text-cyan-400">Admin Portal</span>
 		</span>
 	</div>
-	<span
-		class="rounded-full border border-red-800/40 bg-red-900/30 px-2.5 py-0.5 text-xs font-semibold text-red-400"
-	>
-		Restricted
-	</span>
-</div>
-
-<!--
-	Not in the original. The Base44 AdminRoute component was a pass-through with
-	the login gate removed, so /admin was reachable by anyone; TimFord has no
-	authentication system to gate it with either. This notice makes that explicit
-	instead of leaving the portal looking protected. It should be removed once a
-	real server-side guard exists.
--->
-<div class="border-b border-amber-900/40 bg-amber-950/40 px-6 py-2">
-	<p class="flex items-center gap-2 text-xs text-amber-300">
-		<Lock class="h-3.5 w-3.5 shrink-0" />
-		<span>
-			This route has no access control. It is not linked from the site, but anyone who knows the URL
-			can open it. A server-side guard is required before deployment.
+	<div class="flex items-center gap-2">
+		<!--
+			The amber pill is not in the original. The Base44 AdminRoute was a
+			pass-through with the login gate removed, so /admin was reachable by
+			anyone; TimFord has no authentication system to gate it with either.
+			This keeps that disclosure visible (hover for detail) without the
+			full-width banner that broke visual parity. Remove once a real
+			server-side guard exists.
+		-->
+		<span
+			title="This route has no access control — anyone with the URL can open it. A server-side guard is required before deployment."
+			class="flex items-center gap-1 rounded-full border border-amber-800/40 bg-amber-900/30 px-2.5 py-0.5 text-xs font-semibold text-amber-400"
+		>
+			<Lock class="h-3 w-3" /> No access control
 		</span>
-	</p>
+		<span
+			class="rounded-full border border-red-800/40 bg-red-900/30 px-2.5 py-0.5 text-xs font-semibold text-red-400"
+		>
+			Restricted
+		</span>
+	</div>
 </div>
 
 <div class="mx-auto max-w-7xl overflow-x-hidden px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
@@ -264,55 +275,66 @@
 
 		<div class="admin-blue-box rounded-xl border border-[#2a4a8c] p-4 sm:p-6">
 			{#if activeTab === 'dashboard'}
-				<BackendRequired title="Team Wall" entities={['AdminComment']} />
+				<AdminDashboardTab />
 			{:else if activeTab === 'tickets'}
-				<BackendRequired title="Support Tickets" entities={['SupportTicket']} />
+				<SupportTicketsTab />
 			{:else if activeTab === 'alerts'}
-				<BackendRequired title="Safety Alerts" entities={['SafetyAlert']} />
+				<SafetyAlertsTab />
 			{:else if activeTab === 'users'}
-				<BackendRequired title="Users" entities={['User']} />
+				<UsersTab />
+				<!--
+					The original nests the following tabs in a SECOND admin-blue-box panel
+					(AdminPortal.jsx wraps each of these components in its own
+					`admin-blue-box rounded-xl border p-6` inside the outer one), giving
+					them the inner bordered card look. Dashboard, tickets, alerts, users
+					and owner render directly in the outer box.
+				-->
 			{:else if activeTab === 'pages'}
-				<PagesTab />
+				<div class="admin-blue-box rounded-xl border border-[#2a4a8c] p-6"><PagesTab /></div>
 			{:else if activeTab === 'admins'}
-				<BackendRequired
-					title="Admins"
-					entities={['AdminInvite', 'AdminApplication']}
-					note="Also depends on the Base44 SendEmail integration."
-				/>
+				<div class="admin-blue-box rounded-xl border border-[#2a4a8c] p-6"><AdminsTab /></div>
 			{:else if activeTab === 'assets'}
-				<BackendRequired title="ForgeEngine Assets" entities={['GameAsset']} />
+				<div class="admin-blue-box rounded-xl border border-[#2a4a8c] p-6">
+					<ForgeEngineTab />
+				</div>
 			{:else if activeTab === 'templates'}
-				<TemplateControlsTab />
+				<div class="admin-blue-box rounded-xl border border-[#2a4a8c] p-6">
+					<TemplateControlsTab />
+				</div>
 			{:else if activeTab === 'cad'}
-				<CadStudioTab />
+				<div class="admin-blue-box rounded-xl border border-[#2a4a8c] p-6"><CadStudioTab /></div>
 			{:else if activeTab === 'messaging'}
-				<BackendRequired
-					title="Messaging & Notifications"
-					entities={['AdminMessage', 'User']}
-					note="Also depends on the Base44 SendEmail integration."
-				/>
+				<div class="admin-blue-box rounded-xl border border-[#2a4a8c] p-6">
+					<MessagingTab />
+				</div>
 			{:else if activeTab === 'agency'}
-				<BackendRequired title="Marketing Agency" entities={['MediaPlacement', 'User']} />
+				<div class="admin-blue-box rounded-xl border border-[#2a4a8c] p-6">
+					<ForgeMarketingAgencyTab />
+				</div>
 			{:else if activeTab === 'placements'}
-				<BackendRequired title="Media Placements" entities={['MediaPlacement']} />
+				<div class="admin-blue-box rounded-xl border border-[#2a4a8c] p-6">
+					<AdminMediaPlacementsTab />
+				</div>
 			{:else if activeTab === 'credits'}
-				<BackendRequired title="User Credits" entities={['UserSubscription']} />
+				<div class="admin-blue-box rounded-xl border border-[#2a4a8c] p-6">
+					<UserCreditsTab />
+				</div>
 			{:else if activeTab === 'payments'}
-				<BackendRequired
-					title="Recurring Payments"
-					entities={['UserSubscription', 'HostingOrder']}
-				/>
+				<div class="admin-blue-box rounded-xl border border-[#2a4a8c] p-6">
+					<RecurringPaymentsTab />
+				</div>
 			{:else if activeTab === 'finance'}
-				<BackendRequired
-					title="Finance & Profit"
-					entities={['UserSubscription', 'HostingOrder', 'MediaPlacement']}
-				/>
+				<div class="admin-blue-box rounded-xl border border-[#2a4a8c] p-6">
+					<FinanceTab />
+				</div>
 			{:else if activeTab === 'brain'}
-				<BackendRequired
-					title="Chloe's Brain"
-					entities={['ChloeNeuralPathway', 'ChloeBrainConfig']}
-					note="Chloe's AI behaviour is untouched by this migration — the original tab is a CRUD editor over stored pathway records."
-				/>
+				<div class="admin-blue-box rounded-xl border border-[#2a4a8c] p-6">
+					<BackendRequired
+						title="Chloe's Brain"
+						entities={['ChloeNeuralPathway', 'ChloeBrainConfig']}
+						note="Chloe's AI behaviour is untouched by this migration — the original tab is a CRUD editor over stored pathway records."
+					/>
+				</div>
 			{:else if activeTab === 'owner'}
 				<div class="space-y-6">
 					<GeminiKeyCard />
