@@ -1,5 +1,9 @@
-<script></script>
+<script>
+import Header from '../Header.svelte';
+import Footer from '../Footer.svelte';
+</script>
 <main>
+<Header />
 <form action="/submit-path" method="POST">
   <label for="username">Username:</label>
   <input type="text" id="username" name="username" placeholder="Enter username" required>
@@ -9,6 +13,11 @@
 
   <button type="submit">Register</button>
 </form>
-
+<Footer />
 </main>
-<style></style>
+
+<style>
+main {
+background-color: black;
+}
+</style>
