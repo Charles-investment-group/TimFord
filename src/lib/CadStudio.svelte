@@ -103,14 +103,24 @@
 {/snippet}
 
 <style>
-	/* base/grid/glow come from .page-backdrop in src/app.css */
 	.cad-section {
 		width: 100%;
+		background:
+			linear-gradient(rgba(74, 144, 255, 0.055) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(74, 144, 255, 0.055) 1px, transparent 1px),
+			radial-gradient(circle at 40% 68%, rgba(54, 162, 255, 0.14), transparent 40%),
+			linear-gradient(180deg, #020818 0%, #071121 48%, #0b1424 100%);
+		background-size: 96px 96px, 96px 96px, auto, auto;
 		color: #ffffff;
 		font-family:
 			Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 		/* trimmed top pad — Section3 supplies the rest of the gap above */
 		padding: clamp(0.75rem, 1.5vw, 1rem) clamp(1rem, 4vw, 1.5rem) clamp(3rem, 7vw, 5.5rem);
+	}
+
+	.cad-section.page-backdrop::before,
+	.cad-section.page-backdrop::after {
+		content: none;
 	}
 
 	.cad-section,
