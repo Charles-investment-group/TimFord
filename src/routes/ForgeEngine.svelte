@@ -1,21 +1,5 @@
 <script>
-	const highlights = [
-		'4K/8K Cinematic + PBR',
-		'500+ Animation Clips',
-		'500+ Free Assets',
-		'Moon server integration coming soon'
-	];
 
-	// Stat cards replacing the old feature boilerplate (Ranger's call).
-	//
-	// The 98% SEO figure came from Ranger and is the company's own customer claim.
-	// The remaining five are product facts already published elsewhere on this site,
-	// so they stay consistent with the rest of the page:
-	//   83 agents + 41+ languages .... Section3.svelte stat row
-	//   no licensing fees ............ ForgeEngine summary copy
-	//   1,000 concurrent players ..... Pricing.svelte, Titan tier
-	//   500+ free assets ............. ForgeEngine highlight row
-	// If any of those change, update them here too.
 	const stats = [
 		{
 			icon: 'bolt',
@@ -58,16 +42,10 @@
 
 <section class="forge-section" aria-label="ForgeEngine platform highlights">
 	<div class="section-inner">
-		<div class="highlight-row" aria-label="ForgeEngine highlights">
-			{#each highlights as item}
-				<span>{item}</span>
-			{/each}
-		</div>
-
 		<div class="feature-grid">
 			{#each stats as stat, index}
 				<article
-					class:featured={index === 0}
+					class="featured"
 					style={`--delay: ${index * 70}ms`}
 				>
 					{@render Icon({ name: stat.icon, size: '34' })}
@@ -124,13 +102,13 @@
 		background:
 			linear-gradient(rgba(74, 144, 255, 0.055) 1px, transparent 1px),
 			linear-gradient(90deg, rgba(74, 144, 255, 0.055) 1px, transparent 1px),
-			radial-gradient(circle at 48% 24%, rgba(54, 162, 255, 0.18), transparent 32%),
+			radial-gradient(circle at 48% 24%, rgba(54, 162, 255, 0), transparent 32%),
 			linear-gradient(180deg, #020818 0%, #071121 56%, #0b1424 100%);
 		background-size: 96px 96px, 96px 96px, auto, auto;
 		color: white;
+		padding: 100px 50px;
 		font-family:
 			Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-		padding: 112px 24px 120px;
 		outline: 1px solid transparent;
 		transition:
 			background-position 900ms ease,
@@ -185,21 +163,11 @@
 			16px 14px,
 			center,
 			center;
-		outline-color: rgba(90, 167, 255, 0.26);
-		box-shadow: inset 0 0 54px rgba(58, 153, 255, 0.08);
+		outline-color: rgba(90, 167, 255, 0);
+		box-shadow: inset 0 0 54px rgba(58, 153, 255, 0.0);
 	}
 
-	.forge-section:hover::before,
-	.forge-section:focus-within::before {
-		animation: borderOrbit 4.8s linear infinite;
-		opacity: 1;
-	}
 
-	.forge-section:hover::after,
-	.forge-section:focus-within::after {
-		animation: sectionSweep 1.25s ease forwards;
-		opacity: 1;
-	}
 
 	.section-inner {
 		position: relative;
@@ -222,7 +190,7 @@
 	}
 
 	.highlight-row span {
-		border: 1px solid rgba(90, 167, 255, 0.35);
+		border: 1px solid rgba(90, 167, 255, 0);
 		border-radius: 999px;
 		background: rgba(39, 93, 165, 0.24);
 		padding: 12px 20px;
@@ -241,7 +209,7 @@
 		transform: translateY(-2px);
 		border-color: rgba(141, 244, 255, 0.7);
 		background: rgba(44, 119, 204, 0.34);
-		box-shadow: 0 14px 30px rgba(20, 108, 255, 0.14);
+		box-shadow: 0 14px 30px rgba(20, 108, 255, 0);
 	}
 
 	.feature-grid {
@@ -253,9 +221,10 @@
 	article {
 		position: relative;
 		overflow: hidden;
-		border: 1px solid rgba(93, 159, 237, 0.28);
-		border-radius: 8px;
-		background: rgba(30, 43, 63, 0.92);
+		border: 0px solid rgba(93, 159, 237, 0.28);
+		border-radius: 10px;
+		backdrop-filter: blur(10px);
+		background: rgba(0,0,0,1);
 		transition:
 			transform 260ms ease,
 			border-color 260ms ease,
@@ -277,7 +246,6 @@
 		transform: translateY(-6px);
 		border-color: rgba(141, 244, 255, 0.55);
 		background: rgba(34, 52, 78, 0.96);
-		box-shadow: 0 22px 60px rgba(3, 13, 34, 0.36), 0 0 0 1px rgba(90, 167, 255, 0.14);
 	}
 
 	article:hover::before {
@@ -294,7 +262,6 @@
 
 	.feature-grid article.featured {
 		border-color: #5aa7ff;
-		box-shadow: inset 0 0 0 1px #5aa7ff, 0 16px 60px rgba(20, 108, 255, 0.18);
 	}
 
 	.icon {

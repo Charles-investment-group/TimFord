@@ -57,7 +57,7 @@ window.removeEventListener('scroll', handleScroll);
 </div>
 
 <div class="header_links_container">
-<a class="header_link" href="#">Templates</a>
+<a class="header_link" href="./workshop">Workshop</a>
 <a class="header_link" href="#">CAD Studio</a>
 <a class="header_link" href="#">Media Studio</a>
 <a class="header_link" href="#">Pricing</a>
@@ -149,8 +149,8 @@ background-color: transparent;
 margin: 0px;
 gap: 0px;
 z-index: 10000000;
-position: fixed;
 width: 100%;
+position: fixed;
 }
 
 .main_content {
