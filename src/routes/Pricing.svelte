@@ -38,13 +38,13 @@
 			annualPrice: '$0',
 			description: 'Try AetherForge for free. Build your first project and explore what AI can create.',
 			chipRows: [
-				[{ label: 'Chloe' }, { label: '5 AIs' }],
+				[{ label: 'AI tools' }],
 				[{ label: 'Free social media ad & commercial creation', accent: true }],
 				[{ label: '100 AI credits' }, { label: '25 integration' }]
 			],
 			features: [
-				'Chloe + 5 AIs',
-				'Gemini Flash AI model',
+				'AI-powered creation tools',
+				'Standard AI model access',
 				'ForgeEngine Basic web export',
 				'Free templates only',
 				'1 published project',
@@ -63,13 +63,12 @@
 			annualPrice: '$144',
 			description: 'More credits, better AI models, and light support from our team. Great for side projects.',
 			chipRows: [
-				[{ label: 'Chloe' }, { label: 'up to 83 AIs' }],
-				[{ label: 'Chloe & her team manage your ads', accent: true }, { label: 'From $15/mo', accent: true }],
+				[{ label: 'AI tools' }],
 				[{ label: '300 AI credits' }, { label: '50 integration' }]
 			],
 			features: [
-				'Chloe + up to 83 AIs work on your website, app, game & enterprise software (2-3 of which are QA)',
-				'Gemini Flash, Claude Haiku AI',
+				'AI-assisted website, app, game, and software creation',
+				'Expanded AI model access',
 				'ForgeEngine Lite (2D & basic 3D)',
 				'More templates unlocked',
 				'3 published projects',
@@ -77,7 +76,6 @@
 				'Stripe payment integration',
 				'Integrations hub - 50 credits/mo',
 				'Advanced analytics',
-				'Chloe and her team craft your social media ads & commercials; they manage posting & distribution',
 				'Priority email support'
 			],
 			cta: 'Go Starter'
@@ -90,13 +88,12 @@
 			annualPrice: '$240',
 			description: 'Built for serious creators. Pro engines, custom domain, team access, and multiple AI choices.',
 			chipRows: [
-				[{ label: 'Chloe' }, { label: 'up to 83 AIs' }],
-				[{ label: 'Chloe & her team manage your ads', accent: true }, { label: 'From $15/mo', accent: true }],
+				[{ label: 'Advanced AI tools' }],
 				[{ label: '800 AI credits' }, { label: '150 integration' }, { label: '3 seats' }]
 			],
 			features: [
-				'Chloe + up to 83 AIs work on your website, app, game & enterprise software (2-3 of which are QA)',
-				'Gemini Pro, Claude Sonnet, GPT-4o',
+				'Advanced AI-assisted project creation',
+				'Premium AI model access',
 				'ForgeEngine Pro (full 3D, physics, 5 platforms)',
 				'All free templates',
 				'10 published projects',
@@ -104,7 +101,6 @@
 				'Up to 3 team members (share plan credits)',
 				'Stripe + PayPal integration',
 				'Integrations hub - 150 credits/mo',
-				'Chloe and her team craft your social media ads & commercials; they manage posting & distribution',
 				'Advanced analytics',
 				'Professional email setup',
 				'Google Play / App Store deploy',
@@ -123,13 +119,12 @@
 			annualPrice: '$374',
 			description: 'Full power for agencies and freelancers. Multiple AI models, advanced engines, and client tools.',
 			chipRows: [
-				[{ label: 'Chloe' }, { label: 'up to 83 AIs (Full Swarm)' }],
-				[{ label: 'Chloe & her team manage your ads', accent: true }, { label: 'From $15/mo', accent: true }],
+				[{ label: 'Advanced AI tools' }],
 				[{ label: '3,000 AI credits' }, { label: '400 integration' }, { label: '8 seats' }]
 			],
 			features: [
-				'Chloe + up to 83 AIs (Full Swarm) work on your website, app, game & enterprise software (2-3 of which are QA)',
-				'Gemini Ultra, Claude, GPT-4o + config',
+				'Advanced AI-assisted project creation',
+				'Configurable AI model access',
 				'ForgeEngine Advanced (ray tracing, multiplayer)',
 				'All templates (free + premium)',
 				'25 published projects',
@@ -138,7 +133,6 @@
 				'Full payment suite',
 				'Integrations hub - 400 credits/mo',
 				'Advanced analytics',
-				'Chloe and her team craft your social media ads & commercials; they manage posting & distribution',
 				'Client project management',
 				'White-label option',
 				'Custom AI model configuration',
@@ -156,13 +150,12 @@
 			annualPrice: '$758',
 			description: 'For studios, agencies, and dev teams. Collaborate with up to 20 members and use multiple AIs at once.',
 			chipRows: [
-				[{ label: 'Chloe' }, { label: 'up to 83 AIs (Full Swarm)' }],
-				[{ label: 'Chloe & her team manage your ads', accent: true }, { label: 'From $15/mo', accent: true }],
+				[{ label: 'Collaborative AI tools' }],
 				[{ label: '7,000 AI credits' }, { label: '1000 integration' }, { label: '20 seats' }]
 			],
 			features: [
-				'Chloe + up to 83 AIs (Full Swarm) work on your website, app, game & enterprise software (2-3 of which are QA)',
-				'All AI models + multi-agent routing',
+				'Collaborative AI-assisted project creation',
+				'Advanced AI model access and task routing',
 				'Build a custom AI from scratch',
 				'ForgeEngine Studio (high-fidelity 3D)',
 				'All templates (free + premium)',
@@ -173,7 +166,6 @@
 				'Complete payment infrastructure',
 				'Integrations hub - 1,000 credits/mo',
 				'Advanced analytics',
-				'Chloe and her team craft your social media ads & commercials; they manage posting & distribution',
 				'White-label & reseller tools',
 				'High-fidelity 3D graphics',
 				'Professional email suites',
@@ -193,13 +185,12 @@
 			annualPrice: '$1046',
 			description: 'For growing teams that need more firepower. 12,000 credits, 30 seats, and dedicated infrastructure - without the Titan price tag.',
 			chipRows: [
-				[{ label: 'Chloe' }, { label: 'up to 83 AIs (Full Swarm)' }],
-				[{ label: 'Chloe & her team manage your ads', accent: true }, { label: 'From $15/mo', accent: true }],
+				[{ label: 'Advanced AI tools' }],
 				[{ label: '12,000 AI credits' }, { label: '2000 integration' }, { label: '30 seats' }]
 			],
 			features: [
-				'Chloe + up to 83 AIs (Full Swarm) work on your website, app, game & enterprise software (2-3 of which are QA)',
-				'Every AI model available',
+				'Advanced AI-assisted project creation',
+				'Comprehensive AI model access',
 				'Build & fine-tune your own AI model',
 				'ForgeEngine Ultimate (near-AAA)',
 				'All templates (free + premium)',
@@ -208,7 +199,6 @@
 				'Up to 30 team members (share plan credits)',
 				'Advanced team roles & permissions',
 				'White-label platform option',
-				'Chloe and her team craft your social media ads & commercials; they manage posting & distribution',
 				'Integrations hub - 2,000 credits/mo',
 				'Advanced analytics',
 				'AAA-grade game graphics',
@@ -230,13 +220,12 @@
 			annualPrice: '$1430',
 			description: 'The apex tier. ForgeEngine Ultimate, 20,000 credits, up to 50 team seats, and the most powerful AI stack available.',
 			chipRows: [
-				[{ label: 'Chloe' }, { label: 'up to 83 AIs (Full Swarm)' }],
-				[{ label: 'Chloe & her team manage your ads', accent: true }, { label: 'From $15/mo', accent: true }],
+				[{ label: 'Advanced AI tools' }],
 				[{ label: '20,000 AI credits' }, { label: '3500 integration' }, { label: '50 seats' }]
 			],
 			features: [
-				'Chloe + up to 83 AIs (Full Swarm) work on your website, app, game & enterprise software (2-3 of which are QA)',
-				'Every AI model available',
+				'Advanced AI-assisted project creation',
+				'Comprehensive AI model access',
 				'Build & fine-tune your own AI model',
 				'ForgeEngine Ultimate (near-AAA)',
 				'All templates + exclusive Titan-only',
@@ -245,7 +234,6 @@
 				'Up to 50 team members (share plan credits)',
 				'Advanced team roles & permissions',
 				'White-label platform option',
-				'Chloe and her team craft your social media ads & commercials; they manage posting & distribution',
 				'Integrations hub - 3,500 credits/mo',
 				'Advanced analytics',
 				'AAA-grade game graphics',
@@ -269,13 +257,12 @@
 			annualPrice: '$2390',
 			description: 'The ultimate power tier. 40,000 credits, 100 team seats, bare-metal infrastructure, and unlimited everything. For those who need absolute maximum.',
 			chipRows: [
-				[{ label: 'Chloe' }, { label: 'up to 83 AIs (Full Swarm + Priority GPU)' }],
-				[{ label: 'Chloe & her team manage your ads', accent: true }, { label: 'From $15/mo', accent: true }],
+				[{ label: 'Enterprise AI tools' }],
 				[{ label: '40,000 AI credits' }, { label: '6000 integration' }, { label: '100 seats' }]
 			],
 			features: [
-				'Chloe + up to 83 AIs (Full Swarm) work on your website, app, game & enterprise software (2-3 of which are QA)',
-				'Every AI model + priority GPU inference',
+				'Enterprise AI-assisted project creation',
+				'Comprehensive AI model access with priority processing',
 				'Build & fine-tune unlimited custom AI models',
 				'ForgeEngine Ultimate+ (AAA-grade)',
 				'All templates + exclusive Colossus-only',
@@ -286,7 +273,6 @@
 				'Full white-label + reseller platform',
 				'Integrations hub - 6,000 credits/mo',
 				'Advanced analytics',
-				'Chloe and her team craft your social media ads & commercials; they manage posting & distribution',
 				'AAA-grade game graphics + ray tracing',
 				'Dedicated game server (up to 5,000 concurrent players)',
 				'Bare-metal dedicated server (cloud or on-prem)',
