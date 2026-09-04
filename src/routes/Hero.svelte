@@ -9,23 +9,14 @@
         </div>
 <div class="overlay"></div>
 <section class="hero-content" aria-labelledby="hero-forge-heading">
-  <p class="hero-eyebrow">Proprietary Technology</p>
-  <h1 id="hero-forge-heading">Introducing <span>ForgeEngine</span></h1>
+  <p class="hero-eyebrow">Enhanced AI Technology</p>
+  <h1 id="hero-forge-heading">Introducing <span>Chlo.e</span></h1>
   <p class="hero-summary">
     ForgeAI's proprietary game engine is built from the ground up to deliver premium games,
     apps, and interactive experiences without third-party engines or licensing fees.
     Fully integrated with <strong>Chloe</strong> and all <strong>83 AIs</strong>.
   </p>
 
-  <div class="about-me" aria-labelledby="about-me-heading">
-    <p class="about-kicker">About Me</p>
-    <h2 id="about-me-heading">Building faster paths from idea to launch.</h2>
-    <p>
-      This platform brings AI strategy, web development, CAD tools, media workflows, and
-      ForgeEngine together so creators and businesses can move from concept to polished
-      digital products with one connected system.
-    </p>
-  </div>
 </section>
 </main>
 
@@ -33,25 +24,23 @@
 
 .hero-shell {
 position: relative;
-min-height: 100vh;
+min-height: 80vh;
 overflow: hidden;
 isolation: isolate;
 }
 
 .main_container {
 width: 100%;
-height: 100vh;
+height: 80vh;
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
 position: absolute;
-padding-top: 50px;
 }
 
 .overlay {
 width: 100%;
-height: 100vh;
-min-height: 100vh;
+height: 80vh;
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
@@ -66,12 +55,13 @@ inset: 0;
 display: flex;
 flex-direction: column;
 justify-content: center;
-width: min(1120px, calc(100% - 40px));
-margin: 0 auto;
-padding: 118px 0 72px;
 color: #fff;
 font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 pointer-events: none;
+background-color: transparent;
+padding-left: 5vw;
+padding-top: 5vh;
+height: 80vh;
 }
 
 .hero-eyebrow {
