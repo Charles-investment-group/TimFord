@@ -12,9 +12,8 @@
   <p class="hero-eyebrow">Enhanced AI Technology</p>
   <h1 id="hero-forge-heading">Introducing <span>Chlo.e</span></h1>
   <p class="hero-summary">
-    ForgeAI's proprietary game engine is built from the ground up to deliver premium games,
-    apps, and interactive experiences without third-party engines or licensing fees.
-    Fully integrated with <strong>Chloe</strong> and all <strong>83 AIs</strong>.
+  Build and scale your business 20x faster! <br>
+  <strong>Chlo.e</strong> is your newest business partner, Agent, <em>and</em> <strong>Prompt Engineer</strong>. <br> Designed for speed and accuracy with support for over 70 langauges.
   </p>
 
 </section>
@@ -24,14 +23,14 @@
 
 .hero-shell {
 position: relative;
-min-height: 80vh;
+height: calc(70vh + 60px);
 overflow: hidden;
 isolation: isolate;
 }
 
 .main_container {
 width: 100%;
-height: 80vh;
+height: calc(70vh + 60px);
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
@@ -40,7 +39,7 @@ position: absolute;
 
 .overlay {
 width: 100%;
-height: 80vh;
+height: calc(70vh + 60px);
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
@@ -60,8 +59,9 @@ font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
 pointer-events: none;
 background-color: transparent;
 padding-left: 5vw;
-padding-top: 5vh;
-height: 80vh;
+height: calc(70vh + 60px);
+margin-top: 30px;
+margin-bottom: 30px;
 }
 
 .hero-eyebrow {
@@ -144,7 +144,7 @@ line-height: 1.62;
 
 .container {
   width: 100%;
-  background: radial-gradient(circle at 50vw 110vh,yellow 10%, orange 22%,red 40%, #000000 40%,#0B223E );
+  background: radial-gradient(circle at 50vw 85vh,yellow 10%, orange 30%,red 40%, #000000 30%,#0B223E );
   overflow: hidden;
 }
 
