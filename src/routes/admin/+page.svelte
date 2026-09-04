@@ -56,7 +56,6 @@
 	import AlertTriangle from 'lucide-svelte/icons/alert-triangle';
 	import Lock from 'lucide-svelte/icons/lock';
 
-	import BackendRequired from '$lib/admin/BackendRequired.svelte';
 	import AdminDashboardTab from '$lib/admin/tabs/AdminDashboardTab.svelte';
 	import SupportTicketsTab from '$lib/admin/tabs/SupportTicketsTab.svelte';
 	import SafetyAlertsTab from '$lib/admin/tabs/SafetyAlertsTab.svelte';
@@ -69,6 +68,7 @@
 	import UserCreditsTab from '$lib/admin/tabs/UserCreditsTab.svelte';
 	import RecurringPaymentsTab from '$lib/admin/tabs/RecurringPaymentsTab.svelte';
 	import FinanceTab from '$lib/admin/tabs/FinanceTab.svelte';
+	import ChloeBrainTab from '$lib/admin/tabs/ChloeBrainTab.svelte';
 	import PagesTab from '$lib/admin/tabs/PagesTab.svelte';
 	import TemplateControlsTab from '$lib/admin/tabs/TemplateControlsTab.svelte';
 	import CadStudioTab from '$lib/admin/tabs/CadStudioTab.svelte';
@@ -329,11 +329,7 @@
 				</div>
 			{:else if activeTab === 'brain'}
 				<div class="admin-blue-box rounded-xl border border-[#2a4a8c] p-6">
-					<BackendRequired
-						title="Chloe's Brain"
-						entities={['ChloeNeuralPathway', 'ChloeBrainConfig']}
-						note="Chloe's AI behaviour is untouched by this migration — the original tab is a CRUD editor over stored pathway records."
-					/>
+					<ChloeBrainTab />
 				</div>
 			{:else if activeTab === 'owner'}
 				<div class="space-y-6">
