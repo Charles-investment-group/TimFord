@@ -9,23 +9,13 @@
         </div>
 <div class="overlay"></div>
 <section class="hero-content" aria-labelledby="hero-forge-heading">
-  <p class="hero-eyebrow">Proprietary Technology</p>
-  <h1 id="hero-forge-heading">Introducing <span>ForgeEngine</span></h1>
+  <p class="hero-eyebrow">Enhanced AI Technology</p>
+  <h1 id="hero-forge-heading">Introducing <span>Chlo.e</span></h1>
   <p class="hero-summary">
-    ForgeAI's proprietary game engine is built from the ground up to deliver premium games,
-    apps, and interactive experiences without third-party engines or licensing fees.
-    Fully integrated with <strong>Chloe</strong> and all <strong>83 AIs</strong>.
+  Build and scale your business 20x faster! <br>
+  <strong>Chlo.e</strong> is your newest business partner, Agent, <em>and</em> <strong>Prompt Engineer</strong>. <br> Designed for speed and accuracy with support for over 70 langauges.
   </p>
 
-  <div class="about-me" aria-labelledby="about-me-heading">
-    <p class="about-kicker">About Me</p>
-    <h2 id="about-me-heading">Building faster paths from idea to launch.</h2>
-    <p>
-      This platform brings AI strategy, web development, CAD tools, media workflows, and
-      ForgeEngine together so creators and businesses can move from concept to polished
-      digital products with one connected system.
-    </p>
-  </div>
 </section>
 </main>
 
@@ -33,25 +23,23 @@
 
 .hero-shell {
 position: relative;
-min-height: 100vh;
+height: calc(70vh + 60px);
 overflow: hidden;
 isolation: isolate;
 }
 
 .main_container {
 width: 100%;
-height: 100vh;
+height: calc(70vh + 60px);
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
 position: absolute;
-padding-top: 50px;
 }
 
 .overlay {
 width: 100%;
-height: 100vh;
-min-height: 100vh;
+height: calc(70vh + 60px);
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
@@ -66,12 +54,14 @@ inset: 0;
 display: flex;
 flex-direction: column;
 justify-content: center;
-width: min(1120px, calc(100% - 40px));
-margin: 0 auto;
-padding: 118px 0 72px;
 color: #fff;
 font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 pointer-events: none;
+background-color: transparent;
+padding-left: 5vw;
+height: calc(70vh + 60px);
+margin-top: 30px;
+margin-bottom: 30px;
 }
 
 .hero-eyebrow {
@@ -154,7 +144,7 @@ line-height: 1.62;
 
 .container {
   width: 100%;
-  background: radial-gradient(circle at 50vw 110vh,yellow 10%, orange 22%,red 40%, #000000 40%,#0B223E );
+  background: radial-gradient(circle at 50vw 85vh,yellow 10%, orange 30%,red 40%, #000000 30%,#0B223E );
   overflow: hidden;
 }
 
