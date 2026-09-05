@@ -25,7 +25,7 @@
 </h3>
 <ul>
 <li><a class="footer_link" href="#">Templates</a></li>
-<li><a class="footer_link" href="#">Pricing</a></li>
+<li><a class="footer_link" href="#Pricing">Pricing</a></li>
 <li><a class="footer_link" href="#">AI Prompting</a></li>
 <li><a class="footer_link" href="#">Deploy</a></li>
 </ul>
@@ -83,10 +83,11 @@ h3
 }
 .footer_columns
 {
-    display: flex;
+    display: grid;
     gap: 30px;
     max-width: 920px;
     margin: 0 auto;
+    grid-template-columns: auto auto;
 
 }
 .header_logo
@@ -94,7 +95,7 @@ h3
     display: flex;
     flex-shrink: 0;
     align-items: center; 
-    gap: 10px;
+    gap: 6px;
     
 
 
@@ -143,6 +144,7 @@ h3
     justify-content: space-between;
     max-width: 920px;
     margin: 10px auto;
+    flex-wrap:wrap;
 }
 .highlight
 {
