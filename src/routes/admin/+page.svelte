@@ -184,24 +184,28 @@
 		</div>
 	</div>
 
-	<!-- Stats -->
-	<div class="mb-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
-		{#each stats as stat (stat.label)}
-			<div class="h-full">
-				<div
-					class="flex h-full items-center gap-3 rounded-xl border border-[#3a5a9a] bg-[#15295c] p-3.5 sm:gap-4 sm:p-5"
-				>
-					<div class="shrink-0 rounded-xl bg-[#0b1c4a] p-2 sm:p-2.5">
-						<stat.icon class="h-4 w-4 sm:h-5 sm:w-5 {stat.color}" />
-					</div>
-					<div class="min-w-0">
-						<p class="text-xl font-black leading-none text-white sm:text-2xl">{stat.value}</p>
-						<p class="mt-0.5 text-[11px] leading-tight text-slate-400 sm:text-xs">{stat.label}</p>
+	<!-- Stats — Dashboard tab only -->
+	{#if activeTab === 'dashboard'}
+		<div class="mb-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
+			{#each stats as stat (stat.label)}
+				<div class="h-full">
+					<div
+						class="flex h-full items-center gap-3 rounded-xl border border-[#3a5a9a] bg-[#15295c] p-3.5 sm:gap-4 sm:p-5"
+					>
+						<div class="shrink-0 rounded-xl bg-[#0b1c4a] p-2 sm:p-2.5">
+							<stat.icon class="h-4 w-4 sm:h-5 sm:w-5 {stat.color}" />
+						</div>
+						<div class="min-w-0">
+							<p class="text-xl font-black leading-none text-white sm:text-2xl">{stat.value}</p>
+							<p class="mt-0.5 text-[11px] leading-tight text-slate-400 sm:text-xs">
+								{stat.label}
+							</p>
+						</div>
 					</div>
 				</div>
-			</div>
-		{/each}
-	</div>
+			{/each}
+		</div>
+	{/if}
 
 	<!-- Nav dropdown -->
 	<div class="relative mb-6">
