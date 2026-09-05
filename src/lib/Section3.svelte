@@ -125,12 +125,22 @@
 </section>
 
 <style>
-	/* base/grid/glow come from .page-backdrop in src/app.css */
 	.section3 {
+		background:
+			linear-gradient(rgba(74, 144, 255, 0.055) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(74, 144, 255, 0.055) 1px, transparent 1px),
+			radial-gradient(circle at 38% 46%, rgba(54, 162, 255, 0.16), transparent 38%),
+			linear-gradient(180deg, #0b1424 0%, #071121 52%, #0b1424 100%);
+		background-size: 96px 96px, 96px 96px, auto, auto;
 		color: #f8fafc;
 		font-family: 'Inter', 'Segoe UI', sans-serif;
 		/* trimmed on both edges — neighbouring sections supply the rest of the gap */
 		padding: clamp(1.75rem, 3.5vw, 2.5rem) clamp(1rem, 4vw, 1.5rem) clamp(1.75rem, 3.5vw, 2.5rem);
+	}
+
+	.section3.page-backdrop::before,
+	.section3.page-backdrop::after {
+		content: none;
 	}
 
 	.section3 *,
