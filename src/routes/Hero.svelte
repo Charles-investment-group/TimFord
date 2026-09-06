@@ -1,5 +1,5 @@
 <script>
- 
+import ForgeEngine from './ForgeEngine.svelte';
 </script>
 <main class="hero-shell">
   <div class="main_container container">
@@ -10,27 +10,34 @@
 <div class="overlay"></div>
 <section class="hero-content" aria-labelledby="hero-forge-heading">
   <p class="hero-eyebrow">Enhanced AI Technology</p>
-  <h1 id="hero-forge-heading">Introducing <span>Chlo.e</span></h1>
+  <h1 id="hero-forge-heading">Introducing <br><span>Chlo.e</span></h1>
   <p class="hero-summary">
   Build and scale your business 20x faster! <br>
   <strong>Chlo.e</strong> is your newest business partner, Agent, <em>and</em> <strong>Prompt Engineer</strong>. <br> Designed for speed and accuracy with support for over 70 langauges.
   </p>
-
 </section>
+<ForgeEngine />
+
 </main>
 
 <style>
 
+:root {
+--head-height: calc(75vh + 60px);
+--head-shadow: 4px 4px 20px rgba(0,0,0,0.2);
+}
+
 .hero-shell {
 position: relative;
-height: calc(70vh + 60px);
+height: var(--head-height);
 overflow: hidden;
 isolation: isolate;
+height: 100%;
 }
 
 .main_container {
 width: 100%;
-height: calc(70vh + 60px);
+height: var(--head-height);
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
@@ -39,11 +46,12 @@ position: absolute;
 
 .overlay {
 width: 100%;
-height: calc(70vh + 60px);
+height: var(--head-height);
+height: 200%;
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
-background: linear-gradient(rgba(0,0,0,0) 50%, #020919 100%);
+background: linear-gradient(rgba(0,0,0,0) 40%, #020919 98%);
 position: relative;
 }
 
@@ -58,19 +66,19 @@ color: #fff;
 font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 pointer-events: none;
 background-color: transparent;
-padding-left: 5vw;
-height: calc(70vh + 60px);
+padding-left: 0vw;
+height: var(--head-height);
 margin-top: 30px;
-margin-bottom: 30px;
+margin-bottom: 0px;
 }
 
 .hero-eyebrow {
 width: fit-content;
 margin: 0 0 18px;
-border: 1px solid rgba(90, 167, 255, 0.42);
-border-radius: 999px;
-background: rgba(12, 32, 62, 0.54);
-box-shadow: 0 0 28px rgba(68, 158, 255, 0.16);
+border: 0px dotted white;
+border-radius: 10px;
+background: rgba(0,0,0,1);
+box-shadow: -2px 2px 10px rgba(0,0,0,0.2);
 padding: 10px 16px;
 color: #8df4ff;
 font-size: 0.78rem;
@@ -78,6 +86,7 @@ font-weight: 800;
 letter-spacing: 0.14em;
 text-transform: uppercase;
 animation: introFadeUp 720ms ease-out both;
+margin-left: 5vw;
 }
 
 .hero-content h1 {
@@ -89,11 +98,14 @@ font-weight: 900;
 letter-spacing: 0;
 text-wrap: balance;
 animation: introFadeUp 900ms ease-out 90ms both;
+padding-left: 5vw;
+text-shadow: var(--head-shadow);
+
 }
 
 .hero-content h1 span {
 color: #45b8ff;
-text-shadow: 0 0 34px rgba(69, 184, 255, 0.34);
+text-shadow: var(--head-shadow);
 }
 
 .hero-summary {
@@ -103,7 +115,16 @@ color: #e5edf9;
 font-size: clamp(1rem, 2vw, 1.25rem);
 line-height: 1.7;
 animation: introFadeUp 900ms ease-out 180ms both;
+margin-left: 50px;
+text-shadow: var(--head-shadow);
+background: linear-gradient(90deg,rgba(0,0,200,0.2));
+backdrop-filter: blur(30px);
+padding: 30px 30px;
+border-radius: 10px;
+border: 1px dotted white;
+box-shadow: -2px 2px 20px rgba(0,0,0,0.2);
 }
+
 
 .hero-summary strong {
 color: #8df4ff;
@@ -144,14 +165,17 @@ line-height: 1.62;
 
 .container {
   width: 100%;
-  background: radial-gradient(circle at 50vw 85vh,yellow 10%, orange 30%,red 40%, #000000 30%,#0B223E );
+  background: radial-gradient(circle at 23vw 25vh, blue 20%, white 30%, #000000 30%,#0B223E );
   overflow: hidden;
+  height: 110%;
+  z-index: 1;
 }
 
 #stars {
   width: 1px;
   height: 1px;
   background: transparent;
+  z-index: -1;
   box-shadow:
     501px 811px #fff,
     1450px 1324px #fff,
