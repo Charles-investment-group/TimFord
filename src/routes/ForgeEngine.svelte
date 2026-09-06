@@ -95,18 +95,10 @@
 
 <style>
 	.forge-section {
-		position: relative;
-		isolation: isolate;
 		width: 100%;
 		overflow: hidden;
-		background:
-			linear-gradient(rgba(74, 144, 255, 0.055) 1px, transparent 1px),
-			linear-gradient(90deg, rgba(74, 144, 255, 0.055) 1px, transparent 1px),
-			radial-gradient(circle at 48% 24%, rgba(54, 162, 255, 0), transparent 32%),
-			linear-gradient(180deg, #020818 0%, #071121 56%, #0b1424 100%);
-		background-size: 96px 96px, 96px 96px, auto, auto;
 		color: white;
-		padding: 100px 50px;
+		padding: 700px 50px 50px 50px;
 		font-family:
 			Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 		outline: 1px solid transparent;
@@ -221,10 +213,11 @@
 	article {
 		position: relative;
 		overflow: hidden;
-		border: 0px solid rgba(93, 159, 237, 0.28);
+		border: 1px dotted rgba(93, 159, 237, 0.28);
 		border-radius: 10px;
 		backdrop-filter: blur(10px);
 		background: rgba(0,0,0,1);
+		box-shadow: -2px 2px 20px rgba(0,0,0,0.3);
 		transition:
 			transform 260ms ease,
 			border-color 260ms ease,
@@ -244,8 +237,8 @@
 
 	article:hover {
 		transform: translateY(-6px);
-		border-color: rgba(141, 244, 255, 0.55);
-		background: rgba(34, 52, 78, 0.96);
+		border: 1px dotted white;
+		background: rgba(34, 52, 78, 0);
 	}
 
 	article:hover::before {

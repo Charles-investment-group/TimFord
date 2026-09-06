@@ -159,10 +159,10 @@ flex-wrap: nowrap;
 align-items: center;
 justify-content: space-between;
 padding: 0px;
+background: linear-gradient(transparent);
 background: linear-gradient(#0A1628);
-border-bottom: 1px solid black;
-box-shadow: 0px 40px 60px black;
-
+border-bottom: 1px solid #0C1F3A;
+backdrop-filter: blur(0px);
 padding: 10px 20px;
 margin-bottom: 0px;
 gap: 20px;
