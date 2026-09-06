@@ -1,5 +1,5 @@
 <script>
-
+	import { base } from '$app/paths';
 </script>
 <footer>
 <div class='footer_columns'>
@@ -25,7 +25,7 @@
 </h3>
 <ul>
 <li><a class="footer_link" href="#">Templates</a></li>
-<li><a class="footer_link" href="#Pricing">Pricing</a></li>
+<li><a class="footer_link" href={`${base}/#pricing-heading`}>Pricing</a></li>
 <li><a class="footer_link" href="#">AI Prompting</a></li>
 <li><a class="footer_link" href="#">Deploy</a></li>
 </ul>
