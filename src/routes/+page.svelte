@@ -1,24 +1,16 @@
 <script>
     import Header from './Header.svelte';
     import Hero from './Hero.svelte';
-    import Section3 from '$lib/Section3.svelte';
-    import RenderingEngine from '$lib/RenderingEngine.svelte';
-    import CadStudio from '$lib/CadStudio.svelte';
+    import About from './About.svelte';
     import Pricing from './Pricing.svelte';
-    import Footer from './Footer.svelte'
-    
+    import Footer from './Footer.svelte' 
 </script>
-
 
 <main>
     <Header />
     <Hero  />
-    <Section3 />
-    <RenderingEngine />
-    <CadStudio />
+    <About />
     <Pricing />
+    <Footer />
 </main>
 
-<footer>
-	<Footer />
-</footer>
