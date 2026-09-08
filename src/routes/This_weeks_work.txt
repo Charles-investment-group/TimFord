@@ -1,0 +1,47 @@
+Gideon:
+-New About section.
+Apollo:
+-Footer.
+Alan:
+-Pricing Page.
+Captain_Marvel:
+-Deployment.
+Junaid:
+-Pricing Section.
+
+Team:
+-Message me for details.
+
+New pricing tiers:
+-Apprentice $0,
+-no consultations
+-no support tickets
+Architect $39,
+-1 free consultations
+-1 free support ticket
+-full site access
+Studio $79,
+-2 monthly consultations
+-2 monthly support tickets
+-full site access
+-custom prompts from chloe
+Colossus $249
+-unlimited consultations
+-unlimited support tickets
+-full site access
+-custom prompts from chloe
+-postgres database
+Corporations $999 monthly:
+-full professional team of programmers,
+-full website frontend and backend
+-unlimited consultations
+-unlimited support tickets
+-postgres database
+-user login
+-admin panel
+
+
+
+
+
+
