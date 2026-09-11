@@ -1,4 +1,6 @@
 <script>
+	import { fade } from 'svelte/transition';
+
 	let selectedBilling = $state('monthly');
 
 	// Long plans run to 22 features, which made the section enormous. Collapse to a
@@ -29,7 +31,7 @@
 		return Number(value.replace(/[^0-9.]/g, ''));
 	}
 
-	const plans = [
+	const legacyPlans = [
 		{
 			name: 'Apprentice',
 			tagline: 'Free Forever',
@@ -289,6 +291,116 @@
 		}
 	];
 
+	const plans = [
+		{
+			name: 'Apprentice',
+			tagline: 'Free Forever',
+			monthlyPrice: '$0',
+			oneTimePrice: '$0',
+			annualPrice: '$0',
+			description: 'Explore the platform at no cost.',
+			chipRows: [],
+			features: [],
+			unavailableFeatures: [
+				'Consultations',
+				'Support tickets',
+				'Full site access',
+				'Custom prompts from Chloe',
+				'Postgres database',
+				'User login',
+				'Admin panel'
+			],
+			cta: 'Start Free'
+		},
+		{
+			name: 'Architect',
+			tagline: 'For Independent Builders',
+			monthlyPrice: '$39',
+			oneTimePrice: '$49',
+			annualPrice: '$374',
+			description: 'Everything you need to build with direct help when it counts.',
+			chipRows: [],
+			features: ['1 free consultation', '1 free support ticket', 'Full site access'],
+			unavailableFeatures: [
+				'Custom prompts from Chloe',
+				'Postgres database',
+				'User login',
+				'Admin panel'
+			],
+			cta: 'Choose Architect'
+		},
+		{
+			name: 'Studio',
+			tagline: 'For Growing Teams',
+			monthlyPrice: '$79',
+			oneTimePrice: '$99',
+			annualPrice: '$758',
+			description: 'More expert support and tailored guidance for your work.',
+			chipRows: [],
+			features: [
+				'2 monthly consultations',
+				'2 monthly support tickets',
+				'Full site access',
+				'Custom prompts from Chloe'
+			],
+			unavailableFeatures: ['Postgres database', 'User login', 'Admin panel'],
+			highlighted: true,
+			badge: 'Most Popular',
+			badgeTone: 'blue',
+			cta: 'Choose Studio'
+		},
+		{
+			name: 'Colossus',
+			tagline: 'For High-Output Teams',
+			monthlyPrice: '$249',
+			oneTimePrice: '$311',
+			annualPrice: '$2,390',
+			description: 'Unlimited access and dedicated infrastructure for serious scale.',
+			chipRows: [],
+			features: [
+				'Unlimited consultations',
+				'Unlimited support tickets',
+				'Full site access',
+				'Custom prompts from Chloe',
+				'Postgres database'
+			],
+			unavailableFeatures: [
+				'Full professional team of programmers',
+				'Full website frontend and backend',
+				'User login',
+				'Admin panel'
+			],
+			tone: 'dark',
+			cta: 'Choose Colossus'
+		},
+		{
+			name: 'Corporations',
+			tagline: 'Complete Professional Delivery',
+			monthlyPrice: '$999',
+			oneTimePrice: '$1,249',
+			annualPrice: '$9,590',
+			description: 'A complete development team and production-ready platform.',
+			chipRows: [],
+			features: [
+				'Full professional team of programmers',
+				'Full website frontend and backend',
+				'Unlimited consultations',
+				'Unlimited support tickets',
+				'Postgres database',
+				'User login',
+				'Admin panel'
+			],
+			unavailableFeatures: [],
+			badge: 'Enterprise',
+			tone: 'dark',
+			cta: 'Talk to Our Team'
+		}
+	];
+
+	function formatCurrency(value) {
+		return `$${Math.floor(value).toLocaleString('en-US')}`;
+	}
+
 	const displayPlans = $derived(
 		plans.map((plan) => {
 			const annualSavings = getPriceValue(plan.monthlyPrice) * 12 - getPriceValue(plan.annualPrice);
@@ -311,7 +423,7 @@
 					selectedBilling === 'one-time' && plan.oneTimePrice !== '$0'
 						? 'One-time payment • 1 month of credits'
 						: selectedBilling === 'annual' && plan.annualPrice !== '$0'
-							? `Billed once • saves $${annualSavings}/yr vs monthly`
+							? `Billed once • saves ${formatCurrency(annualSavings)}/yr vs monthly`
 							: ''
 			};
 		})
@@ -332,7 +444,13 @@
 				for a month of credits, go monthly recurring, or save 20% with annual billing.
 			</p>
 
-			<div class="billing-toggle" role="tablist" aria-label="Billing period">
+			<div
+				class="billing-toggle"
+				style={`--active-index: ${billingOptions.findIndex((option) => option.value === selectedBilling)}`}
+				role="tablist"
+				aria-label="Billing period"
+			>
+				<span class="billing-indicator" aria-hidden="true"></span>
 				{#each billingOptions as option}
 					<button
 						type="button"
@@ -350,9 +468,15 @@
 			<p class="billing-message">{billingMessages[selectedBilling]}</p>
 		</div>
 
-		<div class="plan-grid">
-			{#each displayPlans as plan}
-				<article class:dark={plan.tone === 'dark'} class:highlighted={plan.highlighted} class="plan-card">
+		{#key selectedBilling}
+			<div class="plan-grid">
+				{#each displayPlans as plan, index (plan.name)}
+					<article
+						in:fade={{ duration: 220, delay: index * 35 }}
+						class:dark={plan.tone === 'dark'}
+						class:highlighted={plan.highlighted}
+						class="plan-card"
+					>
 					{#if plan.badge}
 						<span class:badge-blue={plan.badgeTone === 'blue'} class="plan-badge">{plan.badge}</span>
 					{/if}
@@ -372,20 +496,25 @@
 						<p class="description">{plan.description}</p>
 					</div>
 
-					<div class="chip-stack" aria-label={`${plan.name} quick highlights`}>
-						{#each plan.chipRows as row}
-							<div class:single-chip={row.length === 1} class="chip-row">
-								{#each row as chip}
-									<span class:accent={chip.accent} class="chip">{chip.label}</span>
-								{/each}
-							</div>
-						{/each}
-					</div>
+					{#if plan.chipRows.length}
+						<div class="chip-stack" aria-label={`${plan.name} quick highlights`}>
+							{#each plan.chipRows as row}
+								<div class:single-chip={row.length === 1} class="chip-row">
+									{#each row as chip}
+										<span class:accent={chip.accent} class="chip">{chip.label}</span>
+									{/each}
+								</div>
+							{/each}
+						</div>
+					{/if}
 
 					<div class="plan-body">
 						<ul class="feature-list">
 							{#each expandedPlans[plan.name] ? plan.features : plan.features.slice(0, VISIBLE_FEATURES) as feature}
 								<li>{feature}</li>
+							{/each}
+							{#each plan.unavailableFeatures as feature}
+								<li class="unavailable">{feature}</li>
 							{/each}
 						</ul>
 
@@ -406,17 +535,24 @@
 						{/if}
 					</div>
 
-					<button type="button" class="plan-cta">{plan.cta}</button>
-				</article>
-			{/each}
-		</div>
+						<button
+							type="button"
+							class:subtle-emphasis={plan.name === 'Apprentice' || plan.name === 'Architect'}
+							class="plan-cta"
+						>
+							{plan.cta}
+						</button>
+					</article>
+				{/each}
+			</div>
+		{/key}
 	</div>
 </section>
 
 <style>
 	.pricing-section {
 		width: 100%;
-		padding: clamp(2.5rem, 5vw, 3.5rem) clamp(1rem, 4vw, 1.5rem) clamp(3rem, 5vw, 4rem);
+		padding: clamp(2.5rem, 5vw, 3.5rem) clamp(1.5rem, 5vw, 3rem) clamp(3rem, 5vw, 4rem);
 		background:
 			radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.08), transparent 30%),
 			linear-gradient(180deg, #ffffff 0%, #f4f7fc 100%);
@@ -433,7 +569,7 @@
 	}
 
 	.container {
-		width: min(1040px, 100%);
+		width: min(1340px, 100%);
 		margin: 0 auto;
 	}
 
@@ -486,9 +622,26 @@
 		border-radius: 1rem;
 		background: #ffffff;
 		box-shadow: 0 12px 35px -24px rgba(15, 23, 42, 0.35);
+		position: relative;
+		isolation: isolate;
+	}
+
+	.billing-indicator {
+		position: absolute;
+		top: 0.28rem;
+		bottom: 0.28rem;
+		left: 0.28rem;
+		width: calc((100% - 1.16rem) / 3);
+		border-radius: 0.75rem;
+		background: #2563eb;
+		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+		transform: translateX(calc(var(--active-index) * (100% + 0.3rem)));
+		transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
 	}
 
 	.billing-toggle button {
+		position: relative;
+		z-index: 1;
 		appearance: none;
 		border: 0;
 		border-radius: 0.75rem;
@@ -501,6 +654,7 @@
 		flex-direction: column;
 		align-items: center;
 		gap: 0.1rem;
+		transition: color 180ms ease;
 	}
 
 	.billing-toggle button span {
@@ -515,9 +669,7 @@
 	}
 
 	.billing-toggle button.active {
-		background: #2563eb;
 		color: #ffffff;
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
 	}
 
 	.billing-toggle button.active small {
@@ -526,7 +678,7 @@
 
 	.plan-grid {
 		display: grid;
-		grid-template-columns: repeat(4, minmax(0, 1fr));
+		grid-template-columns: repeat(5, minmax(0, 1fr));
 		/* no grid-auto-rows: cards match within a row, rows size to their own content */
 		gap: 0.75rem;
 		align-items: stretch;
@@ -535,6 +687,7 @@
 	.plan-card {
 		position: relative;
 		min-width: 0;
+		min-height: 26rem;
 		height: 100%;
 		display: flex;
 		flex-direction: column;
@@ -766,8 +919,32 @@
 		font-weight: 800;
 	}
 
+	.feature-list li.unavailable {
+		color: #94a3b8;
+	}
+
+	.feature-list li.unavailable::before {
+		content: '×';
+		color: #dc2626;
+	}
+
 	.plan-card.dark .feature-list li::before {
 		color: #38bdf8;
+	}
+
+	.plan-card.dark .feature-list li.unavailable {
+		color: rgba(148, 163, 184, 0.92);
+	}
+
+	.plan-card.dark .feature-list li.unavailable::before {
+		color: #f87171;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.billing-indicator,
+		.billing-toggle button {
+			transition: none;
+		}
 	}
 
 	.plan-cta {
@@ -789,6 +966,11 @@
 			border-color 0.2s ease,
 			box-shadow 0.2s ease,
 			color 0.2s ease;
+	}
+
+	.plan-cta.subtle-emphasis {
+		border-color: #94a3b8;
+		box-shadow: 0 10px 24px -20px rgba(15, 23, 42, 0.65);
 	}
 
 	.plan-card.highlighted .plan-cta {
