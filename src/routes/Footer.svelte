@@ -3,9 +3,9 @@
 </script>
 <footer>
 <div class='footer_columns'>
-<div class='footer-logo'>
+<div class='footer_logo'>
 <div class='header_logo'>
-<div class='logo-color'>
+<div class='logo'>
  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
  <path d="M13 2L4.09344 12.6879C3.74463 13.1064 3.57023 13.3157 3.56756 13.4925C3.56524 13.6461 3.63372 13.7923 3.75324 13.8889C3.89073 14 4.16316 14 4.70802 14H12L11 22L19.9065 11.3121C20.2553 10.8936 20.4297 10.6843 20.4324 10.5075C20.4347 10.3539 20.3663 10.2077 20.2467 10.1111C20.1092 10 19.8368 10 19.292 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
  </svg>
@@ -74,21 +74,23 @@
 footer
 {
    
-    background-color: rgb(255, 255, 255);
-    padding: 5px;
+    background-color:white;
+    padding: 7px;
 }
 h3
 {
     font-weight: bold;
 }
+@media (min-width:600px) {
 .footer_columns
 {
     display: grid;
     gap: 30px;
     max-width: 920px;
     margin: 0 auto;
-    grid-template-columns: auto auto;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
 
+}
 }
 .header_logo
 {
@@ -100,33 +102,39 @@ h3
 
 
 }
-.logo-color
+
+.logo
 {
     background-color: rgb(36, 99, 235);
-    border-radius: 9px;
-    padding: 8px;
-    vertical-align: middle;
+    border-radius: 8px;
+    padding: 6px;
     color: white;
 }
 .footer_links
 {
     display: flex;
-    flex-direction: column;
-    flex: 1;
-    
-    
+    flex-direction: column;   
 }
-.footer-logo
-{
-    flex: 2;
-}
+
 .footer_link
 {
-
     font-size: 15px;
     font-family: Inter;
     text-decoration: none;
     color: grey; 
+}
+.footer_link:hover {
+    color:darkblue;
+    text-decoration: underline;
+    
+}
+.footer_link:focus
+{
+    color: black;
+}
+.footer_link:active
+{
+    color: green;
 }
 .summary
 {
@@ -139,13 +147,14 @@ h3
 
 .copyright
 {
-    border-top: 1px solid black;
+    border-top: 2px solid black;
     display:flex;
     justify-content: space-between;
     max-width: 920px;
     margin: 10px auto;
     flex-wrap:wrap;
 }
+
 .highlight
 {
     color: rgb(36, 99, 235)
