@@ -60,7 +60,7 @@ window.removeEventListener('scroll', handleScroll);
 <a class="header_link" href="./workshop">Workshop</a>
 <a class="header_link" href="#">CAD Studio</a>
 <a class="header_link" href="#">Media Studio</a>
-<a class="header_link" href="#">Pricing</a>
+<a class="header_link" href="./pricing">Pricing</a>
 <a class="header_link" href="#">Hosting</a>
 <div class="logo_middle">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2rem" height="2rem" viewBox="0 0 512 512">
