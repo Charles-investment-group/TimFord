@@ -10,7 +10,7 @@ const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
 export async function load() {
   const { data } = await supabase.from("countries").select();
   
-  return { aiResponse: null 
+  return { aiResponse: null,
            countries: data ?? [],
 };
 }
