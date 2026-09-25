@@ -2,12 +2,6 @@ import { GoogleGenAI } from "@google/genai";
 import { GEMINI_API_KEY } from "$env/static/private";
 import { supabase } from "$lib/supabaseClient";
 
-export async function load() {
-  const { data } = await supabase.from("countries").select();
-  return {
-    countries: data ?? [],
-  };
-}
 
 export const prerender = false; 
 
@@ -41,7 +35,11 @@ export const actions = {
       return {
         aiResponse: `Failed to generate AI response. ${error.message || ""}`
       };
-    }
-  }
-};
+    } export async function load() {
+  const { data } = await supabase.from("countries").select();
+  return {
+    countries: data ?? [],
+  };
+}
+
 
