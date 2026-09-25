@@ -4,10 +4,7 @@
     import About from './About.svelte';
     import Pricing from './Pricing.svelte';
     import Footer from './Footer.svelte' 
-</script>
-
-<script>
-  export let data;
+    export let data;
 </script>
 
 <ul>
