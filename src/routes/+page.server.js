@@ -8,6 +8,10 @@ export const prerender = false;
 const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
 
 export async function load() {
+  const { data } = await supabase.from("countries").select();
+  return {
+    countries: data ?? [],
+  };
   return { aiResponse: null };
 }
 
@@ -35,11 +39,4 @@ export const actions = {
       return {
         aiResponse: `Failed to generate AI response. ${error.message || ""}`
       };
-    } export async function load() {
-  const { data } = await supabase.from("countries").select();
-  return {
-    countries: data ?? [],
-  };
-}
-
-
+    } 
