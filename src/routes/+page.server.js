@@ -41,3 +41,5 @@ export const actions = {
         aiResponse: `Failed to generate AI response. ${error.message || ""}`
       };
     } 
+  }
+ };
