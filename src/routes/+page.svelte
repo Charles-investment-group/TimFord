@@ -7,6 +7,7 @@
     export let data;
 </script>
 
+{#if data?.countries?.length}
 <ul>
   {#each data.countries as country}
     <li>{country.name}</li>
