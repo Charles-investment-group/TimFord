@@ -12,7 +12,7 @@ export async function load() {
   
   return { aiResponse: null,
            countries: data ?? [],
-};
+ };
 }
 
 
