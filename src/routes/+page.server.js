@@ -27,7 +27,7 @@ export const actions = {
 
     try {
       const response = await ai.interactions.create({
-        model: "gemini-2.5-flash",
+        model: "gemini-3.6-flash",
         input: userPrompt,
       });
 
