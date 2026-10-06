@@ -2,6 +2,7 @@
   "name": "timford",
   "private": true,
   "version": "1.0.0",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "vite preview --host 0.0.0.0",
@@ -11,8 +12,6 @@
     "prepare": "svelte-kit sync || echo ''"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "^7.0.1",
-    "@sveltejs/adapter-static": "^3.0.10",
     "@sveltejs/adapter-vercel": "^6.3.4",
     "@sveltejs/kit": "^2.63.0",
     "@sveltejs/vite-plugin-svelte": "^7.1.2",
@@ -25,6 +24,7 @@
   },
   "dependencies": {
     "@google/genai": "^2.17.1",
+    "@supabase/supabase-js": "^2.117.2",
     "date-fns": "^3.6.0",
     "esbuild": "^0.28.2",
     "express": "^4.19.2",
