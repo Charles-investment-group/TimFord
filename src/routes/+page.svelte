@@ -1,4 +1,5 @@
 <script>
+    
     import Header from './Header.svelte';
     import Hero from './Hero.svelte';
     import About from './About.svelte';
@@ -13,6 +14,7 @@
     <li>{country.name}</li>
   {/each}
 </ul>
+{/if}
 
 <main>
     <Header />

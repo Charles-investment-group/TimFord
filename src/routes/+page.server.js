@@ -1,6 +1,6 @@
 import { GoogleGenAI } from "@google/genai";
 import { GEMINI_API_KEY } from "$env/static/private";
-import { supabase } from "$lib/supabaseClient";
+import { supabase } from "#lib/supabaseClient.js";
 
 
 export const prerender = false; 
