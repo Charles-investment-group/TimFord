@@ -1,0 +1,230 @@
+If you have questions please message me on Discord,
+lets get back on the grind - ranger.
+
+Gideon:
+  Node.js server deployment on Vercel.
+  Then connect our svelte frontend on github to the Node.js backend on vercel.
+
+Apollo:
+  Remake footer to match the Mockup in the discord.
+  I also added the Mockup to the repo. Just look in the Mockups folder in this project.
+
+Alan: make an About page for the AI workshop.
+put it under the hero section.
+
+
+Captain Marvel: Make the grid layout for the AI Workshop page.
+Delete how the code is and remake it with a grid layout.
+
+Prompts for AI workshop page:
+
+These need to be converted to JSON. 
+format: 
+	id:     '',
+	name:   '',
+	label:  '',
+	slug:   '',
+	prompt: ''
+
+We could also use slugs for the pages if we need.
+Which is most likely the best way to do it.
+
+Homepage Hero Section Prompt: Write a catchy headline, subheadline, and primary call-to-action for a specific niche.
+
+"About Us" Story Prompt: Turn raw bullet points about a founder’s journey into an engaging, emotional brand story.
+
+Product/Service Description Prompt: Convert technical features into benefit-driven bullet points that sell.
+
+FAQ Section Generator Prompt: Anticipate and answer top customer objections and questions for a specific product.
+
+PPC Landing Page Copy Prompt: Write high-converting, single-focus sales copy matched to a paid ad campaign.
+
+Footer & Microcopy Prompt: Generate snappy microcopy for buttons, error messages, form labels, and navigation.
+
+Meta Title & Description Prompt: Write CTR-optimized titles and descriptions targeting a specific primary keyword.
+
+Blog Outline Generator Prompt: Create a comprehensive, SEO-friendly H2/H3 outline for an authoritative article.
+
+Pillar Article Drafting Prompt: Turn an outline into a long-form, expert-level blog post or guide.
+
+Image Alt Text Generator Prompt: Write concise, descriptive, and keyword-friendly alt text for web images.
+
+Internal Linking Anchor Text Prompt: Analyze a topic and suggest natural anchor text phrases for cross-linking.
+
+Local SEO Business Bio Prompt: Write a localized Google Business Profile description highlighting local service areas.
+
+Value Proposition / Elevator Pitch Prompt: Boil a business model down into a 15-second hook.
+
+Brand Voice Guidelines Prompt: Create a custom style guide (tone, vocabulary, rules) based on brand personality traits.
+
+Tagline & Slogan Generator Prompt: Brainstorm catchy, memorable slogans based on core business benefits.
+
+Target Audience Persona Prompt: Generate detailed demographic and psychodynamic profiles for an ideal customer.
+
+Press Release Prompt: Format a company milestone or product launch into a standard media-ready press release.
+
+Social Media Bio Prompt: Write punchy, character-limited bios optimized for Instagram, LinkedIn, X, or TikTok.
+
+Pricing Page Tier Copy Prompt: Write psychological, feature-contrasting copy for tiers (e.g., Starter, Pro, Enterprise).
+
+Email Welcome Sequence Prompt: Write a multi-part automated onboarding email series for new subscribers.
+
+Cold Outreach Email Prompt: Draft personalized, high-response B2B cold emails or LinkedIn DMs.
+
+Case Study / Success Story Prompt: Turn raw client metrics and feedback into a Problem-Solution-Result narrative.
+
+Testimonial Request Email Prompt: Write friendly templates asking happy customers for reviews and social proof.
+
+Cart Abandonment Email Prompt: Craft persuasive, urgency-driven copy to win back customers who left items in their cart.
+
+Business Plan Executive Summary Prompt: Summarize a business concept, market opportunity, and financial overview.
+
+Business Model Canvas Prompt: Textually map out revenue streams, channels, key partners, and cost structures.
+
+Competitor SWOT Analysis Prompt: Generate a structured strengths, weaknesses, opportunities, and threats breakdown.
+
+Operations & Logistics SOP Prompt: Write a step-by-step Standard Operating Procedure for a routine task.
+
+Financial Projections Narrative Prompt: Write the explanatory prose accompanying financial forecasts or cash flow models.
+
+Risk Mitigation Strategy Prompt: Identify potential business risks and write strategic contingencies for them.
+
+Terms of Service Draft Prompt: Generate a custom website ToS template based on specific business operations (e.g., e-commerce vs. SaaS).
+
+Privacy Policy Text Prompt: Outline data collection, cookie usage, and GDPR/CCPA compliance clauses.
+
+Refund & Return Policy Prompt: Write clear, customer-friendly parameters for product returns and cancellations.
+
+Service Level Agreement (SLA) Prompt: Define uptime commitments, support response windows, and performance metrics.
+
+Disclaimer/Liability Notice Prompt: Draft legal disclaimers for financial, wellness, or professional advice websites.
+
+Intellectual Property Notice Prompt: Write copyright, trademark, and fair-use attribution notices.
+
+Employee Handbook Prompt: Draft foundational company policies, remote-work guidelines, and code of conduct rules.
+
+Job Description (JD) Prompt: Write an inclusive, attractive job posting designed to pull top talent.
+
+New Hire Onboarding Guide Prompt: Create a step-by-step training manual and checklist for new employees.
+
+Internal SOP Generator Prompt: Standardize team workflows into clear, repeatable text documents.
+
+Performance Review Template Prompt: Create constructive evaluation rubrics and manager feedback scripts.
+
+Internal Team Newsletter Prompt: Write a monthly or weekly update keeping team members aligned on company wins and goals.
+
+Knowledge Base Article Prompt: Write a clear, step-by-step troubleshooting guide or tutorial for users.
+
+Support Ticket Macro Prompts: Create empathetic, pre-written response templates for common customer complaints.
+
+Product Tooltip / Microcopy Prompt: Write bite-sized in-app guidance messages to help users navigate software.
+
+Customer Exit Survey Prompt: Draft thoughtful cancellation or churn survey questions to gather exit feedback.
+
+Pitch Deck Script Prompt: Write persuasive speaker notes and slide copy for an investor pitch presentation.
+
+Investor Update Report Prompt: Draft a periodic performance update detailing growth metrics and runway for stakeholders.
+
+Partnership Proposal Prompt: Write a professional B2B outreach letter proposing a strategic alliance or joint venture.
+
+Founders' Vision Statement Prompt: Articulate a long-term company manifesto and industry-changing mission.
+
+Influencer Outreach Email Prompt: Write a personalized pitch letter to collaborate with social media influencers or creators.
+
+Affiliate Program Guidelines Prompt: Draft the terms, commission structures, and rules for recruiting brand affiliates.
+
+Webinar Script & Slide Copy Prompt: Write an engaging script and presentation text for an educational or sales webinar.
+
+Podcast Interview Pitch Prompt: Draft a compelling pitch to get a founder booked as a guest on industry podcasts.
+
+Podcast Show Notes & Summary Prompt: Turn an audio transcript into structured show notes, timestamps, and key takeaways.
+
+Community Discord/Slack Channel Rules Prompt: Write welcoming guidelines and moderation rules for a customer community.
+
+Virtual Event Landing Page Prompt: Write registration copy, speaker bios, and agendas for an online conference or workshop.
+
+Live-Streaming / Q&A Script Prompt: Outline a script and discussion prompts for a live Q&A session with customers.
+
+Giveaway / Contest Rules Prompt: Draft official terms, eligibility criteria, and promotional copy for a social media giveaway.
+
+Crowdfunding Campaign Pitch Prompt: Write a compelling narrative, reward tier descriptions, and updates for Kickstarter or Indiegogo.
+
+Beta Tester Invitation & Onboarding Prompt: Write exclusive invite copy and feedback instructions for early software testers.
+
+Product Feature Request Response Prompt: Draft polite, professional replies acknowledging user feature suggestions and roadmap realities.
+
+Release Notes / Changelog Prompt: Turn technical software updates into engaging, user-friendly feature highlights.
+
+Customer Appreciation Thank-You Note Prompt: Write heartfelt, personalized messages or holiday cards for VIP clients.
+
+VIP Loyalty Program Rules Prompt: Draft copy explaining tier benefits, point collection, and rewards for a customer loyalty program.
+
+Re-engagement / "We Miss You" Email Prompt: Craft a win-back campaign for dormant subscribers or inactive app users.
+
+Upsell / Cross-sell Email Prompt: Write strategic post-purchase recommendations to encourage higher customer lifetime value (LTV).
+
+Subscription Renewal Reminder Prompt: Draft friendly, urgency-based copy reminding users their annual or monthly plan is renewing.
+
+Payment Failure Notification Prompt: Write a tactful, secure email sequence alerting customers of a declined credit card.
+
+Account Deletion Confirmation Prompt: Draft compassionate farewell copy and a quick exit feedback prompt when a user closes their account.
+
+Company Milestone Celebration Post Prompt: Write an engaging internal or external announcement for hitting a major business revenue or user milestone.
+
+Crisis Management Statement Prompt: Draft a professional, measured holding statement or public apology for PR emergencies.
+
+Brand Partnership / Co-Marketing Pitch Prompt: Write a collaboration proposal for a non-competing brand targeting the same audience.
+
+Guest Blogging Pitch Prompt: Draft an outreach email proposing high-value guest article topics to industry blogs.
+
+Interactive Quiz / Diagnostic Tool Copy Prompt: Write questions, result logic, and lead-capture copy for a marketing quiz.
+
+SMS Marketing Text Broadcast Prompt: Write high-conversion, character-limited promotional texts for mobile marketing.
+
+Push Notification Copy Prompt: Draft snappy, punchy app notification hooks to drive daily active engagement.
+
+Direct Mail Marketing Letter Prompt: Write a traditional physical sales letter or direct mail postcard copy.
+
+Sales Objection Handling Script Prompt: Create a reference sheet of word-for-word rebuttals for common sales call objections.
+
+Sales Discovery Call Agenda & Questions Prompt: Draft a structured questionnaire for qualifying inbound sales leads.
+
+B2B Proposal / Statement of Work (SOW) Prompt: Write the project scope, deliverables, and timeline text for a client proposal.
+
+Client Offboarding & Handover Document Prompt: Draft a final delivery checklist and project summary text for completed client work.
+
+Contractor / Freelancer Agreement Prompt: Outline standard expectations, deliverables, and payment terms for external talent.
+
+Non-Disclosure Agreement (NDA) Summary Prompt: Draft plain-English explanations or clauses for protecting sensitive business data.
+
+Board of Directors Meeting Agenda Prompt: Organize topics, voting items, and discussion points for formal corporate meetings.
+
+Board Meeting Minutes Template Prompt: Create structured text templates to record official corporate decisions and meeting resolutions.
+
+Shareholder Annual Report Letter Prompt: Write the CEO’s opening address summarizing yearly performance for company stakeholders.
+
+Grant Application Narrative Prompt: Draft persuasive impact statements and project proposals for government or foundation grants.
+
+CSR (Corporate Social Responsibility) Statement Prompt: Articulate a company’s environmental, social, and charitable giving commitments.
+
+Diversity, Equity, and Inclusion (DEI) Policy Prompt: Draft clear organizational commitments and hiring frameworks for workplace inclusivity.
+
+Cybersecurity & Data Safety Policy Prompt: Write internal rules regarding password management, phishing prevention, and data handling.
+
+Remote Work Policy Document Prompt: Draft guidelines covering home office stipends, core working hours, and communication standards.
+
+Employee Exit Interview Questionnaire Prompt: Write structured, constructive questions for departing team members.
+
+Employee Recognition / Shout-Out Announcement Prompt: Draft peer-to-peer appreciation templates for company Slack channels or meetings.
+
+Team Retrospective Meeting Prompt: Write reflection questions (What went well? What didn't?) for sprint or quarterly reviews.
+
+Job Offer Letter Prompt: Draft an exciting, professional employment offer including salary, benefits, and start date terms.
+
+Rejection Letter for Applicants Prompt: Write a kind, empathetic automated message for unsuccessful job candidates.
+
+Internal IT Helpdesk Request Macro Prompt: Draft troubleshooting instructions for common internal hardware or software tickets.
+
+Supplier / Vendor Evaluation Criteria Prompt: Write a scoring rubric and assessment text for vetting new supply chain partners.
+
+Company Wiki / Knowledge Base Home Prompt: Write welcoming orientation text and directory structures for internal company intranets.
