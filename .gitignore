@@ -13,8 +13,6 @@ node_modules
 Thumbs.db
 
 # Env
-.env
-.env.*
 !.env.example
 !.env.test
 
@@ -24,3 +22,4 @@ vite.config.ts.timestamp-*
 branch_structure.json
 temp_auto_push.bat
 temp_interactive_push.bat
+config.bat
