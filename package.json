@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "vite preview --host 0.0.0.0",
-    "dev": "vite dev",
-    "build": "vite build",
+    "start": "node api.js && vite preview --host 0.0.0.0",
+    "dev": "node api.js && vite dev",
+    "build": "node api.js && vite build",
     "preview": "vite preview",
     "prepare": "svelte-kit sync || echo ''"
   },
@@ -39,5 +39,5 @@
   "imports": {
     "#lib": "./src/lib/index.js",
     "#lib/*": "./src/lib/*"
-    }
+  }
 }
