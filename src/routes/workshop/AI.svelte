@@ -3,608 +3,805 @@
 
   const aiOptions = [
       {
-         id:     '',
+         id:     'Homepage Hero Section',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-     Homepage Hero Section Prompt: Write a catchy headline, subheadline, and primary call-to-action for a specific niche.
-        id:     '',
-        name:   '',
-        label:  '',
-        slug:   '',
-        prompt: ''
+        prompt: ' Write a catchy headline, subheadline, and primary call-to-action for a specific niche.'
+},
 
-"About Us" Story Prompt: Turn raw bullet points about a founder’s journey into an engaging, emotional brand story.
-        id:     '',
+       {
+         id:     '"About Us" Story',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
+        prompt: 'Turn raw bullet points about a founder’s journey into an engaging, emotional brand story.'
+},
 
-Product/Service Description Prompt: Convert technical features into benefit-driven bullet points that sell.
-        id:     '',
+        {
+         id:     'Product/Service Description',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-FAQ Section Generator Prompt: Anticipate and answer top customer objections and questions for a specific product.
-        id:     '',
+        prompt: ' Convert technical features into benefit-driven bullet points that sell.'
+},
+
+       {
+         id:     'FAQ Section Generator',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-PPC Landing Page Copy Prompt: Write high-converting, single-focus sales copy matched to a paid ad campaign.
-        id:     '',
+        prompt: ' Anticipate and answer top customer objections and questions for a specific product.'
+},
+
+     {
+         id:     'PPC Landing Page Copy',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Footer & Microcopy Prompt: Generate snappy microcopy for buttons, error messages, form labels, and navigation.
-        id:     '',
+        prompt: 'Write high-converting, single-focus sales copy matched to a paid ad campaign.'
+},
+ 
+       {
+         id:     'Footer & Microcopy',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Meta Title & Description Prompt: Write CTR-optimized titles and descriptions targeting a specific primary keyword.
-        id:     '',
+        prompt: 'Generate snappy microcopy for buttons, error messages, form labels, and navigation.'
+},
+
+       {
+         id:     'Meta Title & Description',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Blog Outline Generator Prompt: Create a comprehensive, SEO-friendly H2/H3 outline for an authoritative article.
-        id:     '',
+        prompt: 'Write CTR-optimized titles and descriptions targeting a specific primary keyword.'
+},
+ 
+       {
+         id:     'Blog Outline Generator',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Pillar Article Drafting Prompt: Turn an outline into a long-form, expert-level blog post or guide.
-        id:     '',
+        prompt: 'Create a comprehensive, SEO-friendly H2/H3 outline for an authoritative article.'
+},
+ 
+       {
+         id:     'Pillar Article Drafting',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Image Alt Text Generator Prompt: Write concise, descriptive, and keyword-friendly alt text for web images.
-        id:     '',
+        prompt: 'Turn an outline into a long-form, expert-level blog post or guide.'
+},
+ 
+      {
+         id:     'Image Alt Text Generator Prompt:',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Internal Linking Anchor Text Prompt: Analyze a topic and suggest natural anchor text phrases for cross-linking.
-        id:     '',
+        prompt: ' Write concise, descriptive, and keyword-friendly alt text for web images.'
+},
+
+      {
+         id:     'Internal Linking Anchor Text',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Local SEO Business Bio Prompt: Write a localized Google Business Profile description highlighting local service areas.
-        id:     '',
+        prompt: 'Analyze a topic and suggest natural anchor text phrases for cross-linking.'
+},
+ 
+      {
+         id:     'Local SEO Business Bio',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Value Proposition / Elevator Pitch Prompt: Boil a business model down into a 15-second hook.
-        id:     '',
+        prompt: ' Write a localized Google Business Profile description highlighting local service areas.'
+},
+
+       {
+         id:     'Value Proposition / Elevator Pitch',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Brand Voice Guidelines Prompt: Create a custom style guide (tone, vocabulary, rules) based on brand personality traits.
-        id:     '',
+        prompt: 'Boil a business model down into a 15-second hook.'
+},
+
+        {
+         id:     'Brand Voice Guidelines',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Tagline & Slogan Generator Prompt: Brainstorm catchy, memorable slogans based on core business benefits.
-        id:     '',
+        prompt: 'Create a custom style guide (tone, vocabulary, rules) based on brand personality traits.'
+},
+ 
+       {
+         id:     'Tagline & Slogan Generator',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Target Audience Persona Prompt: Generate detailed demographic and psychodynamic profiles for an ideal customer.
-        id:     '',
+        prompt: 'Brainstorm catchy, memorable slogans based on core business benefits.'
+},
+
+       {
+         id:     'Target Audience Persona',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Press Release Prompt: Format a company milestone or product launch into a standard media-ready press release.
-        id:     '',
+        prompt: 'Generate detailed demographic and psychodynamic profiles for an ideal customer.'
+},
+ 
+      {
+         id:     'Press Release',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Social Media Bio Prompt: Write punchy, character-limited bios optimized for Instagram, LinkedIn, X, or TikTok.
-        id:     '',
+        prompt: ' Format a company milestone or product launch into a standard media-ready press release.'
+},
+
+      {
+         id:     'Social Media Bio',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Pricing Page Tier Copy Prompt: Write psychological, feature-contrasting copy for tiers (e.g., Starter, Pro, Enterprise).
-        id:     '',
+        prompt: ' Write punchy, character-limited bios optimized for Instagram, LinkedIn, X, or TikTok.'
+},
+
+      {
+         id:     'Pricing Page Tier Copy',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Email Welcome Sequence Prompt: Write a multi-part automated onboarding email series for new subscribers.
-        id:     '',
+        prompt: 'Write psychological, feature-contrasting copy for tiers (e.g., Starter, Pro, Enterprise).'
+},
+ 
+       {
+         id:     'Email Welcome Sequence',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Cold Outreach Email Prompt: Draft personalized, high-response B2B cold emails or LinkedIn DMs.
-        id:     '',
+        prompt: ' Write a multi-part automated onboarding email series for new subscribers.'
+},
+
+      {
+         id:     'Cold Outreach Email',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Case Study / Success Story Prompt: Turn raw client metrics and feedback into a Problem-Solution-Result narrative.
-        id:     '',
+        prompt: ' Draft personalized, high-response B2B cold emails or LinkedIn DMs.'
+},
+
+        {
+         id:     'Case Study / Success Story',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Testimonial Request Email Prompt: Write friendly templates asking happy customers for reviews and social proof.
-        id:     '',
+        prompt: 'Turn raw client metrics and feedback into a Problem-Solution-Result narrative.'
+},
+ 
+       {
+         id:     'Testimonial Request Email',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Cart Abandonment Email Prompt: Craft persuasive, urgency-driven copy to win back customers who left items in their cart.
-        id:     '',
+        prompt: 'Write friendly templates asking happy customers for reviews and social proof.'
+},
+ 
+       {
+         id:     'Cart Abandonment Email',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Business Plan Executive Summary Prompt: Summarize a business concept, market opportunity, and financial overview.
-        id:     '',
+        prompt: 'Craft persuasive, urgency-driven copy to win back customers who left items in their cart.'
+},
+ 
+       {
+         id:     'Business Plan Executive Summary',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Business Model Canvas Prompt: Textually map out revenue streams, channels, key partners, and cost structures.
-        id:     '',
+        prompt: ' Summarize a business concept, market opportunity, and financial overview.'
+},
+
+       {
+         id:     'Business Model Canvas',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Competitor SWOT Analysis Prompt: Generate a structured strengths, weaknesses, opportunities, and threats breakdown.
-        id:     '',
+        prompt: ' Textually map out revenue streams, channels, key partners, and cost structures.'
+},
+
+       {
+         id:     'Competitor SWOT Analysis',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Operations & Logistics SOP Prompt: Write a step-by-step Standard Operating Procedure for a routine task.
-        id:     '',
+        prompt: 'Generate a structured strengths, weaknesses, opportunities, and threats breakdown.'
+},
+ 
+      {
+         id:     'Operations & Logistics',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Financial Projections Narrative Prompt: Write the explanatory prose accompanying financial forecasts or cash flow models.
-        id:     '',
+        prompt: ' Write a step-by-step Standard Operating Procedure for a routine task.'
+},
+
+       {
+         id:     'Financial Projections Narrative',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Risk Mitigation Strategy Prompt: Identify potential business risks and write strategic contingencies for them.
-        id:     '',
+        prompt: ' Write the explanatory prose accompanying financial forecasts or cash flow models.'
+},
+
+        {
+         id:     'Risk Mitigation Strategy',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Terms of Service Draft Prompt: Generate a custom website ToS template based on specific business operations (e.g., e-commerce vs. SaaS).
-        id:     '',
+        prompt: ' Identify potential business risks and write strategic contingencies for them.'
+},
+
+       {
+         id:     'Terms of Service Draft',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Privacy Policy Text Prompt: Outline data collection, cookie usage, and GDPR/CCPA compliance clauses.
-        id:     '',
+        prompt: ' Generate a custom website ToS template based on specific business operations (e.g., e-commerce vs. SaaS).'
+},
+
+        {
+         id:     'Privacy Policy Text',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Refund & Return Policy Prompt: Write clear, customer-friendly parameters for product returns and cancellations.
-        id:     '',
+        prompt: 'Outline data collection, cookie usage, and GDPR/CCPA compliance clauses.'
+},
+ 
+        {
+         id:     'Refund & Return Policy',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Service Level Agreement (SLA) Prompt: Define uptime commitments, support response windows, and performance metrics.
-        id:     '',
+        prompt: ' Write clear, customer-friendly parameters for product returns and cancellations.'
+},
+
+        {
+         id:     'Service Level Agreement (SLA)',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Disclaimer/Liability Notice Prompt: Draft legal disclaimers for financial, wellness, or professional advice websites.
-        id:     '',
+        prompt: 'Define uptime commitments, support response windows, and performance metrics.'
+},
+ 
+        {
+         id:     'Disclaimer/Liability Notice',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Intellectual Property Notice Prompt: Write copyright, trademark, and fair-use attribution notices.
-        id:     '',
+        prompt: ' Draft legal disclaimers for financial, wellness, or professional advice websites.'
+},
+
+       {
+         id:     'Intellectual Property Notice',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Employee Handbook Prompt: Draft foundational company policies, remote-work guidelines, and code of conduct rules.
-        id:     '',
+        prompt: ' Write copyright, trademark, and fair-use attribution notices.'
+},
+
+       {
+         id:     'Employee Handbook',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Job Description (JD) Prompt: Write an inclusive, attractive job posting designed to pull top talent.
-        id:     '',
+        prompt: ' Draft foundational company policies, remote-work guidelines, and code of conduct rules.'
+},
+
+       {
+         id:     'Job Description (JD)',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-New Hire Onboarding Guide Prompt: Create a step-by-step training manual and checklist for new employees.
-        id:     '',
+        prompt: ' Write an inclusive, attractive job posting designed to pull top talent.'
+},
+
+        {
+         id:     'New Hire Onboarding Guide',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Internal SOP Generator Prompt: Standardize team workflows into clear, repeatable text documents.
-        id:     '',
+        prompt: ' Create a step-by-step training manual and checklist for new employees.'
+},
+
+        {
+         id:     'Internal SOP Generator',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Performance Review Template Prompt: Create constructive evaluation rubrics and manager feedback scripts.
-        id:     '',
+        prompt: 'Standardize team workflows into clear, repeatable text documents.'
+},
+
+       {
+         id:     'Performance Review Template',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Internal Team Newsletter Prompt: Write a monthly or weekly update keeping team members aligned on company wins and goals.
-        id:     '',
+        prompt: ' Create constructive evaluation rubrics and manager feedback scripts.'
+},
+
+       {
+         id:     'Internal Team Newsletter',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Knowledge Base Article Prompt: Write a clear, step-by-step troubleshooting guide or tutorial for users.
-        id:     '',
+        prompt: ' Write a monthly or weekly update keeping team members aligned on company wins and goals.'
+},
+
+       {
+         id:     'Knowledge Base Article',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Support Ticket Macro Prompts: Create empathetic, pre-written response templates for common customer complaints.
-        id:     '',
+        prompt: ' Write a clear, step-by-step troubleshooting guide or tutorial for users.'
+},
+
+       {
+         id:     'Support Ticket Macro',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Product Tooltip / Microcopy Prompt: Write bite-sized in-app guidance messages to help users navigate software.
-        id:     '',
+        prompt: ' Create empathetic, pre-written response templates for common customer complaints.'
+},
+
+       {
+         id:     'Product Tooltip / Microcopy',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Customer Exit Survey Prompt: Draft thoughtful cancellation or churn survey questions to gather exit feedback.
-        id:     '',
+        prompt: ' Write bite-sized in-app guidance messages to help users navigate software.'
+},
+
+        {
+         id:     'Customer Exit Survey',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Pitch Deck Script Prompt: Write persuasive speaker notes and slide copy for an investor pitch presentation.
-        id:     '',
+        prompt: 'Draft thoughtful cancellation or churn survey questions to gather exit feedback.'
+},
+ 
+        {
+         id:     'Pitch Deck Script',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Investor Update Report Prompt: Draft a periodic performance update detailing growth metrics and runway for stakeholders.
-        id:     '',
+        prompt: ' Write persuasive speaker notes and slide copy for an investor pitch presentation.'
+},
+
+       {
+         id:     'Investor Update Report',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Partnership Proposal Prompt: Write a professional B2B outreach letter proposing a strategic alliance or joint venture.
-        id:     '',
+        prompt: ' Draft a periodic performance update detailing growth metrics and runway for stakeholders.'
+},
+
+       {
+         id:     'Partnership Proposal',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Founders' Vision Statement Prompt: Articulate a long-term company manifesto and industry-changing mission.
-        id:     '',
+        prompt: ' Write a professional B2B outreach letter proposing a strategic alliance or joint venture.'
+},
+
+       {
+         id:     'Founders' Vision Statement',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Influencer Outreach Email Prompt: Write a personalized pitch letter to collaborate with social media influencers or creators.
-        id:     '',
+        prompt: 'Articulate a long-term company manifesto and industry-changing mission.'
+},
+ 
+        {
+         id:     'Influencer Outreach Email',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Affiliate Program Guidelines Prompt: Draft the terms, commission structures, and rules for recruiting brand affiliates.
-        id:     '',
+        prompt: ' Write a personalized pitch letter to collaborate with social media influencers or creators.'
+},
+
+       {
+         id:     'Affiliate Program Guidelines',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Webinar Script & Slide Copy Prompt: Write an engaging script and presentation text for an educational or sales webinar.
-        id:     '',
+        prompt: ' Draft the terms, commission structures, and rules for recruiting brand affiliates.'
+},
+
+       {
+         id:     'Webinar Script & Slide Copy',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Podcast Interview Pitch Prompt: Draft a compelling pitch to get a founder booked as a guest on industry podcasts.
-        id:     '',
+        prompt: ' Write an engaging script and presentation text for an educational or sales webinar.'
+},
+
+       {
+         id:     'Podcast Interview Pitch',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Podcast Show Notes & Summary Prompt: Turn an audio transcript into structured show notes, timestamps, and key takeaways.
-        id:     '',
+        prompt: ' Draft a compelling pitch to get a founder booked as a guest on industry podcasts.'
+},
+
+       {
+         id:     'Podcast Show Notes & Summary',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Community Discord/Slack Channel Rules Prompt: Write welcoming guidelines and moderation rules for a customer community.
-        id:     '',
+        prompt: 'Turn an audio transcript into structured show notes, timestamps, and key takeaways.'
+},
+ 
+       {
+         id:     'Community Discord/Slack Channel Rules',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Virtual Event Landing Page Prompt: Write registration copy, speaker bios, and agendas for an online conference or workshop.
-        id:     '',
+        prompt: ' Write welcoming guidelines and moderation rules for a customer community.'
+},
+
+       {
+         id:     'Virtual Event Landing Page',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Live-Streaming / Q&A Script Prompt: Outline a script and discussion prompts for a live Q&A session with customers.
-        id:     '',
+        prompt: 'Write registration copy, speaker bios, and agendas for an online conference or workshop.'
+},
+ 
+       {
+         id:     'Live-Streaming / Q&A Script',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Giveaway / Contest Rules Prompt: Draft official terms, eligibility criteria, and promotional copy for a social media giveaway.
-        id:     '',
+        prompt: ' Outline a script and discussion prompts for a live Q&A session with customers.'
+},
+
+        {
+         id:     'Giveaway / Contest Rules',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Crowdfunding Campaign Pitch Prompt: Write a compelling narrative, reward tier descriptions, and updates for Kickstarter or Indiegogo.
-        id:     '',
+        prompt: 'Draft official terms, eligibility criteria, and promotional copy for a social media giveaway.'
+},
+
+       {
+         id:     'Crowdfunding Campaign Pitch',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Beta Tester Invitation & Onboarding Prompt: Write exclusive invite copy and feedback instructions for early software testers.
-        id:     '',
+        prompt: ' Write a compelling narrative, reward tier descriptions, and updates for Kickstarter or Indiegogo.'
+},
+
+       {
+         id:     'Beta Tester Invitation & Onboarding',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Product Feature Request Response Prompt: Draft polite, professional replies acknowledging user feature suggestions and roadmap realities.
-        id:     '',
+        prompt: ' Write exclusive invite copy and feedback instructions for early software testers.'
+},
+
+        {
+         id:     'Product Feature Request Response',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Release Notes / Changelog Prompt: Turn technical software updates into engaging, user-friendly feature highlights.
-        id:     '',
+        prompt: ' Draft polite, professional replies acknowledging user feature suggestions and roadmap realities.'
+},
+
+       {
+         id:     'Release Notes / Changelog',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Customer Appreciation Thank-You Note Prompt: Write heartfelt, personalized messages or holiday cards for VIP clients.
-        id:     '',
+        prompt: ' Turn technical software updates into engaging, user-friendly feature highlights.'
+},
+
+        {
+         id:     'Customer Appreciation Thank-You Note',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-VIP Loyalty Program Rules Prompt: Draft copy explaining tier benefits, point collection, and rewards for a customer loyalty program.
-        id:     '',
+        prompt: ' Write heartfelt, personalized messages or holiday cards for VIP clients.'
+},
+
+        {
+         id:     'VIP Loyalty Program Rules',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Re-engagement / "We Miss You" Email Prompt: Craft a win-back campaign for dormant subscribers or inactive app users.
-        id:     '',
+        prompt: ' Draft copy explaining tier benefits, point collection, and rewards for a customer loyalty program.'
+},
+
+       {
+         id:     'Re-engagement / "We Miss You" Email',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Upsell / Cross-sell Email Prompt: Write strategic post-purchase recommendations to encourage higher customer lifetime value (LTV).
-        id:     '',
+        prompt: ' Craft a win-back campaign for dormant subscribers or inactive app users.'
+},
+
+       {
+         id:     'Upsell / Cross-sell Email',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Subscription Renewal Reminder Prompt: Draft friendly, urgency-based copy reminding users their annual or monthly plan is renewing.
-        id:     '',
+        prompt: 'Write strategic post-purchase recommendations to encourage higher customer lifetime value (LTV).'
+},
+ 
+       {
+         id:     'Subscription Renewal Reminder',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Payment Failure Notification Prompt: Write a tactful, secure email sequence alerting customers of a declined credit card.
-        id:     '',
+        prompt: 'Draft friendly, urgency-based copy reminding users their annual or monthly plan is renewing.'
+},
+
+        {
+         id:     'Payment Failure Notification',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Account Deletion Confirmation Prompt: Draft compassionate farewell copy and a quick exit feedback prompt when a user closes their account.
-        id:     '',
+        prompt: ' Write a tactful, secure email sequence alerting customers of a declined credit card.'
+},
+
+        {
+         id:     'Account Deletion Confirmation',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Company Milestone Celebration Post Prompt: Write an engaging internal or external announcement for hitting a major business revenue or user milestone.
-        id:     '',
+        prompt: ' Draft compassionate farewell copy and a quick exit feedback prompt when a user closes their account.'
+},
+
+        {
+         id:     'Company Milestone Celebration Post Prompt:',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Crisis Management Statement Prompt: Draft a professional, measured holding statement or public apology for PR emergencies.
-        id:     '',
+        prompt: ' Write an engaging internal or external announcement for hitting a major business revenue or user milestone.'
+},
+
+        {
+         id:     'Crisis Management Statement',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Brand Partnership / Co-Marketing Pitch Prompt: Write a collaboration proposal for a non-competing brand targeting the same audience.
-        id:     '',
+        prompt: 'Draft a professional, measured holding statement or public apology for PR emergencies.'
+},
+ 
+        {
+         id:     'Brand Partnership / Co-Marketing Pitch',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Guest Blogging Pitch Prompt: Draft an outreach email proposing high-value guest article topics to industry blogs.
-        id:     '',
+        prompt: ' Write a collaboration proposal for a non-competing brand targeting the same audience.'
+},
+
+       {
+         id:     'Guest Blogging Pitch',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Interactive Quiz / Diagnostic Tool Copy Prompt: Write questions, result logic, and lead-capture copy for a marketing quiz.
-        id:     '',
+        prompt: ' Draft an outreach email proposing high-value guest article topics to industry blogs.'
+},
+
+        {
+         id:     'Interactive Quiz / Diagnostic Tool Copy',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-SMS Marketing Text Broadcast Prompt: Write high-conversion, character-limited promotional texts for mobile marketing.
-        id:     '',
+        prompt: ' Write questions, result logic, and lead-capture copy for a marketing quiz.'
+},
+
+        {
+         id:     'SMS Marketing Text Broadcast',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Push Notification Copy Prompt: Draft snappy, punchy app notification hooks to drive daily active engagement.
-        id:     '',
+        prompt: ' Write high-conversion, character-limited promotional texts for mobile marketing.'
+},
+
+        {
+         id:     'Push Notification Copy',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Direct Mail Marketing Letter Prompt: Write a traditional physical sales letter or direct mail postcard copy.
-        id:     '',
+        prompt: ' Draft snappy, punchy app notification hooks to drive daily active engagement.'
+},
+
+       {
+         id:     'Direct Mail Marketing Letter',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Sales Objection Handling Script Prompt: Create a reference sheet of word-for-word rebuttals for common sales call objections.
-        id:     '',
+        prompt: ' Write a traditional physical sales letter or direct mail postcard copy.'
+},
+
+       {
+         id:     'Sales Objection Handling Script',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Sales Discovery Call Agenda & Questions Prompt: Draft a structured questionnaire for qualifying inbound sales leads.
-        id:     '',
+        prompt: ' Create a reference sheet of word-for-word rebuttals for common sales call objections.'
+},
+
+        {
+         id:     'Sales Discovery Call Agenda & Questions',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-B2B Proposal / Statement of Work (SOW) Prompt: Write the project scope, deliverables, and timeline text for a client proposal.
-        id:     '',
+        prompt: ' Draft a structured questionnaire for qualifying inbound sales leads.'
+},
+
+       {
+         id:     'B2B Proposal / Statement of Work (SOW)',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Client Offboarding & Handover Document Prompt: Draft a final delivery checklist and project summary text for completed client work.
-        id:     '',
+        prompt: ' Write the project scope, deliverables, and timeline text for a client proposal.'
+},
+
+        {
+         id:     'Client Offboarding & Handover Document',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Contractor / Freelancer Agreement Prompt: Outline standard expectations, deliverables, and payment terms for external talent.
-        id:     '',
+        prompt: ' Draft a final delivery checklist and project summary text for completed client work.'
+},
+
+       {
+         id:     'Contractor / Freelancer Agreement',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Non-Disclosure Agreement (NDA) Summary Prompt: Draft plain-English explanations or clauses for protecting sensitive business data.
-        id:     '',
+        prompt: ' Outline standard expectations, deliverables, and payment terms for external talent.'
+},
+
+       {
+         id:     'Non-Disclosure Agreement (NDA) Summary',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Board of Directors Meeting Agenda Prompt: Organize topics, voting items, and discussion points for formal corporate meetings.
-        id:     '',
+        prompt: 'Draft plain-English explanations or clauses for protecting sensitive business data.'
+},
+
+        {
+         id:     'Board of Directors Meeting Agenda',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Board Meeting Minutes Template Prompt: Create structured text templates to record official corporate decisions and meeting resolutions.
-        id:     '',
+        prompt: 'Organize topics, voting items, and discussion points for formal corporate meetings.'
+},
+ 
+        {
+         id:     'Board Meeting Minutes Template',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Shareholder Annual Report Letter Prompt: Write the CEO’s opening address summarizing yearly performance for company stakeholders.
-        id:     '',
+        prompt: 'Create structured text templates to record official corporate decisions and meeting resolutions.'
+},
+
+        {
+         id:     'Shareholder Annual Report Letter',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Grant Application Narrative Prompt: Draft persuasive impact statements and project proposals for government or foundation grants.
-        id:     '',
+        prompt: ' Write the CEO’s opening address summarizing yearly performance for company stakeholders.'
+},
+
+       {
+         id:     'Grant Application Narrative',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-CSR (Corporate Social Responsibility) Statement Prompt: Articulate a company’s environmental, social, and charitable giving commitments.
-        id:     '',
+        prompt: ' Draft persuasive impact statements and project proposals for government or foundation grants.'
+},
+
+        {
+         id:     'CSR (Corporate Social Responsibility) Statement',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Diversity, Equity, and Inclusion (DEI) Policy Prompt: Draft clear organizational commitments and hiring frameworks for workplace inclusivity.
-        id:     '',
+        prompt: 'Articulate a company’s environmental, social, and charitable giving commitments.'
+},
+ 
+       {
+         id:     'Diversity, Equity, and Inclusion (DEI) Policy',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Cybersecurity & Data Safety Policy Prompt: Write internal rules regarding password management, phishing prevention, and data handling.
-        id:     '',
+        prompt: ' Draft clear organizational commitments and hiring frameworks for workplace inclusivity.'
+},
+
+       {
+         id:     'Cybersecurity & Data Safety Policy',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Remote Work Policy Document Prompt: Draft guidelines covering home office stipends, core working hours, and communication standards.
-        id:     '',
+        prompt: ' Write internal rules regarding password management, phishing prevention, and data handling.'
+},
+
+       {
+         id:     'Remote Work Policy Document',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Employee Exit Interview Questionnaire Prompt: Write structured, constructive questions for departing team members.
-        id:     '',
+        prompt: ' Draft guidelines covering home office stipends, core working hours, and communication standards.'
+},
+
+        {
+         id:     'Employee Exit Interview Questionnaire',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Employee Recognition / Shout-Out Announcement Prompt: Draft peer-to-peer appreciation templates for company Slack channels or meetings.
-        id:     '',
+        prompt: ' Write structured, constructive questions for departing team members.'
+},
+
+        {
+         id:     'Employee Recognition / Shout-Out Announcement',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Team Retrospective Meeting Prompt: Write reflection questions (What went well? What didn't?) for sprint or quarterly reviews.
-        id:     '',
+        prompt: 'Draft peer-to-peer appreciation templates for company Slack channels or meetings.'
+},
+
+       {
+         id:     'Team Retrospective Meeting',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Job Offer Letter Prompt: Draft an exciting, professional employment offer including salary, benefits, and start date terms.
-        id:     '',
+        prompt: ' Write reflection questions (What went well? What didn't?) for sprint or quarterly reviews.'
+},
+
+        {
+         id:     'Job Offer Letter',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Rejection Letter for Applicants Prompt: Write a kind, empathetic automated message for unsuccessful job candidates.
-        id:     '',
+        prompt: 'Draft an exciting, professional employment offer including salary, benefits, and start date terms.'
+},
+
+        {
+         id:     'Rejection Letter for Applicants',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Internal IT Helpdesk Request Macro Prompt: Draft troubleshooting instructions for common internal hardware or software tickets.
-        id:     '',
+        prompt: ' Write a kind, empathetic automated message for unsuccessful job candidates.'
+},
+
+       {
+         id:     'Internal IT Helpdesk Request Macro',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Supplier / Vendor Evaluation Criteria Prompt: Write a scoring rubric and assessment text for vetting new supply chain partners.
-        id:     '',
+        prompt: 'Draft troubleshooting instructions for common internal hardware or software tickets.'
+},
+ 
+       {
+         id:     'Supplier / Vendor Evaluation Criteria',
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ''
-Company Wiki / Knowledge Base Home Prompt: Write welcoming orientation text and directory structures for internal company intranets.`
+        prompt: ' Write a scoring rubric and assessment text for vetting new supply chain partners.'
+},
+
+       {
+         id:     'Company Wiki / Knowledge Base Home',
+        name:   '',
+        label:  '',
+        slug:   '',
+        prompt: ' Write welcoming orientation text and directory structures for internal company intranets.'
+},
+
     }
   ];
 
