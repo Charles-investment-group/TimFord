@@ -2,7 +2,8 @@
   let { data, form } = $props();
 
   const aiOptions = [
-    {        id:     '',
+      {
+         id:     '',
         name:   '',
         label:  '',
         slug:   '',
