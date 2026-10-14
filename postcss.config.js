@@ -6,4 +6,4 @@ export default {
 	plugins: {
 		autoprefixer: {}
 	}
-};																																																																																																																																																																																																																																																																																																																		                                                                                                                                                                                                                                                                                               
+};

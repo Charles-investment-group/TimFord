@@ -220,14 +220,20 @@ only ever give just the list. never any other form of data. a list only no matte
 </main>
 
 <style>
-.overlay, main {
- height: 100%;
- min-height: 100vh;
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
-}
+  .overlay,
+  main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .overlay {
+    width: 100%;
+    padding: 6rem clamp(1rem, 5vw, 4rem) 4rem;
+    box-sizing: border-box;
+  }
 
   .response, form {
     display: flex;
@@ -239,11 +245,15 @@ only ever give just the list. never any other form of data. a list only no matte
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+    justify-content: center;
+    width: min(100%, 72rem);
     background-color: white;
-    padding-bottom: 30px;
+    padding: 0 0 30px;
      }
 
   .ai-tab-btn {
+    flex: 1 1 10rem;
+    min-height: 44px;
     padding: 10px 20px;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -262,8 +272,9 @@ only ever give just the list. never any other form of data. a list only no matte
   }
 
   input, input:focus {
-    width: 80vw;
-    height: 20vw;
+    box-sizing: border-box;
+    width: 100%;
+    height: clamp(9rem, 20vw, 18rem);
     border-radius: 30px;
     background-color: white;
     box-shadow: 0px 0px 60px lightblue;
@@ -279,6 +290,7 @@ only ever give just the list. never any other form of data. a list only no matte
   }
 
   form {
+    width: min(100%, 72rem);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -287,7 +299,9 @@ only ever give just the list. never any other form of data. a list only no matte
   }
 
   .response {
-    padding: 10px 10vw;
+    width: min(100%, 72rem);
+    box-sizing: border-box;
+    padding: 1.25rem clamp(0rem, 4vw, 4rem);
   }
 
   .aibox {
@@ -299,5 +313,52 @@ only ever give just the list. never any other form of data. a list only no matte
     align-items: center;
     gap: 10px;
     height: 100%;
+  }
+
+  .submit-btn {
+    min-height: 44px;
+    padding: 0.65rem 1.2rem;
+  }
+
+  @media (max-width: 700px) {
+    .overlay {
+      justify-content: flex-start;
+      padding: 5rem 1rem 3rem;
+    }
+
+    .button-group {
+      gap: 8px;
+      padding-bottom: 1.25rem;
+    }
+
+    .ai-tab-btn {
+      flex-basis: calc(50% - 4px);
+      padding-inline: 0.75rem;
+      font-size: 0.9rem;
+    }
+
+    input,
+    input:focus {
+      height: clamp(9rem, 42vw, 13rem);
+      border-radius: 20px;
+    }
+
+    .response {
+      padding-inline: 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .overlay {
+      padding-top: 4.5rem;
+    }
+
+    .ai-tab-btn {
+      flex-basis: 100%;
+    }
+
+    form {
+      gap: 0.75rem;
+    }
   }
 </style>
