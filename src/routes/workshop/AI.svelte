@@ -4,128 +4,128 @@
   const aiOptions = [
       {
          id:     'Homepage Hero Section',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Homepage Hero Developer',
+        label:  'Describe your desired homepage hero in details',
+        slug:   'homepage-hero-section',
         prompt: ' Write a catchy headline, subheadline, and primary call-to-action for a specific niche.'
 },
 
        {
          id:     '"About Us" Story',
-        name:   '',
-        label:  '',
+        name:   'About us Creator',
+        label:  'Give a short information about your company or organisation',
         slug:   '',
         prompt: 'Turn raw bullet points about a founder’s journey into an engaging, emotional brand story.'
 },
 
         {
          id:     'Product/Service Description',
-        name:   '',
-        label:  '',
+        name:   'Product or Service descriptor',
+        label:  'Tell us about your product or specific service',
         slug:   '',
         prompt: ' Convert technical features into benefit-driven bullet points that sell.'
 },
 
        {
          id:     'FAQ Section Generator',
-        name:   '',
-        label:  '',
+        name:   'FAQ page developer',
+        label:  'Give us your product details',
         slug:   '',
         prompt: ' Anticipate and answer top customer objections and questions for a specific product.'
 },
 
      {
          id:     'PPC Landing Page Copy',
-        name:   '',
-        label:  '',
+        name:   'PPC landing page designer',
+        label:  'What kind of ads do you want on this page',
         slug:   '',
         prompt: 'Write high-converting, single-focus sales copy matched to a paid ad campaign.'
 },
  
        {
          id:     'Footer & Microcopy',
-        name:   '',
-        label:  '',
+        name:   'Footer & Microcopy creator',
+        label:  'Give description of how you want the footer and microcopies',
         slug:   '',
         prompt: 'Generate snappy microcopy for buttons, error messages, form labels, and navigation.'
 },
 
        {
          id:     'Meta Title & Description',
-        name:   '',
-        label:  '',
+        name:   'Meta Title & Description Developer',
+        label:  'Input your keyword and brand identity',
         slug:   '',
         prompt: 'Write CTR-optimized titles and descriptions targeting a specific primary keyword.'
 },
  
        {
          id:     'Blog Outline Generator',
-        name:   '',
-        label:  '',
+        name:   'Blog Outline Writer',
+        label:  'Input your topic,title or target',
         slug:   '',
         prompt: 'Create a comprehensive, SEO-friendly H2/H3 outline for an authoritative article.'
 },
  
        {
          id:     'Pillar Article Drafting',
-        name:   '',
-        label:  '',
+        name:   'Pillar Article Drafter',
+        label:  'Give us the specific topic you want to draft on',
         slug:   '',
         prompt: 'Turn an outline into a long-form, expert-level blog post or guide.'
 },
  
       {
-         id:     'Image Alt Text Generator Prompt:',
-        name:   '',
-        label:  '',
+         id:     'Image Alt Text Generator',
+        name:   'Image Alt Text Converter',
+        label:  'Input the your image ',
         slug:   '',
         prompt: ' Write concise, descriptive, and keyword-friendly alt text for web images.'
 },
 
       {
          id:     'Internal Linking Anchor Text',
-        name:   '',
-        label:  '',
+        name:   'Internal Linking Anchor Text writer',
+        label:  'Input topic or article',
         slug:   '',
         prompt: 'Analyze a topic and suggest natural anchor text phrases for cross-linking.'
 },
  
       {
          id:     'Local SEO Business Bio',
-        name:   '',
-        label:  '',
+        name:   'Local SEO Business Bio Writer',
+        label:  'Give us details about your product and your established locations',
         slug:   '',
         prompt: ' Write a localized Google Business Profile description highlighting local service areas.'
 },
 
        {
          id:     'Value Proposition / Elevator Pitch',
-        name:   '',
-        label:  '',
+        name:   'Value Proposition Writer',
+        label:  'Input the benefits and it's advantage over alternatives ',
         slug:   '',
         prompt: 'Boil a business model down into a 15-second hook.'
 },
 
         {
          id:     'Brand Voice Guidelines',
-        name:   '',
-        label:  '',
+        name:   'Brand Voice Generator',
+        label:  'Tell us about your brand personality',
         slug:   '',
         prompt: 'Create a custom style guide (tone, vocabulary, rules) based on brand personality traits.'
 },
  
        {
          id:     'Tagline & Slogan Generator',
-        name:   '',
-        label:  '',
+        name:   'Slogan Maker',
+        label:  'Input your brand or business benefits or product',
         slug:   '',
         prompt: 'Brainstorm catchy, memorable slogans based on core business benefits.'
 },
 
        {
          id:     'Target Audience Persona',
-        name:   '',
-        label:  '',
+        name:   'Target Consumer Detailer',
+        label:  'Give us information of your business or product',
         slug:   '',
         prompt: 'Generate detailed demographic and psychodynamic profiles for an ideal customer.'
 },
