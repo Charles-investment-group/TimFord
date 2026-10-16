@@ -6,7 +6,7 @@
          id:     'Homepage Hero Section',
         name:   'Homepage Hero Developer',
         label:  'Describe your desired homepage hero in details',
-        slug:   'homepage-hero-section',
+        slug:   'homepage-hero-developer',
         prompt: ' Write a catchy headline, subheadline, and primary call-to-action for a specific niche.'
 },
 
@@ -14,7 +14,7 @@
          id:     '"About Us" Story',
         name:   'About us Creator',
         label:  'Give a short information about your company or organisation',
-        slug:   '',
+        slug:   'about-us-creator',
         prompt: 'Turn raw bullet points about a founders journey into an engaging, emotional brand story.'
 },
 
@@ -22,7 +22,7 @@
          id:     'Product/Service Description',
         name:   'Product or Service descriptor',
         label:  'Tell us about your product or specific service',
-        slug:   '',
+        slug:   'product-or-service-descriptor',
         prompt: ' Convert technical features into benefit-driven bullet points that sell.'
 },
 
@@ -30,7 +30,7 @@
          id:     'FAQ Section Generator',
         name:   'FAQ page developer',
         label:  'Give us your product details',
-        slug:   '',
+        slug:   'faq-page-developer',
         prompt: ' Anticipate and answer top customer objections and questions for a specific product.'
 },
 
@@ -38,7 +38,7 @@
          id:     'PPC Landing Page Copy',
         name:   'PPC landing page designer',
         label:  'What kind of ads do you want on this page',
-        slug:   '',
+        slug:   'ppc-landing-page-designer',
         prompt: 'Write high-converting, single-focus sales copy matched to a paid ad campaign.'
 },
  
@@ -46,7 +46,7 @@
          id:     'Footer & Microcopy',
         name:   'Footer & Microcopy creator',
         label:  'Give description of how you want the footer and microcopies',
-        slug:   '',
+        slug:   'footer-&-microcopy-creator',
         prompt: 'Generate snappy microcopy for buttons, error messages, form labels, and navigation.'
 },
 
@@ -54,7 +54,7 @@
          id:     'Meta Title & Description',
         name:   'Meta Title & Description Developer',
         label:  'Input your keyword and brand identity',
-        slug:   '',
+        slug:   'meta-title-&-description-developer',
         prompt: 'Write CTR-optimized titles and descriptions targeting a specific primary keyword.'
 },
  
@@ -62,7 +62,7 @@
          id:     'Blog Outline Generator',
         name:   'Blog Outline Writer',
         label:  'Input your topic,title or target',
-        slug:   '',
+        slug:   'blog-outline-writer',
         prompt: 'Create a comprehensive, SEO-friendly H2/H3 outline for an authoritative article.'
 },
  
@@ -70,7 +70,7 @@
          id:     'Pillar Article Drafting',
         name:   'Pillar Article Drafter',
         label:  'Give us the specific topic you want to draft on',
-        slug:   '',
+        slug:   'pillar-article-drafter',
         prompt: 'Turn an outline into a long-form, expert-level blog post or guide.'
 },
  
@@ -78,7 +78,7 @@
          id:     'Image Alt Text Generator',
         name:   'Image Alt Text Converter',
         label:  'Input the your image ',
-        slug:   '',
+        slug:   'image-alt-text-converter',
         prompt: ' Write concise, descriptive, and keyword-friendly alt text for web images.'
 },
 
@@ -86,7 +86,7 @@
          id:     'Internal Linking Anchor Text',
         name:   'Internal Linking Anchor Text writer',
         label:  'Input topic or article',
-        slug:   '',
+        slug:   'internal-linking-anchor-text-writer',
         prompt: 'Analyze a topic and suggest natural anchor text phrases for cross-linking.'
 },
  
@@ -94,15 +94,15 @@
          id:     'Local SEO Business Bio',
         name:   'Local SEO Business Bio Writer',
         label:  'Give us details about your product and your established locations',
-        slug:   '',
+        slug:   'local-seo-business-bio-writer',
         prompt: ' Write a localized Google Business Profile description highlighting local service areas.'
 },
 
        {
          id:     'Value Proposition / Elevator Pitch',
         name:   'Value Proposition Writer',
-        label:  'Input the benefits and its advantage over alternatives ',
-        slug:   '',
+        label:  'Input the benefits and its advantage over alternatives',
+        slug:   'value-proposition-writer',
         prompt: 'Boil a business model down into a 15-second hook.'
 },
 
@@ -110,7 +110,7 @@
          id:     'Brand Voice Guidelines',
         name:   'Brand Voice Generator',
         label:  'Tell us about your brand personality',
-        slug:   '',
+        slug:   'brand-voice-generator',
         prompt: 'Create a custom style guide (tone, vocabulary, rules) based on brand personality traits.'
 },
  
@@ -118,7 +118,7 @@
          id:     'Tagline & Slogan Generator',
         name:   'Slogan Maker',
         label:  'Input your brand or business benefits or product',
-        slug:   '',
+        slug:   'slogan-maker',
         prompt: 'Brainstorm catchy, memorable slogans based on core business benefits.'
 },
 
@@ -126,79 +126,79 @@
          id:     'Target Audience Persona',
         name:   'Target Consumer Detailer',
         label:  'Give us information of your business or product',
-        slug:   '',
+        slug:   'target-consumer-detailer',
         prompt: 'Generate detailed demographic and psychodynamic profiles for an ideal customer.'
 },
  
       {
          id:     'Press Release',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Press Release Writer',
+        label:  'Input your company or brand products details,achievements,partnerships or upcoming events ',
+        slug:   'press-release-writer',
         prompt: ' Format a company milestone or product launch into a standard media-ready press release.'
 },
 
       {
          id:     'Social Media Bio',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Social Media Biographer',
+        label:  'Tell us who you are,what you do,call-for-action,contact',
+        slug:   'social-media-biographer',
         prompt: ' Write punchy, character-limited bios optimized for Instagram, LinkedIn, X, or TikTok.'
 },
 
       {
          id:     'Pricing Page Tier Copy',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Pricing Page Developer',
+        label:  'Input your tier options',
+        slug:   'pricing-page-developer',
         prompt: 'Write psychological, feature-contrasting copy for tiers (e.g., Starter, Pro, Enterprise).'
 },
  
        {
          id:     'Email Welcome Sequence',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Email Welcome Sequence drafter',
+        label:  'Give us your brand story or missions',
+        slug:   'email-welcome-sequence-drafter',
         prompt: ' Write a multi-part automated onboarding email series for new subscribers.'
 },
 
       {
          id:     'Cold Outreach Email',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Cold Email Outreach Writer',
+        label:  'Give us the topic,name,company achievements',
+        slug:   'cold-email-outreach-writer',
         prompt: ' Draft personalized, high-response B2B cold emails or LinkedIn DMs.'
 },
 
         {
          id:     'Case Study / Success Story',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Case Study Constructor',
+        label:  'Give us the problem you want to be in the study',
+        slug:   'case-study-constructor',
         prompt: 'Turn raw client metrics and feedback into a Problem-Solution-Result narrative.'
 },
  
        {
          id:     'Testimonial Request Email',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Testimonial Request Drafter',
+        label:  'Give us the name of your project or service',
+        slug:   'testimonial-request-drafter',
         prompt: 'Write friendly templates asking happy customers for reviews and social proof.'
 },
  
        {
          id:     'Cart Abandonment Email',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Cart Abandonment Email Writer',
+        label:  'Tell us about the carted goods',
+        slug:   'cart-abandonment-email-writer',
         prompt: 'Craft persuasive, urgency-driven copy to win back customers who left items in their cart.'
 },
  
        {
          id:     'Business Plan Executive Summary',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Business Plan Executive Summarizer',
+        label:  'Input your business idea,concept,opportunities or financial overview',
+        slug:   'business-plan-executive-summarizer',
         prompt: ' Summarize a business concept, market opportunity, and financial overview.'
 },
 
