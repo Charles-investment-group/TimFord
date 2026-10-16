@@ -15,7 +15,7 @@
         name:   'About us Creator',
         label:  'Give a short information about your company or organisation',
         slug:   '',
-        prompt: 'Turn raw bullet points about a founder’s journey into an engaging, emotional brand story.'
+        prompt: 'Turn raw bullet points about a founders journey into an engaging, emotional brand story.'
 },
 
         {
@@ -101,7 +101,7 @@
        {
          id:     'Value Proposition / Elevator Pitch',
         name:   'Value Proposition Writer',
-        label:  'Input the benefits and it's advantage over alternatives ',
+        label:  'Input the benefits and its advantage over alternatives ',
         slug:   '',
         prompt: 'Boil a business model down into a 15-second hook.'
 },
@@ -395,7 +395,7 @@
 },
 
        {
-         id:     'Founders' Vision Statement',
+         id:     'Founders Vision Statement',
         name:   '',
         label:  '',
         slug:   '',
@@ -759,7 +759,7 @@
         name:   '',
         label:  '',
         slug:   '',
-        prompt: ' Write reflection questions (What went well? What didn't?) for sprint or quarterly reviews.'
+        prompt: ' Write reflection questions (What went well? What didnt?) for sprint or quarterly reviews.'
 },
 
         {
@@ -802,7 +802,7 @@
         prompt: ' Write welcoming orientation text and directory structures for internal company intranets.'
 },
 
-    }
+    
   ];
 
   let activeIndex = $state(0);
