@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "vite preview --host 0.0.0.0",
-    "dev": "vite dev",
-    "build": "vite build",
+    "start": "node api.js && vite preview --host 0.0.0.0",
+    "dev": "node api.js && vite dev",
+    "build": "node api.js && vite build",
     "preview": "vite preview",
     "prepare": "svelte-kit sync || echo ''"
   },
@@ -24,7 +24,8 @@
   },
   "dependencies": {
     "@google/genai": "^2.17.1",
-    "@supabase/supabase-js": "^2.117.2",
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.117.3",
     "date-fns": "^3.6.0",
     "esbuild": "^0.28.2",
     "express": "^4.19.2",
@@ -39,5 +40,5 @@
   "imports": {
     "#lib": "./src/lib/index.js",
     "#lib/*": "./src/lib/*"
-    }
+  }
 }
