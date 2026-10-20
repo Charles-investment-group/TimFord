@@ -204,65 +204,65 @@
 
        {
          id:     'Business Model Canvas',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Business Model Designer',
+        label:  'Give me details about your business values',
+        slug:   'business-model-designer',
         prompt: ' Textually map out revenue streams, channels, key partners, and cost structures.'
 },
 
        {
          id:     'Competitor SWOT Analysis',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Business Competitor Analyst',
+        label:  'Give us information about your competitor strengths,weaknesses and opportunities',
+        slug:   'business-competitor-analyst',
         prompt: 'Generate a structured strengths, weaknesses, opportunities, and threats breakdown.'
 },
  
       {
          id:     'Operations & Logistics',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Operation planner',
+        label:  'What are your production activities?',
+        slug:   'operation-planner',
         prompt: ' Write a step-by-step Standard Operating Procedure for a routine task.'
 },
 
        {
          id:     'Financial Projections Narrative',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Narrative Writer',
+        label:  'Input for your Business strategy and financial report',
+        slug:   'narrative-writer',
         prompt: ' Write the explanatory prose accompanying financial forecasts or cash flow models.'
 },
 
         {
          id:     'Risk Mitigation Strategy',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Risk Strategizer',
+        label:  'Input your business sectoer and plan',
+        slug:   'risk-strategizer',
         prompt: ' Identify potential business risks and write strategic contingencies for them.'
 },
 
        {
          id:     'Terms of Service Draft',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'ToS drafter',
+        label:  'Give me details on your business operations',
+        slug:   'tos-drafter',
         prompt: ' Generate a custom website ToS template based on specific business operations (e.g., e-commerce vs. SaaS).'
 },
 
         {
          id:     'Privacy Policy Text',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Privacy Policy Generator',
+        label:  'Give us the kind of information you collect from users',
+        slug:   'privacy-policy-generator',
         prompt: 'Outline data collection, cookie usage, and GDPR/CCPA compliance clauses.'
 },
  
         {
          id:     'Refund & Return Policy',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Refund policy generatoor',
+        label:  'Give us your products details',
+        slug:   'refund-policy-generator',
         prompt: ' Write clear, customer-friendly parameters for product returns and cancellations.'
 },
 
