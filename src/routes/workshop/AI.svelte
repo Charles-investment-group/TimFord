@@ -268,65 +268,65 @@
 
         {
          id:     'Service Level Agreement (SLA)',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Service Level Generator',
+        label:  'What are your scope os service,reponsibilties and penalties?',
+        slug:   'service-level-generator',
         prompt: 'Define uptime commitments, support response windows, and performance metrics.'
 },
  
         {
          id:     'Disclaimer/Liability Notice',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Liability Disclaimer Designer',
+        label:  'What are your business and business reponsibilities?',
+        slug:   'liability-disclaimer-designer',
         prompt: ' Draft legal disclaimers for financial, wellness, or professional advice websites.'
 },
 
        {
          id:     'Intellectual Property Notice',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'IP Notice Noter',
+        label:  'What is your copyright,trademark or restrictions',
+        slug:   'ip-notice-noter',
         prompt: ' Write copyright, trademark, and fair-use attribution notices.'
 },
 
        {
          id:     'Employee Handbook',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Employee Handbook Drafter',
+        label:  'What are the values you would like your employees to keep to?',
+        slug:   'employee-handbook-drafter',
         prompt: ' Draft foundational company policies, remote-work guidelines, and code of conduct rules.'
 },
 
        {
          id:     'Job Description (JD)',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Job Descriptor',
+        label:  'What are the skills and qualification you need and working conditions?',
+        slug:   'job-descriptor',
         prompt: ' Write an inclusive, attractive job posting designed to pull top talent.'
 },
 
         {
          id:     'New Hire Onboarding Guide',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Onboard Guide Creator',
+        label:  'Input Company Cultures and the department or role for the new hire...',
+        slug:   'onboard-guide-creator',
         prompt: ' Create a step-by-step training manual and checklist for new employees.'
 },
 
         {
          id:     'Internal SOP Generator',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'SOP Drafter',
+        label:  'Input the tasks and routine',
+        slug:   'sop-drafter',
         prompt: 'Standardize team workflows into clear, repeatable text documents.'
 },
 
        {
          id:     'Performance Review Template',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Performance Review Designer',
+        label:  'What are the role,department and review period?',
+        slug:   'performance-review-designer',
         prompt: ' Create constructive evaluation rubrics and manager feedback scripts.'
 },
 
