@@ -332,105 +332,105 @@
 
        {
          id:     'Internal Team Newsletter',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Team Newsletter Writer',
+        label:  'Input your business goals you want highlighted and additional things like birthdays or work anniversary?',
+        slug:   'team-newsletter-writer',
         prompt: ' Write a monthly or weekly update keeping team members aligned on company wins and goals.'
 },
 
        {
          id:     'Knowledge Base Article',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Base Article Generator',
+        label:  'What topic do you want to be answered?',
+        slug:   'base-article-generator',
         prompt: ' Write a clear, step-by-step troubleshooting guide or tutorial for users.'
 },
 
        {
          id:     'Support Ticket Macro',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Macro Creator',
+        label:  'Input Questions commonly asked?',
+        slug:   'macro-creator',
         prompt: ' Create empathetic, pre-written response templates for common customer complaints.'
 },
 
        {
          id:     'Product Tooltip / Microcopy',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Tooltip Designer',
+        label:  'Input descrption to the control or guidance ',
+        slug:   'tooltip-designer',
         prompt: ' Write bite-sized in-app guidance messages to help users navigate software.'
 },
 
         {
          id:     'Customer Exit Survey',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Customer Survey Drafter',
+        label:  'What tone do you want the survey to sound to the customer?',
+        slug:   'customer-survey-drafter',
         prompt: 'Draft thoughtful cancellation or churn survey questions to gather exit feedback.'
 },
  
         {
          id:     'Pitch Deck Script',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Pitch Desk Scripter',
+        label:  'What are the information you want to relate with partners or investors',
+        slug:   'pitch-desk-scripter',
         prompt: ' Write persuasive speaker notes and slide copy for an investor pitch presentation.'
 },
 
        {
          id:     'Investor Update Report',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Update Report Drafter',
+        label:  'What are the updates you want to informn your partners or investors',
+        slug:   'update-report-drafter',
         prompt: ' Draft a periodic performance update detailing growth metrics and runway for stakeholders.'
 },
 
        {
          id:     'Partnership Proposal',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Proposal Composer',
+        label:  'What is the name of the company you want partnership with and which product...',
+        slug:   'proposal-composer',
         prompt: ' Write a professional B2B outreach letter proposing a strategic alliance or joint venture.'
 },
 
        {
          id:     'Founders Vision Statement',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Founders Vision Writer',
+        label:  'What are you future expectation for your business...',
+        slug:   'founders-vision-writer',
         prompt: 'Articulate a long-term company manifesto and industry-changing mission.'
 },
  
         {
          id:     'Influencer Outreach Email',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Outreach Email Generator',
+        label:  'Input the name of the creator and topic of the recent or desired topic...',
+        slug:   'outreach-email-generator',
         prompt: ' Write a personalized pitch letter to collaborate with social media influencers or creators.'
 },
 
        {
          id:     'Affiliate Program Guidelines',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Guidelines Articulator',
+        label:  'Input the name of the partner and what product are you promoting...',
+        slug:   'guidelines-articulator',
         prompt: ' Draft the terms, commission structures, and rules for recruiting brand affiliates.'
 },
 
        {
          id:     'Webinar Script & Slide Copy',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Script & Slide copier',
+        label:  'Who are your Audience involved...',
+        slug:   'script-&-slide-copier',
         prompt: ' Write an engaging script and presentation text for an educational or sales webinar.'
 },
 
        {
          id:     'Podcast Interview Pitch',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Podcast Interview Composer',
+        label:  'What are the values you are planning to pass to the host audience...',
+        slug:   'podcast-interview-composer',
         prompt: ' Draft a compelling pitch to get a founder booked as a guest on industry podcasts.'
 },
 
