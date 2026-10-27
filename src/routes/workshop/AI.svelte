@@ -436,65 +436,65 @@
 
        {
          id:     'Podcast Show Notes & Summary',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Podcasts Noter',
+        label:  'What is the topic you are talking on and guests onboard...',
+        slug:   'podcast-noter',
         prompt: 'Turn an audio transcript into structured show notes, timestamps, and key takeaways.'
 },
  
        {
          id:     'Community Discord/Slack Channel Rules',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Rules Drafter',
+        label:  'What kind of community are you organizing',
+        slug:   'rules-drafter',
         prompt: ' Write welcoming guidelines and moderation rules for a customer community.'
 },
 
        {
          id:     'Virtual Event Landing Page',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Event Communicator',
+        label:  'Input for speakers,agendas and topic for the event...',
+        slug:   'event-communicator',
         prompt: 'Write registration copy, speaker bios, and agendas for an online conference or workshop.'
 },
  
        {
          id:     'Live-Streaming / Q&A Script',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Q&A Scripter',
+        label:  'Input the topic to be discussed about...',
+        slug:   'q&a-scripter',
         prompt: ' Outline a script and discussion prompts for a live Q&A session with customers.'
 },
 
         {
          id:     'Giveaway / Contest Rules',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Contest Rule Constructor',
+        label:  'Input the eligibility/requirements,prize details,time and acitivites details',
+        slug:   'contest-rule-constructor',
         prompt: 'Draft official terms, eligibility criteria, and promotional copy for a social media giveaway.'
 },
 
        {
          id:     'Crowdfunding Campaign Pitch',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Crowdfunder Campaign Designer',
+        label:  'What is your project or product,the amount of fund you need and why you think it will work...',
+        slug:   'crowdfunder-campaign-designer',
         prompt: ' Write a compelling narrative, reward tier descriptions, and updates for Kickstarter or Indiegogo.'
 },
 
        {
          id:     'Beta Tester Invitation & Onboarding',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Tester Invitation Writer',
+        label:  'What product are you testing?',
+        slug:   'tester-invitation-writer',
         prompt: ' Write exclusive invite copy and feedback instructions for early software testers.'
 },
 
         {
          id:     'Product Feature Request Response',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Feature Request Reponse Drafter',
+        label:  'What is the name of the product,the underlying problem and preferred solution?',
+        slug:   'feature-request-reponse-drafter',
         prompt: ' Draft polite, professional replies acknowledging user feature suggestions and roadmap realities.'
 },
 
