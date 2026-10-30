@@ -500,105 +500,105 @@
 
        {
          id:     'Release Notes / Changelog',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Changelog Artist',
+        label:  'What are the major upadtes or minor changes added to your product?',
+        slug:   'changelog-artist',
         prompt: ' Turn technical software updates into engaging, user-friendly feature highlights.'
 },
 
         {
          id:     'Customer Appreciation Thank-You Note',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Appreciation Noter',
+        label:  'What specific product are you thank for??',
+        slug:   'appreciation-noter',
         prompt: ' Write heartfelt, personalized messages or holiday cards for VIP clients.'
 },
 
         {
          id:     'VIP Loyalty Program Rules',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Rules Maker',
+        label:  'What are the rewards for VIPs or the benefits and how the points are collected...',
+        slug:   'rules-maker',
         prompt: ' Draft copy explaining tier benefits, point collection, and rewards for a customer loyalty program.'
 },
 
        {
          id:     'Re-engagement / "We Miss You" Email',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Re-engagement Secretary',
+        label:  'What are your recents updates and brand name?',
+        slug:   'reengagement-secretary',
         prompt: ' Craft a win-back campaign for dormant subscribers or inactive app users.'
 },
 
        {
          id:     'Upsell / Cross-sell Email',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Sales Advertiser',
+        label:  'What are the complementing products to the product purchased?',
+        slug:   'sales-advertiser',
         prompt: 'Write strategic post-purchase recommendations to encourage higher customer lifetime value (LTV).'
 },
  
        {
          id:     'Subscription Renewal Reminder',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Reminder Designer',
+        label:  'What is your product name?',
+        slug:   'reminder-designer',
         prompt: 'Draft friendly, urgency-based copy reminding users their annual or monthly plan is renewing.'
 },
 
         {
          id:     'Payment Failure Notification',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Notifying Designer',
+        label:  'What is your product name/brand?',
+        slug:   'notifying-designer',
         prompt: ' Write a tactful, secure email sequence alerting customers of a declined credit card.'
 },
 
         {
          id:     'Account Deletion Confirmation',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Confirmation Letter Writer',
+        label:  'Input your services name/brand...',
+        slug:   'confirmation-letter-writer',
         prompt: ' Draft compassionate farewell copy and a quick exit feedback prompt when a user closes their account.'
 },
 
         {
-         id:     'Company Milestone Celebration Post Prompt:',
-        name:   '',
-        label:  '',
-        slug:   '',
+         id:     'Company Milestone Celebration Post',
+        name:   'Milestone messenger',
+        label:  'What is the name of your company and how many years have you be established?',
+        slug:   'milestone-messenger',
         prompt: ' Write an engaging internal or external announcement for hitting a major business revenue or user milestone.'
 },
 
         {
          id:     'Crisis Management Statement',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Crisis Manager',
+        label:  'What are the problems faced by your company and your presumed solutions?',
+        slug:   'crisis-manager',
         prompt: 'Draft a professional, measured holding statement or public apology for PR emergencies.'
 },
  
         {
          id:     'Brand Partnership / Co-Marketing Pitch',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Partnership Organizer',
+        label:  'What are your common goal with the future partner and the product??',
+        slug:   'partnership-organizer',
         prompt: ' Write a collaboration proposal for a non-competing brand targeting the same audience.'
 },
 
        {
          id:     'Guest Blogging Pitch',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Blogging inviter',
+        label:  'What are your proposed topics?',
+        slug:   'blogging-inviter',
         prompt: ' Draft an outreach email proposing high-value guest article topics to industry blogs.'
 },
 
         {
          id:     'Interactive Quiz / Diagnostic Tool Copy',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Diagnostic Quiz Organizer',
+        label:  'Input problems that you have seen and presumed solutions...',
+        slug:   'diagnostic-quiz-organizer',
         prompt: ' Write questions, result logic, and lead-capture copy for a marketing quiz.'
 },
 
