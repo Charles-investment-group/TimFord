@@ -604,201 +604,201 @@
 
         {
          id:     'SMS Marketing Text Broadcast',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Broadcast Text Writer',
+        label:  'What is your business or goals of the message?',
+        slug:   'broadcast-text-writer',
         prompt: ' Write high-conversion, character-limited promotional texts for mobile marketing.'
 },
 
         {
          id:     'Push Notification Copy',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Notifying Message Creator',
+        label:  'What industry are you working?',
+        slug:   'notifying-message-creator',
         prompt: ' Draft snappy, punchy app notification hooks to drive daily active engagement.'
 },
 
        {
          id:     'Direct Mail Marketing Letter',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Marketing Letter Drafter',
+        label:  'What are your primary goal,Who your target audience is,What product or service you are promoting?',
+        slug:   'marketing-letter-drafter',
         prompt: ' Write a traditional physical sales letter or direct mail postcard copy.'
 },
 
        {
          id:     'Sales Objection Handling Script',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Objection Scripter',
+        label:  'What is the exact objection that your business have been have?',
+        slug:   'objection-scripter',
         prompt: ' Create a reference sheet of word-for-word rebuttals for common sales call objections.'
 },
 
         {
          id:     'Sales Discovery Call Agenda & Questions',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Sales Discovery Constructor',
+        label:  'What industry or product/service are you selling?',
+        slug:   'sales-discovery-constructor',
         prompt: ' Draft a structured questionnaire for qualifying inbound sales leads.'
 },
 
        {
          id:     'B2B Proposal / Statement of Work (SOW)',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'SOW Drafter',
+        label:  'What industry or type of service are you providing and is it fixed-price or time-and-materials?',
+        slug:   'sow drafter',
         prompt: ' Write the project scope, deliverables, and timeline text for a client proposal.'
 },
 
         {
          id:     'Client Offboarding & Handover Document',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Offboarding Documentator',
+        label:  'What type of service or agency you run (e.g., design, web dev, marketing)?',
+        slug:   'offboarding-documentator',
         prompt: ' Draft a final delivery checklist and project summary text for completed client work.'
 },
 
        {
          id:     'Contractor / Freelancer Agreement',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Agreement Constructor',
+        label:  'What type of service or industry the contract is for and whether you are writing this as the freelancer or the client?',
+        slug:   'agreement-constructor',
         prompt: ' Outline standard expectations, deliverables, and payment terms for external talent.'
 },
 
        {
          id:     'Non-Disclosure Agreement (NDA) Summary',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Agreement Summarizer',
+        label:  'Who is sharing the information (employer, startup founder, freelancer)? and what kind of project or deal are you working on?',
+        slug:   'agreement-summarizer',
         prompt: 'Draft plain-English explanations or clauses for protecting sensitive business data.'
 },
 
         {
          id:     'Board of Directors Meeting Agenda',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Agenda Maker',
+        label:  'Is this for a nonprofit, corporate, or startup board and what is the total meeting length you are aiming for?',
+        slug:   'agenda-maker',
         prompt: 'Organize topics, voting items, and discussion points for formal corporate meetings.'
 },
  
         {
          id:     'Board Meeting Minutes Template',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Minutes Designer',
+        label:  'What is the specified type for your organization?',
+        slug:   'minutes-designer',
         prompt: 'Create structured text templates to record official corporate decisions and meeting resolutions.'
 },
 
         {
          id:     'Shareholder Annual Report Letter',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Report Letter Writer',
+        label:  'Which industry or brand are you working for?',
+        slug:   'report-letter-writer',
         prompt: ' Write the CEO’s opening address summarizing yearly performance for company stakeholders.'
 },
 
        {
          id:     'Grant Application Narrative',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Application Narrator',
+        label:  'The type of project or organization you are writing for and the funder or grant program you are targeting?',
+        slug:   'application-narrator',
         prompt: ' Draft persuasive impact statements and project proposals for government or foundation grants.'
 },
 
         {
          id:     'CSR (Corporate Social Responsibility) Statement',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'CSR Articulator',
+        label:  'Your industry or business type and your main social or environmental focus (e.g., education, green energy, local youth)?',
+        slug:   'csr-articulator',
         prompt: 'Articulate a company’s environmental, social, and charitable giving commitments.'
 },
  
        {
          id:     'Diversity, Equity, and Inclusion (DEI) Policy',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'DEI Formulator',
+        label:  'What type of organization it is for (corporate, school, NGO, etc.) and who does the policy cover?',
+        slug:   'dei-formulator',
         prompt: ' Draft clear organizational commitments and hiring frameworks for workplace inclusivity.'
 },
 
        {
          id:     'Cybersecurity & Data Safety Policy',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Data Safety Writer',
+        label:  'What type of organization is this for (small business, non-profit, school, etc.) and what specific area do you need to focus on (remote work, password rules, or incident response)?',
+        slug:   'data-safety-writer',
         prompt: ' Write internal rules regarding password management, phishing prevention, and data handling.'
 },
 
        {
          id:     'Remote Work Policy Document',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Remote Policy Maker',
+        label:  'Is your company fully remote or hybrid and what country or region do your employees work in?',
+        slug:   'remote-policy-maker',
         prompt: ' Draft guidelines covering home office stipends, core working hours, and communication standards.'
 },
 
         {
          id:     'Employee Exit Interview Questionnaire',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Departing Questionnaire',
+        label:  'What industry or department are your departing employees in?',
+        slug:   'departing-questionnaire',
         prompt: ' Write structured, constructive questions for departing team members.'
 },
 
         {
          id:     'Employee Recognition / Shout-Out Announcement',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Shout-out Creator',
+        label:  'Who you are recognizing and the specific win or action they completed?',
+        slug:   'shoutout-creator',
         prompt: 'Draft peer-to-peer appreciation templates for company Slack channels or meetings.'
 },
 
        {
          id:     'Team Retrospective Meeting',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:  'Team Retrospect Agenda',
+        label:  'What are the goals and the departments or individual that helped achieving the goals?',
+        slug:   'team-retrospect-agenda',
         prompt: ' Write reflection questions (What went well? What didnt?) for sprint or quarterly reviews.'
 },
 
         {
          id:     'Job Offer Letter',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Job Offer Writer',
+        label:  'Is this offer for a full-time, contract, or remote position and what country or state are you hiring in?',
+        slug:   'job-offer-writer',
         prompt: 'Draft an exciting, professional employment offer including salary, benefits, and start date terms.'
 },
 
         {
          id:     'Rejection Letter for Applicants',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Rejection letter Constructor',
+        label:  'What stage the candidate is at (resume review, phone screen, or post-interview)?',
+        slug:   'rejection-letter-constructor',
         prompt: ' Write a kind, empathetic automated message for unsuccessful job candidates.'
 },
 
        {
          id:     'Internal IT Helpdesk Request Macro',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Helpdesk List Creator',
+        label:  'What specific IT issue or scenario is this macro for and what ticketing platform do you use?',
+        slug:   'helpdesk-list-creator',
         prompt: 'Draft troubleshooting instructions for common internal hardware or software tickets.'
 },
  
        {
          id:     'Supplier / Vendor Evaluation Criteria',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Evaluation Noter',
+        label:  'What industry or product/service you are sourcing for?',
+        slug:   'evaluation-noter',
         prompt: ' Write a scoring rubric and assessment text for vetting new supply chain partners.'
 },
 
        {
          id:     'Company Wiki / Knowledge Base Home',
-        name:   '',
-        label:  '',
-        slug:   '',
+        name:   'Wiki Generator',
+        label:  'What industry do you work in and what are your company goals and mission?',
+        slug:   'wiki-generator',
         prompt: ' Write welcoming orientation text and directory structures for internal company intranets.'
 },
 
