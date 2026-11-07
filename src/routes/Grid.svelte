@@ -134,23 +134,3 @@
  </div>
   {/each}
 </div>
-```
-
-<script>
-  import Grid from './Grid.svelte';
-
-  const items = [
- { id: 1, title: 'Analytics', description: 'View detailed usage analytics and reports.', image: 'https://picsum.photos/id/1015/400/200' },
- { id: 2, title: 'Settings', description: 'Configure preferences and account settings.', image: 'https://picsum.photos/id/1011/400/200' },
- { id: 3, title: 'Team', description: 'Manage team members and permissions.' },
- { id: 4, title: 'Billing', description: 'Update billing information and invoices.' },
-  ];
-
-  function onSelect(e) {
- const item = e.detail;
- // handle selection - navigate, open modal, etc.
- alert(`Selected: ${item.title}`);
-  }
-</script>
-
-<Grid {items} on:select={onSelect} />
