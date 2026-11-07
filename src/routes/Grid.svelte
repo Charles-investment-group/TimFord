@@ -69,7 +69,6 @@
  color: #111827;
   }
 
-  / Description overlay visible on hover/focus for larger screens /
   .overlay {
  position: absolute;
  left: 0;
@@ -88,7 +87,6 @@
  transform: translateY(0);
   }
 
-  / For small screens, show description inline under the content /
   @media (max-width: 600px) {
  .overlay {
  position: static;
@@ -138,9 +136,6 @@
 </div>
 ```
 
-Example usage (App.svelte):
-
-```svelte
 <script>
   import Grid from './Grid.svelte';
 
