@@ -33,7 +33,6 @@
 <li><a href="">Workflow</a></li>
 <li><a href="">Professional support</a></li>
 <li><a href="">Community</a></li>
-
 </ul>
 </div>
 
@@ -48,9 +47,13 @@
 </ul>
 </div>
 
-<div class="middle_footer_section_image_container">
-<img src="#" alt="#" />
+<div class="middle_footer_section_animation_container">
+<div class="middle_footer_section_animated_div">Chlo.e</div>
 </div>
+</section>
+
+<section class="bottom_footer_section_container">
+<span>Powered by <a class="bottom_footer_section_link" href="">Chlo.e</a></span>
 </section>
 </footer>
 <style>
@@ -105,28 +108,87 @@ background-color: hotpink;
 display: flex;
 padding: 1vw;
 border-top: 1px solid rgba(30,30,30,1);
-align-items: center;
-justify-content: flex-start;
+align-items: flex-start;
+justify-content: center;
+flex-wrap: wrap;
 }
 
 .middle_footer_section_support_container,
 .middle_footer_section_featured_container,
 .middle_footer_section_company_container {
-background-color: red;
-flex-basis: 15%;
+background-color: black;
+flex-basis: 20%;
+min-width: 150px;
+display: flex;
+align-items: flex-start;
+justify-content: flex-start;
+aspect-ratio: 1/1;
+
 }
 
-.middle_footer_section_image_container {
-flex-basis: 40%;
+.middle_footer_section_animation_container {
+flex-basis: 20%;
+background-color: transparent;
+aspect-ratio: 1/1;
+min-width: 150px;
+display: flex;
+align-items: center;
+justify-content: center;
+
 }
+
+.middle_footer_section_animated_div {
+background-color: red;
+width: 80%;
+height: 80%;
+animation: circle 10s alternate infinite;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+
+@keyframes circle {
+
+0% {
+border-radius: 100px 100px 100px 0px;
+}
+
+25% {
+border-radius: 100px 100px 0px 100px;
+}
+
+50% {
+border-radius: 100px 0px 100px 100px;
+}
+
+75% {
+border-radius: 0px 100px 100px 100px;
+}
+
+100% {
+border-radius: 100px 100px 100px 100px;
+}
+}
+
 
 .middle_footer_section_heading {
 font-weight: 700;
 font-size: 1rem;
 padding-bottom: 10px;
-background-color: none;;
+background-color: none;
 display: block;
 color: rgba(255,255,255,0.7);
+}
+
+.bottom_footer_section_container {
+display: flex;
+align-items: center;
+justify-content: center
+}
+
+.bottom_footer_section_link {
+color: red;
 }
 
 </style>

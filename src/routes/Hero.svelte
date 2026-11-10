@@ -47,7 +47,7 @@ position: absolute;
 .overlay {
 width: 100%;
 height: var(--head-height);
-height: 200%;
+height: 100%;
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
@@ -56,7 +56,7 @@ position: relative;
 }
 
 .hero-content {
-position: absolute;
+position: relative;
 z-index: 2;
 inset: 0;
 display: flex;
