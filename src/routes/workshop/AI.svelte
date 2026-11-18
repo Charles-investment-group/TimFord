@@ -1,5 +1,6 @@
 <script>
   let { data, form } = $props();
+import Grid from './Grid.svelte';
 
   const aiOptions = [
       {
@@ -804,6 +805,13 @@
 
     
   ];
+
+function onSelect(e) {
+const item = e.detail;}
+</script>
+<Grid {items} on:select={onSelect} />
+
+
 
   let activeIndex = $state(0);
   let currentAi = $derived(aiOptions[activeIndex]);
