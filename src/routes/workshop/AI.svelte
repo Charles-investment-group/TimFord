@@ -807,9 +807,9 @@ import Grid from './Grid.svelte';
   ];
 
 function onSelect(e) {
-const item = e.detail;}
+const aiOptions = e.detail;}
 </script>
-<Grid {items} on:select={onSelect} />
+<Grid {aiOptions} on:select={onSelect} />
 
 
 
@@ -825,7 +825,6 @@ const item = e.detail;}
     }
     event.target.submit();
   }
-</script>
 
 <main class="page-backdrop">
   <div class="overlay"> 
