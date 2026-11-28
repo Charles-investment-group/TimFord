@@ -1,998 +1,592 @@
 <script>
-  let { data, form } = $props();
-
-  const aiOptions = [
-      {
-         id:     'Homepage Hero Section',
-        name:   'Homepage Hero Developer',
-        label:  'Describe your desired homepage hero in details',
-        slug:   'homepage-hero-developer',
-        prompt: ' Write a catchy headline, subheadline, and primary call-to-action for a specific niche.'
-},
-
-       {
-         id:     '"About Us" Story',
-        name:   'About us Creator',
-        label:  'Give a short information about your company or organisation',
-        slug:   'about-us-creator',
-        prompt: 'Turn raw bullet points about a founders journey into an engaging, emotional brand story.'
-},
-
-        {
-         id:     'Product/Service Description',
-        name:   'Product or Service descriptor',
-        label:  'Tell us about your product or specific service',
-        slug:   'product-or-service-descriptor',
-        prompt: ' Convert technical features into benefit-driven bullet points that sell.'
-},
-
-       {
-         id:     'FAQ Section Generator',
-        name:   'FAQ page developer',
-        label:  'Give us your product details',
-        slug:   'faq-page-developer',
-        prompt: ' Anticipate and answer top customer objections and questions for a specific product.'
-},
-
-     {
-         id:     'PPC Landing Page Copy',
-        name:   'PPC landing page designer',
-        label:  'What kind of ads do you want on this page',
-        slug:   'ppc-landing-page-designer',
-        prompt: 'Write high-converting, single-focus sales copy matched to a paid ad campaign.'
-},
- 
-       {
-         id:     'Footer & Microcopy',
-        name:   'Footer & Microcopy creator',
-        label:  'Give description of how you want the footer and microcopies',
-        slug:   'footer-&-microcopy-creator',
-        prompt: 'Generate snappy microcopy for buttons, error messages, form labels, and navigation.'
-},
-
-       {
-         id:     'Meta Title & Description',
-        name:   'Meta Title & Description Developer',
-        label:  'Input your keyword and brand identity',
-        slug:   'meta-title-&-description-developer',
-        prompt: 'Write CTR-optimized titles and descriptions targeting a specific primary keyword.'
-},
- 
-       {
-         id:     'Blog Outline Generator',
-        name:   'Blog Outline Writer',
-        label:  'Input your topic,title or target',
-        slug:   'blog-outline-writer',
-        prompt: 'Create a comprehensive, SEO-friendly H2/H3 outline for an authoritative article.'
-},
- 
-       {
-         id:     'Pillar Article Drafting',
-        name:   'Pillar Article Drafter',
-        label:  'Give us the specific topic you want to draft on',
-        slug:   'pillar-article-drafter',
-        prompt: 'Turn an outline into a long-form, expert-level blog post or guide.'
-},
- 
-      {
-         id:     'Image Alt Text Generator',
-        name:   'Image Alt Text Converter',
-        label:  'Input the your image ',
-        slug:   'image-alt-text-converter',
-        prompt: ' Write concise, descriptive, and keyword-friendly alt text for web images.'
-},
-
-      {
-         id:     'Internal Linking Anchor Text',
-        name:   'Internal Linking Anchor Text writer',
-        label:  'Input topic or article',
-        slug:   'internal-linking-anchor-text-writer',
-        prompt: 'Analyze a topic and suggest natural anchor text phrases for cross-linking.'
-},
- 
-      {
-         id:     'Local SEO Business Bio',
-        name:   'Local SEO Business Bio Writer',
-        label:  'Give us details about your product and your established locations',
-        slug:   'local-seo-business-bio-writer',
-        prompt: ' Write a localized Google Business Profile description highlighting local service areas.'
-},
-
-       {
-         id:     'Value Proposition / Elevator Pitch',
-        name:   'Value Proposition Writer',
-        label:  'Input the benefits and its advantage over alternatives',
-        slug:   'value-proposition-writer',
-        prompt: 'Boil a business model down into a 15-second hook.'
-},
-
-        {
-         id:     'Brand Voice Guidelines',
-        name:   'Brand Voice Generator',
-        label:  'Tell us about your brand personality',
-        slug:   'brand-voice-generator',
-        prompt: 'Create a custom style guide (tone, vocabulary, rules) based on brand personality traits.'
-},
- 
-       {
-         id:     'Tagline & Slogan Generator',
-        name:   'Slogan Maker',
-        label:  'Input your brand or business benefits or product',
-        slug:   'slogan-maker',
-        prompt: 'Brainstorm catchy, memorable slogans based on core business benefits.'
-},
-
-       {
-         id:     'Target Audience Persona',
-        name:   'Target Consumer Detailer',
-        label:  'Give us information of your business or product',
-        slug:   'target-consumer-detailer',
-        prompt: 'Generate detailed demographic and psychodynamic profiles for an ideal customer.'
-},
- 
-      {
-         id:     'Press Release',
-        name:   'Press Release Writer',
-        label:  'Input your company or brand products details,achievements,partnerships or upcoming events ',
-        slug:   'press-release-writer',
-        prompt: ' Format a company milestone or product launch into a standard media-ready press release.'
-},
-
-      {
-         id:     'Social Media Bio',
-        name:   'Social Media Biographer',
-        label:  'Tell us who you are,what you do,call-for-action,contact',
-        slug:   'social-media-biographer',
-        prompt: ' Write punchy, character-limited bios optimized for Instagram, LinkedIn, X, or TikTok.'
-},
-
-      {
-         id:     'Pricing Page Tier Copy',
-        name:   'Pricing Page Developer',
-        label:  'Input your tier options',
-        slug:   'pricing-page-developer',
-        prompt: 'Write psychological, feature-contrasting copy for tiers (e.g., Starter, Pro, Enterprise).'
-},
- 
-       {
-         id:     'Email Welcome Sequence',
-        name:   'Email Welcome Sequence drafter',
-        label:  'Give us your brand story or missions',
-        slug:   'email-welcome-sequence-drafter',
-        prompt: ' Write a multi-part automated onboarding email series for new subscribers.'
-},
-
-      {
-         id:     'Cold Outreach Email',
-        name:   'Cold Email Outreach Writer',
-        label:  'Give us the topic,name,company achievements',
-        slug:   'cold-email-outreach-writer',
-        prompt: ' Draft personalized, high-response B2B cold emails or LinkedIn DMs.'
-},
-
-        {
-         id:     'Case Study / Success Story',
-        name:   'Case Study Constructor',
-        label:  'Give us the problem you want to be in the study',
-        slug:   'case-study-constructor',
-        prompt: 'Turn raw client metrics and feedback into a Problem-Solution-Result narrative.'
-},
- 
-       {
-         id:     'Testimonial Request Email',
-        name:   'Testimonial Request Drafter',
-        label:  'Give us the name of your project or service',
-        slug:   'testimonial-request-drafter',
-        prompt: 'Write friendly templates asking happy customers for reviews and social proof.'
-},
- 
-       {
-         id:     'Cart Abandonment Email',
-        name:   'Cart Abandonment Email Writer',
-        label:  'Tell us about the carted goods',
-        slug:   'cart-abandonment-email-writer',
-        prompt: 'Craft persuasive, urgency-driven copy to win back customers who left items in their cart.'
-},
- 
-       {
-         id:     'Business Plan Executive Summary',
-        name:   'Business Plan Executive Summarizer',
-        label:  'Input your business idea,concept,opportunities or financial overview',
-        slug:   'business-plan-executive-summarizer',
-        prompt: ' Summarize a business concept, market opportunity, and financial overview.'
-},
-
-       {
-         id:     'Business Model Canvas',
-        name:   'Business Model Designer',
-        label:  'Give me details about your business values',
-        slug:   'business-model-designer',
-        prompt: ' Textually map out revenue streams, channels, key partners, and cost structures.'
-},
-
-       {
-         id:     'Competitor SWOT Analysis',
-        name:   'Business Competitor Analyst',
-        label:  'Give us information about your competitor strengths,weaknesses and opportunities',
-        slug:   'business-competitor-analyst',
-        prompt: 'Generate a structured strengths, weaknesses, opportunities, and threats breakdown.'
-},
- 
-      {
-         id:     'Operations & Logistics',
-        name:   'Operation planner',
-        label:  'What are your production activities?',
-        slug:   'operation-planner',
-        prompt: ' Write a step-by-step Standard Operating Procedure for a routine task.'
-},
-
-       {
-         id:     'Financial Projections Narrative',
-        name:   'Narrative Writer',
-        label:  'Input for your Business strategy and financial report',
-        slug:   'narrative-writer',
-        prompt: ' Write the explanatory prose accompanying financial forecasts or cash flow models.'
-},
-
-        {
-         id:     'Risk Mitigation Strategy',
-        name:   'Risk Strategizer',
-        label:  'Input your business sectoer and plan',
-        slug:   'risk-strategizer',
-        prompt: ' Identify potential business risks and write strategic contingencies for them.'
-},
-
-       {
-         id:     'Terms of Service Draft',
-        name:   'ToS drafter',
-        label:  'Give me details on your business operations',
-        slug:   'tos-drafter',
-        prompt: ' Generate a custom website ToS template based on specific business operations (e.g., e-commerce vs. SaaS).'
-},
-
-        {
-         id:     'Privacy Policy Text',
-        name:   'Privacy Policy Generator',
-        label:  'Give us the kind of information you collect from users',
-        slug:   'privacy-policy-generator',
-        prompt: 'Outline data collection, cookie usage, and GDPR/CCPA compliance clauses.'
-},
- 
-        {
-         id:     'Refund & Return Policy',
-        name:   'Refund policy generatoor',
-        label:  'Give us your products details',
-        slug:   'refund-policy-generator',
-        prompt: ' Write clear, customer-friendly parameters for product returns and cancellations.'
-},
-
-        {
-         id:     'Service Level Agreement (SLA)',
-        name:   'Service Level Generator',
-        label:  'What are your scope os service,reponsibilties and penalties?',
-        slug:   'service-level-generator',
-        prompt: 'Define uptime commitments, support response windows, and performance metrics.'
-},
- 
-        {
-         id:     'Disclaimer/Liability Notice',
-        name:   'Liability Disclaimer Designer',
-        label:  'What are your business and business reponsibilities?',
-        slug:   'liability-disclaimer-designer',
-        prompt: ' Draft legal disclaimers for financial, wellness, or professional advice websites.'
-},
-
-       {
-         id:     'Intellectual Property Notice',
-        name:   'IP Notice Noter',
-        label:  'What is your copyright,trademark or restrictions',
-        slug:   'ip-notice-noter',
-        prompt: ' Write copyright, trademark, and fair-use attribution notices.'
-},
-
-       {
-         id:     'Employee Handbook',
-        name:   'Employee Handbook Drafter',
-        label:  'What are the values you would like your employees to keep to?',
-        slug:   'employee-handbook-drafter',
-        prompt: ' Draft foundational company policies, remote-work guidelines, and code of conduct rules.'
-},
-
-       {
-         id:     'Job Description (JD)',
-        name:   'Job Descriptor',
-        label:  'What are the skills and qualification you need and working conditions?',
-        slug:   'job-descriptor',
-        prompt: ' Write an inclusive, attractive job posting designed to pull top talent.'
-},
-
-        {
-         id:     'New Hire Onboarding Guide',
-        name:   'Onboard Guide Creator',
-        label:  'Input Company Cultures and the department or role for the new hire...',
-        slug:   'onboard-guide-creator',
-        prompt: ' Create a step-by-step training manual and checklist for new employees.'
-},
-
-        {
-         id:     'Internal SOP Generator',
-        name:   'SOP Drafter',
-        label:  'Input the tasks and routine',
-        slug:   'sop-drafter',
-        prompt: 'Standardize team workflows into clear, repeatable text documents.'
-},
-
-       {
-         id:     'Performance Review Template',
-        name:   'Performance Review Designer',
-        label:  'What are the role,department and review period?',
-        slug:   'performance-review-designer',
-        prompt: ' Create constructive evaluation rubrics and manager feedback scripts.'
-},
-
-       {
-         id:     'Internal Team Newsletter',
-        name:   'Team Newsletter Writer',
-        label:  'Input your business goals you want highlighted and additional things like birthdays or work anniversary?',
-        slug:   'team-newsletter-writer',
-        prompt: ' Write a monthly or weekly update keeping team members aligned on company wins and goals.'
-},
-
-       {
-         id:     'Knowledge Base Article',
-        name:   'Base Article Generator',
-        label:  'What topic do you want to be answered?',
-        slug:   'base-article-generator',
-        prompt: ' Write a clear, step-by-step troubleshooting guide or tutorial for users.'
-},
-
-       {
-         id:     'Support Ticket Macro',
-        name:   'Macro Creator',
-        label:  'Input Questions commonly asked?',
-        slug:   'macro-creator',
-        prompt: ' Create empathetic, pre-written response templates for common customer complaints.'
-},
-
-       {
-         id:     'Product Tooltip / Microcopy',
-        name:   'Tooltip Designer',
-        label:  'Input descrption to the control or guidance ',
-        slug:   'tooltip-designer',
-        prompt: ' Write bite-sized in-app guidance messages to help users navigate software.'
-},
-
-        {
-         id:     'Customer Exit Survey',
-        name:   'Customer Survey Drafter',
-        label:  'What tone do you want the survey to sound to the customer?',
-        slug:   'customer-survey-drafter',
-        prompt: 'Draft thoughtful cancellation or churn survey questions to gather exit feedback.'
-},
- 
-        {
-         id:     'Pitch Deck Script',
-        name:   'Pitch Desk Scripter',
-        label:  'What are the information you want to relate with partners or investors',
-        slug:   'pitch-desk-scripter',
-        prompt: ' Write persuasive speaker notes and slide copy for an investor pitch presentation.'
-},
-
-       {
-         id:     'Investor Update Report',
-        name:   'Update Report Drafter',
-        label:  'What are the updates you want to informn your partners or investors',
-        slug:   'update-report-drafter',
-        prompt: ' Draft a periodic performance update detailing growth metrics and runway for stakeholders.'
-},
-
-       {
-         id:     'Partnership Proposal',
-        name:   'Proposal Composer',
-        label:  'What is the name of the company you want partnership with and which product...',
-        slug:   'proposal-composer',
-        prompt: ' Write a professional B2B outreach letter proposing a strategic alliance or joint venture.'
-},
-
-       {
-         id:     'Founders Vision Statement',
-        name:   'Founders Vision Writer',
-        label:  'What are you future expectation for your business...',
-        slug:   'founders-vision-writer',
-        prompt: 'Articulate a long-term company manifesto and industry-changing mission.'
-},
- 
-        {
-         id:     'Influencer Outreach Email',
-        name:   'Outreach Email Generator',
-        label:  'Input the name of the creator and topic of the recent or desired topic...',
-        slug:   'outreach-email-generator',
-        prompt: ' Write a personalized pitch letter to collaborate with social media influencers or creators.'
-},
-
-       {
-         id:     'Affiliate Program Guidelines',
-        name:   'Guidelines Articulator',
-        label:  'Input the name of the partner and what product are you promoting...',
-        slug:   'guidelines-articulator',
-        prompt: ' Draft the terms, commission structures, and rules for recruiting brand affiliates.'
-},
-
-       {
-         id:     'Webinar Script & Slide Copy',
-        name:   'Script & Slide copier',
-        label:  'Who are your Audience involved...',
-        slug:   'script-&-slide-copier',
-        prompt: ' Write an engaging script and presentation text for an educational or sales webinar.'
-},
-
-       {
-         id:     'Podcast Interview Pitch',
-        name:   'Podcast Interview Composer',
-        label:  'What are the values you are planning to pass to the host audience...',
-        slug:   'podcast-interview-composer',
-        prompt: ' Draft a compelling pitch to get a founder booked as a guest on industry podcasts.'
-},
-
-       {
-         id:     'Podcast Show Notes & Summary',
-        name:   'Podcasts Noter',
-        label:  'What is the topic you are talking on and guests onboard...',
-        slug:   'podcast-noter',
-        prompt: 'Turn an audio transcript into structured show notes, timestamps, and key takeaways.'
-},
- 
-       {
-         id:     'Community Discord/Slack Channel Rules',
-        name:   'Rules Drafter',
-        label:  'What kind of community are you organizing',
-        slug:   'rules-drafter',
-        prompt: ' Write welcoming guidelines and moderation rules for a customer community.'
-},
-
-       {
-         id:     'Virtual Event Landing Page',
-        name:   'Event Communicator',
-        label:  'Input for speakers,agendas and topic for the event...',
-        slug:   'event-communicator',
-        prompt: 'Write registration copy, speaker bios, and agendas for an online conference or workshop.'
-},
- 
-       {
-         id:     'Live-Streaming / Q&A Script',
-        name:   'Q&A Scripter',
-        label:  'Input the topic to be discussed about...',
-        slug:   'q&a-scripter',
-        prompt: ' Outline a script and discussion prompts for a live Q&A session with customers.'
-},
-
-        {
-         id:     'Giveaway / Contest Rules',
-        name:   'Contest Rule Constructor',
-        label:  'Input the eligibility/requirements,prize details,time and acitivites details',
-        slug:   'contest-rule-constructor',
-        prompt: 'Draft official terms, eligibility criteria, and promotional copy for a social media giveaway.'
-},
-
-       {
-         id:     'Crowdfunding Campaign Pitch',
-        name:   'Crowdfunder Campaign Designer',
-        label:  'What is your project or product,the amount of fund you need and why you think it will work...',
-        slug:   'crowdfunder-campaign-designer',
-        prompt: ' Write a compelling narrative, reward tier descriptions, and updates for Kickstarter or Indiegogo.'
-},
-
-       {
-         id:     'Beta Tester Invitation & Onboarding',
-        name:   'Tester Invitation Writer',
-        label:  'What product are you testing?',
-        slug:   'tester-invitation-writer',
-        prompt: ' Write exclusive invite copy and feedback instructions for early software testers.'
-},
-
-        {
-         id:     'Product Feature Request Response',
-        name:   'Feature Request Reponse Drafter',
-        label:  'What is the name of the product,the underlying problem and preferred solution?',
-        slug:   'feature-request-reponse-drafter',
-        prompt: ' Draft polite, professional replies acknowledging user feature suggestions and roadmap realities.'
-},
-
-       {
-         id:     'Release Notes / Changelog',
-        name:   'Changelog Artist',
-        label:  'What are the major upadtes or minor changes added to your product?',
-        slug:   'changelog-artist',
-        prompt: ' Turn technical software updates into engaging, user-friendly feature highlights.'
-},
-
-        {
-         id:     'Customer Appreciation Thank-You Note',
-        name:   'Appreciation Noter',
-        label:  'What specific product are you thank for??',
-        slug:   'appreciation-noter',
-        prompt: ' Write heartfelt, personalized messages or holiday cards for VIP clients.'
-},
-
-        {
-         id:     'VIP Loyalty Program Rules',
-        name:   'Rules Maker',
-        label:  'What are the rewards for VIPs or the benefits and how the points are collected...',
-        slug:   'rules-maker',
-        prompt: ' Draft copy explaining tier benefits, point collection, and rewards for a customer loyalty program.'
-},
-
-       {
-         id:     'Re-engagement / "We Miss You" Email',
-        name:   'Re-engagement Secretary',
-        label:  'What are your recents updates and brand name?',
-        slug:   'reengagement-secretary',
-        prompt: ' Craft a win-back campaign for dormant subscribers or inactive app users.'
-},
-
-       {
-         id:     'Upsell / Cross-sell Email',
-        name:   'Sales Advertiser',
-        label:  'What are the complementing products to the product purchased?',
-        slug:   'sales-advertiser',
-        prompt: 'Write strategic post-purchase recommendations to encourage higher customer lifetime value (LTV).'
-},
- 
-       {
-         id:     'Subscription Renewal Reminder',
-        name:   'Reminder Designer',
-        label:  'What is your product name?',
-        slug:   'reminder-designer',
-        prompt: 'Draft friendly, urgency-based copy reminding users their annual or monthly plan is renewing.'
-},
-
-        {
-         id:     'Payment Failure Notification',
-        name:   'Notifying Designer',
-        label:  'What is your product name/brand?',
-        slug:   'notifying-designer',
-        prompt: ' Write a tactful, secure email sequence alerting customers of a declined credit card.'
-},
-
-        {
-         id:     'Account Deletion Confirmation',
-        name:   'Confirmation Letter Writer',
-        label:  'Input your services name/brand...',
-        slug:   'confirmation-letter-writer',
-        prompt: ' Draft compassionate farewell copy and a quick exit feedback prompt when a user closes their account.'
-},
-
-        {
-         id:     'Company Milestone Celebration Post',
-        name:   'Milestone messenger',
-        label:  'What is the name of your company and how many years have you be established?',
-        slug:   'milestone-messenger',
-        prompt: ' Write an engaging internal or external announcement for hitting a major business revenue or user milestone.'
-},
-
-        {
-         id:     'Crisis Management Statement',
-        name:   'Crisis Manager',
-        label:  'What are the problems faced by your company and your presumed solutions?',
-        slug:   'crisis-manager',
-        prompt: 'Draft a professional, measured holding statement or public apology for PR emergencies.'
-},
- 
-        {
-         id:     'Brand Partnership / Co-Marketing Pitch',
-        name:   'Partnership Organizer',
-        label:  'What are your common goal with the future partner and the product??',
-        slug:   'partnership-organizer',
-        prompt: ' Write a collaboration proposal for a non-competing brand targeting the same audience.'
-},
-
-       {
-         id:     'Guest Blogging Pitch',
-        name:   'Blogging inviter',
-        label:  'What are your proposed topics?',
-        slug:   'blogging-inviter',
-        prompt: ' Draft an outreach email proposing high-value guest article topics to industry blogs.'
-},
-
-        {
-         id:     'Interactive Quiz / Diagnostic Tool Copy',
-        name:   'Diagnostic Quiz Organizer',
-        label:  'Input problems that you have seen and presumed solutions...',
-        slug:   'diagnostic-quiz-organizer',
-        prompt: ' Write questions, result logic, and lead-capture copy for a marketing quiz.'
-},
-
-        {
-         id:     'SMS Marketing Text Broadcast',
-        name:   'Broadcast Text Writer',
-        label:  'What is your business or goals of the message?',
-        slug:   'broadcast-text-writer',
-        prompt: ' Write high-conversion, character-limited promotional texts for mobile marketing.'
-},
-
-        {
-         id:     'Push Notification Copy',
-        name:   'Notifying Message Creator',
-        label:  'What industry are you working?',
-        slug:   'notifying-message-creator',
-        prompt: ' Draft snappy, punchy app notification hooks to drive daily active engagement.'
-},
-
-       {
-         id:     'Direct Mail Marketing Letter',
-        name:   'Marketing Letter Drafter',
-        label:  'What are your primary goal,Who your target audience is,What product or service you are promoting?',
-        slug:   'marketing-letter-drafter',
-        prompt: ' Write a traditional physical sales letter or direct mail postcard copy.'
-},
-
-       {
-         id:     'Sales Objection Handling Script',
-        name:   'Objection Scripter',
-        label:  'What is the exact objection that your business have been have?',
-        slug:   'objection-scripter',
-        prompt: ' Create a reference sheet of word-for-word rebuttals for common sales call objections.'
-},
-
-        {
-         id:     'Sales Discovery Call Agenda & Questions',
-        name:   'Sales Discovery Constructor',
-        label:  'What industry or product/service are you selling?',
-        slug:   'sales-discovery-constructor',
-        prompt: ' Draft a structured questionnaire for qualifying inbound sales leads.'
-},
-
-       {
-         id:     'B2B Proposal / Statement of Work (SOW)',
-        name:   'SOW Drafter',
-        label:  'What industry or type of service are you providing and is it fixed-price or time-and-materials?',
-        slug:   'sow drafter',
-        prompt: ' Write the project scope, deliverables, and timeline text for a client proposal.'
-},
-
-        {
-         id:     'Client Offboarding & Handover Document',
-        name:   'Offboarding Documentator',
-        label:  'What type of service or agency you run (e.g., design, web dev, marketing)?',
-        slug:   'offboarding-documentator',
-        prompt: ' Draft a final delivery checklist and project summary text for completed client work.'
-},
-
-       {
-         id:     'Contractor / Freelancer Agreement',
-        name:   'Agreement Constructor',
-        label:  'What type of service or industry the contract is for and whether you are writing this as the freelancer or the client?',
-        slug:   'agreement-constructor',
-        prompt: ' Outline standard expectations, deliverables, and payment terms for external talent.'
-},
-
-       {
-         id:     'Non-Disclosure Agreement (NDA) Summary',
-        name:   'Agreement Summarizer',
-        label:  'Who is sharing the information (employer, startup founder, freelancer)? and what kind of project or deal are you working on?',
-        slug:   'agreement-summarizer',
-        prompt: 'Draft plain-English explanations or clauses for protecting sensitive business data.'
-},
-
-        {
-         id:     'Board of Directors Meeting Agenda',
-        name:   'Agenda Maker',
-        label:  'Is this for a nonprofit, corporate, or startup board and what is the total meeting length you are aiming for?',
-        slug:   'agenda-maker',
-        prompt: 'Organize topics, voting items, and discussion points for formal corporate meetings.'
-},
- 
-        {
-         id:     'Board Meeting Minutes Template',
-        name:   'Minutes Designer',
-        label:  'What is the specified type for your organization?',
-        slug:   'minutes-designer',
-        prompt: 'Create structured text templates to record official corporate decisions and meeting resolutions.'
-},
-
-        {
-         id:     'Shareholder Annual Report Letter',
-        name:   'Report Letter Writer',
-        label:  'Which industry or brand are you working for?',
-        slug:   'report-letter-writer',
-        prompt: ' Write the CEO’s opening address summarizing yearly performance for company stakeholders.'
-},
-
-       {
-         id:     'Grant Application Narrative',
-        name:   'Application Narrator',
-        label:  'The type of project or organization you are writing for and the funder or grant program you are targeting?',
-        slug:   'application-narrator',
-        prompt: ' Draft persuasive impact statements and project proposals for government or foundation grants.'
-},
-
-        {
-         id:     'CSR (Corporate Social Responsibility) Statement',
-        name:   'CSR Articulator',
-        label:  'Your industry or business type and your main social or environmental focus (e.g., education, green energy, local youth)?',
-        slug:   'csr-articulator',
-        prompt: 'Articulate a company’s environmental, social, and charitable giving commitments.'
-},
- 
-       {
-         id:     'Diversity, Equity, and Inclusion (DEI) Policy',
-        name:   'DEI Formulator',
-        label:  'What type of organization it is for (corporate, school, NGO, etc.) and who does the policy cover?',
-        slug:   'dei-formulator',
-        prompt: ' Draft clear organizational commitments and hiring frameworks for workplace inclusivity.'
-},
-
-       {
-         id:     'Cybersecurity & Data Safety Policy',
-        name:   'Data Safety Writer',
-        label:  'What type of organization is this for (small business, non-profit, school, etc.) and what specific area do you need to focus on (remote work, password rules, or incident response)?',
-        slug:   'data-safety-writer',
-        prompt: ' Write internal rules regarding password management, phishing prevention, and data handling.'
-},
-
-       {
-         id:     'Remote Work Policy Document',
-        name:   'Remote Policy Maker',
-        label:  'Is your company fully remote or hybrid and what country or region do your employees work in?',
-        slug:   'remote-policy-maker',
-        prompt: ' Draft guidelines covering home office stipends, core working hours, and communication standards.'
-},
-
-        {
-         id:     'Employee Exit Interview Questionnaire',
-        name:   'Departing Questionnaire',
-        label:  'What industry or department are your departing employees in?',
-        slug:   'departing-questionnaire',
-        prompt: ' Write structured, constructive questions for departing team members.'
-},
-
-        {
-         id:     'Employee Recognition / Shout-Out Announcement',
-        name:   'Shout-out Creator',
-        label:  'Who you are recognizing and the specific win or action they completed?',
-        slug:   'shoutout-creator',
-        prompt: 'Draft peer-to-peer appreciation templates for company Slack channels or meetings.'
-},
-
-       {
-         id:     'Team Retrospective Meeting',
-        name:  'Team Retrospect Agenda',
-        label:  'What are the goals and the departments or individual that helped achieving the goals?',
-        slug:   'team-retrospect-agenda',
-        prompt: ' Write reflection questions (What went well? What didnt?) for sprint or quarterly reviews.'
-},
-
-        {
-         id:     'Job Offer Letter',
-        name:   'Job Offer Writer',
-        label:  'Is this offer for a full-time, contract, or remote position and what country or state are you hiring in?',
-        slug:   'job-offer-writer',
-        prompt: 'Draft an exciting, professional employment offer including salary, benefits, and start date terms.'
-},
-
-        {
-         id:     'Rejection Letter for Applicants',
-        name:   'Rejection letter Constructor',
-        label:  'What stage the candidate is at (resume review, phone screen, or post-interview)?',
-        slug:   'rejection-letter-constructor',
-        prompt: ' Write a kind, empathetic automated message for unsuccessful job candidates.'
-},
-
-       {
-         id:     'Internal IT Helpdesk Request Macro',
-        name:   'Helpdesk List Creator',
-        label:  'What specific IT issue or scenario is this macro for and what ticketing platform do you use?',
-        slug:   'helpdesk-list-creator',
-        prompt: 'Draft troubleshooting instructions for common internal hardware or software tickets.'
-},
- 
-       {
-         id:     'Supplier / Vendor Evaluation Criteria',
-        name:   'Evaluation Noter',
-        label:  'What industry or product/service you are sourcing for?',
-        slug:   'evaluation-noter',
-        prompt: ' Write a scoring rubric and assessment text for vetting new supply chain partners.'
-},
-
-       {
-         id:     'Company Wiki / Knowledge Base Home',
-        name:   'Wiki Generator',
-        label:  'What industry do you work in and what are your company goals and mission?',
-        slug:   'wiki-generator',
-        prompt: ' Write welcoming orientation text and directory structures for internal company intranets.'
-},
-
-    
-  ];
-
+  import workshop_prompts from '#lib/ai_prompts/workshop_prompts.json'
   let activeIndex = $state(0);
   let currentAi = $derived(aiOptions[activeIndex]);
   let userInput = $state("");
 
   function handleSubmit(event) {
     event.preventDefault();
-    const inputElement = document.getElementById('aiprompt');
+    const inputElement = document.getElementById('ai_prompt');
     if (inputElement) {
       inputElement.value = currentAi.prompt + userInput;
     }
     event.target.submit();
   }
+
+  let { data, form } = $props();
 </script>
 
-<main class="page-backdrop">
-  <div class="overlay"> 
-    <div class="button-group">
-      {#each aiOptions as ai, index}
-        <button 
-          type="button" 
-          class="ai-tab-btn {activeIndex === index ? 'active' : ''}" 
-          onclick={() => { activeIndex = index; userInput = ''; }}
-        >
-          {ai.name}
-        </button>
-      {/each}
-    </div>
+<div class="press">
+  <div class="sheet"></div>
+  <div class="roll"></div>
+  <div class="sheet"></div>
+  <div class="roll"></div>
+  <div class="sheet"></div>
+  <div class="roll"></div>
+  <div class="sheet"></div>
+  <div class="sheet"></div>
+  <div class="sheet"></div>
+  <div class="sheet"></div>
+  <div class="sheet"></div>
+  <div class="roll"></div>
 
-    <form method="POST" class="form_container" onsubmit={handleSubmit}>
-      <label for="aiprompt">{currentAi.label}</label>
-      <input 
-        type="text" 
-        id="aiprompt" 
-        name="aiprompt" 
-        bind:value={userInput} 
-        required 
-      />
-      <button type="submit" class="submit-btn">Submit</button>
-    </form>
+  
+<section class="workshop-about" aria-labelledby="workshop-about-heading">
+	<div class="" aria-hidden="true"></div>
+	<div class="about-shell">
+		<div class="intro">
+			<p class="eyebrow"> AI Workshop</p>
+			<h2 id="workshop-about-heading">Build a clearer path <span>forward.</span></h2>
+			<p class="lede">
+				Choose a focused AI guide for the business question in front of you, then turn that direction into work you can use.
+			</p>
+		</div>
 
-    {#if form?.aiResponse}
-      <div class="response">
-        <div class="aibox">{@html form.aiResponse}</div>
-      </div>
-    {/if}
-  </div>
+		<div class="about-detail">
+			<div class="technical-divider" aria-hidden="true">
+				<span></span><i></i><span></span>
+			</div>
+			<div class="about-copy">
+				<h3 class="about-heading">Your ideas. <span>Powered by AI.</span></h3>
+				<p class="about-description">
+					The AI Workshop provides practical AI-powered guides designed to help you tackle real business challenges. From developing strategies to refining your marketing, find the right starting point and turn your ideas into actionable results.
+				</p>
+			</div>
+
+</section>
+
+
+</div>
+
+
+<main class="main_section">
+{#each workshop_prompts as prompt}
+<div class="workshop_prompt_card">
+<span>{prompt.name}</span>
+<form class="input_form">
+<label for="prompt">{prompt.label}.</label>
+<input type="text" name="prompt" id="ai_prompt">
+</form>
+</div>
+{/each}
 </main>
 
 <style>
-  .overlay,
-  main {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+/* From Uiverse.io by preet_7613 */ 
+/* 1. Scoped Global Selectors */
+.press * {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.press {
+  background: #86a6f9;
+  position: relative;
+  width: 100%; /* Replaced 100vh with 100% or a fixed height depending on your container needs */
+  height: 600px;
+  overflow: hidden; /* Removed dynamic font-size using vw to avoid the unit error */
+  font-size: 16px;
+  color: #17181c;
+  font-family: serif;
+  line-height: 1.5;
+} /* Scoped body styles to the container instead */
+.press-container {
+  display: block;
+}
+.press .sheet {
+  overflow: hidden;
+}
+.press .sheet,
+.press .sheet:before,
+.press .roll {
+  position: absolute;
+}
+.press .sheet,
+.press .roll {
+  top: 50%;
+  left: 50%;
+}
+.press .sheet {
+  width: 4em;
+  height: 6em;
+  transform: translate(-50%, -50%) rotateX(-45deg) rotateZ(-45deg);
+}
+.press .sheet:before {
+  animation: print 0.5s ease-in-out infinite;
+  background:
+    linear-gradient(#0000 5.2em, currentColor 5.2em 5.3em, #0000 5.3em 5.5em)
+      0.4em 0 / 3.2em 6em,
+    linear-gradient(#0000 5.5em, currentColor 5.5em 5.7em, #0000 5.7em) 0.6em 0 /
+      2.8em 6em,
+    linear-gradient(
+        90deg,
+        #e3e4e8 0.4em,
+        #0000 0.4em 1.9em,
+        #e3e4e8 1.9em 2.1em,
+        #0000 2.1em 3.6em,
+        #e3e4e8 3.6em
+      )
+      0 0 / 4em 6em,
+    repeating-linear-gradient(
+        #e3e4e8 0 0.4em,
+        #0000 0.4em 5em,
+        #e3e4e8 5em 6em,
+        #0000 6em
+      )
+      0 0 / 4em 6em,
+    linear-gradient(#0000 3.4em, currentColor 3.4em) 100% 0 / 50% 6em,
+    repeating-linear-gradient(currentColor 0 0.2em, #e3e4e8 0.2em 0.4em) 0 0 /
+      4em 6em;
+  background-repeat: repeat-y;
+  color: #17181c;
+  content: "";
+  display: block;
+  top: -6em;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 6em);
+}
+.press .sheet:nth-child(1):before,
+.press .sheet:nth-child(5):before {
+  color: #c7cad1;
+}
+.press .sheet:nth-child(n + 7):nth-child(-n + 9) {
+  height: 0.4em;
+}
+.press .sheet:nth-child(1) {
+  height: 42em;
+  transform: translate(-50%, -50%) rotateX(-45deg) rotateZ(-45deg)
+    translate(-17.4em, 9.4em) rotateX(-90deg);
+}
+.press .sheet:nth-child(3) {
+  transform: translate(-50%, -50%) rotateX(-45deg) rotateZ(-45deg)
+    translate(-2.5em, -2.5em);
+}
+.press .sheet:nth-child(5) {
+  transform: translate(-50%, -50%) rotateX(-45deg) rotateZ(-45deg)
+    translate(-0.5em, -0.7em) rotateX(-75deg);
+}
+.press .sheet:nth-child(7) {
+  transform: translate(-50%, -50%) rotateX(-45deg) rotateZ(-45deg)
+    translate(1.7em, -1.85em) rotateX(-15deg);
+}
+.press .sheet:nth-child(7):before {
+  background-position-y: 5.2em;
+}
+.press .sheet:nth-child(8) {
+  transform: translate(-50%, -50%) rotateX(-45deg) rotateZ(-45deg)
+    translate(1.7em, -1.5em) rotateX(15deg);
+}
+.press .sheet:nth-child(8):before {
+  background-position-y: 4.8em;
+}
+.press .sheet:nth-child(9) {
+  transform: translate(-50%, -50%) rotateX(-45deg) rotateZ(-45deg)
+    translate(1.6em, -1.05em) rotateX(45deg);
+}
+.press .sheet:nth-child(9):before {
+  background-position-y: 4.4em;
+}
+.press .sheet:nth-child(10):before,
+.press .sheet:nth-child(11):before {
+  background-position-y: 4em;
+}
+.press .sheet:nth-child(10) {
+  transform: translate(-50%, -50%) rotateX(-45deg) rotateZ(-45deg)
+    translate(-0.5em, 1.95em) rotateX(75deg);
+}
+.press .sheet:nth-child(11) {
+  height: 29em;
+  transform: translate(-50%, -50%) rotateX(-45deg) rotateZ(-45deg)
+    translate(-2.5em, 19.25em);
+}
+.press .roll {
+  background-color: #2e3138;
+  background-image: radial-gradient(
+    1em 2em at 0.5em 50%,
+    #17181c 49%,
+    #17181c00 50%
+  );
+  border-radius: 0.5em 0.5em 0.5em 0.5em / 1em 1em 1em 1em;
+  width: 8em;
+  height: 2em;
+}
+.press .roll:nth-child(2) {
+  transform: translate(-50%, -50%) rotateX(-45deg) rotateZ(-45deg)
+    translate(-3em, -4.5em) skewX(-22.5deg);
+}
+.press .roll:nth-child(4) {
+  transform: translate(-50%, -50%) rotateX(-45deg) rotateZ(-45deg)
+    translate(-2em, -0.5em) skewX(-22.5deg);
+}
+.press .roll:nth-child(6) {
+  transform: translate(-50%, -50%) rotateX(-45deg) rotateZ(-45deg)
+    translate(1em, -1em) skewX(-22.5deg);
+}
+.press .roll:nth-child(12) {
+  transform: translate(-50%, -50%) rotateX(-45deg) rotateZ(-45deg)
+    translate(-2em, 4.45em) skewX(-22.5deg);
+} /* Animations */
+@keyframes print {
+  from {
+    transform: translateY(0);
   }
-
-  .overlay {
-    width: 100%;
-    padding: 6rem clamp(1rem, 5vw, 4rem) 4rem;
-    box-sizing: border-box;
+  to {
+    transform: translateY(6em);
   }
-
-  .response, form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .button-group {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: min(100%, 72rem);
-    background-color: white;
-    padding: 0 0 30px;
-     }
-
-  .ai-tab-btn {
-    flex: 1 1 10rem;
-    min-height: 44px;
-    padding: 10px 20px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    background-color: white;
-    color: black;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0px 0px 10px lightblue;
-  }
-
-  .ai-tab-btn.active {
-    background-color: black;
-    color: white;
-    font-weight: bold;
-    box-shadow: 0px 0px 60px lightblue;
-  }
-
-  input, input:focus {
-    box-sizing: border-box;
-    width: 100%;
-    height: clamp(9rem, 20vw, 18rem);
-    border-radius: 30px;
-    background-color: white;
-    box-shadow: 0px 0px 60px lightblue;
-    color: black;
-    padding: 20px;
-    border: none;
-    outline: none;
-  }
+}
 
 
-  .form_container, .response {
-    color: white;
-  }
+.main_section {
+display: flex;
+width: calc(100vw - 2vw);
+flex-wrap: wrap;
+gap: 1vw;
+margin: 0px 0px 0px 2.5vw;
+align-items: center;
+justify-content: flex-start;
+}
 
-  form {
-    width: min(100%, 72rem);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 10px;
-  }
+.workshop_prompt_card {
+display: flex;
+width: calc(25vw - 15px - 2px - 10px);
+height: 100%;
+background-color: rgba(0,0,0,0.3);
+flex-direction: column;
+border-radius: 10px;
+border: 1px solid rgba(255,255,255,0.3);
+padding: 0px;
+}
 
-  .response {
-    width: min(100%, 72rem);
-    box-sizing: border-box;
-    padding: 1.25rem clamp(0rem, 4vw, 4rem);
-  }
+.input_form {
+display: flex;
+flex-direction: column;
+width: 100%;
+position: relative;
+height: 100%;
+align-items: flex-start;
+justify-content: flex-start;
+background-color: none;
+}
 
-  .aibox {
-    background-color: rgba(0,0,0,0);
-    color: white;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    height: 100%;
-  }
+#ai_prompt {
+position: absolute;
+bottom: 0px;
+width: calc(100% - 40px);
+left: 0px;
+height: 40px;
+border: none;
+border-radius: 0px;
+background: linear-gradient(transparent);
+border-top: 1px solid rgba(255,255,255,0.3);
+color: white;
+padding: 5px 20px; 
+}
 
-  .submit-btn {
-    min-height: 44px;
-    padding: 0.65rem 1.2rem;
-  }
+#ai_prompt:focus {
+outline: none;
+}
 
-  @media (max-width: 700px) {
-    .overlay {
-      justify-content: flex-start;
-      padding: 5rem 1rem 3rem;
-    }
+.workshop_prompt_card span {
+font-weight: 700;
+padding: 10px 10px 10px 10px;
+color: rgba(255,255,255,0.9);
+max-height: 40px;
+min-height: 40px;
+}
 
-    .button-group {
-      gap: 8px;
-      padding-bottom: 1.25rem;
-    }
+.workshop_prompt_card form label {
+padding: 0px 10px 10px 10px;
+color: rgba(255,255,255,0.7);
+word-break: break-word;
+min-height: 30vh;
+max-height: 30vh;
+}
 
-    .ai-tab-btn {
-      flex-basis: calc(50% - 4px);
-      padding-inline: 0.75rem;
-      font-size: 0.9rem;
-    }
+	.workshop-about {
+		--ink: #0a1628;
+		--panel: #ffffff;
+		--line: rgba(255, 255, 255, 0.28);
+		--electric: #4a9fff;
+		position: relative;
+		isolation: isolate;
+		overflow: hidden;
+		padding: clamp(3.5rem, 5vw, 5rem) 1.25rem clamp(4rem, 6vw, 5.5rem);
+		color: #ffffff;
+		font-family: Arial, Helvetica, sans-serif;
+		background: rgba(0,0,0,0);
+	}
 
-    input,
-    input:focus {
-      height: clamp(9rem, 42vw, 13rem);
-      border-radius: 20px;
-    }
 
-    .response {
-      padding-inline: 0;
-    }
-  }
+	.about-shell {
+		width: min(100%, 1120px);
+		margin: 0 auto;
+	}
 
-  @media (max-width: 480px) {
-    .overlay {
-      padding-top: 4.5rem;
-    }
+	.intro {
+		width: min(100%, 700px);
+		margin: 0 auto clamp(1.5rem, 3vw, 2.5rem);
+		text-align: center;
+	}
 
-    .ai-tab-btn {
-      flex-basis: 100%;
-    }
+	.eyebrow {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.45rem;
+		margin: 0 0 0.75rem;
+		padding: 0.42rem 0.78rem;
+		border: 1px solid rgba(255, 255, 255, 0.32);
+		border-radius: 999px;
+		color: #ffffff;
+		background: rgba(30, 111, 217, 0.45);
+		font: 700 0.74rem/1 Arial, Helvetica, sans-serif;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
 
-    form {
-      gap: 0.75rem;
-    }
-  }
+	h2, h3, p { margin-top: 0; }
+
+	h2 {
+		margin-bottom: 0.75rem;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: clamp(2.35rem, 6vw, 4.85rem);
+		font-weight: 800;
+		line-height: 1.04;
+		letter-spacing: 0;
+	}
+
+	h2 span { color: var(--electric); }
+
+	.lede {
+		max-width: 590px;
+		margin: 0 auto;
+		color: rgba(255, 255, 255, 0.82);
+		font: 400 clamp(1rem, 1.7vw, 1.15rem)/1.65 Arial, Helvetica, sans-serif;
+	}
+
+	.about-detail {
+		margin: 0 auto clamp(2rem, 3.5vw, 2.75rem);
+	}
+
+	.technical-divider {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		max-width: 700px;
+		margin: 0 auto clamp(1rem, 2vw, 1.5rem);
+	}
+
+	.technical-divider span {
+		flex: 1;
+		height: 1px;
+		background: linear-gradient(90deg, transparent, rgba(74, 159, 255, 0.55));
+	}
+
+	.technical-divider span:last-child {
+		background: linear-gradient( transparent);
+	}
+
+	.technical-divider i {
+		width: 0.45rem;
+		height: 0.45rem;
+		border: 1px solid #9bc7ff;
+		border-radius: 50%;
+		background: var(--electric);
+		box-shadow: 0 0 10px rgba(74, 159, 255, 0.7);
+	}
+
+	.about-copy {
+		max-width: 760px;
+		margin: 0 auto clamp(1.25rem, 2.5vw, 1.75rem);
+		text-align: center;
+	}
+
+	.about-heading {
+		margin-bottom: 0.65rem;
+		color: #ffffff;
+		font: 800 clamp(1.8rem, 3.6vw, 2.65rem)/1.1 Arial, Helvetica, sans-serif;
+	}
+
+	.about-heading span { color: var(--electric); }
+
+	.about-description {
+		max-width: 680px;
+		margin: 0 auto;
+		color: rgba(255, 255, 255, 0.82);
+		font: 400 clamp(0.96rem, 1.5vw, 1.05rem)/1.65 Arial, Helvetica, sans-serif;
+	}
+
+	.benefit-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: clamp(0.75rem, 2vw, 1rem);
+	}
+
+	.benefit-card {
+		min-height: 10.5rem;
+		padding: clamp(1.1rem, 2.2vw, 1.45rem);
+		border: 1px solid rgba(121, 167, 220, 0.3);
+		border-radius: 7px;
+		background: linear-gradient(145deg, rgba(17, 39, 69, 0.96), rgba(9, 22, 42, 0.96));
+		box-shadow: inset 0 1px rgba(255, 255, 255, 0.035);
+		outline: none;
+		transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+	}
+
+	.benefit-icon {
+		display: grid;
+		width: 2.25rem;
+		height: 2.25rem;
+		margin-bottom: 1.1rem;
+		place-items: center;
+		border: 1px solid rgba(74, 159, 255, 0.8);
+		border-radius: 5px;
+		color: var(--electric);
+		background: rgba(30, 111, 217, 0.12);
+		transition: color 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
+	}
+
+	.benefit-card h4 {
+		margin: 0 0 0.55rem;
+		color: #ffffff;
+		font: 700 1rem/1.25 Arial, Helvetica, sans-serif;
+	}
+
+	.benefit-card p {
+		margin: 0;
+		color: rgba(255, 255, 255, 0.72);
+		font: 400 0.9rem/1.5 Arial, Helvetica, sans-serif;
+	}
+
+	.tool-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: clamp(1rem, 2.5vw, 1.4rem);
+	}
+
+	.tool-card {
+		min-width: 0;
+		overflow: hidden;
+		border: 1px solid rgba(255, 255, 255, 0.46);
+		border-radius: 8px;
+		background: var(--panel);
+		box-shadow: 0 0 24px rgba(74, 159, 255, 0.22);
+		outline: none;
+		transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+	}
+
+	.card-visual {
+		position: relative;
+		height: clamp(11rem, 24vw, 15.5rem);
+		overflow: hidden;
+		border-bottom: 1px solid rgba(30, 111, 217, 0.2);
+		background:
+			linear-gradient(rgba(30, 111, 217, 0.1) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(30, 111, 217, 0.1) 1px, transparent 1px),
+			radial-gradient(circle at 58% 44%, rgba(74, 159, 255, 0.24), transparent 42%),
+			#f7fbff;
+		background-size: 36px 36px, 36px 36px, auto, auto;
+	}
+
+	.card-copy { padding: clamp(1.25rem, 2.5vw, 1.7rem); }
+
+	.tool-icon {
+		display: grid;
+		width: 2.35rem;
+		height: 2.35rem;
+		margin-bottom: 1.1rem;
+		place-items: center;
+		border: 1px solid currentColor;
+		border-radius: 6px;
+		color: #1e6fd9;
+		background: #eef6ff;
+		transition: color 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
+	}
+
+	h3 {
+		margin-bottom: 0.65rem;
+		color: #000000;
+		font: 700 clamp(1.2rem, 2.1vw, 1.45rem)/1.2 Arial, Helvetica, sans-serif;
+		letter-spacing: 0;
+	}
+
+	.card-copy p {
+		margin-bottom: 0;
+		color: #242424;
+		font: 400 0.95rem/1.6 Arial, Helvetica, sans-serif;
+	}
+
+	@media (hover: hover) {
+		.tool-card:hover,
+		.benefit-card:hover {
+			transform: translateY(-4px);
+			border-color: var(--electric);
+			box-shadow: 0 10px 26px rgba(30, 111, 217, 0.24);
+		}
+
+		.tool-card:hover .tool-icon,
+		.benefit-card:hover .benefit-icon {
+			color: #0e5dc3;
+			background: #ffffff;
+			box-shadow: 0 0 14px rgba(74, 159, 255, 0.48);
+		}
+	}
+
+	.tool-card:focus-visible,
+	.benefit-card:focus-visible {
+		transform: translateY(-3px);
+		border-color: #9bc7ff;
+		box-shadow: 0 0 0 3px rgba(74, 159, 255, 0.34), 0 10px 26px rgba(30, 111, 217, 0.24);
+	}
+
+	.tool-card:focus-visible .tool-icon,
+	.benefit-card:focus-visible .benefit-icon {
+		color: #0e5dc3;
+		box-shadow: 0 0 14px rgba(74, 159, 255, 0.48);
+	}
+
+	.node { position: absolute; display: grid; place-items: center; border: 1px solid rgba(30, 111, 217, 0.64); border-radius: 50%; background: #ffffff; color: #1e6fd9; }
+	.node-main { top: 50%; left: 50%; width: 4rem; height: 4rem; transform: translate(-50%, -50%); box-shadow: 0 0 30px rgba(74, 159, 255, 0.5); }
+	.node-one, .node-two, .node-three { width: 1.1rem; height: 1.1rem; }
+	.node-one { top: 23%; left: 25%; }.node-two { right: 21%; bottom: 23%; }.node-three { top: 25%; right: 25%; }
+	.line { position: absolute; top: 50%; left: 50%; width: 31%; height: 1px; transform-origin: left; background: linear-gradient(90deg, #1e6fd9, transparent); }
+	.line-one { transform: rotate(-145deg); }.line-two { transform: rotate(-35deg); }.line-three { transform: rotate(34deg); }
+
+	.chart-axis { position: absolute; right: 10%; bottom: 18%; left: 10%; height: 1px; background: rgba(30, 111, 217, 0.46); }
+	.chart-bar { position: absolute; bottom: 18%; width: 10%; border: 1px solid rgba(30, 111, 217, 0.62); border-bottom: 0; background: rgba(74, 159, 255, 0.2); }
+	.bar-one { left: 19%; height: 25%; }.bar-two { left: 37%; height: 39%; }.bar-three { left: 55%; height: 31%; }.bar-four { left: 73%; height: 57%; }
+	.marketing svg { position: absolute; top: 18%; right: 10%; bottom: 18%; left: 10%; width: 80%; height: 64%; overflow: visible; }
+	.marketing polyline { fill: none; stroke: #1e6fd9; stroke-width: 2; filter: drop-shadow(0 0 5px rgba(74, 159, 255, 0.7)); }
+
+	.search-window { position: absolute; top: 25%; right: 11%; left: 11%; display: flex; align-items: center; gap: 0.65rem; padding: 0.8rem 0.9rem; border: 1px solid rgba(30, 111, 217, 0.46); border-radius: 5px; color: #1e6fd9; background: #ffffff; font: 0.75rem/1 Arial, Helvetica, sans-serif; }
+	.result-line { position: absolute; left: 17%; height: 0.45rem; border-radius: 99px; background: rgba(30, 111, 217, 0.46); }.result-line.first { top: 53%; width: 59%; }.result-line.second { top: 66%; width: 45%; }.result-line.third { top: 79%; width: 32%; }
+
+	.copy-window { position: absolute; top: 22%; right: 16%; left: 16%; padding: 1rem; border: 1px solid rgba(30, 111, 217, 0.47); border-radius: 5px; background: #ffffff; }.copy-heading, .copy-line { display: block; height: 0.45rem; margin-bottom: 0.75rem; border-radius: 99px; background: rgba(30, 111, 217, 0.56); }.copy-heading { width: 45%; height: 0.62rem; }.copy-line { width: 94%; }.copy-line.short { width: 67%; margin-bottom: 0; }
+	.cursor { position: absolute; right: 22%; bottom: 19%; width: 0.65rem; height: 1.1rem; border-right: 2px solid #1e6fd9; animation: blink 1.15s steps(2, start) infinite; }
+
+	.mint .tool-icon, .cyan .tool-icon, .sky .tool-icon { color: #1e6fd9; }
+
+	@keyframes blink { 50% { opacity: 0.15; } }
+
+	@media (max-width: 650px) {
+		.workshop-about {
+			padding-top: 4rem;
+			padding-bottom: 4.5rem;
+		}
+
+		.tool-grid,
+		.benefit-grid { grid-template-columns: 1fr; }
+		.card-visual { height: clamp(9.5rem, 48vw, 11rem); }
+		.benefit-card { min-height: 0; }
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.cursor { animation: none; }
+		.tool-card,
+		.benefit-card,
+		.tool-icon,
+		.benefit-icon { transition: none; }
+	}
+
 </style>

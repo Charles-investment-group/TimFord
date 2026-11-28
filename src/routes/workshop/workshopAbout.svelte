@@ -78,48 +78,6 @@
 				</p>
 			</div>
 
-			<div class="benefit-grid">
-				{#each workshopBenefits as benefit}
-					<article class="benefit-card" tabindex="0">
-						<div class="benefit-icon"><svelte:component this={benefit.icon} size={21} strokeWidth={1.75} /></div>
-						<h4>{benefit.title}</h4>
-						<p>{benefit.description}</p>
-					</article>
-				{/each}
-			</div>
-		</div>
-
-		<div class="tool-grid">
-			{#each workshopTools as tool}
-				<article class="tool-card {tool.tone}" tabindex="0">
-					<div class="card-visual {tool.visual}" aria-hidden="true">
-						{#if tool.visual === 'strategy'}
-							<div class="node node-main"><Brain size={23} /></div>
-							<span class="node node-one"></span>
-							<span class="node node-two"></span>
-							<span class="node node-three"></span>
-							<i class="line line-one"></i><i class="line line-two"></i><i class="line line-three"></i>
-						{:else if tool.visual === 'marketing'}
-							<div class="chart-axis"></div>
-							<span class="chart-bar bar-one"></span><span class="chart-bar bar-two"></span><span class="chart-bar bar-three"></span><span class="chart-bar bar-four"></span>
-							<svg viewBox="0 0 220 94" preserveAspectRatio="none"><polyline points="10,74 52,58 96,64 136,30 208,14" /></svg>
-						{:else if tool.visual === 'seo'}
-							<div class="search-window"><Search size={18} /><span>target keywords</span></div>
-							<div class="result-line first"></div><div class="result-line second"></div><div class="result-line third"></div>
-						{:else}
-							<div class="copy-window"><span class="copy-heading"></span><span class="copy-line"></span><span class="copy-line short"></span></div>
-							<div class="cursor"></div>
-						{/if}
-					</div>
-					<div class="card-copy">
-						<div class="tool-icon"><svelte:component this={tool.icon} size={19} strokeWidth={1.8} /></div>
-						<h3>{tool.name}</h3>
-						<p>{tool.description}</p>
-					</div>
-				</article>
-			{/each}
-		</div>
-	</div>
 </section>
 
 <style>

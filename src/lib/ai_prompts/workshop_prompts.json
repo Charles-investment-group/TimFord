@@ -1,0 +1,688 @@
+[
+  {
+    "id": "Homepage Hero Section",
+    "name": "Homepage Hero Developer",
+    "label": "Describe your desired homepage hero in details",
+    "slug": "homepage-hero-developer",
+    "prompt": " Write a catchy headline, subheadline, and primary call-to-action for a specific niche."
+  },
+  {
+    "id": "\"About Us\" Story",
+    "name": "About us Creator",
+    "label": "Give a short information about your company or organisation",
+    "slug": "about-us-creator",
+    "prompt": "Turn raw bullet points about a founders journey into an engaging, emotional brand story."
+  },
+  {
+    "id": "Product/Service Description",
+    "name": "Product or Service descriptor",
+    "label": "Tell us about your product or specific service",
+    "slug": "product-or-service-descriptor",
+    "prompt": " Convert technical features into benefit-driven bullet points that sell."
+  },
+  {
+    "id": "FAQ Section Generator",
+    "name": "FAQ page developer",
+    "label": "Give us your product details",
+    "slug": "faq-page-developer",
+    "prompt": " Anticipate and answer top customer objections and questions for a specific product."
+  },
+  {
+    "id": "PPC Landing Page Copy",
+    "name": "PPC landing page designer",
+    "label": "What kind of ads do you want on this page",
+    "slug": "ppc-landing-page-designer",
+    "prompt": "Write high-converting, single-focus sales copy matched to a paid ad campaign."
+  },
+  {
+    "id": "Footer & Microcopy",
+    "name": "Footer & Microcopy creator",
+    "label": "Give description of how you want the footer and microcopies",
+    "slug": "footer-&-microcopy-creator",
+    "prompt": "Generate snappy microcopy for buttons, error messages, form labels, and navigation."
+  },
+  {
+    "id": "Meta Title & Description",
+    "name": "Meta Title & Description Developer",
+    "label": "Input your keyword and brand identity",
+    "slug": "meta-title-&-description-developer",
+    "prompt": "Write CTR-optimized titles and descriptions targeting a specific primary keyword."
+  },
+  {
+    "id": "Blog Outline Generator",
+    "name": "Blog Outline Writer",
+    "label": "Input your topic,title or target",
+    "slug": "blog-outline-writer",
+    "prompt": "Create a comprehensive, SEO-friendly H2/H3 outline for an authoritative article."
+  },
+  {
+    "id": "Pillar Article Drafting",
+    "name": "Pillar Article Drafter",
+    "label": "Give us the specific topic you want to draft on",
+    "slug": "pillar-article-drafter",
+    "prompt": "Turn an outline into a long-form, expert-level blog post or guide."
+  },
+  {
+    "id": "Image Alt Text Generator",
+    "name": "Image Alt Text Converter",
+    "label": "Input the your image ",
+    "slug": "image-alt-text-converter",
+    "prompt": " Write concise, descriptive, and keyword-friendly alt text for web images."
+  },
+  {
+    "id": "Internal Linking Anchor Text",
+    "name": "Internal Linking Anchor Text writer",
+    "label": "Input topic or article",
+    "slug": "internal-linking-anchor-text-writer",
+    "prompt": "Analyze a topic and suggest natural anchor text phrases for cross-linking."
+  },
+  {
+    "id": "Local SEO Business Bio",
+    "name": "Local SEO Business Bio Writer",
+    "label": "Give us details about your product and your established locations",
+    "slug": "local-seo-business-bio-writer",
+    "prompt": " Write a localized Google Business Profile description highlighting local service areas."
+  },
+  {
+    "id": "Value Proposition / Elevator Pitch",
+    "name": "Value Proposition Writer",
+    "label": "Input the benefits and its advantage over alternatives",
+    "slug": "value-proposition-writer",
+    "prompt": "Boil a business model down into a 15-second hook."
+  },
+  {
+    "id": "Brand Voice Guidelines",
+    "name": "Brand Voice Generator",
+    "label": "Tell us about your brand personality",
+    "slug": "brand-voice-generator",
+    "prompt": "Create a custom style guide (tone, vocabulary, rules) based on brand personality traits."
+  },
+  {
+    "id": "Tagline & Slogan Generator",
+    "name": "Slogan Maker",
+    "label": "Input your brand or business benefits or product",
+    "slug": "slogan-maker",
+    "prompt": "Brainstorm catchy, memorable slogans based on core business benefits."
+  },
+  {
+    "id": "Target Audience Persona",
+    "name": "Target Consumer Detailer",
+    "label": "Give us information of your business or product",
+    "slug": "target-consumer-detailer",
+    "prompt": "Generate detailed demographic and psychodynamic profiles for an ideal customer."
+  },
+  {
+    "id": "Press Release",
+    "name": "Press Release Writer",
+    "label": "Input your company or brand products details,achievements,partnerships or upcoming events ",
+    "slug": "press-release-writer",
+    "prompt": " Format a company milestone or product launch into a standard media-ready press release."
+  },
+  {
+    "id": "Social Media Bio",
+    "name": "Social Media Biographer",
+    "label": "Tell us who you are,what you do,call-for-action,contact",
+    "slug": "social-media-biographer",
+    "prompt": " Write punchy, character-limited bios optimized for Instagram, LinkedIn, X, or TikTok."
+  },
+  {
+    "id": "Pricing Page Tier Copy",
+    "name": "Pricing Page Developer",
+    "label": "Input your tier options",
+    "slug": "pricing-page-developer",
+    "prompt": "Write psychological, feature-contrasting copy for tiers (e.g., Starter, Pro, Enterprise)."
+  },
+  {
+    "id": "Email Welcome Sequence",
+    "name": "Email Welcome Sequence drafter",
+    "label": "Give us your brand story or missions",
+    "slug": "email-welcome-sequence-drafter",
+    "prompt": " Write a multi-part automated onboarding email series for new subscribers."
+  },
+  {
+    "id": "Cold Outreach Email",
+    "name": "Cold Email Outreach Writer",
+    "label": "Give us the topic,name,company achievements",
+    "slug": "cold-email-outreach-writer",
+    "prompt": " Draft personalized, high-response B2B cold emails or LinkedIn DMs."
+  },
+  {
+    "id": "Case Study / Success Story",
+    "name": "Case Study Constructor",
+    "label": "Give us the problem you want to be in the study",
+    "slug": "case-study-constructor",
+    "prompt": "Turn raw client metrics and feedback into a Problem-Solution-Result narrative."
+  },
+  {
+    "id": "Testimonial Request Email",
+    "name": "Testimonial Request Drafter",
+    "label": "Give us the name of your project or service",
+    "slug": "testimonial-request-drafter",
+    "prompt": "Write friendly templates asking happy customers for reviews and social proof."
+  },
+  {
+    "id": "Cart Abandonment Email",
+    "name": "Cart Abandonment Email Writer",
+    "label": "Tell us about the carted goods",
+    "slug": "cart-abandonment-email-writer",
+    "prompt": "Craft persuasive, urgency-driven copy to win back customers who left items in their cart."
+  },
+  {
+    "id": "Business Plan Executive Summary",
+    "name": "Business Plan Executive Summarizer",
+    "label": "Input your business idea,concept,opportunities or financial overview",
+    "slug": "business-plan-executive-summarizer",
+    "prompt": " Summarize a business concept, market opportunity, and financial overview."
+  },
+  {
+    "id": "Business Model Canvas",
+    "name": "Business Model Designer",
+    "label": "Give me details about your business values",
+    "slug": "business-model-designer",
+    "prompt": " Textually map out revenue streams, channels, key partners, and cost structures."
+  },
+  {
+    "id": "Competitor SWOT Analysis",
+    "name": "Business Competitor Analyst",
+    "label": "Give us information about your competitor strengths,weaknesses and opportunities",
+    "slug": "business-competitor-analyst",
+    "prompt": "Generate a structured strengths, weaknesses, opportunities, and threats breakdown."
+  },
+  {
+    "id": "Operations & Logistics",
+    "name": "Operation planner",
+    "label": "What are your production activities?",
+    "slug": "operation-planner",
+    "prompt": " Write a step-by-step Standard Operating Procedure for a routine task."
+  },
+  {
+    "id": "Financial Projections Narrative",
+    "name": "Narrative Writer",
+    "label": "Input for your Business strategy and financial report",
+    "slug": "narrative-writer",
+    "prompt": " Write the explanatory prose accompanying financial forecasts or cash flow models."
+  },
+  {
+    "id": "Risk Mitigation Strategy",
+    "name": "Risk Strategizer",
+    "label": "Input your business sectoer and plan",
+    "slug": "risk-strategizer",
+    "prompt": " Identify potential business risks and write strategic contingencies for them."
+  },
+  {
+    "id": "Terms of Service Draft",
+    "name": "ToS drafter",
+    "label": "Give me details on your business operations",
+    "slug": "tos-drafter",
+    "prompt": " Generate a custom website ToS template based on specific business operations (e.g., e-commerce vs. SaaS)."
+  },
+  {
+    "id": "Privacy Policy Text",
+    "name": "Privacy Policy Generator",
+    "label": "Give us the kind of information you collect from users",
+    "slug": "privacy-policy-generator",
+    "prompt": "Outline data collection, cookie usage, and GDPR/CCPA compliance clauses."
+  },
+  {
+    "id": "Refund & Return Policy",
+    "name": "Refund policy generatoor",
+    "label": "Give us your products details",
+    "slug": "refund-policy-generator",
+    "prompt": " Write clear, customer-friendly parameters for product returns and cancellations."
+  },
+  {
+    "id": "Service Level Agreement (SLA)",
+    "name": "Service Level Generator",
+    "label": "What are your scope os service,reponsibilties and penalties?",
+    "slug": "service-level-generator",
+    "prompt": "Define uptime commitments, support response windows, and performance metrics."
+  },
+  {
+    "id": "Disclaimer/Liability Notice",
+    "name": "Liability Disclaimer Designer",
+    "label": "What are your business and business reponsibilities?",
+    "slug": "liability-disclaimer-designer",
+    "prompt": " Draft legal disclaimers for financial, wellness, or professional advice websites."
+  },
+  {
+    "id": "Intellectual Property Notice",
+    "name": "IP Notice Noter",
+    "label": "What is your copyright,trademark or restrictions",
+    "slug": "ip-notice-noter",
+    "prompt": " Write copyright, trademark, and fair-use attribution notices."
+  },
+  {
+    "id": "Employee Handbook",
+    "name": "Employee Handbook Drafter",
+    "label": "What are the values you would like your employees to keep to?",
+    "slug": "employee-handbook-drafter",
+    "prompt": " Draft foundational company policies, remote-work guidelines, and code of conduct rules."
+  },
+  {
+    "id": "Job Description (JD)",
+    "name": "Job Descriptor",
+    "label": "What are the skills and qualification you need and working conditions?",
+    "slug": "job-descriptor",
+    "prompt": " Write an inclusive, attractive job posting designed to pull top talent."
+  },
+  {
+    "id": "New Hire Onboarding Guide",
+    "name": "Onboard Guide Creator",
+    "label": "Input Company Cultures and the department or role for the new hire...",
+    "slug": "onboard-guide-creator",
+    "prompt": " Create a step-by-step training manual and checklist for new employees."
+  },
+  {
+    "id": "Internal SOP Generator",
+    "name": "SOP Drafter",
+    "label": "Input the tasks and routine",
+    "slug": "sop-drafter",
+    "prompt": "Standardize team workflows into clear, repeatable text documents."
+  },
+  {
+    "id": "Performance Review Template",
+    "name": "Performance Review Designer",
+    "label": "What are the role,department and review period?",
+    "slug": "performance-review-designer",
+    "prompt": " Create constructive evaluation rubrics and manager feedback scripts."
+  },
+  {
+    "id": "Internal Team Newsletter",
+    "name": "Team Newsletter Writer",
+    "label": "Input your business goals you want highlighted and additional things like birthdays or work anniversary?",
+    "slug": "team-newsletter-writer",
+    "prompt": " Write a monthly or weekly update keeping team members aligned on company wins and goals."
+  },
+  {
+    "id": "Knowledge Base Article",
+    "name": "Base Article Generator",
+    "label": "What topic do you want to be answered?",
+    "slug": "base-article-generator",
+    "prompt": " Write a clear, step-by-step troubleshooting guide or tutorial for users."
+  },
+  {
+    "id": "Support Ticket Macro",
+    "name": "Macro Creator",
+    "label": "Input Questions commonly asked?",
+    "slug": "macro-creator",
+    "prompt": " Create empathetic, pre-written response templates for common customer complaints."
+  },
+  {
+    "id": "Product Tooltip / Microcopy",
+    "name": "Tooltip Designer",
+    "label": "Input descrption to the control or guidance ",
+    "slug": "tooltip-designer",
+    "prompt": " Write bite-sized in-app guidance messages to help users navigate software."
+  },
+  {
+    "id": "Customer Exit Survey",
+    "name": "Customer Survey Drafter",
+    "label": "What tone do you want the survey to sound to the customer?",
+    "slug": "customer-survey-drafter",
+    "prompt": "Draft thoughtful cancellation or churn survey questions to gather exit feedback."
+  },
+  {
+    "id": "Pitch Deck Script",
+    "name": "Pitch Desk Scripter",
+    "label": "What are the information you want to relate with partners or investors",
+    "slug": "pitch-desk-scripter",
+    "prompt": " Write persuasive speaker notes and slide copy for an investor pitch presentation."
+  },
+  {
+    "id": "Investor Update Report",
+    "name": "Update Report Drafter",
+    "label": "What are the updates you want to informn your partners or investors",
+    "slug": "update-report-drafter",
+    "prompt": " Draft a periodic performance update detailing growth metrics and runway for stakeholders."
+  },
+  {
+    "id": "Partnership Proposal",
+    "name": "Proposal Composer",
+    "label": "What is the name of the company you want partnership with and which product...",
+    "slug": "proposal-composer",
+    "prompt": " Write a professional B2B outreach letter proposing a strategic alliance or joint venture."
+  },
+  {
+    "id": "Founders Vision Statement",
+    "name": "Founders Vision Writer",
+    "label": "What are you future expectation for your business...",
+    "slug": "founders-vision-writer",
+    "prompt": "Articulate a long-term company manifesto and industry-changing mission."
+  },
+  {
+    "id": "Influencer Outreach Email",
+    "name": "Outreach Email Generator",
+    "label": "Input the name of the creator and topic of the recent or desired topic...",
+    "slug": "outreach-email-generator",
+    "prompt": " Write a personalized pitch letter to collaborate with social media influencers or creators."
+  },
+  {
+    "id": "Affiliate Program Guidelines",
+    "name": "Guidelines Articulator",
+    "label": "Input the name of the partner and what product are you promoting...",
+    "slug": "guidelines-articulator",
+    "prompt": " Draft the terms, commission structures, and rules for recruiting brand affiliates."
+  },
+  {
+    "id": "Webinar Script & Slide Copy",
+    "name": "Script & Slide copier",
+    "label": "Who are your Audience involved...",
+    "slug": "script-&-slide-copier",
+    "prompt": " Write an engaging script and presentation text for an educational or sales webinar."
+  },
+  {
+    "id": "Podcast Interview Pitch",
+    "name": "Podcast Interview Composer",
+    "label": "What are the values you are planning to pass to the host audience...",
+    "slug": "podcast-interview-composer",
+    "prompt": " Draft a compelling pitch to get a founder booked as a guest on industry podcasts."
+  },
+  {
+    "id": "Podcast Show Notes & Summary",
+    "name": "Podcasts Noter",
+    "label": "What is the topic you are talking on and guests onboard...",
+    "slug": "podcast-noter",
+    "prompt": "Turn an audio transcript into structured show notes, timestamps, and key takeaways."
+  },
+  {
+    "id": "Community Discord/Slack Channel Rules",
+    "name": "Rules Drafter",
+    "label": "What kind of community are you organizing",
+    "slug": "rules-drafter",
+    "prompt": " Write welcoming guidelines and moderation rules for a customer community."
+  },
+  {
+    "id": "Virtual Event Landing Page",
+    "name": "Event Communicator",
+    "label": "Input for speakers,agendas and topic for the event...",
+    "slug": "event-communicator",
+    "prompt": "Write registration copy, speaker bios, and agendas for an online conference or workshop."
+  },
+  {
+    "id": "Live-Streaming / Q&A Script",
+    "name": "Q&A Scripter",
+    "label": "Input the topic to be discussed about...",
+    "slug": "q&a-scripter",
+    "prompt": " Outline a script and discussion prompts for a live Q&A session with customers."
+  },
+  {
+    "id": "Giveaway / Contest Rules",
+    "name": "Contest Rule Constructor",
+    "label": "Input the eligibility/requirements,prize details,time and acitivites details",
+    "slug": "contest-rule-constructor",
+    "prompt": "Draft official terms, eligibility criteria, and promotional copy for a social media giveaway."
+  },
+  {
+    "id": "Crowdfunding Campaign Pitch",
+    "name": "Crowdfunder Campaign Designer",
+    "label": "What is your project or product,the amount of fund you need and why you think it will work...",
+    "slug": "crowdfunder-campaign-designer",
+    "prompt": " Write a compelling narrative, reward tier descriptions, and updates for Kickstarter or Indiegogo."
+  },
+  {
+    "id": "Beta Tester Invitation & Onboarding",
+    "name": "Tester Invitation Writer",
+    "label": "What product are you testing?",
+    "slug": "tester-invitation-writer",
+    "prompt": " Write exclusive invite copy and feedback instructions for early software testers."
+  },
+  {
+    "id": "Product Feature Request Response",
+    "name": "Feature Request Reponse Drafter",
+    "label": "What is the name of the product,the underlying problem and preferred solution?",
+    "slug": "feature-request-reponse-drafter",
+    "prompt": " Draft polite, professional replies acknowledging user feature suggestions and roadmap realities."
+  },
+  {
+    "id": "Release Notes / Changelog",
+    "name": "Changelog Artist",
+    "label": "What are the major upadtes or minor changes added to your product?",
+    "slug": "changelog-artist",
+    "prompt": " Turn technical software updates into engaging, user-friendly feature highlights."
+  },
+  {
+    "id": "Customer Appreciation Thank-You Note",
+    "name": "Appreciation Noter",
+    "label": "What specific product are you thank for??",
+    "slug": "appreciation-noter",
+    "prompt": " Write heartfelt, personalized messages or holiday cards for VIP clients."
+  },
+  {
+    "id": "VIP Loyalty Program Rules",
+    "name": "Rules Maker",
+    "label": "What are the rewards for VIPs or the benefits and how the points are collected...",
+    "slug": "rules-maker",
+    "prompt": " Draft copy explaining tier benefits, point collection, and rewards for a customer loyalty program."
+  },
+  {
+    "id": "Re-engagement / \"We Miss You\" Email",
+    "name": "Re-engagement Secretary",
+    "label": "What are your recents updates and brand name?",
+    "slug": "reengagement-secretary",
+    "prompt": " Craft a win-back campaign for dormant subscribers or inactive app users."
+  },
+  {
+    "id": "Upsell / Cross-sell Email",
+    "name": "Sales Advertiser",
+    "label": "What are the complementing products to the product purchased?",
+    "slug": "sales-advertiser",
+    "prompt": "Write strategic post-purchase recommendations to encourage higher customer lifetime value (LTV)."
+  },
+  {
+    "id": "Subscription Renewal Reminder",
+    "name": "Reminder Designer",
+    "label": "What is your product name?",
+    "slug": "reminder-designer",
+    "prompt": "Draft friendly, urgency-based copy reminding users their annual or monthly plan is renewing."
+  },
+  {
+    "id": "Payment Failure Notification",
+    "name": "Notifying Designer",
+    "label": "What is your product name/brand?",
+    "slug": "notifying-designer",
+    "prompt": " Write a tactful, secure email sequence alerting customers of a declined credit card."
+  },
+  {
+    "id": "Account Deletion Confirmation",
+    "name": "Confirmation Letter Writer",
+    "label": "Input your services name/brand...",
+    "slug": "confirmation-letter-writer",
+    "prompt": " Draft compassionate farewell copy and a quick exit feedback prompt when a user closes their account."
+  },
+  {
+    "id": "Company Milestone Celebration Post",
+    "name": "Milestone messenger",
+    "label": "What is the name of your company and how many years have you be established?",
+    "slug": "milestone-messenger",
+    "prompt": " Write an engaging internal or external announcement for hitting a major business revenue or user milestone."
+  },
+  {
+    "id": "Crisis Management Statement",
+    "name": "Crisis Manager",
+    "label": "What are the problems faced by your company and your presumed solutions?",
+    "slug": "crisis-manager",
+    "prompt": "Draft a professional, measured holding statement or public apology for PR emergencies."
+  },
+  {
+    "id": "Brand Partnership / Co-Marketing Pitch",
+    "name": "Partnership Organizer",
+    "label": "What are your common goal with the future partner and the product??",
+    "slug": "partnership-organizer",
+    "prompt": " Write a collaboration proposal for a non-competing brand targeting the same audience."
+  },
+  {
+    "id": "Guest Blogging Pitch",
+    "name": "Blogging inviter",
+    "label": "What are your proposed topics?",
+    "slug": "blogging-inviter",
+    "prompt": " Draft an outreach email proposing high-value guest article topics to industry blogs."
+  },
+  {
+    "id": "Interactive Quiz / Diagnostic Tool Copy",
+    "name": "Diagnostic Quiz Organizer",
+    "label": "Input problems that you have seen and presumed solutions...",
+    "slug": "diagnostic-quiz-organizer",
+    "prompt": " Write questions, result logic, and lead-capture copy for a marketing quiz."
+  },
+  {
+    "id": "SMS Marketing Text Broadcast",
+    "name": "Broadcast Text Writer",
+    "label": "What is your business or goals of the message?",
+    "slug": "broadcast-text-writer",
+    "prompt": " Write high-conversion, character-limited promotional texts for mobile marketing."
+  },
+  {
+    "id": "Push Notification Copy",
+    "name": "Notifying Message Creator",
+    "label": "What industry are you working?",
+    "slug": "notifying-message-creator",
+    "prompt": " Draft snappy, punchy app notification hooks to drive daily active engagement."
+  },
+  {
+    "id": "Direct Mail Marketing Letter",
+    "name": "Marketing Letter Drafter",
+    "label": "What are your primary goal,Who your target audience is,What product or service you are promoting?",
+    "slug": "marketing-letter-drafter",
+    "prompt": " Write a traditional physical sales letter or direct mail postcard copy."
+  },
+  {
+    "id": "Sales Objection Handling Script",
+    "name": "Objection Scripter",
+    "label": "What is the exact objection that your business have been have?",
+    "slug": "objection-scripter",
+    "prompt": " Create a reference sheet of word-for-word rebuttals for common sales call objections."
+  },
+  {
+    "id": "Sales Discovery Call Agenda & Questions",
+    "name": "Sales Discovery Constructor",
+    "label": "What industry or product/service are you selling?",
+    "slug": "sales-discovery-constructor",
+    "prompt": " Draft a structured questionnaire for qualifying inbound sales leads."
+  },
+  {
+    "id": "B2B Proposal / Statement of Work (SOW)",
+    "name": "SOW Drafter",
+    "label": "What industry or type of service are you providing and is it fixed-price or time-and-materials?",
+    "slug": "sow drafter",
+    "prompt": " Write the project scope, deliverables, and timeline text for a client proposal."
+  },
+  {
+    "id": "Client Offboarding & Handover Document",
+    "name": "Offboarding Documentator",
+    "label": "What type of service or agency you run (e.g., design, web dev, marketing)?",
+    "slug": "offboarding-documentator",
+    "prompt": " Draft a final delivery checklist and project summary text for completed client work."
+  },
+  {
+    "id": "Contractor / Freelancer Agreement",
+    "name": "Agreement Constructor",
+    "label": "What type of service or industry the contract is for and whether you are writing this as the freelancer or the client?",
+    "slug": "agreement-constructor",
+    "prompt": " Outline standard expectations, deliverables, and payment terms for external talent."
+  },
+  {
+    "id": "Non-Disclosure Agreement (NDA) Summary",
+    "name": "Agreement Summarizer",
+    "label": "Who is sharing the information (employer, startup founder, freelancer)? and what kind of project or deal are you working on?",
+    "slug": "agreement-summarizer",
+    "prompt": "Draft plain-English explanations or clauses for protecting sensitive business data."
+  },
+  {
+    "id": "Board of Directors Meeting Agenda",
+    "name": "Agenda Maker",
+    "label": "Is this for a nonprofit, corporate, or startup board and what is the total meeting length you are aiming for?",
+    "slug": "agenda-maker",
+    "prompt": "Organize topics, voting items, and discussion points for formal corporate meetings."
+  },
+  {
+    "id": "Board Meeting Minutes Template",
+    "name": "Minutes Designer",
+    "label": "What is the specified type for your organization?",
+    "slug": "minutes-designer",
+    "prompt": "Create structured text templates to record official corporate decisions and meeting resolutions."
+  },
+  {
+    "id": "Shareholder Annual Report Letter",
+    "name": "Report Letter Writer",
+    "label": "Which industry or brand are you working for?",
+    "slug": "report-letter-writer",
+    "prompt": " Write the CEO’s opening address summarizing yearly performance for company stakeholders."
+  },
+  {
+    "id": "Grant Application Narrative",
+    "name": "Application Narrator",
+    "label": "The type of project or organization you are writing for and the funder or grant program you are targeting?",
+    "slug": "application-narrator",
+    "prompt": " Draft persuasive impact statements and project proposals for government or foundation grants."
+  },
+  {
+    "id": "CSR (Corporate Social Responsibility) Statement",
+    "name": "CSR Articulator",
+    "label": "Your industry or business type and your main social or environmental focus (e.g., education, green energy, local youth)?",
+    "slug": "csr-articulator",
+    "prompt": "Articulate a company’s environmental, social, and charitable giving commitments."
+  },
+  {
+    "id": "Diversity, Equity, and Inclusion (DEI) Policy",
+    "name": "DEI Formulator",
+    "label": "What type of organization it is for (corporate, school, NGO, etc.) and who does the policy cover?",
+    "slug": "dei-formulator",
+    "prompt": " Draft clear organizational commitments and hiring frameworks for workplace inclusivity."
+  },
+  {
+    "id": "Cybersecurity & Data Safety Policy",
+    "name": "Data Safety Writer",
+    "label": "What type of organization is this for (small business, non-profit, school, etc.) and what specific area do you need to focus on (remote work, password rules, or incident response)?",
+    "slug": "data-safety-writer",
+    "prompt": " Write internal rules regarding password management, phishing prevention, and data handling."
+  },
+  {
+    "id": "Remote Work Policy Document",
+    "name": "Remote Policy Maker",
+    "label": "Is your company fully remote or hybrid and what country or region do your employees work in?",
+    "slug": "remote-policy-maker",
+    "prompt": " Draft guidelines covering home office stipends, core working hours, and communication standards."
+  },
+  {
+    "id": "Employee Exit Interview Questionnaire",
+    "name": "Departing Questionnaire",
+    "label": "What industry or department are your departing employees in?",
+    "slug": "departing-questionnaire",
+    "prompt": " Write structured, constructive questions for departing team members."
+  },
+  {
+    "id": "Employee Recognition / Shout-Out Announcement",
+    "name": "Shout-out Creator",
+    "label": "Who you are recognizing and the specific win or action they completed?",
+    "slug": "shoutout-creator",
+    "prompt": "Draft peer-to-peer appreciation templates for company Slack channels or meetings."
+  },
+  {
+    "id": "Team Retrospective Meeting",
+    "name": "Team Retrospect Agenda",
+    "label": "What are the goals and the departments or individual that helped achieving the goals?",
+    "slug": "team-retrospect-agenda",
+    "prompt": " Write reflection questions (What went well? What didnt?) for sprint or quarterly reviews."
+  },
+  {
+    "id": "Job Offer Letter",
+    "name": "Job Offer Writer",
+    "label": "Is this offer for a full-time, contract, or remote position and what country or state are you hiring in?",
+    "slug": "job-offer-writer",
+    "prompt": "Draft an exciting, professional employment offer including salary, benefits, and start date terms."
+  },
+  {
+    "id": "Rejection Letter for Applicants",
+    "name": "Rejection letter Constructor",
+    "label": "What stage the candidate is at (resume review, phone screen, or post-interview)?",
+    "slug": "rejection-letter-constructor",
+    "prompt": " Write a kind, empathetic automated message for unsuccessful job candidates."
+  },
+  {
+    "id": "Internal IT Helpdesk Request Macro",
+    "name": "Helpdesk List Creator",
+    "label": "What specific IT issue or scenario is this macro for and what ticketing platform do you use?",
+    "slug": "helpdesk-list-creator",
+    "prompt": "Draft troubleshooting instructions for common internal hardware or software tickets."
+  }
+]

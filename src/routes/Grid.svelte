@@ -16,6 +16,33 @@
   }
 </script>
 
+<div class="grid" role="list">
+  {#each items as item (item.id)}
+ <div
+ role="button"
+ class="cell"
+ tabindex="0"
+ aria-label={item.title}
+ on:click={() => handleClick(item)}
+ on:keydown={(e) => handleKey(e, item)}
+ >
+ {#if item.image}
+ <img src={item.image} alt="" class="media" />
+ {:else}
+ <div class="media" aria-hidden="true"></div>
+ {/if}
+
+ <div class="content">
+ <div class="title">{item.title}</div>
+ <!-- visible on small screens; on desktop overlay will appear on hover -->
+ <div class="overlay" aria-hidden="false">{item.description}</div>
+ </div>
+
+ <span class="sr-only">Press Enter or Space to select</span>
+ </div>
+  {/each}
+</div>
+
 <style>
   .grid {
  display: grid;
@@ -107,30 +134,3 @@
  overflow: hidden;
   }
 </style>
-
-<div class="grid" role="list">
-  {#each items as item (item.id)}
- <div
- role="button"
- class="cell"
- tabindex="0"
- aria-label={item.title}
- on:click={() => handleClick(item)}
- on:keydown={(e) => handleKey(e, item)}
- >
- {#if item.image}
- <img src={item.image} alt="" class="media" />
- {:else}
- <div class="media" aria-hidden="true"></div>
- {/if}
-
- <div class="content">
- <div class="title">{item.title}</div>
- <!-- visible on small screens; on desktop overlay will appear on hover -->
- <div class="overlay" aria-hidden="false">{item.description}</div>
- </div>
-
- <span class="sr-only">Press Enter or Space to select</span>
- </div>
-  {/each}
-</div>
