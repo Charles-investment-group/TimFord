@@ -1,5 +1,37 @@
 <script>
-import ForgeEngine from './ForgeEngine.svelte';
+	const stats = [
+		{
+			value: '98%',
+			title: 'See SEO gains by week two',
+			text: 'of customers see a 5% increase in SEO by the second week of working with Charles Investment Group.'
+		},
+		{
+			value: '83',
+			title: 'AI agents on every build',
+			text: 'Chloe leads 2 QA orchestrators and 80 specialists on your project — no prompt engineering required.'
+		},
+		{
+			value: '41+',
+			title: 'Languages and frameworks',
+			text: 'React and Swift through to COBOL and Solidity. Your stack is already covered before you ask.'
+		},
+		{
+			value: '$0',
+			title: 'In engine licensing fees',
+			text: 'ForgeEngine is built in-house, so you never owe a third-party engine royalty on anything you ship.'
+		},
+		{
+			value: '1,000',
+			title: 'Concurrent players per server',
+			text: 'Dedicated multiplayer hosting on Titan, with the full AAA pipeline and 4K/8K rendering included.'
+		},
+		{
+			value: '500+',
+			title: 'Free assets, included',
+			text: 'Models, textures and audio ready to drop in, alongside a 500+ clip mocap animation library.'
+		}
+	];
+
 </script>
 <main class="hero-shell">
   <div class="main_container container">
@@ -8,6 +40,7 @@ import ForgeEngine from './ForgeEngine.svelte';
       <div id="stars3"></div>
         </div>
 <div class="overlay"></div>
+<div class="full_section">
 <section class="hero-content" aria-labelledby="hero-forge-heading">
   <p class="hero-eyebrow">Enhanced AI Technology</p>
   <h1 id="hero-forge-heading">Introducing <br><span>Chlo.e</span></h1>
@@ -16,158 +49,159 @@ import ForgeEngine from './ForgeEngine.svelte';
   <strong>Chlo.e</strong> is your newest business partner, Agent, <em>and</em> <strong>Prompt Engineer</strong>. <br> Designed for speed and accuracy with support for over 70 langauges.
   </p>
 </section>
-<ForgeEngine />
+<section class="forge-section" aria-label="ForgeEngine platform highlights">
+	<div class="section-inner">
+		<div class="feature-grid">
+			{#each stats as stat, index}
+				<article
+					class="featured"
+					style={`--delay: ${index * 70}ms`}
+				>
+					<p class="stat-value">{stat.value}</p>
+					<h2>{stat.title}</h2>
+					<p>{stat.text}</p>
+				</article>
+			{/each}
+		</div>
+	</div>
+</section>
+
+</div>
 
 </main>
 
 <style>
 
-:root {
---head-height: calc(75vh + 60px);
---head-shadow: 4px 4px 20px rgba(0,0,0,0.2);
+* {
+color: white;
 }
+
 
 .hero-shell {
 position: relative;
-height: var(--head-height);
-overflow: hidden;
-isolation: isolate;
-height: 100%;
+margin: 0px; 
 }
 
-.main_container {
-width: 100%;
-height: var(--head-height);
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
+
+.full_section {
 position: absolute;
-}
-
-.overlay {
-width: 100%;
-height: var(--head-height);
-height: 100%;
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-background: linear-gradient(rgba(0,0,0,0) 40%, #020919 98%);
-position: relative;
-}
-
-.hero-content {
-position: relative;
-z-index: 2;
-inset: 0;
+top: 0px;
+left: 0px;
+background-color: transparent;
 display: flex;
 flex-direction: column;
+gap: 0px;
+align-items: flex-start;
 justify-content: center;
-color: #fff;
-font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-pointer-events: none;
+}
+
+.feature-grid {
 background-color: transparent;
-padding-left: 0vw;
-height: var(--head-height);
-margin-top: 30px;
-margin-bottom: 0px;
+display: flex;
+width: 100vw;
+flex-wrap: wrap;
 }
 
-.hero-eyebrow {
-width: fit-content;
-margin: 0 0 18px;
-border: 0px dotted white;
-border-radius: 10px;
-background: rgba(0,0,0,1);
-box-shadow: -2px 2px 10px rgba(0,0,0,0.2);
-padding: 10px 16px;
-color: #8df4ff;
-font-size: 0.78rem;
-font-weight: 800;
-letter-spacing: 0.14em;
-text-transform: uppercase;
-animation: introFadeUp 720ms ease-out both;
-margin-left: 5vw;
-}
-
-.hero-content h1 {
-max-width: 880px;
-margin: 0;
-font-size: clamp(3rem, 8vw, 7rem);
-line-height: 0.92;
-font-weight: 900;
-letter-spacing: 0;
-text-wrap: balance;
-animation: introFadeUp 900ms ease-out 90ms both;
-padding-left: 5vw;
-text-shadow: var(--head-shadow);
-
-}
-
-.hero-content h1 span {
-color: #45b8ff;
-text-shadow: var(--head-shadow);
-}
-
-.hero-summary {
-max-width: 760px;
-margin: 24px 0 0;
-color: #e5edf9;
-font-size: clamp(1rem, 2vw, 1.25rem);
-line-height: 1.7;
-animation: introFadeUp 900ms ease-out 180ms both;
-margin-left: 50px;
-text-shadow: var(--head-shadow);
-background: linear-gradient(90deg,rgba(0,0,200,0.2));
-backdrop-filter: blur(30px);
-padding: 30px 30px;
-border-radius: 10px;
-border: 1px dotted white;
-box-shadow: -2px 2px 20px rgba(0,0,0,0.2);
+.featured {
+display: flex;
+flex-direction: column;
+min-width: 30vw;
+width: 30vw;
+max-width: 30vw;
 }
 
 
-.hero-summary strong {
-color: #8df4ff;
-}
+	.feature-grid article h2 {
+		margin: 0 0 10px;
+	}
 
-.about-me {
-width: min(620px, 100%);
-margin-top: 34px;
-border-left: 3px solid #45b8ff;
-background: linear-gradient(90deg, rgba(7, 17, 33, 0.76), rgba(7, 17, 33, 0.22));
-box-shadow: 0 24px 70px rgba(0, 0, 0, 0.26);
-padding: 22px 26px;
-animation: introFadeUp 900ms ease-out 270ms both;
-}
+	@property --border-angle {
+		syntax: "<angle>";
+		inherits: false;
+		initial-value: 0deg;
+	}
 
-.about-kicker {
-margin: 0 0 8px;
-color: #8df4ff;
-font-size: 0.76rem;
-font-weight: 900;
-letter-spacing: 0.16em;
-text-transform: uppercase;
-}
+	@keyframes revealUp {
+		from {
+			opacity: 0;
+			translate: 0 22px;
+		}
+		to {
+			opacity: 1;
+			translate: 0 0;
+		}
+	}
 
-.about-me h2 {
-margin: 0 0 10px;
-color: #fff;
-font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-line-height: 1.18;
-}
+	@keyframes borderOrbit {
+		to {
+			--border-angle: 360deg;
+		}
+	}
 
-.about-me p:last-child {
-margin: 0;
-color: #dce8f8;
-font-size: 1rem;
-line-height: 1.62;
-}
+	@keyframes sectionSweep {
+		from {
+			transform: translateX(-120%);
+		}
+		to {
+			transform: translateX(120%);
+		}
+	}
+
+	@media (max-width: 920px) {
+		.forge-section {
+			padding: 84px 18px 88px;
+		}
+
+		.feature-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.feature-grid article {
+			min-height: auto;
+		}
+
+		.highlight-row {
+			align-items: stretch;
+			flex-direction: column;
+		}
+
+		.highlight-row span {
+			white-space: normal;
+		}
+	}
+
+	@media (max-width: 560px) {
+		.forge-section {
+			padding: 66px 14px 72px;
+		}
+
+		.feature-grid article {
+			padding: 22px;
+		}
+
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.forge-section,
+		.forge-section::before,
+		.forge-section::after,
+		.feature-grid article {
+			animation: none;
+			transition: none;
+		}
+
+		article:hover,
+		.highlight-row span:hover,
+		article:hover .icon {
+			transform: none;
+		}
+	}
 
 .container {
   width: 100%;
   background: radial-gradient(circle at 23vw 25vh, blue 20%, white 30%, #000000 30%,#0B223E );
   overflow: hidden;
-  height: 110%;
+  height: 100vh;;
   z-index: 1;
 }
 
